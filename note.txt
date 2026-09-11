@@ -1,0 +1,447 @@
+Software installation
+---------------------
+
+    Software Installation and Setup
+    Windows Installation and Configuration
+    Printer Driver Installation and Configuration
+    Network Folder Scanning Configuration
+    Network Folder Sharing and Access Configuration
+    Network Connectivity Troubleshooting Using Adapter Enable/Disable
+    APIPA Troubleshooting 
+    Static IP Configuration
+
+
+    RJ45 Cable Crimping, Punching, and Network Cable Termination
+    Extension Board Assembly and Wiring 
+    IP Phone Configuration and Extension Management 
+    Basic Network Switch Configuration and Connectivity
+
+
+
+Page -1 : 205, 204, 171, 198,197, 195, 162, 190, 189, 188, 
+
+Page -2 : 136, 157, 140, 168, 161, 142, 178, 177, 173, 172, 
+
+Page - 3 : 179, 170, 174, 176, 175, 166, 167, 164,165, 160
+
+page -4 : 159, 155, 147, 146, 109, 85, 129, 96,
+143,154, 
+
+page -5 : 153, 86, 82, 102, 134, 99, 152, 151, 149, 141
+
+======================================================================================
+
+
+Page 1: 205, 204, 198, 197, 195, 190, 189, 188, 179, 178   ---> Completed
+
+Page 2: 177, 176, 175, 174, 173, 172, 171, 170, 168, 167  ----> Completed
+
+Page 3: 166, 165, 164, 162, 161, 160, 159, 157, 155, 154
+
+Page 4: 153, 152, 151, 149, 147, 146, 143, 142, 141, 140
+
+Page 5: 136, 134, 129, 109, 102, 99, 96, 86, 85, 82
+
+
+ <section id="our__services">
+      <div class="container">
+        <h2
+          class="page__title__text page__title__text__space"
+          data-aos="fade-down"
+        >
+          Our Services
+        </h2>
+
+        <div class="our__services__wrapper">
+          <div class="our__services__item" data-aos="fade-up">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-building2-icon lucide-building-2"
+            >
+              <path d="M10 12h4" />
+              <path d="M10 8h4" />
+              <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+              <path
+                d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"
+              />
+              <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
+            </svg>
+            <h4 class="our__services__title">Civil Construction</h4>
+            <p class="our__services__text">
+              Building durable residential, commercial, and industrial
+              structures with quality craftsmanship, modern engineering, and
+              strict adherence to safety standards.
+            </p>
+          </div>
+          <div class="our__services__item" data-aos="fade-up">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-gamepad-directional-icon lucide-gamepad-directional"
+            >
+              <path
+                d="M11.146 15.854a1.207 1.207 0 0 1 1.708 0l1.56 1.56A2 2 0 0 1 15 18.828V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.172a2 2 0 0 1 .586-1.414z"
+              />
+              <path
+                d="M18.828 15a2 2 0 0 1-1.414-.586l-1.56-1.56a1.207 1.207 0 0 1 0-1.708l1.56-1.56A2 2 0 0 1 18.828 9H21a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1z"
+              />
+              <path
+                d="M6.586 14.414A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708z"
+              />
+              <path
+                d="M9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z"
+              />
+            </svg>
+            <h4 class="our__services__title">MEP Services</h4>
+            <p class="our__services__text">
+              Providing reliable mechanical, electrical, and plumbing solutions
+              that ensure efficient building performance, comfort, energy
+              savings, and long-term reliability.
+            </p>
+          </div>
+          <div class="our__services__item" data-aos="fade-up">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-backhoe"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M2 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M11 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M13 19l-9 0" />
+              <path d="M4 15l9 0" />
+              <path d="M8 12v-5h2a3 3 0 0 1 3 3v5" />
+              <path d="M5 15v-2a1 1 0 0 1 1 -1h7" />
+              <path d="M21.12 9.88l-3.12 -4.88l-5 5" />
+              <path
+                d="M21.12 9.88a3 3 0 0 1 -2.12 5.12a3 3 0 0 1 -2.12 -.88l4.24 -4.24"
+              />
+            </svg>
+            <h4 class="our__services__title">Infrastructure</h4>
+            <p class="our__services__text">
+              Developing roads, utilities, drainage systems, and public
+              infrastructure that support sustainable communities, economic
+              growth, and future urban development.
+            </p>
+          </div>
+          <div class="our__services__item" data-aos="fade-up">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
+              />
+              <path
+                d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2"
+              />
+              <path d="M9 17v-4" />
+              <path d="M12 17v-1" />
+              <path d="M15 17v-2" />
+              <path d="M12 17v-1" />
+            </svg>
+
+            <h4 class="our__services__title">Project Management</h4>
+            <p class="our__services__text">
+              Planning, coordinating, and supervising every project phase to
+              ensure timely completion, budget control, quality assurance, and
+              client satisfaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+.our__services__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: center;
+  gap: 1rem;
+}
+.our__services__item {
+  padding: 20px 30px;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background: #fff;
+  text-align: center;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.our__services__item:hover {
+  cursor: pointer;
+  transform: translateY(-10px) !important;
+  box-shadow: rgba(67, 71, 85, 0.2) 0px 15px 35px;
+}
+
+.our__services__item svg {
+  color: var(--green-1);
+}
+.our__services__title {
+  font-size: 1.6rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: var(--black-1);
+}
+.our__services__text {
+  font-size: 1.6rem;
+  font-family: Raleway;
+  color: var(--black-3);
+}
+ .our__services__wrapper {
+    gap: 3rem;
+  }
+  .our__services__item {
+    min-width: 200px;
+    padding: 40px 20px;
+  }
+
+  .our__services__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .our__services__text {
+    font-size: 1.6rem;
+  }
+
+
+
+
+ <section class="why-choose__wrapper">
+      <div class="container">
+        <div class="section-title">
+          <h2
+            class="page__title__text page__title__text__space"
+            data-aos="fade-down"
+          >
+            WHY CHOOSE US
+          </h2>
+        </div>
+
+        <div class="why-grid">
+          <!-- Card 1 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Shield -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+
+            <h4>Quality Assurance</h4>
+
+            <p>
+              We maintain the highest standards through strict quality control,
+              premium materials, skilled craftsmanship, and detailed inspections
+              to deliver reliable, durable, and exceptional construction
+              projects.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Hard Hat -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 15a8 8 0 0 1 16 0" />
+                <path d="M2 15h20" />
+                <path d="M12 7v8" />
+              </svg>
+            </div>
+
+            <h4>Safety First</h4>
+
+            <p>
+              Safety is our highest priority, with strict compliance, regular
+              training, advanced protective measures, and continuous monitoring
+              to ensure a secure working environment for everyone on every
+              project.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Users -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+
+            <h4>Expert Team</h4>
+
+            <p>
+              Our highly skilled engineers, architects, and construction
+              professionals bring extensive experience, technical expertise, and
+              dedication to successfully deliver projects with precision,
+              quality, and efficiency.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Clock -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v6l4 2" />
+              </svg>
+            </div>
+
+            <h4>On-Time Delivery</h4>
+
+            <p>
+              We are committed to completing every project on schedule through
+              efficient planning, effective project management, skilled
+              execution, and seamless coordination without compromising quality
+              or safety.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Leaf -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M11 20A7 7 0 0 1 18 9h3v3a7 7 0 0 1-10 8z" />
+                <path d="M2 21c3-3 5-8 13-8" />
+              </svg>
+            </div>
+
+            <h4>Sustainable Solutions</h4>
+
+            <p>
+              We implement environmentally responsible construction practices,
+              energy-efficient solutions, and sustainable materials to create
+              durable, innovative projects while minimizing environmental impact
+              for future generations.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="why-card" data-aos="fade-up">
+            <div class="why-icon">
+              <!-- Handshake -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M11 12l2 2a2 2 0 0 0 3-3l-2-2" />
+                <path d="M6 8l3-3a2 2 0 0 1 3 0l1 1" />
+                <path d="M18 16l-3 3a2 2 0 0 1-3 0l-1-1" />
+                <path d="M2 10l4-4 4 4-4 4z" />
+                <path d="M14 18l4-4 4 4-4 4z" />
+              </svg>
+            </div>
+
+            <h4>Client Satisfaction</h4>
+
+            <p>
+              Client satisfaction is our priority, achieved through transparent
+              communication, reliable service, exceptional workmanship, and
+              delivering projects that consistently exceed expectations,
+              budgets, and timelines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    

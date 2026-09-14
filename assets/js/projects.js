@@ -803,26 +803,26 @@ function getCardsPerPage() {
             `;
 
         }
-        else if (isOngoing) {
+            else if (isOngoing) {
 
-            badgeHTML = `
-                <span class="project-badge ongoing-badge">
-                    Under Construction
-                </span>
-            `;
+                badgeHTML = `
+                    <span class="project-badge ongoing-badge">
+                        Under Construction
+                    </span>
+                `;
 
-        }
-        else if (project.status) {
+            }
+            else if (project.status) {
 
-            badgeHTML = `
-                <span class="project-badge ongoing-badge">
-                    ${escapeHTML(
-                        project.status
-                    )}
-                </span>
-            `;
+                badgeHTML = `
+                    <span class="project-badge ongoing-badge">
+                        ${escapeHTML(
+                            project.status
+                        )}
+                    </span>
+                `;
 
-        }
+            }
 
 
         /* =================================================

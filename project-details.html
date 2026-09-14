@@ -21,7 +21,6 @@
   <body>
     <!-- Nav -->
     <header class="hatim__wrapper">
-    
       <!-- Navigation -->
       <div class="nav__menu__wrapper" id="navbar">
         <div class="container">
@@ -50,7 +49,7 @@
               </svg>
 
               <ul>
-               <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="./projects.html">Projects</a></li>
                 <li><a href="./gallery.html">Gallery</a></li>
                 <li><a href="./about.html">About US</a></li>
@@ -88,7 +87,7 @@
     <!-- project details -->
     <section class="project-hero">
       <div class="hero-image">
-        <img id="projectImage" src="" alt=""/>
+        <img id="projectHeroImage" src="" alt="" />
       </div>
       <div class="hero-overlay"></div>
 
@@ -121,12 +120,16 @@
     </section>
 
     <!-- Project about -->
-    <section class="project-about" >
+    <section class="project-about">
       <div class="container">
         <div class="project-about__wrapper">
           <!-- Left Image -->
-          <div class="project-about__image" data-aos="fade-up">
-            <img id="cardProjectImage" src="" alt="" />
+          <div class="project-about__image project-gallery" data-aos="fade-up">
+            <div class="project-main-image">
+              <img id="projectImage" src="" alt="Project Image" />
+            </div>
+
+            <div id="projectThumbnails" class="project-thumbnails"></div>
           </div>
 
           <!-- Right Info -->
@@ -422,7 +425,7 @@
       </div>
     </section>
 
-     <!-- Gmail -->
+    <!-- Gmail -->
     <a
       href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadfaizanweb@gmail.com"
       target="_blank"
@@ -448,7 +451,7 @@
     </a>
 
     <!-- scroll button -->
-     <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
       <svg class="progress-ring" viewBox="0 0 50 50">
         <circle class="progress-ring-bg" cx="25" cy="25" r="21" />
 
@@ -462,12 +465,25 @@
       </svg>
 
       <span class="scroll-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
       </span>
     </button>
 
     <!-- Footer Section -->
-     <footer>
+    <footer>
       <div class="container">
         <div class="footer__wrapper" data-aos="fade-up">
           <div class="footer__col1">

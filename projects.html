@@ -48,7 +48,7 @@
               </svg>
 
               <ul>
-               <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="./projects.html">Projects</a></li>
                 <li><a href="./gallery.html">Gallery</a></li>
                 <li><a href="./about.html">About US</a></li>
@@ -90,142 +90,141 @@
     <!-- Nav End -->
 
     <!-- Our Projects -->
-   <section class="projects-section">
-        <div class="container">
-             <!-- ==========================================
+    <section class="projects-section">
+      <div class="container">
+        <!-- ==========================================
          FILTER TOOLBAR
     =========================================== -->
-      <div class="projects-toolbar">
-        <!-- Search -->
-        <div class="project-search">
-          <span class="search-icon">
-            <svg viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="7"></circle>
-              <path d="M16.5 16.5L21 21"></path>
-            </svg>
-          </span>
+        <div class="projects-toolbar">
+          <!-- Search -->
+          <div class="project-search">
+            <span class="search-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M16.5 16.5L21 21"></path>
+              </svg>
+            </span>
 
-          <input
-            type="text"
-            id="projectSearch"
-            placeholder="Search projects..."
-            autocomplete="off"
-          />
+            <input
+              type="text"
+              id="projectSearch"
+              placeholder="Search projects..."
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Project Type -->
+          <div class="project-select-wrapper">
+            <select id="projectTypeFilter" class="project-select">
+              <option value="">All Types</option>
+            </select>
+          </div>
+
+          <!-- Status -->
+          <div class="project-select-wrapper">
+            <select id="projectStatusFilter" class="project-select">
+              <option value="">All Status</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div class="project-select-wrapper">
+            <select id="projectLocationFilter" class="project-select">
+              <option value="">All Locations</option>
+            </select>
+          </div>
+
+          <!-- Sort -->
+          <div class="project-select-wrapper sort-select-wrapper">
+            <select id="projectSort" class="project-select">
+              <option value="latest">Sort By</option>
+
+              <option value="latest">Latest</option>
+
+              <option value="oldest">Oldest</option>
+
+              <option value="number-desc">Project No. ↓</option>
+
+              <option value="number-asc">Project No. ↑</option>
+
+              <option value="title-asc">Name A-Z</option>
+
+              <option value="title-desc">Name Z-A</option>
+            </select>
+          </div>
+
+          <!-- Clear Filters -->
+          <button
+            type="button"
+            class="clear-filter-btn"
+            id="clearProjectFilters"
+          >
+            <span class="clear-filter-icon">×</span>
+            <span>Clear Filters</span>
+          </button>
         </div>
 
-        <!-- Project Type -->
-        <div class="project-select-wrapper">
-          <select id="projectTypeFilter" class="project-select">
-            <option value="">All Types</option>
-          </select>
-        </div>
-
-        <!-- Status -->
-        <div class="project-select-wrapper">
-          <select id="projectStatusFilter" class="project-select">
-            <option value="">All Status</option>
-          </select>
-        </div>
-
-        <!-- Location -->
-        <div class="project-select-wrapper">
-          <select id="projectLocationFilter" class="project-select">
-            <option value="">All Locations</option>
-          </select>
-        </div>
-
-        <!-- Sort -->
-        <div class="project-select-wrapper sort-select-wrapper">
-          <select id="projectSort" class="project-select">
-            <option value="latest">Sort By</option>
-
-            <option value="latest">Latest</option>
-
-            <option value="oldest">Oldest</option>
-
-            <option value="number-desc">Project No. ↓</option>
-
-            <option value="number-asc">Project No. ↑</option>
-
-            <option value="title-asc">Name A-Z</option>
-
-            <option value="title-desc">Name Z-A</option>
-          </select>
-        </div>
-
-        <!-- Clear Filters -->
-        <button type="button" class="clear-filter-btn" id="clearProjectFilters">
-          <span class="clear-filter-icon">×</span>
-          <span>Clear Filters</span>
-        </button>
-      </div>
-
-      <!-- ==========================================
+        <!-- ==========================================
          PROJECT CONTENT
     =========================================== -->
 
-      <div class="projects-layout">
-        <!-- ======================================
+        <div class="projects-layout">
+          <!-- ======================================
              LEFT NAVIGATION
         ======================================= -->
 
-        <div class="project-side-nav">
-          <div class="side-number" id="projectCounter">01</div>
+          <div class="project-side-nav">
+            <div class="side-number" id="projectCounter">01</div>
 
-          <div class="side-line" id="projectPagination"></div>
+            <div class="side-line" id="projectPagination"></div>
 
-          <div class="side-buttons">
-            <button
-              type="button"
-              class="side-btn active"
-              id="previousProject"
-              aria-label="Previous projects"
-            >
-              ↑
-            </button>
+            <div class="side-buttons">
+              <button
+                type="button"
+                class="side-btn active"
+                id="previousProject"
+                aria-label="Previous projects"
+              >
+                ↑
+              </button>
 
-            <button
-              type="button"
-              class="side-btn"
-              id="nextProject"
-              aria-label="Next projects"
-            >
-              ↓
-            </button>
+              <button
+                type="button"
+                class="side-btn"
+                id="nextProject"
+                aria-label="Next projects"
+              >
+                ↓
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- ======================================
+          <!-- ======================================
              PROJECT CARDS
         ======================================= -->
 
-        <div class="projects-grid" id="projectsGrid">
-          <!-- JavaScript will generate cards here -->
+          <div class="projects-grid" id="projectsGrid">
+            <!-- JavaScript will generate cards here -->
 
-          <div class="projects-loading">Loading projects...</div>
+            <div class="projects-loading">Loading projects...</div>
+          </div>
         </div>
-      </div>
 
-      <!-- ==========================================
+        <!-- ==========================================
          EMPTY RESULT
     =========================================== -->
 
-      <div class="projects-empty" id="projectsEmpty">
-        <div class="empty-icon">🔍</div>
-
-        <h3>No Projects Found</h3>
-
-        <p>Try changing your search or filter.</p>
-
-        <button type="button" id="clearProjectFilters">Clear Filters</button>
-      </div>
+        <div class="projects-empty" id="projectsEmpty">
+          <div class="empty-icon">🔍</div>
+          <h3>No Projects Found</h3>
+          <p>Try changing your search or filter.</p>
         </div>
+      </div>
     </section>
 
-   
     <!-- Our Projects End -->
 
-     <!-- Gmail -->
+    <!-- Gmail -->
     <a
       href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadfaizanweb@gmail.com"
       target="_blank"
@@ -265,7 +264,20 @@
       </svg>
 
       <span class="scroll-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
       </span>
     </button>
 

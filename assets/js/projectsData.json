@@ -180,7 +180,7 @@
     "slug": "P-188-Residential-Building",
     "title": "Residential Building",
     "image": "assets/images/projects_img/p188.jpg",
-     "images": [
+    "images": [
       "assets/images/img_gallery/188v1.webp",
       "assets/images/img_gallery/188v2.webp",
       "assets/images/img_gallery/188v3.webp"
@@ -835,6 +835,32 @@
     "fullAddress": "E 89th St - Dubai - United Arab Emirates",
     "area": "Al Warqa First",
     "city": "Al Warqa First",
+    "state": "Dubai",
+    "country": "United Arab Emirates"
+  },
+  {
+    "id": 137,
+    "projectNumber": "137",
+    "slug": "P-137-Hotel-Apartment",
+    "title": "Hotel Apartment",
+    "image": "assets/images/projects_img/p137.jpg",
+    "images": [
+      "assets/images/img_gallery/147v1.webp",
+      "assets/images/img_gallery/147v2.webp",
+      "assets/images/img_gallery/147v3.webp"
+    ],
+    "projectValue": "AED 68,700,000",
+    "client": "M/s. New Dubai Properties LLC",
+    "consultant": "M/s. Rimal Eng. Consultant",
+    "projectLocation": "Palm Jumeirah",
+    "startDate": "01 April 2015",
+    "completionDate": "08 May 2018",
+    "status": "Completed",
+    "projectType": "Hotel Apartment",
+    "projectDescription": "Hotel Apartment comprising Basement Floor, Ground Floor, 9 Floors and Roof Level.",
+    "fullAddress": "Al Satwa - Dubai - United Arab Emirates",
+    "area": "Deira",
+    "city": "Palm Jumeirah",
     "state": "Dubai",
     "country": "United Arab Emirates"
   },

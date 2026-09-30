@@ -4,7 +4,7 @@
     "projectNumber": "205",
     "slug": "P-205-JVC-SRG-Commercial-Residential-Building",
     "title": "JVC SRG Commercial & Residential Building",
-    "image": "assets/images/projects_img/p205.jpg",
+    "image": "assets/images/projects_img/205.webp",
     "projectValue": "AED 96,500,000",
     "client": "M/s. SRG Real Estate Developer LLC",
     "consultant": "M/s. Erga Progress Eng. Consultant",
@@ -382,6 +382,10 @@
     "slug": "P-171-Residential-Building",
     "title": "Residential Building",
     "image": "assets/images/projects_img/p171.jpg",
+    "images": [
+      "assets/images/img_gallery/171v1.webp",
+      "assets/images/img_gallery/171v2.webp"
+    ],
     "projectValue": "AED 81,000,000",
     "client": "Mr. Ahmad Ali Abdulla Al Ansari",
     "consultant": "M/s. Central One Dubai Properties L.L.C.",

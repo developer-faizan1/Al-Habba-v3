@@ -1,9 +1,5 @@
 const params = new URLSearchParams(window.location.search);
 const projectSlug = params.get("slug");
-
-console.log("Project Slug:", projectSlug);
-
-
 // =====================================================
 // Helper Function
 // =====================================================
@@ -57,11 +53,6 @@ fetch("./assets/js/projectsData.json")
 
       return;
     }
-
-
-    console.log("Project:", project);
-
-
     // =================================================
     // Select HTML Elements
     // =================================================

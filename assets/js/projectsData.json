@@ -1182,26 +1182,6 @@
     "city": "Al Mezhar",
     "state": "Dubai",
     "country": "United Arab Emirates"
-  },
-  {
-  "id": 116,
-  "projectNumber": "116",
-  "slug": "P-116-Residential-Building",
-  "title": "Residential Building",
-  "image": "assets/images/projects_img/p116.jpg",
-  "projectValue": "AED 9,100,000",
-  "client": "Mr. Ismail Abdullah Mohd. Buhumaid",
-  "consultant": "M/s. Style Eng. Consultant",
-  "projectLocation": "Al Baraha",
-  "startDate": "13 September 2011",
-  "completionDate": "18 December 2012",
-  "status": "Completed",
-  "projectType": "Residential Building",
-  "projectDescription": "Residential Building comprising Ground Floor, 4 Floors and Roof Level.",
-  "fullAddress": "Deira, Al Baraha, Dubai, United Arab Emirates",
-  "area": "Al Baraha",
-  "city": "Al Baraha",
-  "state": "Dubai",
-  "country": "United Arab Emirates"
-}
+  }
 ]
+          

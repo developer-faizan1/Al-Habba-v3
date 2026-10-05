@@ -2,7 +2,7 @@
   {
     "id": 215,
     "projectNumber": "P-215",
-    "slug": "P-215-PROPOSED-MIXED-USE-DEVELOPMENT",
+    "slug": "p-215-proposed-mixed-use-development",
     "title": "Proposed Mixed Use Development",
     "image": "assets/images/projects/p215.jpg",
     "projectValue": "AED 40,000,000.00",
@@ -24,7 +24,7 @@
   {
     "id": 214,
     "projectNumber": "P-214",
-    "slug": "P-214-G-1P-6F-R-RESIDENTIAL-BUILDING",
+    "slug": "p-214-g-1p-6f-r-residential-building",
     "title": "G+1P+6F+R - Residential Building",
     "image": "assets/images/projects/p214.jpg",
     "projectValue": "AED 31,000,000.00",
@@ -46,7 +46,7 @@
   {
     "id": 212,
     "projectNumber": "P-212",
-    "slug": "P-212-G-2P-7F-R-HOTEL-TOWER",
+    "slug": "p-212-g-2p-7f-r-hotel-tower",
     "title": "G+2P+7F+R - Hotel Tower",
     "image": "assets/images/projects/p212.jpg",
     "projectValue": "AED 86,000,000.00",
@@ -68,7 +68,7 @@
   {
     "id": 211,
     "projectNumber": "P-211",
-    "slug": "P-211-G-2P-14F-R-RESIDENTIAL-BUILDING",
+    "slug": "p-211-g-2p-14f-r-residential-building",
     "title": "G+2P+14F+R - Residential Building",
     "image": "assets/images/projects/p211.jpg",
     "projectValue": "AED 133,200,000.00",
@@ -90,7 +90,7 @@
   {
     "id": 210,
     "projectNumber": "P-210",
-    "slug": "P-210-1B-G-1P-9F-R-RESIDENTIAL-BUILDING",
+    "slug": "p-210-1b-g-1p-9f-r-residential-building",
     "title": "1B+G+1P+9F+R - Residential Building",
     "image": "assets/images/projects/p210.jpg",
     "projectValue": "AED 75,000,000.00",
@@ -112,7 +112,7 @@
   {
     "id": 208,
     "projectNumber": "P-208",
-    "slug": "P-208-UG-GF-2P-8-FLOORS-RESIDENTIAL-BUILDING",
+    "slug": "p-208-ug-gf-2p-8-floors-residential-building",
     "title": "(UG+GF+2P+8 Floors) Residential Building",
     "image": "assets/images/projects/p208.jpg",
     "projectValue": "AED 129,400,000.00",
@@ -134,7 +134,7 @@
   {
     "id": 205,
     "projectNumber": "P-205",
-    "slug": "P-205-SRG-JVC-G-3P-16-R",
+    "slug": "p-205-srg-jvc-g-3p-16-r",
     "title": "SRG JVC - G+3P+16 + R)",
     "image": "assets/images/projects/p205.jpg",
     "projectValue": "AED 95,800,000.00",
@@ -156,13 +156,9 @@
   {
     "id": 204,
     "projectNumber": "P-204",
-    "slug": "P-204-G-7-R-RESIDENTIAL-BUILDING",
+    "slug": "p-204-g-7-r-residential-building",
     "title": "G+7+R Residential Building",
     "image": "assets/images/projects/p204.jpg",
-    "images": [
-      "assets/images/img_gallery/204v1.webp",
-      "assets/images/img_gallery/204v2.webp"
-    ],
     "projectValue": "AED 46,700,000.00",
     "client": "SRG Real Estate Developer LLC",
     "consultant": "Erga Progress Eng.",
@@ -182,13 +178,9 @@
   {
     "id": 198,
     "projectNumber": "P-198",
-    "slug": "P-198-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-198-proposed-b-g-8-r-commercial-residential-building",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p198.jpg",
-    "images": [
-      "assets/images/img_gallery/198v1.webp",
-      "assets/images/img_gallery/198v2.webp"
-    ],
     "projectValue": "AED 34,535,000.00",
     "client": "Mr. Ali Ahmed Mohd Al Habbai",
     "consultant": "Style Engineering",
@@ -208,14 +200,9 @@
   {
     "id": 197,
     "projectNumber": "P-197",
-    "slug": "P-197-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-197-proposed-b-g-8-r-commercial-residential-building",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p197.jpg",
-    "images": [
-      "assets/images/img_gallery/197v1.webp",
-      "assets/images/img_gallery/197v2.webp",
-      "assets/images/img_gallery/197v3.webp"
-    ],
     "projectValue": "AED 34,465,000.00",
     "client": "Mr. Ali Ahmed Mohd Al Habbai",
     "consultant": "Style Engineering",
@@ -235,14 +222,9 @@
   {
     "id": 195,
     "projectNumber": "P-195",
-    "slug": "P-195-G-1-SHOPPING-MALL",
+    "slug": "p-195-g-1-shopping-mall",
     "title": "G+1 Shopping Mall",
     "image": "assets/images/projects/p195.jpg",
-    "images": [
-      "assets/images/img_gallery/195v3.webp",
-      "assets/images/img_gallery/195v1.webp",
-      "assets/images/img_gallery/195v2.webp"
-    ],
     "projectValue": "AED 30,400,000.00",
     "client": "SRG Hodling Ltd",
     "consultant": "LOCI Eng. Consultant",
@@ -262,7 +244,7 @@
   {
     "id": 192,
     "projectNumber": "P-192",
-    "slug": "P-192-G-2P-12-R-U-ROOF-COMMERCIAL-AND-RESIDENTIAL-BUILDING",
+    "slug": "p-192-g-2p-12-r-u-roof-commercial-and-residential-building",
     "title": "(G+2P+12+R+U Roof) Commercial and Residential Building",
     "image": "assets/images/projects/p192.jpg",
     "projectValue": "AED 45,000,000.00",
@@ -284,14 +266,9 @@
   {
     "id": 190,
     "projectNumber": "P-190",
-    "slug": "P-190-PROPOSED-B-G-13-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-190-proposed-b-g-13-r-commercial-residential-building",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
     "image": "assets/images/projects/p190.jpg",
-    "images": [
-      "assets/images/img_gallery/190v1.webp",
-      "assets/images/img_gallery/190v2.webp",
-      "assets/images/img_gallery/190v3.webp"
-    ],
     "projectValue": "AED 75,500,000.00",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "Style Consultant Engineers",
@@ -311,14 +288,9 @@
   {
     "id": 189,
     "projectNumber": "P-189",
-    "slug": "P-189-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-189-proposed-b-g-8-r-commercial-residential-building",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p189.jpg",
-    "images": [
-      "assets/images/img_gallery/189v1.webp",
-      "assets/images/img_gallery/189v2.webp",
-      "assets/images/img_gallery/189v3.webp"
-    ],
     "projectValue": "AED 32,400,000.00",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "Style Consultant Engineers",
@@ -338,14 +310,9 @@
   {
     "id": 188,
     "projectNumber": "P-188",
-    "slug": "P-188-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-188-proposed-b-g-8-r-commercial-residential-building",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p188.jpg",
-    "images": [
-      "assets/images/img_gallery/188v1.webp",
-      "assets/images/img_gallery/188v2.webp",
-      "assets/images/img_gallery/188v3.webp"
-    ],
     "projectValue": "AED 33,100,000.00",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "Style Consultant Engineers",
@@ -365,10 +332,9 @@
   {
     "id": 177,
     "projectNumber": "P-177",
-    "slug": "P-177-PROPOSED-B-G-13-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-177-proposed-b-g-13-r-commercial-residential-building",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
     "image": "assets/images/projects/p177.jpg",
-
     "projectValue": "AED 63,750,000.00",
     "client": "Mr. Ali Ahmed Mohammad Al Habbai",
     "consultant": "Al Ajmi Eng. Co.",
@@ -388,7 +354,7 @@
   {
     "id": 176,
     "projectNumber": "P-176",
-    "slug": "P-176-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-176-proposed-b-g-p-8-r-commercial-residential-building",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p176.jpg",
     "projectValue": "AED 30,100,000.00",
@@ -410,13 +376,9 @@
   {
     "id": 173,
     "projectNumber": "P-173",
-    "slug": "P-173-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-173-proposed-b-g-p-8-r-commercial-residential-building",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p173.jpg",
-    "images": [
-      "assets/images/img_gallery/173v1.webp",
-      "assets/images/img_gallery/173v2.webp"
-    ],
     "projectValue": "AED 40,768,262.00",
     "client": "H.H Shaik Ahmed Mohammed Sultan Sorour Al Dhaheri.",
     "consultant": "Al Ajmi Eng. Co. / M/s. Edmac Eng Consultant",
@@ -436,13 +398,9 @@
   {
     "id": 172,
     "projectNumber": "P-172",
-    "slug": "P-172-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-172-proposed-b-g-p-8-r-commercial-residential-building",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p172.jpg",
-    "images": [
-      "assets/images/img_gallery/172v1.webp",
-      "assets/images/img_gallery/172v2.webp"
-    ],
     "projectValue": "AED 52,231,738.00",
     "client": "H.H Shaik Ahmed Mohammed Sultan Sorour Al Dhaheri.",
     "consultant": "Al Ajmi Eng. Co. / M/s. Edmac Eng Consultant",
@@ -462,13 +420,9 @@
   {
     "id": 171,
     "projectNumber": "P-171",
-    "slug": "P-171-PROPOSED-B-G-17-R-HOTEL-BUILDING",
+    "slug": "p-171-proposed-b-g-17-r-hotel-building",
     "title": "Proposed (B+G+17+R) HOTEL Building",
     "image": "assets/images/projects/p171.jpg",
-    "images": [
-      "assets/images/img_gallery/171v1.webp",
-      "assets/images/img_gallery/171v2.webp"
-    ],
     "projectValue": "AED 81,000,000.00",
     "client": "Mr. Ahmad Ali Al Abdullah Al Ansari.",
     "consultant": "M/s RIMAL Engineering Consultant",
@@ -488,7 +442,7 @@
   {
     "id": 167,
     "projectNumber": "P-167",
-    "slug": "P-167-PROPOSED-2B-G-P-8-R-HOTEL-BUILDING",
+    "slug": "p-167-proposed-2b-g-p-8-r-hotel-building",
     "title": "Proposed (2B+G+P+8+R) Hotel Building",
     "image": "assets/images/projects/p167.jpg",
     "projectValue": "AED 85,000,000.00",
@@ -510,7 +464,7 @@
   {
     "id": 166,
     "projectNumber": "P-166",
-    "slug": "P-166-PROPOSED-B-G-P-8-FLOORS-ROOF-BUILDING",
+    "slug": "p-166-proposed-b-g-p-8-floors-roof-building",
     "title": "Proposed (B+G+P+8 Floors + Roof) Building",
     "image": "assets/images/projects/p166.jpg",
     "projectValue": "AED 122,000,000.00",
@@ -532,7 +486,7 @@
   {
     "id": 165,
     "projectNumber": "P-165",
-    "slug": "P-165-PROPOSED-G-M-7FLOOR-GYM",
+    "slug": "p-165-proposed-g-m-7floor-gym",
     "title": "Proposed (G+M+7Floor+Gym)",
     "image": "assets/images/projects/p165.jpg",
     "projectValue": "AED 37,300,000.00",
@@ -554,7 +508,7 @@
   {
     "id": 164,
     "projectNumber": "P-164",
-    "slug": "P-164-PROPOSED-G-4-FLOORS-ROOF",
+    "slug": "p-164-proposed-g-4-floors-roof",
     "title": "Proposed (G+4 Floors +Roof)",
     "image": "assets/images/projects/p164.jpg",
     "projectValue": "AED 34,200,000.00",
@@ -576,7 +530,7 @@
   {
     "id": 163,
     "projectNumber": "P-163",
-    "slug": "P-163-PROPOSED-G-1-ADC-ABDULSALAM-AL-RAFI-DIALYSIS-CENTER",
+    "slug": "p-163-proposed-g-1-adc-abdulsalam-al-rafi-dialysis-center",
     "title": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
     "image": "assets/images/projects/p163.jpg",
     "projectValue": "AED 30,000,000.00",
@@ -598,7 +552,7 @@
   {
     "id": 159,
     "projectNumber": "P-159",
-    "slug": "P-159-PROPOSED-B-G-8-R-COMMERCIAL-AND-RESIDENTIAL",
+    "slug": "p-159-proposed-b-g-8-r-commercial-and-residential",
     "title": "Proposed (B+G+8+R) Commercial and Residential",
     "image": "assets/images/projects/p159.jpg",
     "projectValue": "AED 49,000,000.00",
@@ -620,7 +574,7 @@
   {
     "id": 157,
     "projectNumber": "P-157",
-    "slug": "P-157-B-G-4P-MC-22-R-RESIDENTIAL-RETAIL-BUILDING",
+    "slug": "p-157-b-g-4p-mc-22-r-residential-retail-building",
     "title": "B+G+4P+MC+22+R Residential & Retail Building",
     "image": "assets/images/projects/p157.jpg",
     "projectValue": "AED 116,000,000.00",
@@ -642,7 +596,7 @@
   {
     "id": 155,
     "projectNumber": "P-155",
-    "slug": "P-155-2B-G-9F-STORIES-SOHO-APARTMENT",
+    "slug": "p-155-2b-g-9f-stories-soho-apartment",
     "title": "(2B+G+9F Stories) Soho Apartment",
     "image": "assets/images/projects/p155.jpg",
     "projectValue": "AED 62,000,000.00",
@@ -664,7 +618,7 @@
   {
     "id": 154,
     "projectNumber": "P-154",
-    "slug": "P-154-3B-G-6-STORIES-HOTEL-BUILDING",
+    "slug": "p-154-3b-g-6-stories-hotel-building",
     "title": "(3B+G+6 Stories) Hotel Building",
     "image": "assets/images/projects/p154.jpg",
     "projectValue": "AED 56,000,000.00",
@@ -686,7 +640,7 @@
   {
     "id": 153,
     "projectNumber": "P-153",
-    "slug": "P-153-2B-G-5-STORIES-HOTEL-BUILDING",
+    "slug": "p-153-2b-g-5-stories-hotel-building",
     "title": "(2B+G+5 Stories) Hotel Building",
     "image": "assets/images/projects/p153.jpg",
     "projectValue": "AED 37,000,000.00",
@@ -708,7 +662,7 @@
   {
     "id": 152,
     "projectNumber": "P-152",
-    "slug": "P-152-3B-G-13-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-152-3b-g-13-commercial-residential-Building",
     "title": "(3B+G+13) Commercial / Residential Building",
     "image": "assets/images/projects/p152.jpg",
     "projectValue": "AED 39,000,000.00",
@@ -730,7 +684,7 @@
   {
     "id": 151,
     "projectNumber": "P-151",
-    "slug": "P-151-3B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-151-3b-g-8-r-commercial-residential-Building",
     "title": "(3B+G+8+R) Commercial / Residential Building",
     "image": "assets/images/projects/p151.jpg",
     "projectValue": "AED 62,000,000.00",
@@ -752,7 +706,7 @@
   {
     "id": 149,
     "projectNumber": "P-149",
-    "slug": "P-149-B-G-6-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-149-b-g-6-r-commercial-residential-Building",
     "title": "(B+G+6+R) Commercial / Residential Building",
     "image": "assets/images/projects/p149.jpg",
     "projectValue": "AED 73,000,000.00",
@@ -774,14 +728,9 @@
   {
     "id": 147,
     "projectNumber": "P-147",
-    "slug": "P-147-B-G-8-R-U-R-HOTEL-BUILDING",
+    "slug": "p-147-b-g-8-r-u-r-hotel-building",
     "title": "(B+G+8+R+U.R ) Hotel Building",
     "image": "assets/images/projects/p147.jpg",
-     "images": [
-      "assets/images/img_gallery/147v1.webp",
-      "assets/images/img_gallery/147v2.webp",
-      "assets/images/img_gallery/147v3.webp"
-    ],
     "projectValue": "AED 68,279,000.00",
     "client": "Reem Al Sahari General Trading LLC.",
     "consultant": "Rimal Engeneering Consultant",
@@ -801,7 +750,7 @@
   {
     "id": 146,
     "projectNumber": "P-146",
-    "slug": "P-146-B-G-1P-16-R-HOTEL-TOWER",
+    "slug": "p-146-b-g-1p-16-r-hotel-tower",
     "title": "(B+G+1P+16+R) Hotel Tower",
     "image": "assets/images/projects/p146.jpg",
     "projectValue": "AED 102,200,000.00",
@@ -823,7 +772,7 @@
   {
     "id": 143,
     "projectNumber": "P-143",
-    "slug": "P-143-2B-G-14F-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-143-2b-g-14f-commercial-residential-Building",
     "title": "(2B+G+14F) Commercial / Residential Building",
     "image": "assets/images/projects/p143.png",
     "projectValue": "AED 59,000,000.00",
@@ -845,7 +794,7 @@
   {
     "id": 142,
     "projectNumber": "P-142",
-    "slug": "P-142-PROPOSED-B-G-22-FLOORS-R-HOTEL-BUILDING",
+    "slug": "p-142-proposed-b-g-22-floors-r-hotel-building",
     "title": "Proposed (B+G+22 Floors +R) Hotel Building",
     "image": "assets/images/projects/p142.png",
     "projectValue": "AED 107,000,000.00",
@@ -867,7 +816,7 @@
   {
     "id": 141,
     "projectNumber": "P-141",
-    "slug": "P-141-B-G-11-H-C-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-141-b-g-11-h-c-commercial-residential-building",
     "title": "B+G+11+H.C. Commercial & Residential Building",
     "image": "assets/images/projects/p141.png",
     "projectValue": "AED 94,753,000.00",
@@ -889,7 +838,7 @@
   {
     "id": 140,
     "projectNumber": "P-140",
-    "slug": "P-140-2B-G-19-HOTEL-BUILDING",
+    "slug": "p-140-2b-g-19-hotel-building",
     "title": "2B+G+19 Hotel building",
     "image": "assets/images/projects/p140.jpg",
     "projectValue": "AED 77,000,000.00",
@@ -911,14 +860,9 @@
   {
     "id": 137,
     "projectNumber": "P-137",
-    "slug": "P-137-B-G-9F-HOTEL-BUILDING",
+    "slug": "p-137-b-g-9f-hotel-building",
     "title": "(B+G+9F) Hotel Building",
     "image": "assets/images/projects/p137.jpg",
-    "images": [
-      "assets/images/img_gallery/147v1.webp",
-      "assets/images/img_gallery/147v2.webp",
-      "assets/images/img_gallery/147v3.webp"
-    ],
     "projectValue": "AED 68,700,000.00",
     "client": "M/s. New Dubai Properties",
     "consultant": "Rimal Engeneering Consultant",
@@ -938,7 +882,7 @@
   {
     "id": 136,
     "projectNumber": "P-136",
-    "slug": "P-136-2B-G-3P-16-R-HOTEL-BUILDING",
+    "slug": "p-136-2b-g-3p-16-r-hotel-Building",
     "title": "2B+G+3P+16+R Hotel Building",
     "image": "assets/images/projects/p136.jpg",
     "projectValue": "AED 113,200,000.00",
@@ -960,7 +904,7 @@
   {
     "id": 135,
     "projectNumber": "P-135",
-    "slug": "P-135-2B-G-12-R-2NOS-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-135-2b-g-12-r-2nos-commercial-residential-building",
     "title": "2B+G+12 +R (2Nos) Commercial & Residential Building",
     "image": "assets/images/projects/p135.jpg",
     "projectValue": "AED 104,950,000.00",
@@ -982,7 +926,7 @@
   {
     "id": 134,
     "projectNumber": "P-134",
-    "slug": "P-134-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-134-b-g-7-r-floor-roof-commercial-residential-building",
     "title": "B+ G+7+R floor + Roof Commercial & Residential Building",
     "image": "assets/images/projects/p134.jpg",
     "projectValue": "AED 66,000,000.00",
@@ -1004,7 +948,7 @@
   {
     "id": 133,
     "projectNumber": "P-133",
-    "slug": "P-133-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-133-b-g-7-r-floor-roof-commercial-residential-building",
     "title": "B+ G+7+R floor + Roof Commercial & Residential Building",
     "image": "assets/images/projects/p133.png",
     "projectValue": "AED 40,000,000.00",
@@ -1026,7 +970,7 @@
   {
     "id": 132,
     "projectNumber": "P-132",
-    "slug": "P-132-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-132-b-g-7-r-floor-roof-commercial-residential-building",
     "title": "B+G+7+R floor + Roof Commercial & Residential Building",
     "image": "assets/images/projects/p132.jpg",
     "projectValue": "AED 41,100,000.00",
@@ -1048,7 +992,7 @@
   {
     "id": 130,
     "projectNumber": "P-130",
-    "slug": "P-130-2B-G-14-GYM-RESIDENTIAL-BUILDING",
+    "slug": "p-130-2b-g-14-gym-Residential-Building",
     "title": "2B+G+14+GYM Residential Building",
     "image": "assets/images/projects/p130.jpg",
     "projectValue": "AED 34,000,000",
@@ -1070,7 +1014,7 @@
   {
     "id": 129,
     "projectNumber": "P-129",
-    "slug": "P-129-B-G-32-HOTEL-BUILDING",
+    "slug": "p-129-b-g-32-hotel-building",
     "title": "B+G+32 Hotel Building",
     "image": "assets/images/projects/p129.png",
     "projectValue": "AED 92,000,000.00",
@@ -1092,7 +1036,7 @@
   {
     "id": 122,
     "projectNumber": "P-122",
-    "slug": "P-122-B-G-6-RESIDENTIAL-BUILDING",
+    "slug": "p-122-b-g-6-residential-building",
     "title": "B+G+6 Residential building",
     "image": "assets/images/projects/p122.jpg",
     "projectValue": "AED 35,744,000.00",
@@ -1114,7 +1058,7 @@
   {
     "id": 118,
     "projectNumber": "P-118",
-    "slug": "P-118-B-G-M-3-RESIDENTIAL-COMMERCIAL-BUILDING",
+    "slug": "p-118-b-g-m-3-Residential-Commercial-Building",
     "title": "B+G+M+3 Residential & Commercial Building",
     "image": "assets/images/projects/p118.jpg",
     "projectValue": "AED 36,800,000.00",
@@ -1136,7 +1080,7 @@
   {
     "id": 117,
     "projectNumber": "P-117",
-    "slug": "P-117-2B-G-11-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-117-2b-g-11-r-Commercial-Residential-Building",
     "title": "2B+G+11+R Residential & Commercial Building",
     "image": "assets/images/projects/p117.jpg",
     "projectValue": "AED 30,000,000.00",
@@ -1158,7 +1102,7 @@
   {
     "id": 114,
     "projectNumber": "P-114",
-    "slug": "P-114-2B-G-OFFICE-BUILDING",
+    "slug": "p-114-2b-g-office-building",
     "title": "(2B+G) Office Building",
     "image": "assets/images/projects/p114.jpg",
     "projectValue": "AED 71,230,200.00",
@@ -1180,7 +1124,7 @@
   {
     "id": 109,
     "projectNumber": "P-109",
-    "slug": "P-109-3B-G-4-GYM-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-109-3b-g-4-gym-Commercial-Residential-Building",
     "title": "(3B+G+4+Gym) Commercial & Residential Building",
     "image": "assets/images/projects/p109.jpg",
     "projectValue": "AED 204,000,000.00",
@@ -1202,7 +1146,7 @@
   {
     "id": 105,
     "projectNumber": "P-105",
-    "slug": "P-105-B-G-4FLOORS-GYM-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "p-105-b-g-4floors-gym-Commercial-Residential-Building",
     "title": "(B+G+4Floors+Gym) Commercial & Residential Building",
     "image": "assets/images/projects/p105.jpg",
     "projectValue": "AED 50,940,000.00",
@@ -1224,7 +1168,7 @@
   {
     "id": 102,
     "projectNumber": "P-102",
-    "slug": "P-102-2B-G-11-PENTHEHOUSE-HOTEL-TOWER",
+    "slug": "p-102-2b-g-11-penthehouse-hotel-tower",
     "title": "2B+G+11+Penthehouse - Hotel Tower",
     "image": "assets/images/projects/p102.jpg",
     "projectValue": "AED 90,000,000.00",
@@ -1246,7 +1190,7 @@
   {
     "id": 99,
     "projectNumber": "P-099",
-    "slug": "P-099-2B-G-30-RESIDENTIAL-COMMERCIAL-BUILDING",
+    "slug": "p-099-2b-g-30-residential-commercial-building",
     "title": "2B+G+30 Residential & Commercial Building",
     "image": "assets/images/projects/p99.jpg",
     "projectValue": "AED 169,650,000.00",
@@ -1268,7 +1212,7 @@
   {
     "id": 96,
     "projectNumber": "P-096",
-    "slug": "P-096-3B-G-19-STOREY-HOTEL-TOWER",
+    "slug": "p-096-3b-g-19-storey-hotel-tower",
     "title": "(3B+G+19) Storey Hotel Tower",
     "image": "assets/images/projects/p96.jpg",
     "projectValue": "AED 170,000,000.00",
@@ -1290,7 +1234,7 @@
   {
     "id": 95,
     "projectNumber": "P-095",
-    "slug": "P-095-2B-G-15-RESIDENTIAL-COMMERCIAL-BUILDING",
+    "slug": "p-095-2b-g-15-residential-commercial-building",
     "title": "2B+G+15 Residential & Commercial Building",
     "image": "assets/images/projects/p95.jpg",
     "projectValue": "AED 97,000,000.00",
@@ -1312,7 +1256,7 @@
   {
     "id": 88,
     "projectNumber": "P-088",
-    "slug": "P-088-COMMERCIAL-RESIDENTIAL-BUILDING-B-G-M-4",
+    "slug": "p-088-Commercial-Residential-Building-b-g-m-4",
     "title": "Commercial-Residential-Building(B+G+M+4)",
     "image": "assets/images/projects/p88.jpg",
     "projectValue": "AED 54,000,000.00",
@@ -1334,7 +1278,7 @@
   {
     "id": 87,
     "projectNumber": "P-087",
-    "slug": "P-087-B-G-9-RESIDENTIAL-BUILDING",
+    "slug": "p-087-b-g-9-residential-building",
     "title": "B+G+9 Residential Building",
     "image": "assets/images/projects/p87.jpg",
     "projectValue": "AED 42,000,000.00",
@@ -1356,7 +1300,7 @@
   {
     "id": 86,
     "projectNumber": "P-086",
-    "slug": "P-086-2B-G-12-RESIDENTIAL-COMMERCIAL",
+    "slug": "p-086-2b-g-12-Residential-Commercial",
     "title": "(2B+G+12) Residential & Commercial",
     "image": "assets/images/projects/p86.jpg",
     "projectValue": "AED 99,770,441.00",
@@ -1378,7 +1322,7 @@
   {
     "id": 85,
     "projectNumber": "P-085",
-    "slug": "P-085-2B-G-M-12-R-COMMERCIAL- RESIDENTIAL-BUILDING",
+    "slug": "p-085-2b-g-m-12-r-Commercial- Residential-Building",
     "title": "2B+G+M+12+R Commercial & Residential Building",
     "image": "assets/images/projects/p85.jpg",
     "projectValue": "AED 166,965,000",
@@ -1400,7 +1344,7 @@
   {
     "id": 83,
     "projectNumber": "P-083",
-    "slug": "P-083-B-G-12-RESI-BLDG",
+    "slug": "p-083-b-g-12-resi-bldg",
     "title": "B+G+12 Residential Building",
     "image": "assets/images/projects/p83.jpg",
     "projectValue": "AED 40,200,000",
@@ -1422,7 +1366,7 @@
   {
     "id": 82,
     "projectNumber": "P-082",
-    "slug": "P-082-2B-G-14-FLOORS",
+    "slug": "p-082-2b-g-14-floors",
     "title": "(2B+G+14 FLOORS)",
     "image": "assets/images/projects/p82.jpg",
     "projectValue": "AED 50,000,000",
@@ -1444,7 +1388,7 @@
   {
     "id": 78,
     "projectNumber": "P-078",
-    "slug": "P-078-SCHOOL-BLDG-G-1",
+    "slug": "p-078-school-bldg-g-1",
     "title": "School Building (G+1)",
     "image": "assets/images/projects/p78.jpg",
     "projectValue": "AED 30,284,000",
@@ -1466,7 +1410,7 @@
   {
     "id": 77,
     "projectNumber": "P-077",
-    "slug": "P-077-COMM-RESI-BLDG-B-G-UG-12",
+    "slug": "p-077-comm-resi-bldg-b-g-ug-12",
     "title": "Commercial & Residential Building (B+G+UG+12)",
     "image": "assets/images/projects/p77.jpg",
     "projectValue": "AED 46,000,000.00",
@@ -1488,7 +1432,7 @@
   {
     "id": 63,
     "projectNumber": "P-063",
-    "slug": "P-063-23-NOS-BOUTIQUE-OFFICES",
+    "slug": "p-063-23-nos-boutique-offices",
     "title": "23 Nos. Boutique Offices",
     "image": "assets/images/projects/p63.jpg",
     "projectValue": "AED 35,700,000.00",

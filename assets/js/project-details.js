@@ -8,48 +8,33 @@ const setText = (element, value, fallback = "Not Available") => {
   if (!element) return;
 
   element.textContent =
-    value !== undefined &&
-    value !== null &&
-    String(value).trim() !== ""
+    value !== undefined && value !== null && String(value).trim() !== ""
       ? value
       : fallback;
 };
-
 
 // =====================================================
 // Fetch Project Data
 // =====================================================
 
 fetch("./assets/js/projectsData.json")
-
   .then((response) => {
-
     if (!response.ok) {
-      throw new Error(
-        "Failed to load projectsData.json"
-      );
+      throw new Error("Failed to load projectsData.json");
     }
 
     return response.json();
   })
 
   .then((projects) => {
-
     // =================================================
     // Find Project
     // =================================================
 
-    const project = projects.find(
-      (item) => item.slug === projectSlug
-    );
-
+    const project = projects.find((item) => item.slug === projectSlug);
 
     if (!project) {
-
-      console.error(
-        "Project not found:",
-        projectSlug
-      );
+      console.error("Project not found:", projectSlug);
 
       return;
     }
@@ -58,92 +43,68 @@ fetch("./assets/js/projectsData.json")
     // =================================================
 
     // Hero image
-    const projectHeroImage =
-      document.getElementById("projectHeroImage");
-
+    const projectHeroImage = document.getElementById("projectHeroImage");
 
     // Gallery main image
-    const projectImage =
-      document.getElementById("projectImage");
-
+    const projectImage = document.getElementById("projectImage");
 
     // Gallery thumbnails
-    const projectThumbnails =
-      document.getElementById("projectThumbnails");
-
+    const projectThumbnails = document.getElementById("projectThumbnails");
 
     // Project information
-    const projectNumber =
-      document.getElementById("projectNumber");
+    const projectNumber = document.getElementById("projectNumber");
 
-    const projectTitle =
-      document.getElementById("projectTitle");
+    const projectTitle = document.getElementById("projectTitle");
 
-    const projectSlugElement =
-      document.getElementById("projectSlug");
+    const projectSlugElement = document.getElementById("projectSlug");
 
-    const projectValue =
-      document.getElementById("projectValue");
+    const projectValue = document.getElementById("projectValue");
 
-    const projectClient =
-      document.getElementById("projectClient");
+    const projectClient = document.getElementById("projectClient");
 
-    const projectConsultant =
-      document.getElementById("projectConsultant");
+    const projectConsultant = document.getElementById("projectConsultant");
 
-    const projectStartDate =
-      document.getElementById("projectStartDate");
+    const projectStartDate = document.getElementById("projectStartDate");
 
-    const projectCompletionDate =
-      document.getElementById("projectCompletionDate");
+    const projectCompletionDate = document.getElementById(
+      "projectCompletionDate",
+    );
 
-    const projectStatus =
-      document.getElementById("projectStatus");
+    const projectStatus = document.getElementById("projectStatus");
 
-    const projectType =
-      document.getElementById("projectType");
+    const projectType = document.getElementById("projectType");
 
-    const projectAddress =
-      document.getElementById("projectAddress");
+    const projectAddress = document.getElementById("projectAddress");
 
-    const projectAddressTwo =
-      document.getElementById("projectAddressTwo");
+    const projectAddressTwo = document.getElementById("projectAddressTwo");
 
-    const projectArea =
-      document.getElementById("projectArea");
+    const projectArea = document.getElementById("projectArea");
 
-    const projectCity =
-      document.getElementById("projectCity");
+    const plotNumber = document.getElementById("plotNumber");
 
-    const projectState =
-      document.getElementById("projectState");
+    const projectCity = document.getElementById("projectCity");
 
-    const projectCountry =
-      document.getElementById("projectCountry");
+    const projectState = document.getElementById("projectState");
 
+    const googleMapButton = document.getElementById("googleMapButton");
+
+    const projectCountry = document.getElementById("projectCountry");
 
     // =================================================
     // Default Image
     // =================================================
 
-    const defaultImage =
-      "assets/images/default.jpg";
-
+    const defaultImage = "assets/images/default.jpg";
 
     // =================================================
     // HERO IMAGE
     // =================================================
 
     if (projectHeroImage) {
+      projectHeroImage.src = project.image || defaultImage;
 
-      projectHeroImage.src =
-        project.image || defaultImage;
-
-      projectHeroImage.alt =
-        project.title || "Project Image";
-
+      projectHeroImage.alt = project.title || "Project Image";
     }
-
 
     // =================================================
     // GET GALLERY IMAGES
@@ -151,209 +112,118 @@ fetch("./assets/js/projectsData.json")
 
     let projectImages = [];
 
-
-    if (
-      Array.isArray(project.images) &&
-      project.images.length > 0
-    ) {
-
+    if (Array.isArray(project.images) && project.images.length > 0) {
       // Use images array
-      projectImages =
-        project.images;
-
+      projectImages = project.images;
     } else if (project.image) {
-
       // Fallback to main image
-      projectImages = [
-        project.image
-      ];
-
+      projectImages = [project.image];
     } else {
-
       // No image
-      projectImages = [
-        defaultImage
-      ];
-
+      projectImages = [defaultImage];
     }
 
-
-    console.log(
-      "Project Images:",
-      projectImages
-    );
-
+    console.log("Project Images:", projectImages);
 
     // =================================================
     // GALLERY MAIN IMAGE
     // =================================================
 
-    if (
-      projectImage &&
-      projectImages.length > 0
-    ) {
+    if (projectImage && projectImages.length > 0) {
+      projectImage.src = projectImages[0];
 
-      projectImage.src =
-        projectImages[0];
+      projectImage.alt = project.title || "Project Image";
 
-      projectImage.alt =
-        project.title || "Project Image";
-
-
-      console.log(
-        "Gallery Main Image:",
-        projectImages[0]
-      );
-
+      console.log("Gallery Main Image:", projectImages[0]);
     }
-
 
     // =================================================
     // CREATE THUMBNAILS
     // =================================================
 
     if (projectThumbnails) {
-
       // Remove old thumbnails
       projectThumbnails.innerHTML = "";
 
+      projectImages.forEach((image, index) => {
+        // =========================================
+        // Create Button
+        // =========================================
 
-      projectImages.forEach(
-        (image, index) => {
+        const thumbnailButton = document.createElement("button");
 
-          // =========================================
-          // Create Button
-          // =========================================
+        thumbnailButton.type = "button";
 
-          const thumbnailButton =
-            document.createElement("button");
+        thumbnailButton.className = "project-thumbnail";
 
+        // =========================================
+        // First Thumbnail Active
+        // =========================================
 
-          thumbnailButton.type =
-            "button";
+        if (index === 0) {
+          thumbnailButton.classList.add("active");
+        }
 
+        // =========================================
+        // Create Thumbnail Image
+        // =========================================
 
-          thumbnailButton.className =
-            "project-thumbnail";
+        const thumbnailImage = document.createElement("img");
 
+        thumbnailImage.src = image;
 
-          // =========================================
-          // First Thumbnail Active
-          // =========================================
+        thumbnailImage.alt = `${project.title || "Project"} Image ${index + 1}`;
 
-          if (index === 0) {
+        thumbnailImage.loading = "lazy";
 
-            thumbnailButton.classList.add(
-              "active"
-            );
+        // =========================================
+        // Add Image To Button
+        // =========================================
 
+        thumbnailButton.appendChild(thumbnailImage);
+
+        // =========================================
+        // Thumbnail Click
+        // =========================================
+
+        thumbnailButton.addEventListener("click", () => {
+          // -------------------------------------
+          // Change Gallery Main Image
+          // -------------------------------------
+
+          if (projectImage) {
+            projectImage.src = image;
+
+            projectImage.alt = `${project.title || "Project"} Image ${index + 1}`;
           }
 
+          // -------------------------------------
+          // Remove Active Class
+          // -------------------------------------
 
-          // =========================================
-          // Create Thumbnail Image
-          // =========================================
+          const allThumbnails =
+            projectThumbnails.querySelectorAll(".project-thumbnail");
 
-          const thumbnailImage =
-            document.createElement("img");
+          allThumbnails.forEach((thumbnail) => {
+            thumbnail.classList.remove("active");
+          });
 
+          // -------------------------------------
+          // Add Active Class
+          // -------------------------------------
 
-          thumbnailImage.src =
-            image;
+          thumbnailButton.classList.add("active");
 
+          console.log("Gallery image changed to:", image);
+        });
 
-          thumbnailImage.alt =
-            `${project.title || "Project"} Image ${index + 1}`;
+        // =========================================
+        // Add Thumbnail To Container
+        // =========================================
 
-
-          thumbnailImage.loading =
-            "lazy";
-
-
-          // =========================================
-          // Add Image To Button
-          // =========================================
-
-          thumbnailButton.appendChild(
-            thumbnailImage
-          );
-
-
-          // =========================================
-          // Thumbnail Click
-          // =========================================
-
-          thumbnailButton.addEventListener(
-            "click",
-            () => {
-
-              // -------------------------------------
-              // Change Gallery Main Image
-              // -------------------------------------
-
-              if (projectImage) {
-
-                projectImage.src =
-                  image;
-
-                projectImage.alt =
-                  `${project.title || "Project"} Image ${index + 1}`;
-
-              }
-
-
-              // -------------------------------------
-              // Remove Active Class
-              // -------------------------------------
-
-              const allThumbnails =
-                projectThumbnails.querySelectorAll(
-                  ".project-thumbnail"
-                );
-
-
-              allThumbnails.forEach(
-                (thumbnail) => {
-
-                  thumbnail.classList.remove(
-                    "active"
-                  );
-
-                }
-              );
-
-
-              // -------------------------------------
-              // Add Active Class
-              // -------------------------------------
-
-              thumbnailButton.classList.add(
-                "active"
-              );
-
-
-              console.log(
-                "Gallery image changed to:",
-                image
-              );
-
-            }
-          );
-
-
-          // =========================================
-          // Add Thumbnail To Container
-          // =========================================
-
-          projectThumbnails.appendChild(
-            thumbnailButton
-          );
-
-        }
-      );
-
+        projectThumbnails.appendChild(thumbnailButton);
+      });
     }
-
 
     // =================================================
     // PROJECT INFORMATION
@@ -361,169 +231,101 @@ fetch("./assets/js/projectsData.json")
 
     setText(
       projectNumber,
-      project.projectNumber
-        ? `Project - ${project.projectNumber}`
-        : null
+      project.projectNumber ? `Project - ${project.projectNumber}` : null,
     );
-
 
     // =================================================
     // Title
     // =================================================
 
-    setText(
-      projectTitle,
-      project.title
-    );
-
+    setText(projectTitle, project.title);
 
     // =================================================
     // Slug
     // =================================================
 
-    setText(
-      projectSlugElement,
-      project.slug
-    );
-
+    setText(projectSlugElement, project.slug);
 
     // =================================================
     // Project Value
     // =================================================
 
-    setText(
-      projectValue,
-      project.projectValue
-    );
-
+    setText(projectValue, project.projectValue);
 
     // =================================================
     // Client
     // =================================================
 
-    setText(
-      projectClient,
-      project.client
-    );
-
+    setText(projectClient, project.client);
 
     // =================================================
     // Consultant
     // =================================================
 
-    setText(
-      projectConsultant,
-      project.consultant
-    );
-
+    setText(projectConsultant, project.consultant);
 
     // =================================================
     // Start Date
     // =================================================
 
-    setText(
-      projectStartDate,
-      project.startDate
-    );
-
+    setText(projectStartDate, project.startDate);
 
     // =================================================
     // Completion Date
     // =================================================
 
-    setText(
-      projectCompletionDate,
-      project.completionDate
-    );
-
+    setText(projectCompletionDate, project.completionDate);
 
     // =================================================
     // Status
     // =================================================
 
-    setText(
-      projectStatus,
-      project.status
-    );
-
+    setText(projectStatus, project.status);
 
     // =================================================
     // Project Type
     // =================================================
 
-    setText(
-      projectType,
-      project.projectType
-    );
-
+    setText(projectType, project.projectType);
 
     // =================================================
     // Full Address
     // =================================================
 
-    setText(
-      projectAddress,
-      project.fullAddress
-    );
+    setText(projectAddress, project.fullAddress);
 
-
-    setText(
-      projectAddressTwo,
-      project.fullAddress
-    );
-
+    setText(projectAddressTwo, project.fullAddress);
 
     // =================================================
     // Area
     // =================================================
 
-    setText(
-      projectArea,
-      project.area
-    );
-
+    setText(projectArea, project.area);
 
     // =================================================
-    // City
+    // Plot Number
     // =================================================
 
-    setText(
-      projectCity,
-      project.city
-    );
-
+    setText(plotNumber, project.plot);
 
     // =================================================
-    // State
+    // Google Maps
     // =================================================
 
-    setText(
-      projectState,
-      project.state
-    );
-
-
-    // =================================================
-    // Country
-    // =================================================
-
-    setText(
-      projectCountry,
-      project.country
-    );
-
+    if (googleMapButton) {
+      if (project.googleMap) {
+        googleMapButton.href = project.googleMap;
+        googleMapButton.style.display = "inline-flex";
+      } else {
+        googleMapButton.style.display = "none";
+      }
+    }
   })
 
-
-// =====================================================
-// Error Handling
-// =====================================================
+  // =====================================================
+  // Error Handling
+  // =====================================================
 
   .catch((error) => {
-
-    console.error(
-      "Error loading project:",
-      error
-    );
-
+    console.error("Error loading project:", error);
   });

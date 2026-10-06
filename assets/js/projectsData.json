@@ -2,7 +2,7 @@
   {
     "id": 96,
     "projectNumber": "P-096",
-    "slug": "P-096-3B-G-19-STOREY-HOTEL-TOWER",
+    "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "(3B+G+19) Storey Hotel Tower",
     "image": "assets/images/projects/p96.jpg",
     "projectValue": "AED  171,500,000",
@@ -18,14 +18,13 @@
     "plot": "BB A03 – 041",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+BB+A03+%E2%80%93+041%2C+Business+Bay%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 136,
     "projectNumber": "P-136",
-    "slug": "P-136-2B-G-3P-16-R-HOTEL-BUILDING",
-    "title": "2B+G+3P+16+R Hotel Building",
+    "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
+    "title": "(2B+G+3P+16+R) Hotel Building",
     "image": "assets/images/projects/p136.jpg",
     "projectValue": "AED  133,200,000",
     "client": "M/s. El Housein Limited",
@@ -40,14 +39,13 @@
     "plot": "345-411",
     "area": "BUSINESS BAY",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+345-411%2C+Burj+Town%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 140,
     "projectNumber": "P-140",
-    "slug": "P-140-2B-G-19-HOTEL-BUILDING",
-    "title": "2B+G+19 Hotel building",
+    "slug": "P-140 (2B+G+19) HOTEL BUILDING",
+    "title": "(2B+G+19) Hotel building",
     "image": "assets/images/projects/p140.jpg",
     "projectValue": "AED 77,000,000",
     "client": "M/s. New Dubai Properties LLC",
@@ -62,14 +60,13 @@
     "plot": "346-556",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+346-556%2C+Business+Bay%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 147,
     "projectNumber": "P-147",
-    "slug": "P-147-B-G-8-R-U-R-HOTEL-BUILDING",
-    "title": "(B+G+8+R+U.R ) Hotel Building",
+    "slug": "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
+    "title": "(B+G+8+R+U+R) Hotel Building",
     "image": "assets/images/projects/p147.jpg",
     "images": [
       "assets/images/img_gallery/147v1.webp",
@@ -89,14 +86,13 @@
     "plot": "PJCRC32G",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+PJCRC32G%2C+Palm+Jumeirah%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 85,
     "projectNumber": "P-085",
-    "slug": "P-085-2B-G-M-12-R-COMMERCIAL- RESIDENTIAL-BUILDING",
-    "title": "2B+G+M+12+R Commercial & Residential Building",
+    "slug": "P-085 (2B+G+M+12+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "(2B+G+M+12+R) Commercial & Residential Building",
     "image": "assets/images/projects/p85.jpg",
     "projectValue": "AED 166,965,000",
     "client": "M/S. Royal Star Real State",
@@ -111,14 +107,13 @@
     "plot": "129-692",
     "area": "Port Saeed",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+129-692%2C+Port+Saeed%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 129,
     "projectNumber": "P-129",
-    "slug": "P-129-B-G-32-HOTEL-BUILDING",
-    "title": "B+G+32 Hotel Building",
+    "slug": "P-129 (B+G+32) HOTEL-BUILDING",
+    "title": "(B+G+32) Hotel Building",
     "image": "assets/images/projects/p129.png",
     "projectValue": "AED 102,200,000",
     "client": "M/s. New Dubai Properties LLC",
@@ -133,14 +128,13 @@
     "plot": "392 - 426",
     "area": "Marsa, Dubai",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+392+-+426%2C+Marsa%2C+Dubai%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 102,
     "projectNumber": "P-102",
-    "slug": "P-102-2B-G-11-PENTHEHOUSE-HOTEL-TOWER",
-    "title": "2B+G+11+Penthehouse - Hotel Tower",
+    "slug": "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
+    "title": "(2B+G+11) Penthehouse - Hotel Tower",
     "image": "assets/images/projects/p102.jpg",
     "projectValue": "AED 90,000,000",
     "client": "Mr. Mohammed Jaber Abdulla Al Harbi",
@@ -155,13 +149,12 @@
     "plot": "319-319",
     "area": "Oud Metha",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+319-319%2C+Oud+metha%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 154,
     "projectNumber": "P-154",
-    "slug": "P-154-3B-G-6-STORIES-HOTEL-BUILDING",
+    "slug": "P-154 (3B+G+6) STORIES HOTEL BUILDING",
     "title": "(3B+G+6 Stories) Hotel Building",
     "image": "assets/images/projects/p154.jpg",
     "projectValue": "AED 56,240,000",
@@ -177,13 +170,12 @@
     "plot": "326-897",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+326-897%2C+Al+Jaddaf%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 167,
     "projectNumber": "P-167",
-    "slug": "P-167-PROPOSED-2B-G-P-8-R-HOTEL-BUILDING",
+    "slug": "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
     "title": "Proposed (2B+G+P+8+R) Hotel Building",
     "image": "assets/images/projects/p167.jpg",
     "projectValue": "AED 85,000,000",
@@ -199,13 +191,12 @@
     "plot": "334-7329",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7329%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 82,
     "projectNumber": "P-082",
-    "slug": "P-082-2B-G-14-FLOORS",
+    "slug": "P-082 (2B+G+14+FLOORS)",
     "title": "(2B+G+14 FLOORS)",
     "image": "assets/images/projects/p82.jpg",
     "projectValue": "AED 50,000,000",
@@ -221,14 +212,13 @@
     "plot": "373-1306",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+373-1306%2C+Al+Barsha+First%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 142,
     "projectNumber": "P-142",
-    "slug": "P-142-PROPOSED-B-G-22-FLOORS-R-HOTEL-BUILDING",
-    "title": "Proposed (B+G+22 Floors +R) Hotel Building",
+    "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
+    "title": "Proposed (B+G+22 Floors + R) Hotel Building",
     "image": "assets/images/projects/p142.png",
     "projectValue": "AED 107,000,000.00",
     "client": "M/s. New Dubai Properties",
@@ -243,13 +233,12 @@
     "plot": "3920454",
     "area": "Marsa Dubai - Marina",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+3920454%2C+Marsa%2C+Dubai%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 137,
     "projectNumber": "P-137",
-    "slug": "P-137-B-G-9F-HOTEL-BUILDING",
+    "slug": "P-137 (B+G+9F) HOTEL BUILDING",
     "title": "(B+G+9F) Hotel Building",
     "image": "assets/images/projects/p137.jpg",
     "images": [
@@ -270,14 +259,13 @@
     "plot": "PJCRC38F",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+PJCRC38F%2C+Palm+Jumeirah%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 155,
     "projectNumber": "P-155",
-    "slug": "P-155-2B-G-9F-STORIES-SOHO-APARTMENT",
-    "title": "(2B+G+9F Stories) Soho Apartment",
+    "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
+    "title": "(2B+G+9F) Stories Soho Apartment",
     "image": "assets/images/projects/p155.jpg",
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
@@ -292,14 +280,13 @@
     "plot": "PJTRH04A",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+PJTRH04A%2C+Jumairah%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 153,
     "projectNumber": "P-153",
-    "slug": "P-153-2B-G-5-STORIES-HOTEL-BUILDING",
-    "title": "(2B+G+5 Stories) Hotel Building",
+    "slug": "P-153 (2B+G+5 Stories) STORIES HOTEL BUILDING",
+    "title": "(2B+G+5) Stories Hotel Building",
     "image": "assets/images/projects/p153.jpg",
     "projectValue": "AED 38,500,000",
     "client": "Mr. Hashim Abdulla Ahmed Al Dabal",
@@ -314,14 +301,13 @@
     "plot": "326-943",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+326-943%2C+Al+Jaddaf%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 99,
     "projectNumber": "P-099",
-    "slug": "P-099-2B-G-30-RESIDENTIAL-COMMERCIAL-BUILDING",
-    "title": "2B+G+30 Residential & Commercial Building",
+    "slug": "P-099 (2B+G+30) RESIDENTIAL COMMERCIAL BUILDING",
+    "title": "(2B+G+30) Residential & Commercial Building",
     "image": "assets/images/projects/p99.jpg",
     "projectValue": "AED 169,650,000",
     "client": "M/S. Dire (Dubai I Nt’l Real Es Tate)",
@@ -336,14 +322,13 @@
     "plot": "231-129",
     "area": "Al Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+231-129%2C+Al+Nahdah%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 157,
     "projectNumber": "P-157",
-    "slug": "P-157-B-G-4P-MC-22-R-RESIDENTIAL-RETAIL-BUILDING",
-    "title": "B+G+4P+MC+22+R Residential & Retail Building",
+    "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
+    "title": "(B+G+4P+MC+22+R) Residential & Retail Building",
     "image": "assets/images/projects/p157.jpg",
     "projectValue": "AED 116,500,000",
     "client": "M/s Al Sandos Real Estate",
@@ -358,13 +343,12 @@
     "plot": "JVC14BHRA004",
     "area": "Al Barsha Fpurth (JVC)",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+JVC14BHRA004%2C+Al+Barsha+South+4%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 146,
     "projectNumber": "P-146",
-    "slug": "P-146-B-G-1P-16-R-HOTEL-TOWER",
+    "slug": "P-146 (B+G+1P+16+R) HOTEL TOWER",
     "title": "(B+G+1P+16+R) Hotel Tower",
     "image": "assets/images/projects/p146.jpg",
     "projectValue": "AED 107,500,000",
@@ -380,13 +364,12 @@
     "plot": "346-0585",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+346-0585%2C+Business+Bay%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 109,
     "projectNumber": "P-109",
-    "slug": "P-109-3B-G-4-GYM-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-109 (3B+G+4+Gym) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(3B+G+4+Gym) Commercial & Residential Building",
     "image": "assets/images/projects/p109.jpg",
     "projectValue": "AED 205,000,000",
@@ -402,14 +385,13 @@
     "plot": "318 – 131",
     "area": "Al Karama - Zabeel Road",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+318+%E2%80%93+131%2C+Al+Karama%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 83,
     "projectNumber": "P-083",
-    "slug": "P-083-B-G-12-RESI-BLDG",
-    "title": "B+G+12 Residential Building",
+    "slug": "P-083 (B+G+12) Residential Building",
+    "title": "(B+G+12) Residential Building",
     "image": "assets/images/projects/p83.jpg",
     "projectValue": "AED 40,500,000",
     "client": "Mr. Abdul La Bin HumeiDan",
@@ -424,13 +406,12 @@
     "plot": "241-337",
     "area": "Al Nahda Second",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+241-337%2C+Al+Nahda+Second%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 86,
     "projectNumber": "P-086",
-    "slug": "P-086-2B-G-12-RESIDENTIAL-COMMERCIAL",
+    "slug": "P-086 (2B+G+12) RESIDENTIAL COMMERCIAL",
     "title": "(2B+G+12) Residential & Commercial",
     "image": "assets/images/projects/p86.jpg",
     "projectValue": "AED 99,770,000",
@@ -446,14 +427,13 @@
     "plot": "373-373",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+373-373%2C+Al+Barsha%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 95,
     "projectNumber": "P-095",
-    "slug": "P-095-2B-G-15-RESIDENTIAL-COMMERCIAL-BUILDING",
-    "title": "2B+G+15 Residential & Commercial Building",
+    "slug": "P-095 (2B+G+15) RESIDENTIAL COMMERCIAL BUILDING",
+    "title": "(2B+G+15) Residential & Commercial Building",
     "image": "assets/images/projects/p95.jpg",
     "projectValue": "AED 97,200,000",
     "client": "Mr. Ahmad Abdulrahim Ahmad  Baker",
@@ -468,13 +448,12 @@
     "plot": "231-354",
     "area": "Al Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+231-354%2C+Al+Nahdah-1%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 77,
     "projectNumber": "P-077",
-    "slug": "P-077-COMM-RESI-BLDG-B-G-UG-12",
+    "slug": "P-077 (B+G+UG+12) Commercial & Residential Building",
     "title": "Commercial & Residential Building (B+G+UG+12)",
     "image": "assets/images/projects/p77.jpg",
     "projectValue": "AED 46,500,000",
@@ -490,14 +469,13 @@
     "plot": "241-197",
     "area": "Al Nahda Second",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+241-197%2C+Al+Nahdah+Second%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 117,
     "projectNumber": "P-117",
-    "slug": "P-117-2B-G-11-R-COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "2B+G+11+R Residential & Commercial Building",
+    "slug": "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "(2B+G+11+R) Residential & Commercial Building",
     "image": "assets/images/projects/p117.jpg",
     "projectValue": "AED 40,500,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rah Man",
@@ -512,14 +490,13 @@
     "plot": "319 - 321",
     "area": "Oud Metha",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+319+-+321%2C+Oud+Metha%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 118,
     "projectNumber": "P-118",
-    "slug": "P-118-B-G-M-3-RESIDENTIAL-COMMERCIAL-BUILDING",
-    "title": "B+G+M+3 Residential & Commercial Building",
+    "slug": "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
+    "title": "(B+G+M+3) Residential & Commercial Building",
     "image": "assets/images/projects/p118.jpg",
     "projectValue": "AED 46,200,000",
     "client": "Mr. Ali Ahmed Mohamed",
@@ -534,14 +511,13 @@
     "plot": "318 -475",
     "area": "Al Karama",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+318+-475%2C+Al+Karama%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": "P-119",
     "projectNumber": "P-119",
-    "slug": "p-119-2b-g-m-11-resi-building",
-    "title": "2B+G+M+11 Resi Building",
+    "slug": "p-119 (2B+G+M+11)  Residential Buildin",
+    "title": "(2B+G+M+11) Residential Buildin",
     "image": "assets/images/projects/p119.jpg",
     "projectValue": "AED 37,000,000",
     "client": "Mr. Saif Abdul Lah Ali Saif Al Shafar",
@@ -551,7 +527,7 @@
     "completionDate": "07 September 2014",
     "status": "Completed",
     "projectType": "Residential Building",
-    "projectDescription": "2B+G+M+11 Resi Building",
+    "projectDescription": "2B+G+M+11 Residential Buildin",
     "fullAddress": "Al Barsha First, Dubai, United Arab Emirates",
     "area": "Al Barsha First",
     "city": "Dubai",
@@ -561,8 +537,8 @@
   {
     "id": "P-121",
     "projectNumber": "P-121",
-    "slug": "p-121-b-g-7-r-comm-commercial-residential-building",
-    "title": "B+G+7+R Comm. Commercial & Residential Building .",
+    "slug": "p-121 (B+G+7+R) Commercial & Residential Building",
+    "title": "(B+G+7+R) Commercial & Residential Building",
     "image": "assets/images/projects/p121.jpg",
     "projectValue": "AED 38,500,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rahman",
@@ -582,8 +558,8 @@
   {
     "id": 132,
     "projectNumber": "P-132",
-    "slug": "P-132-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "B+G+7+R floor + Roof Commercial & Residential Building",
+    "slug": "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "(B+G+7F+R) Commercial & Residential Building",
     "image": "assets/images/projects/p132.jpg",
     "projectValue": "AED 51,100,000",
     "client": "M/s. New Dubai Properties LLC",
@@ -598,14 +574,13 @@
     "plot": "673 - 1134",
     "area": "Al barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673+-+1134%2C+Al+barsha+South%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 133,
     "projectNumber": "P-133",
-    "slug": "P-133-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "B+ G+7+R floor + Roof Commercial & Residential Building",
+    "slug": "P-133 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "(B+G+7+R) Commercial & Residential Building",
     "image": "assets/images/projects/p133.png",
     "projectValue": "AED 40,200,000",
     "client": "Mr. Ahmed Abdul Rahman Ahmed Arif",
@@ -620,14 +595,13 @@
     "plot": "316-626",
     "area": "Al Raffa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+316-626%2C+Al+Raffa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 134,
     "projectNumber": "P-134",
-    "slug": "P-134-B-G-7-R-FLOOR-ROOF-COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "B+ G+7+R floor + Roof Commercial & Residential Building",
+    "slug": "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "(B+G+7+R) Commercial & Residential Building",
     "image": "assets/images/projects/p134.jpg",
     "projectValue": "AED 66,500,000",
     "client": "M/S. SRG PROPERTIES LLC",
@@ -642,14 +616,13 @@
     "plot": "673-1138",
     "area": "Al barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673-1138%2C+Al+Barsha+South%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 135,
     "projectNumber": "P-135",
-    "slug": "P-135-2B-G-12-R-2NOS-COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "2B+G+12 +R (2Nos) Commercial & Residential Building",
+    "slug": "P-135 (2B+G+12+R (2Nos)) COMMERCIAL-RESIDENTIAL-BUILDING",
+    "title": "(2B+G+12+R (2Nos)) Commercial & Residential Building",
     "image": "assets/images/projects/p135.jpg",
     "projectValue": "AED 104,950,000",
     "client": "M/s. Dubai Int'l Real Estate",
@@ -664,13 +637,12 @@
     "plot": "231-162 231-163",
     "area": "AL Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+231-162+231-163%2C+AL+Nahda+First%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 143,
     "projectNumber": "P-143",
-    "slug": "P-143-2B-G-14F-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(2B+G+14F) Commercial / Residential Building",
     "image": "assets/images/projects/p143.png",
     "projectValue": "AED 59,500,000",
@@ -686,13 +658,12 @@
     "plot": "326-1060",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+326-1060%2C+Al+Jaddaf%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 149,
     "projectNumber": "P-149",
-    "slug": "P-149-B-G-6-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(B+G+6+R) Commercial / Residential Building",
     "image": "assets/images/projects/p149.jpg",
     "projectValue": "AED 73,600,000",
@@ -708,13 +679,12 @@
     "plot": "316-593",
     "area": "Al Raffa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+316-593%2C+Al+Raffaa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 151,
     "projectNumber": "P-151",
-    "slug": "P-151-3B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-151 (3B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(3B+G+8+R) Commercial / Residential Building",
     "image": "assets/images/projects/p151.jpg",
     "projectValue": "AED 62,000,000",
@@ -730,13 +700,12 @@
     "plot": "673-1318",
     "area": "Al Barsha Third, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673-1318%2C+Al+BarshaSouth+3rd+Dubai%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 152,
     "projectNumber": "P-152",
-    "slug": "P-152-3B-G-13-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-152 (3B+G+13) COMMERCIAL-RESIDENTIAL-BUILDING",
     "title": "(3B+G+13) Commercial / Residential Building",
     "image": "assets/images/projects/p152.jpg",
     "projectValue": "AED 40,000,000",
@@ -752,13 +721,12 @@
     "plot": "373-1316",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+373-1316%2C+Al+Barsha+First%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 159,
     "projectNumber": "P-159",
-    "slug": "P-159-PROPOSED-B-G-8-R-COMMERCIAL-AND-RESIDENTIAL",
+    "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
     "title": "Proposed (B+G+8+R) Commercial and Residential",
     "image": "assets/images/projects/p159.jpg",
     "projectValue": "AED 49,000,000",
@@ -774,13 +742,12 @@
     "plot": "334-7337",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7337%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 163,
     "projectNumber": "P-163",
-    "slug": "P-163-PROPOSED-G-1-ADC-ABDULSALAM-AL-RAFI-DIALYSIS-CENTER",
+    "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     "title": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
     "image": "assets/images/projects/p163.jpg",
     "projectValue": "AED 32,000,000",
@@ -796,14 +763,13 @@
     "plot": "671-2986",
     "area": "Al Barsha South, Third",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+671-2986%2C+Al+Barsha+South%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 164,
     "projectNumber": "P-164",
-    "slug": "P-164-PROPOSED-G-4-FLOORS-ROOF",
-    "title": "Proposed (G+4 Floors +Roof)",
+    "slug": "P-164 PROPOSED (G+4F+R)",
+    "title": "Proposed (G+4F+R)",
     "image": "assets/images/projects/p164.jpg",
     "projectValue": "AED 34,200,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
@@ -818,14 +784,13 @@
     "plot": "673-1140",
     "area": "Al Barsha Third",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673-1140%2C+Al+Barsha+South+Third%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 165,
     "projectNumber": "P-165",
-    "slug": "P-165-PROPOSED-G-M-7FLOOR-GYM",
-    "title": "Proposed (G+M+7Floor+Gym)",
+    "slug": "P-165 PROPOSED (G+M+7F+Gym)",
+    "title": "Proposed (G+M+7F+Gym)",
     "image": "assets/images/projects/p165.jpg",
     "projectValue": "AED 37,300,000",
     "client": "Mr. HUSSAIN ALI FARDAN AL FARDAN",
@@ -840,14 +805,13 @@
     "plot": "312-119",
     "area": "Al Souq Al Kabeer",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+312-119%2C+Al+Souq+Al+Kabeer%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 166,
     "projectNumber": "P-166",
-    "slug": "P-166-PROPOSED-B-G-P-8-FLOORS-ROOF-BUILDING",
-    "title": "Proposed (B+G+P+8 Floors + Roof) Building",
+    "slug": "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
+    "title": "Proposed (B+G+P+8F+R) Building",
     "image": "assets/images/projects/p166.jpg",
     "projectValue": "AED 122,300,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -862,13 +826,12 @@
     "plot": "334-7341 & 334-7342",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7341+%26+334-7342%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 171,
     "projectNumber": "P-171",
-    "slug": "P-171-PROPOSED-B-G-17-R-HOTEL-BUILDING",
+    "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     "title": "Proposed (B+G+17+R) HOTEL Building",
     "image": "assets/images/projects/p171.jpg",
     "images": [
@@ -888,13 +851,12 @@
     "plot": "346-582",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+346-582%2C+Business+Bay%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 172,
     "projectNumber": "P-172",
-    "slug": "P-172-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p172.jpg",
     "images": [
@@ -914,13 +876,12 @@
     "plot": "334-7338",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7338%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 173,
     "projectNumber": "P-173",
-    "slug": "P-173-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p173.jpg",
     "images": [
@@ -940,13 +901,12 @@
     "plot": "334-7287",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7287%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 176,
     "projectNumber": "P-176",
-    "slug": "P-176-PROPOSED-B-G-P-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p176.jpg",
     "projectValue": "AED 30,100,000",
@@ -962,16 +922,14 @@
     "plot": "334-7323",
     "area": "Jumeirah Garden City- Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-7323%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 177,
     "projectNumber": "P-177",
-    "slug": "P-177-PROPOSED-B-G-13-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
     "image": "assets/images/projects/p177.jpg",
-
     "projectValue": "AED 75,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -985,13 +943,12 @@
     "plot": "673-4086",
     "area": "Al Barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673-4086%2C+Arjan+-+Al+Barsha%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 188,
     "projectNumber": "P-188",
-    "slug": "P-188-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p188.jpg",
     "images": [
@@ -1012,13 +969,12 @@
     "plot": "334-2738",
     "area": "Jumeirah Garden City - Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-2738%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 189,
     "projectNumber": "P-189",
-    "slug": "P-189-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p189.jpg",
     "images": [
@@ -1039,13 +995,12 @@
     "plot": "334-2672",
     "area": "Jumeirah Garden City - Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+334-2672%2C+Al+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 190,
     "projectNumber": "P-190",
-    "slug": "P-190-PROPOSED-B-G-13-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
     "image": "assets/images/projects/p190.jpg",
     "images": [
@@ -1066,13 +1021,12 @@
     "plot": "673-1104",
     "area": "Al Barsha South Third, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+673-1104%2C+Al+Barsha+South+Arjan%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 192,
     "projectNumber": "P-192",
-    "slug": "P-192-G-2P-12-R-U-ROOF-COMMERCIAL-AND-RESIDENTIAL-BUILDING",
+    "slug": "P-192 (G+2P+12+R+U Roof) COMMERCIAL AND RESIDENTIAL BUILDING",
     "title": "(G+2P+12+R+U Roof) Commercial and Residential Building",
     "image": "assets/images/projects/p192.jpg",
     "projectValue": "AED 35,100,000",
@@ -1088,14 +1042,13 @@
     "plot": "1341547",
     "area": "Al Mamzar",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+1341547%2C+Al+Mamzar%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 195,
     "projectNumber": "P-195",
-    "slug": "P-195-G-1-SHOPPING-MALL",
-    "title": "G+1 Shopping Mall",
+    "slug": "P-195 (G+1) SHOPPING MALL",
+    "title": "(G+1) Shopping Mall",
     "image": "assets/images/projects/p195.jpg",
     "images": [
       "assets/images/img_gallery/195v3.webp",
@@ -1115,13 +1068,12 @@
     "plot": "3760961",
     "area": "Al Barsha Second",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+3760961%2C+Barsha+3rd%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 197,
     "projectNumber": "P-197",
-    "slug": "P-197-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p197.jpg",
     "images": [
@@ -1142,13 +1094,12 @@
     "plot": "3342621",
     "area": "Jumairah Garden City",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+3342621%2C+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 198,
     "projectNumber": "P-198",
-    "slug": "P-198-PROPOSED-B-G-8-R-COMMERCIAL-RESIDENTIAL-BUILDING",
+    "slug": "P-198 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
     "image": "assets/images/projects/p198.jpg",
     "images": [
@@ -1168,14 +1119,13 @@
     "plot": "3342403",
     "area": "Jumairah Garden City",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+3342403%2C+Satwa%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 204,
     "projectNumber": "P-204",
-    "slug": "P-204-G-7-R-RESIDENTIAL-BUILDING",
-    "title": "G+7+R Residential Building",
+    "slug": "P-204 (G+7+R) RESIDENTIAL BUILDING",
+    "title": "(G+7+R) Residential Building",
     "image": "assets/images/projects/p204.jpg",
     "images": [
       "assets/images/img_gallery/204v1.webp",
@@ -1194,14 +1144,13 @@
     "plot": "6731159",
     "area": "Al Barsha South 3rd, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+6731159%2C+Al+Barsha+South+Third%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 205,
     "projectNumber": "P-205",
-    "slug": "P-205-SRG-JVC-G-3P-16-R",
-    "title": "SRG JVC - G+3P+16 + R)",
+    "slug": "P-205 SRG JVC (G+3P+16 +R)",
+    "title": "SRG JVC - (G+3P+16 +R)",
     "image": "assets/images/projects/205.webp",
     "projectValue": "AED 98,100,000",
     "client": "M/S. Srg Holding Limited",
@@ -1216,13 +1165,12 @@
     "plot": "6816514",
     "area": "Jumairah Village Circle",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+6816514%2C+Al+Barsha+South+Fourth%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 208,
     "projectNumber": "P-208",
-    "slug": "P-208-UG-GF-2P-8-FLOORS-RESIDENTIAL-BUILDING",
+    "slug": "P-208 (UG+GF+2P+8 Floors) RESIDENTIAL BUILDING",
     "title": "(UG+GF+2P+8 Floors) Residential Building",
     "image": "assets/images/img_gallery/p208v1.webp",
     "images": [
@@ -1243,13 +1191,12 @@
     "plot": "1010581",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+1010581%2C+Dubai+Island%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": "P-209",
     "projectNumber": "P-209",
-    "slug": "p-209-al-habbai-headquarters",
+    "slug": "p-209 Al Habbai Headquarters",
     "title": "Al Habbai Headquarters",
     "image": "assets/images/img_gallery/p209v1.webp",
     "images": [
@@ -1273,9 +1220,8 @@
   {
     "id": 214,
     "projectNumber": "P-214",
-    "slug": "P-214-G-1P-6F-R-RESIDENTIAL-BUILDING",
-    "title": "G+1P+6F+R - Residential Building",
-    
+    "slug": "P-214 (G+1P+6F+R) RESIDENTIAL BUILDING",
+    "title": "(G+1P+6F+R) Residential Building",
     "projectValue": "AED 39,000,000",
     "client": "Mr. Ali Ahmed Mohd Al Habbai",
     "consultant": "M/S. Style Engineering Consultant",
@@ -1289,14 +1235,13 @@
     "plot": "6185375",
     "area": "NAD ALSHIBA",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+6185375%2C+Nad+Al+Sheba+Garden%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 210,
     "projectNumber": "P-210",
-    "slug": "P-210-1B-G-1P-9F-R-RESIDENTIAL-BUILDING",
-    "title": "1B+G+1P+9F+R - Residential Building",
+    "slug": "P-210 (1B+G+1P+9F+R) RESIDENTIAL BUILDING",
+    "title": "(1B+G+1P+9F+R) Residential Building",
     "image": "assets/images/img_gallery/p210v1.webp",
     "images": ["assets/images/img_gallery/p209v1.webp"],
     "projectValue": "AED 75,100,000",
@@ -1312,14 +1257,13 @@
     "plot": "6731113",
     "area": "Arjan - Al Barsha South 3rd",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+6731113%2C+Arjan+-+Al+Barsha%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 211,
     "projectNumber": "P-211",
-    "slug": "P-211-G-2P-14F-R-RESIDENTIAL-BUILDING",
-    "title": "G+2P+14F+R - Residential Building",
+    "slug": "P-211 (G+2P+14F+R) RESIDENTIAL BUILDING",
+    "title": "(G+2P+14F+R) Residential Building",
     "image": "assets/images/img_gallery/p211v1.webp",
     "images": [
       "assets/images/img_gallery/p211v1.webp",
@@ -1338,14 +1282,13 @@
     "plot": "1010447",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+1010447%2C+Dubai+Island%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 212,
     "projectNumber": "P-212",
-    "slug": "P-212-G-2P-7F-R-HOTEL-TOWER",
-    "title": "G+2P+7F+R - Hotel Tower",
+    "slug": "P-212 (G+2P+7F+R) HOTEL TOWER",
+    "title": "(G+2P+7F+R) Hotel Tower",
     "image": "assets/images/img_gallery/p212v1.webp",
     "images": ["assets/images/img_gallery/p212v1.webp"],
     "projectValue": "AED 82,000,000",
@@ -1361,13 +1304,12 @@
     "plot": "1010614",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+1010614%2C+Dubai+Island%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   },
   {
     "id": 215,
     "projectNumber": "P-215",
-    "slug": "P-215-PROPOSED-MIXED-USE-DEVELOPMENT",
+    "slug": "P-215 PROPOSED MIXED USE DEVELOPMENT",
     "title": "Proposed Mixed Use Development",
     "image": "assets/images/img_gallery/p215v1.webp",
     "images": ["assets/images/img_gallery/p215v1.webp"],
@@ -1384,7 +1326,6 @@
     "plot": "6750299",
     "area": "Studio City - Al Hebiah Second",
     "state": "Dubai",
-    "country": "United Arab Emirates",
-    "googleMap": "https://www.google.com/maps/search/?api=1&query=Plot+6750299%2C+Studio+City+-+Al+Hebiah+Second%2C+Dubai%2C+United+Arab+Emirates"
+    "country": "United Arab Emirates"
   }
 ]

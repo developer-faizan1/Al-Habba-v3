@@ -18,7 +18,9 @@
     "plot": "BB A03 – 041",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 136,
@@ -39,7 +41,9 @@
     "plot": "345-411",
     "area": "BUSINESS BAY",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 140,
@@ -60,7 +64,9 @@
     "plot": "346-556",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 147,
@@ -86,7 +92,9 @@
     "plot": "PJCRC32G",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 85,
@@ -107,7 +115,9 @@
     "plot": "129-692",
     "area": "Port Saeed",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 129,
@@ -128,7 +138,9 @@
     "plot": "392 - 426",
     "area": "Marsa, Dubai",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 102,
@@ -149,7 +161,9 @@
     "plot": "319-319",
     "area": "Oud Metha",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 154,
@@ -170,7 +184,9 @@
     "plot": "326-897",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 167,
@@ -191,7 +207,9 @@
     "plot": "334-7329",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 82,
@@ -212,7 +230,9 @@
     "plot": "373-1306",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 142,
@@ -233,7 +253,9 @@
     "plot": "3920454",
     "area": "Marsa Dubai - Marina",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 137,
@@ -259,7 +281,9 @@
     "plot": "PJCRC38F",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 155,
@@ -280,7 +304,9 @@
     "plot": "PJTRH04A",
     "area": "Palm Jumeirah",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 153,
@@ -301,7 +327,9 @@
     "plot": "326-943",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 99,
@@ -322,7 +350,9 @@
     "plot": "231-129",
     "area": "Al Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 157,
@@ -343,7 +373,9 @@
     "plot": "JVC14BHRA004",
     "area": "Al Barsha Fpurth (JVC)",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 146,
@@ -364,7 +396,9 @@
     "plot": "346-0585",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 109,
@@ -385,7 +419,9 @@
     "plot": "318 – 131",
     "area": "Al Karama - Zabeel Road",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 83,
@@ -406,7 +442,9 @@
     "plot": "241-337",
     "area": "Al Nahda Second",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 86,
@@ -427,7 +465,9 @@
     "plot": "373-373",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 95,
@@ -448,7 +488,9 @@
     "plot": "231-354",
     "area": "Al Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 77,
@@ -469,7 +511,9 @@
     "plot": "241-197",
     "area": "Al Nahda Second",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 117,
@@ -490,7 +534,9 @@
     "plot": "319 - 321",
     "area": "Oud Metha",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 118,
@@ -511,7 +557,9 @@
     "plot": "318 -475",
     "area": "Al Karama",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": "P-119",
@@ -532,7 +580,9 @@
     "area": "Al Barsha First",
     "city": "Dubai",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": "P-121",
@@ -553,7 +603,9 @@
     "area": "Mankhool",
     "city": "Dubai",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 132,
@@ -574,7 +626,9 @@
     "plot": "673 - 1134",
     "area": "Al barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 133,
@@ -595,7 +649,9 @@
     "plot": "316-626",
     "area": "Al Raffa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 134,
@@ -616,7 +672,9 @@
     "plot": "673-1138",
     "area": "Al barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 135,
@@ -637,7 +695,9 @@
     "plot": "231-162 231-163",
     "area": "AL Nahda First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 143,
@@ -658,7 +718,9 @@
     "plot": "326-1060",
     "area": "Al Jaddaf",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 149,
@@ -679,7 +741,9 @@
     "plot": "316-593",
     "area": "Al Raffa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 151,
@@ -700,7 +764,9 @@
     "plot": "673-1318",
     "area": "Al Barsha Third, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 152,
@@ -721,7 +787,9 @@
     "plot": "373-1316",
     "area": "Al Barsha First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 159,
@@ -742,7 +810,9 @@
     "plot": "334-7337",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 163,
@@ -763,7 +833,9 @@
     "plot": "671-2986",
     "area": "Al Barsha South, Third",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 164,
@@ -784,7 +856,9 @@
     "plot": "673-1140",
     "area": "Al Barsha Third",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 165,
@@ -805,7 +879,9 @@
     "plot": "312-119",
     "area": "Al Souq Al Kabeer",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 166,
@@ -826,7 +902,9 @@
     "plot": "334-7341 & 334-7342",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 171,
@@ -851,7 +929,9 @@
     "plot": "346-582",
     "area": "Business Bay",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 172,
@@ -876,7 +956,9 @@
     "plot": "334-7338",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 173,
@@ -901,7 +983,9 @@
     "plot": "334-7287",
     "area": "Jumeirah Garden City - Al Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 176,
@@ -922,7 +1006,9 @@
     "plot": "334-7323",
     "area": "Jumeirah Garden City- Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 177,
@@ -943,7 +1029,9 @@
     "plot": "673-4086",
     "area": "Al Barsha South, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 188,
@@ -969,7 +1057,9 @@
     "plot": "334-2738",
     "area": "Jumeirah Garden City - Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 189,
@@ -995,7 +1085,9 @@
     "plot": "334-2672",
     "area": "Jumeirah Garden City - Satwa",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 190,
@@ -1021,7 +1113,9 @@
     "plot": "673-1104",
     "area": "Al Barsha South Third, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 192,
@@ -1042,7 +1136,9 @@
     "plot": "1341547",
     "area": "Al Mamzar",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.287167,
+    "longitude": 55.355333
   },
   {
     "id": 195,
@@ -1068,7 +1164,9 @@
     "plot": "3760961",
     "area": "Al Barsha Second",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 197,
@@ -1094,7 +1192,9 @@
     "plot": "3342621",
     "area": "Jumairah Garden City",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 198,
@@ -1119,7 +1219,9 @@
     "plot": "3342403",
     "area": "Jumairah Garden City",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": null,
+    "longitude": null
   },
   {
     "id": 204,
@@ -1144,7 +1246,9 @@
     "plot": "6731159",
     "area": "Al Barsha South 3rd, Arjan",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.064806,
+    "longitude": 55.241722
   },
   {
     "id": 205,
@@ -1165,7 +1269,9 @@
     "plot": "6816514",
     "area": "Jumairah Village Circle",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.051111,
+    "longitude": 55.218472
   },
   {
     "id": 208,
@@ -1191,7 +1297,9 @@
     "plot": "1010581",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.291291,
+    "longitude": 55.291194
   },
   {
     "id": "P-209",
@@ -1215,7 +1323,9 @@
     "fullAddress": "Mirdif First, Dubai, United Arab Emirates",
     "area": "Mirdif First",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.2331507,
+    "longitude": 55.4327018
   },
   {
     "id": 214,
@@ -1235,7 +1345,9 @@
     "plot": "6185375",
     "area": "NAD ALSHIBA",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.139605,
+    "longitude": 55.313251
   },
   {
     "id": 210,
@@ -1257,7 +1369,9 @@
     "plot": "6731113",
     "area": "Arjan - Al Barsha South 3rd",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.066333,
+    "longitude": 55.247472
   },
   {
     "id": 211,
@@ -1282,7 +1396,9 @@
     "plot": "1010447",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.286675,
+    "longitude": 55.296047
   },
   {
     "id": 212,
@@ -1304,7 +1420,9 @@
     "plot": "1010614",
     "area": "Dubai Island",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.302722,
+    "longitude": 55.300306
   },
   {
     "id": 215,
@@ -1326,6 +1444,8 @@
     "plot": "6750299",
     "area": "Studio City - Al Hebiah Second",
     "state": "Dubai",
-    "country": "United Arab Emirates"
+    "country": "United Arab Emirates",
+    "latitude": 25.036667,
+    "longitude": 55.24225
   }
 ]

@@ -991,6 +991,7 @@ function getCardsPerPage() {
 
                     <div class="project-icon">
 
+                        <a href="./map.html">
                         <svg
                             viewBox="0 0 24 24"
                             aria-hidden="true"
@@ -1021,6 +1022,7 @@ function getCardsPerPage() {
                             ></path>
 
                         </svg>
+                        </a>
 
                     </div>
 

@@ -3,7 +3,7 @@
    ===================================================== */
 
 .project-hero {
-  height: 85vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -33,7 +33,7 @@
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 
@@ -112,30 +112,6 @@
    HERO CONTENT
    ===================================================== */
 
-.hero-content {
-  position: relative;
-
-  z-index: 5;
-
-  padding-top: 120px;
-
-  width: 52%;
-}
-
-.hero-content h1 {
-  margin-top: 45px;
-
-  font-family: Poppins, serif;
-
-  font-size: 6rem;
-
-  font-weight: 700;
-
-  line-height: 1.05;
-
-  color: #fff;
-}
-
 
 /* =====================================================
    PROJECT ABOUT
@@ -147,7 +123,7 @@
   grid-template-columns: 1fr 1.15fr;
 
   gap: 4rem;
-
+margin-top: 90px;
   align-items: center;
 }
 

@@ -1066,7 +1066,7 @@
     "projectNumber": "P-189",
     "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+8+R) Commercial & Residential Building",
-    "image": "assets/images/projects/p189.jpg",
+    "image": "assets/images/img_gallery/189v1.webp",
     "images": [
       "assets/images/img_gallery/189v1.webp",
       "assets/images/img_gallery/189v2.webp",
@@ -1094,7 +1094,7 @@
     "projectNumber": "P-190",
     "slug": "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
-    "image": "assets/images/projects/p190.jpg",
+    "image":  "assets/images/img_gallery/190v3.webp",
     "images": [
       "assets/images/img_gallery/190v1.webp",
       "assets/images/img_gallery/190v2.webp",
@@ -1145,7 +1145,7 @@
     "projectNumber": "P-195",
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "(G+1) Shopping Mall",
-    "image": "assets/images/projects/p195.jpg",
+    "image":  "assets/images/img_gallery/195v3.webp",
     "images": [
       "assets/images/img_gallery/195v3.webp",
       "assets/images/img_gallery/195v1.webp",
@@ -1355,7 +1355,7 @@
     "slug": "P-210 (1B+G+1P+9F+R) RESIDENTIAL BUILDING",
     "title": "(1B+G+1P+9F+R) Residential Building",
     "image": "assets/images/img_gallery/p210v1.webp",
-    "images": ["assets/images/img_gallery/p209v1.webp"],
+    "images": ["assets/images/img_gallery/p210v1.webp"],
     "projectValue": "AED 75,100,000",
     "client": "Mr. AbdulRahman Mohd Taher Mohd Wali & Mr. Abdul Halim AbdulRahim Abdulla Muhawid",
     "consultant": "M/s Al Ajmi Engineering Consultant",

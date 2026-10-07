@@ -41,7 +41,7 @@ fetch("./assets/js/projectsData.json")
     // =================================================
     // Select HTML Elements
     // =================================================
-
+    const imageShimmer = document.getElementById("imageShimmer");
     // Hero image
     const projectHeroImage = document.getElementById("projectHeroImage");
 
@@ -130,11 +130,26 @@ fetch("./assets/js/projectsData.json")
     // =================================================
 
     if (projectImage && projectImages.length > 0) {
+      // Reset image state
+      projectImage.classList.remove("loaded");
+
+      // Show shimmer
+      if (imageShimmer) {
+        imageShimmer.classList.remove("hidden");
+      }
+
+      // Load image
+      projectImage.onload = () => {
+        projectImage.classList.add("loaded");
+
+        // Hide shimmer after image loads
+        if (imageShimmer) {
+          imageShimmer.classList.add("hidden");
+        }
+      };
+
       projectImage.src = projectImages[0];
-
       projectImage.alt = project.title || "Project Image";
-
-      console.log("Gallery Main Image:", projectImages[0]);
     }
 
     // =================================================

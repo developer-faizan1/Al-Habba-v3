@@ -111,7 +111,54 @@
 /* =====================================================
    HERO CONTENT
    ===================================================== */
+.project-main-image {
+    position: relative;
+    overflow: hidden;
+}
 
+/* Main image */
+#projectImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#projectImage.loaded {
+    opacity: 1;
+}
+
+/* Shimmer */
+.image-shimmer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #f8f8f8 50%,
+        #eeeeee 75%
+    );
+
+    background-size: 200% 100%;
+    animation: imageShimmer 1.5s infinite;
+}
+
+.image-shimmer.hidden {
+    display: none;
+}
+
+@keyframes imageShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
 
 /* =====================================================
    PROJECT ABOUT

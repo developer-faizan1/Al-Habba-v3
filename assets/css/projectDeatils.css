@@ -433,6 +433,7 @@ margin-top: 90px;
   justify-content: space-between;
 
   margin-bottom: 2rem;
+  margin-top: 10rem;
 }
 
 .project__status__bg {
@@ -752,6 +753,7 @@ margin-top: 90px;
      PROJECT ABOUT
      ========================= */
 
+
   .project-about__wrapper {
     grid-template-columns: 1fr;
 
@@ -841,6 +843,9 @@ margin-top: 90px;
   /* =========================
      PROJECT ABOUT
      ========================= */
+          .project__status__wrapper {
+  margin-top: 15rem;
+}
 
   .project-about__wrapper {
     grid-template-columns: 1fr;

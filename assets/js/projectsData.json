@@ -5,7 +5,13 @@
     "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
     "title": "(2B+G+3P+16+R) Hotel Building",
     "image": "assets/images/img_gallery/136v1.webp",
-    "images" : ["assets/images/img_gallery/136v1.webp","assets/images/img_gallery/136v2.webp","assets/images/intr_img/136iv1.webp","assets/images/intr_img/136iv2.webp","assets/images/intr_img/136iv3.webp"],
+    "images": [
+      "assets/images/img_gallery/136v1.webp",
+      "assets/images/img_gallery/136v2.webp",
+      "assets/images/intr_img/136iv1.webp",
+      "assets/images/intr_img/136iv2.webp",
+      "assets/images/intr_img/136iv3.webp"
+    ],
     "projectValue": "AED  133,200,000",
     "client": "M/s. El Housein Limited",
     "consultant": "Al Ajmi Engineering Consultants",
@@ -22,13 +28,18 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 142,
     "projectNumber": "P-142",
     "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
     "title": "Proposed (B+G+22 Floors + R) Hotel Building",
     "image": "assets/images/img_gallery/142v2.webp",
-    "images" : ["assets/images/img_gallery/142v2.webp","assets/images/intr_img/142iv1.webp","assets/images/intr_img/142iv2.webp","assets/images/intr_img/142iv3.webp"],
+    "images": [
+      "assets/images/img_gallery/142v2.webp",
+      "assets/images/intr_img/142iv1.webp",
+      "assets/images/intr_img/142iv2.webp",
+      "assets/images/intr_img/142iv3.webp"
+    ],
     "projectValue": "AED 107,000,000.00",
     "client": "M/s. New Dubai Properties",
     "consultant": "Al Ajmi Engineering Consultants",
@@ -74,13 +85,18 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 129,
     "projectNumber": "P-129",
     "slug": "P-129 (B+G+32) HOTEL-BUILDING",
     "title": "(B+G+32) Hotel Building",
     "image": "assets/images/img_gallery/129v1.webp",
-    "images" : ["assets/images/img_gallery/129v2.webp","assets/images/img_gallery/129v1.webp","assets/images/intr_img/129iv1.webp","assets/images/intr_img/129iv2.webp"],
+    "images": [
+      "assets/images/img_gallery/129v2.webp",
+      "assets/images/intr_img/129iv1.webp",
+      "assets/images/intr_img/129iv2.webp",
+      "assets/images/intr_img/129iv4.webp"
+    ],
     "projectValue": "AED 102,200,000",
     "client": "M/s. New Dubai Properties LLC",
     "consultant": "M/s Al Ajmi Engineering",
@@ -97,7 +113,7 @@
     "latitude": null,
     "longitude": null
   },
-    {
+  {
     "id": 137,
     "projectNumber": "P-137",
     "slug": "P-137 (B+G+9F) HOTEL BUILDING",
@@ -125,13 +141,18 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 154,
     "projectNumber": "P-154",
     "slug": "P-154 (3B+G+6) STORIES HOTEL BUILDING",
     "title": "(3B+G+6 Stories) Hotel Building",
     "image": "assets/images/img_gallery/154v2.webp",
-    "images" : ["assets/images/img_gallery/154v2.webp","assets/images/img_gallery/154v1.webp","assets/images/intr_img/154iv1.webp","assets/images/intr_img/154iv2.webp"],
+    "images": [
+      "assets/images/img_gallery/154v2.webp",
+      "assets/images/img_gallery/154v1.webp",
+      "assets/images/intr_img/154iv1.webp",
+      "assets/images/intr_img/154iv2.webp"
+    ],
     "projectValue": "AED 56,240,000",
     "client": "Mr. Ahmed Abdulla Juma Bin Biyat",
     "consultant": "M/S. ERGA PROGRESS ENGINEERING CONSULTANT",
@@ -154,10 +175,7 @@
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "(2B+G+19) Hotel building",
     "image": "assets/images/img_gallery/140v1.webp",
-    "images": [
-      "assets/images/img_gallery/140v1.webp",
-      "assets/images/img_gallery/140v3.webp"
-    ],
+    "images": ["assets/images/img_gallery/140v1.webp","assets/images/intr_img/140iv1.webp","assets/images/intr_img/140iv2.webp","assets/images/intr_img/140iv3.webp","assets/images/intr_img/140iv4.webp"],
     "projectValue": "AED 77,000,000",
     "client": "M/s. New Dubai Properties LLC",
     "consultant": "M/S. Rimal Engineering Consultant",
@@ -196,14 +214,17 @@
     "latitude": null,
     "longitude": null
   },
- 
+
   {
     "id": 102,
     "projectNumber": "P-102",
     "slug": "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
     "title": "(2B+G+11) Penthehouse - Hotel Tower",
     "image": "assets/images/img_gallery/102v1.webp",
-    "images" : ["assets/images/img_gallery/102v1.webp","assets/images/img_gallery/102v2.webp"],
+    "images": [
+      "assets/images/img_gallery/102v1.webp",
+      "assets/images/img_gallery/102v2.webp"
+    ],
     "projectValue": "AED 90,000,000",
     "client": "Mr. Mohammed Jaber Abdulla Al Harbi",
     "consultant": "M/s. ARENCO Engineering",
@@ -220,14 +241,17 @@
     "latitude": null,
     "longitude": null
   },
- 
+
   {
     "id": 167,
     "projectNumber": "P-167",
     "slug": "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
     "title": "Proposed (2B+G+P+8+R) Hotel Building",
     "image": "assets/images/img_gallery/167v1.webp",
-    "images" : ["assets/images/img_gallery/167v1.webp","assets/images/img_gallery/167v2.webp"],
+    "images": [
+      "assets/images/img_gallery/167v1.webp",
+      "assets/images/img_gallery/167v2.webp"
+    ],
     "projectValue": "AED 85,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s. Edmac Engineering Consultant",
@@ -288,7 +312,6 @@
     "latitude": null,
     "longitude": null
   },
- 
 
   {
     "id": 155,
@@ -318,7 +341,13 @@
     "slug": "P-153 (2B+G+5 Stories) STORIES HOTEL BUILDING",
     "title": "(2B+G+5) Stories Hotel Building",
     "image": "assets/images/img_gallery/153v1.webp",
-    "images" : ["assets/images/img_gallery/153v1.webp","assets/images/img_gallery/153v2.webp","assets/images/intr_img/153iv1.webp","assets/images/intr_img/153iv2.webp","assets/images/intr_img/153iv3.webp"],
+    "images": [
+      "assets/images/img_gallery/153v1.webp",
+      "assets/images/img_gallery/153v2.webp",
+      "assets/images/intr_img/153iv1.webp",
+      "assets/images/intr_img/153iv2.webp",
+      "assets/images/intr_img/153iv3.webp"
+    ],
     "projectValue": "AED 38,500,000",
     "client": "Mr. Hashim Abdulla Ahmed Al Dabal",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -363,7 +392,10 @@
     "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
     "title": "(B+G+4P+MC+22+R) Residential & Retail Building",
     "image": "assets/images/img_gallery/157v1.webp",
-    "images" : ["assets/images/img_gallery/157v1.webp","assets/images/img_gallery/157v2.webp"],
+    "images": [
+      "assets/images/img_gallery/157v1.webp",
+      "assets/images/img_gallery/157v2.webp"
+    ],
     "projectValue": "AED 116,500,000",
     "client": "M/s Al Sandos Real Estate",
     "consultant": "M/s. Art Engineering Consultant",
@@ -386,7 +418,11 @@
     "slug": "P-146 (B+G+1P+16+R) HOTEL TOWER",
     "title": "(B+G+1P+16+R) Hotel Tower",
     "image": "assets/images/img_gallery/146v1.webp",
-    "images" : ["assets/images/img_gallery/146v1.webp","assets/images/img_gallery/146v2.webp","assets/images/img_gallery/136v3.webp"],
+    "images": [
+      "assets/images/img_gallery/146v1.webp",
+      "assets/images/img_gallery/146v2.webp",
+      "assets/images/img_gallery/136v3.webp"
+    ],
     "projectValue": "AED 107,500,000",
     "client": "Mr. Al Sahel Al Akhder Commercial Brockers  ",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -717,7 +753,10 @@
     "slug": "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(B+G+6+R) Commercial / Residential Building",
     "image": "assets/images/img_gallery/149v4.webp",
-    "images" : ["assets/images/img_gallery/149v4.webp","assets/images/img_gallery/149v3.webp"],
+    "images": [
+      "assets/images/img_gallery/149v4.webp",
+      "assets/images/img_gallery/149v3.webp"
+    ],
     "projectValue": "AED 73,600,000",
     "client": "M/S. SRG PROPERTIES LLC",
     "consultant": "M/s. Future Art Engineering Consultancy",
@@ -740,7 +779,10 @@
     "slug": "P-151 (3B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "(3B+G+8+R) Commercial / Residential Building",
     "image": "assets/images/img_gallery/151v1.webp",
-    "images" : ["assets/images/img_gallery/151v1.webp", "assets/images/img_gallery/151v2.webp"],
+    "images": [
+      "assets/images/img_gallery/151v1.webp",
+      "assets/images/img_gallery/151v2.webp"
+    ],
     "projectValue": "AED 62,000,000",
     "client": "Mr. Ahmed Abdulla Al Ansari",
     "consultant": "M/s. Al Ajmi Engineering Consultant",
@@ -785,7 +827,11 @@
     "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
     "title": "Proposed (B+G+8+R) Commercial and Residential",
     "image": "assets/images/img_gallery/159v1.webp",
-    "images":["assets/images/img_gallery/159v1.webp","assets/images/img_gallery/159v2.webp","assets/images/img_gallery/159v3.webp"],
+    "images": [
+      "assets/images/img_gallery/159v1.webp",
+      "assets/images/img_gallery/159v2.webp",
+      "assets/images/img_gallery/159v3.webp"
+    ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -808,7 +854,10 @@
     "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     "title": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
     "image": "assets/images/img_gallery/163v2.webp",
-    "images" : ["assets/images/img_gallery/163v2.webp","assets/images/img_gallery/163v1.webp"],
+    "images": [
+      "assets/images/img_gallery/163v2.webp",
+      "assets/images/img_gallery/163v1.webp"
+    ],
     "projectValue": "AED 32,000,000",
     "client": "M/S Dubai Health Authority & Srg",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -830,8 +879,12 @@
     "projectNumber": "P-164",
     "slug": "P-164 PROPOSED (G+4F+R)",
     "title": "Proposed (G+4F+R)",
-    "image":"assets/images/img_gallery/164v2.webp",
-    "images" : ["assets/images/img_gallery/164v2.webp","assets/images/img_gallery/164v3.webp","assets/images/img_gallery/164v1.webp"],
+    "image": "assets/images/img_gallery/164v2.webp",
+    "images": [
+      "assets/images/img_gallery/164v2.webp",
+      "assets/images/img_gallery/164v3.webp",
+      "assets/images/img_gallery/164v1.webp"
+    ],
     "projectValue": "AED 34,200,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
     "consultant": "M/s. Dubai Consultant",
@@ -854,7 +907,11 @@
     "slug": "P-165 PROPOSED (G+M+7F+Gym)",
     "title": "Proposed (G+M+7F+Gym)",
     "image": "assets/images/img_gallery/165v1.webp",
-    "images" : ["assets/images/img_gallery/165v1.webp","assets/images/img_gallery/165v2.webp","assets/images/img_gallery/165v3.webp"],
+    "images": [
+      "assets/images/img_gallery/165v1.webp",
+      "assets/images/img_gallery/165v2.webp",
+      "assets/images/img_gallery/165v3.webp"
+    ],
     "projectValue": "AED 37,300,000",
     "client": "Mr. HUSSAIN ALI FARDAN AL FARDAN",
     "consultant": "M/s. CHAWLA Architectural & Consulting Engineers",
@@ -977,8 +1034,11 @@
     "projectNumber": "P-176",
     "slug": "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+P+8+R) Commercial & Residential Building",
-    "image":"assets/images/img_gallery/176v1.webp",
-    "images" : ["assets/images/img_gallery/176v1.webp","assets/images/img_gallery/176v2.webp"],
+    "image": "assets/images/img_gallery/176v1.webp",
+    "images": [
+      "assets/images/img_gallery/176v1.webp",
+      "assets/images/img_gallery/176v2.webp"
+    ],
     "projectValue": "AED 30,100,000",
     "client": "Mr. Ahmad Ali Al Abdulla Al Ansari",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1001,7 +1061,10 @@
     "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Proposed (B+G+13+R) Commercial & Residential Building",
     "image": "assets/images/img_gallery/177v1.webp",
-    "images" : ["assets/images/img_gallery/177v1.webp","assets/images/img_gallery/177v2.webp"],
+    "images": [
+      "assets/images/img_gallery/177v1.webp",
+      "assets/images/img_gallery/177v2.webp"
+    ],
     "projectValue": "AED 75,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
     "consultant": "M/s Al Ajmi Engineering Consultant",

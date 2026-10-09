@@ -175,7 +175,13 @@
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "(2B+G+19) Hotel building",
     "image": "assets/images/img_gallery/140v1.webp",
-    "images": ["assets/images/img_gallery/140v1.webp","assets/images/intr_img/140iv1.webp","assets/images/intr_img/140iv2.webp","assets/images/intr_img/140iv3.webp","assets/images/intr_img/140iv4.webp"],
+    "images": [
+      "assets/images/img_gallery/140v1.webp",
+      "assets/images/intr_img/140iv1.webp",
+      "assets/images/intr_img/140iv2.webp",
+      "assets/images/intr_img/140iv3.webp",
+      "assets/images/intr_img/140iv4.webp"
+    ],
     "projectValue": "AED 77,000,000",
     "client": "M/s. New Dubai Properties LLC",
     "consultant": "M/S. Rimal Engineering Consultant",

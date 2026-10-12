@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AL Habbai Contracting | Dubai</title>
+    <!-- owl -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/components.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -94,7 +104,70 @@
         </div>
       </div>
     </header>
-    <!-- Nav End -->
+    <!-- ---x--- Nav End ---x--- -->
+
+    <!-- Team Members -->
+    <section id="careers" class="management-section">
+      <div class="management-container">
+        <div class="management-heading">
+          <span class="section-label" data-aos="fade-up"> Our Leadership </span>
+
+          <h2 data-aos="fade-up">
+            Meet Our
+            <span>Leadership</span>
+          </h2>
+
+          <p data-aos="fade-up">
+            Experienced professionals leading our projects with expertise,
+            vision and commitment.
+          </p>
+        </div>
+
+        <div class="owl-carousel management-carousel" data-aos="fade-up">
+          <a href="ceo.html" class="management-card">
+            <!-- Photo -->
+            <div class="management-image">
+              <img
+                src="./assets/images/ceo.jpg"
+                alt="Chief Executive Officer"
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="management-content">
+              <h3>Mr. Ali Al Habbai</h3>
+
+              <span class="management-role"> CEO </span>
+
+              <p>
+                Providing strategic leadership and driving the company's
+                long-term growth and success.
+              </p>
+            </div>
+          </a>
+
+          <a href="./gm.html" class="management-card">
+            <!-- Photo -->
+            <div class="management-image">
+              <img src="./assets/images/gm.jpg" alt="General Manager" />
+            </div>
+
+            <!-- Content -->
+            <div class="management-content">
+              <h3>Eng. Walid Sayed Abbas Youssef Allam</h3>
+
+              <span class="management-role"> GM </span>
+
+              <p>
+                Managing operations and ensuring projects are delivered
+                efficiently and successfully.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ---x--- Team Members ---x--- -->
 
     <!-- Counter -->
     <section class="stats__wrapper__container" data-aos="fade-up">
@@ -201,7 +274,7 @@
         </div>
       </div>
     </section>
-    <!-- Counter End -->
+    <!-- ---x--- Counter End ---x--- -->
 
     <!-- Our Services -->
     <section class="services-section">
@@ -334,7 +407,7 @@
         </div>
       </div>
     </section>
-    <!-- Our Services End -->
+    <!-- ---x--- Our Services End ---x--- -->
 
     <!-- About -->
     <section class="about__wrapper_container">
@@ -439,7 +512,7 @@
         </div>
       </div>
     </section>
-    <!-- About End -->
+    <!-- ---x--- About End ---x--- -->
 
     <!-- Why Choose Us -->
     <section class="why-section">
@@ -679,7 +752,7 @@
         </div>
       </div>
     </section>
-    <!-- Why Choose Us End -->
+    <!-- ---x--- Why Choose Us End ---x--- -->
 
     <!-- Gmail -->
     <a
@@ -989,6 +1062,44 @@
         </div>
       </div>
     </footer>
-    <!-- Footer Section End -->
+    <!-- ---x--- Footer Section End ---x--- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- =========================================
+     OWL CAROUSEL INITIALIZATION
+========================================= -->
+
+    <script>
+      $(document).ready(function () {
+        $(".management-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: true,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 4000,
+          autoplayHoverPause: true,
+          smartSpeed: 700,
+          responsive: {
+            0: {
+              items: 1,
+            },
+
+            600: {
+              items: 1,
+            },
+
+            900: {
+              items: 2,
+            },
+
+            1200: {
+              items: 2,
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>

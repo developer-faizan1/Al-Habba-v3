@@ -1,10 +1,473 @@
+/* =========================================
+   MANAGEMENT / LEADERSHIP SECTION
+========================================= */
+
+.management-section {
+  width: 100%;
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+.management-container {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+}
+/* =========================================
+   SECTION HEADING
+========================================= */
+.management-heading {
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--green-1);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.management-heading h2 {
+  margin: 0;
+  color: var(--black-1);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.management-heading h2 span {
+  color: var(--green-1);
+}
+
+.management-heading p {
+  max-width: 560px;
+  margin: 16px 0 0;
+  color: var(--black-3);
+  font-size: 16px;
+  line-height: 1.7;
+}
+/* =========================================
+   OWL CAROUSEL
+========================================= */
+.management-carousel {
+  position: relative;
+  width: 100%;
+}
+/* Remove Owl default outline */
+.management-carousel .owl-stage-outer {
+  padding: 10px 5px 25px;
+}
+
+.management-carousel .owl-item {
+  display: flex;
+  height: auto;
+}
+
+/* =========================================
+   MANAGEMENT CARD
+========================================= */
+
+.management-card {
+  position: relative;
+  width: 100%;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  min-height: 210px;
+  margin: 5px 10px;
+  padding: 28px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid rgba(25, 100, 105, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================
+   TOP ACCENT
+========================================= */
+
+.management-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-1), var(--green-2));
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.management-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(25, 100, 105, 0.13);
+}
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+.management-image {
+  width: 120px;
+  height: 120px;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-1), var(--green-2));
+  flex-shrink: 0;
+}
+
+.management-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--lightGreen-1);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.management-content {
+  min-width: 0;
+  text-align: left;
+}
+
+.management-content h3 {
+  margin: 0;
+  color: var(--black-1);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.management-role {
+  display: block;
+  margin-top: 6px;
+  color: var(--green-1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.management-content p {
+  max-width: 390px;
+  margin: 13px 0 0;
+  color: var(--black-3);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   OWL NAVIGATION
+========================================= */
+
+.management-carousel .owl-nav {
+  margin: 0;
+}
+
+/* Previous + Next buttons */
+
+.management-carousel .owl-nav button {
+  position: absolute;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  transform: translateY(-50%);
+  border: none !important;
+  border-radius: 50% !important;
+  background: var(--green-1) !important;
+  color: #ffffff !important;
+  font-size: 25px !important;
+  line-height: 1 !important;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.management-carousel .owl-nav button:hover {
+  background: var(--green-2) !important;
+  color: var(--black-1) !important;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Previous */
+
+.management-carousel .owl-prev {
+  left: -55px;
+}
+
+/* Next */
+
+.management-carousel .owl-next {
+  right: -55px;
+}
+
+/* Remove default focus */
+
+.management-carousel .owl-nav button:focus {
+  outline: none;
+}
+
+/* =========================================
+   OWL DOTS
+========================================= */
+
+.management-carousel .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+}
+
+.management-carousel .owl-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 50%;
+  background: #b8cbc7 !important;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.management-carousel .owl-dot.active {
+  width: 25px;
+  border-radius: 10px;
+  background: var(--green-1) !important;
+}
+
+.management-carousel .owl-dot:focus {
+  outline: none;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .management-container {
+    width: min(100% - 60px, 950px);
+  }
+
+  .management-carousel .owl-prev {
+    left: -20px;
+  }
+
+  .management-carousel .owl-next {
+    right: -20px;
+  }
+
+  .management-card {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .management-image {
+    width: 105px;
+    height: 105px;
+  }
+
+  .management-content h3 {
+    font-size: 19px;
+  }
+}
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+  .management-section {
+    padding: 75px 0;
+  }
+
+  .management-container {
+    width: calc(100% - 50px);
+  }
+
+  /* Hide side arrows */
+
+  .management-carousel .owl-nav {
+    display: none;
+  }
+
+  .management-carousel .owl-stage-outer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .management-card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .management-section {
+    padding: 60px 0;
+  }
+
+  .management-container {
+    width: calc(100% - 30px);
+  }
+
+  /* ==============================
+     HEADING
+  ============================== */
+
+  .management-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  .management-heading h2 {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .management-heading p {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ==============================
+     CAROUSEL
+  ============================== */
+
+  .management-carousel .owl-stage-outer {
+    padding: 8px 0 22px;
+  }
+
+  /* ==============================
+     CARD
+  ============================== */
+
+  .management-card {
+    grid-template-columns: 85px minmax(0, 1fr);
+    gap: 16px;
+    min-height: 165px;
+    margin: 5px 3px;
+    padding: 22px 18px;
+    border-radius: 15px;
+  }
+
+  /* ==============================
+     IMAGE
+  ============================== */
+
+  .management-image {
+    width: 85px;
+    height: 85px;
+    padding: 3px;
+  }
+
+  /* ==============================
+     CONTENT
+  ============================== */
+
+  .management-content h3 {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .management-role {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .management-content p {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* ==============================
+     DOTS
+  ============================== */
+
+  .management-carousel .owl-dots {
+    margin-top: 0;
+  }
+}
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+  .management-section {
+    padding: 50px 0;
+  }
+
+  .management-container {
+    width: calc(100% - 20px);
+  }
+
+  .management-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 13px;
+    min-height: 145px;
+    padding: 18px 14px;
+    border-radius: 13px;
+  }
+
+  .management-image {
+    width: 72px;
+    height: 72px;
+  }
+
+  .management-content h3 {
+    font-size: 15px;
+  }
+
+  .management-role {
+    font-size: 11px;
+  }
+
+  .management-content p {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}
 /* ***********************************************
   Counter 
 *********************************************** */
 .stats__wrapper__container {
   background: var(--lightGreen-1);
   padding: 45px 0;
-  margin-top: 5rem;
 }
 
 .stats__wrapper {
@@ -47,11 +510,7 @@
   color: var(--black-2);
 }
 
-
-
-
 /* Our Services */
-
 .services-section {
   position: relative;
   overflow: hidden;
@@ -73,6 +532,7 @@
   opacity: 0.65;
   pointer-events: none;
 }
+
 /* ================================
    HEADER
 ================================ */
@@ -116,11 +576,9 @@
   gap: 26px;
 }
 
-
 /* ================================
    SERVICE CARD
 ================================ */
-
 .service-card {
   position: relative;
   min-height: 490px;
@@ -133,14 +591,12 @@
     0 2px 8px rgba(20, 40, 45, 0.035);
   overflow: hidden;
   transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.45s ease,
     border-color 0.45s ease;
 }
 
-
 /* Bottom Accent */
-
 .service-card::after {
   content: "";
   position: absolute;
@@ -162,7 +618,6 @@
     0 24px 50px rgba(20, 40, 45, 0.12),
     0 5px 15px rgba(20, 40, 45, 0.06);
 }
-
 
 .service-card-1::after {
   background: #16777b;
@@ -203,7 +658,6 @@
   transform: translateY(-3px);
 }
 
-
 /* ================================
    ICON
 ================================ */
@@ -217,18 +671,12 @@
   justify-content: center;
   margin-bottom: 28px;
   border-radius: 50%;
-  background: linear-gradient(
-    145deg,
-    #176f73,
-    #1A6469
-  );
-  box-shadow:
-    0 12px 25px rgba(23, 111, 115, 0.20);
+  background: linear-gradient(145deg, #176f73, #1a6469);
+  box-shadow: 0 12px 25px rgba(23, 111, 115, 0.2);
   transition:
     transform 0.45s ease,
     box-shadow 0.45s ease;
 }
-
 
 .service-icon::before {
   content: "";
@@ -245,8 +693,7 @@
 
 .service-card:hover .service-icon {
   transform: translateY(-5px) rotate(-3deg);
-  box-shadow:
-    0 18px 32px rgba(23, 111, 115, 0.28);
+  box-shadow: 0 18px 32px rgba(23, 111, 115, 0.28);
 }
 
 .service-card:hover .service-icon::before {
@@ -262,7 +709,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
 
 /* ================================
    CONTENT
@@ -281,7 +727,6 @@
   font-weight: 700;
   letter-spacing: -0.4px;
 }
-
 
 .service-line {
   width: 34px;
@@ -302,36 +747,20 @@
   line-height: 1.65;
 }
 
-
 /* ================================
    CARD VARIATIONS
 ================================ */
-
 .service-card-2 .service-icon {
-  background: linear-gradient(
-    145deg,
-    #087a98,
-    #1299b8
-  );
+  background: linear-gradient(145deg, #087a98, #1299b8);
 }
 
 .service-card-3 .service-icon {
-  background: linear-gradient(
-    145deg,
-    #18777b,
-    #149e9b
-  );
+  background: linear-gradient(145deg, #18777b, #149e9b);
 }
 
 .service-card-4 .service-icon {
-  background: linear-gradient(
-    145deg,
-    #166b70,
-    #087f84
-  );
+  background: linear-gradient(145deg, #166b70, #087f84);
 }
-
-
 
 /* ***********************************************
   About 
@@ -507,10 +936,10 @@ RIGHT CARDS
   font-family: Raleway;
   font-size: 1.6rem;
 }
+
 /* ***********************************************
   About End
 *********************************************** */
-
 
 /* =========================================================
    WHY CHOOSE US SECTION
@@ -520,7 +949,6 @@ RIGHT CARDS
   position: relative;
   overflow: hidden;
 }
-
 
 /* =========================================================
    CONTAINER
@@ -554,7 +982,6 @@ RIGHT CARDS
   text-transform: uppercase;
 }
 
-
 .why-label i {
   display: block;
   width: 45px;
@@ -573,11 +1000,9 @@ RIGHT CARDS
   font-weight: 400;
 }
 
-
 /* =========================================================
    DOTTED DECORATION
 ========================================================= */
-
 .why-section::after {
   content: "";
   position: absolute;
@@ -587,7 +1012,7 @@ RIGHT CARDS
   height: 80px;
   background-image: radial-gradient(
     circle,
-    rgba(22, 119, 123, 0.40) 2px,
+    rgba(22, 119, 123, 0.4) 2px,
     transparent 2.5px
   );
   background-size: 20px 20px;
@@ -595,22 +1020,18 @@ RIGHT CARDS
   pointer-events: none;
 }
 
-
 /* =========================================================
    GRID
 ========================================================= */
-
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-
 /* =========================================================
    CARD
 ========================================================= */
-
 .why-card {
   position: relative;
   min-height: 350px;
@@ -624,11 +1045,10 @@ RIGHT CARDS
   overflow: hidden;
   isolation: isolate;
   transition:
-    transform 0.45s cubic-bezier(.2, .8, .2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.45s ease,
     border-color 0.45s ease;
 }
-
 
 /* Card Hover */
 
@@ -639,7 +1059,6 @@ RIGHT CARDS
     0 25px 55px rgba(20, 40, 45, 0.12),
     0 5px 16px rgba(20, 40, 45, 0.06);
 }
-
 
 /* =========================================================
    CARD BOTTOM COLOR BAR
@@ -655,15 +1074,12 @@ RIGHT CARDS
   border-radius: 0 0 20px 20px;
   background: #16777b;
   z-index: 5;
-  transition:
-    height 0.35s ease;
+  transition: height 0.35s ease;
 }
-
 
 .why-card:hover::after {
   height: 9px;
 }
-
 
 /* Different accent colors */
 
@@ -691,7 +1107,6 @@ RIGHT CARDS
   background: #159b9a;
 }
 
-
 /* =========================================================
    LARGE CARD NUMBER
 ========================================================= */
@@ -712,12 +1127,10 @@ RIGHT CARDS
     transform 0.4s ease;
 }
 
-
 .why-card:hover .why-number {
   color: rgba(22, 119, 123, 0.14);
   transform: translateY(-3px);
 }
-
 
 /* =========================================================
    ICON
@@ -732,19 +1145,12 @@ RIGHT CARDS
   justify-content: center;
   margin-bottom: 27px;
   border-radius: 50%;
-  background:
-    linear-gradient(
-      145deg,
-      #176f73 0%,
-      #0c858d 100%
-    );
-  box-shadow:
-    0 12px 26px rgba(23, 111, 115, 0.20);
+  background: linear-gradient(145deg, #176f73 0%, #0c858d 100%);
+  box-shadow: 0 12px 26px rgba(23, 111, 115, 0.2);
   transition:
-    transform 0.45s cubic-bezier(.2, .8, .2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.45s ease;
 }
-
 
 /* Outer Ring */
 
@@ -761,71 +1167,37 @@ RIGHT CARDS
     opacity 0.45s ease;
 }
 
-
 .why-card:hover .why-icon {
   transform: translateY(-5px) rotate(-3deg);
-  box-shadow:
-    0 18px 34px rgba(23, 111, 115, 0.28);
+  box-shadow: 0 18px 34px rgba(23, 111, 115, 0.28);
 }
-
 
 .why-card:hover .why-icon::before {
   transform: scale(1);
   opacity: 1;
 }
 
-
 /* Icon variations */
 
 .why-card:nth-child(2) .why-icon {
-  background:
-    linear-gradient(
-      145deg,
-      #087a98,
-      #1299b8
-    );
+  background: linear-gradient(145deg, #087a98, #1299b8);
 }
-
 
 .why-card:nth-child(3) .why-icon {
-  background:
-    linear-gradient(
-      145deg,
-      #18777b,
-      #149e9b
-    );
+  background: linear-gradient(145deg, #18777b, #149e9b);
 }
-
 
 .why-card:nth-child(4) .why-icon {
-  background:
-    linear-gradient(
-      145deg,
-      #176f73,
-      #0c858d
-    );
+  background: linear-gradient(145deg, #176f73, #0c858d);
 }
-
 
 .why-card:nth-child(5) .why-icon {
-  background:
-    linear-gradient(
-      145deg,
-      #087a98,
-      #1299b8
-    );
+  background: linear-gradient(145deg, #087a98, #1299b8);
 }
-
 
 .why-card:nth-child(6) .why-icon {
-  background:
-    linear-gradient(
-      145deg,
-      #18777b,
-      #149e9b
-    );
+  background: linear-gradient(145deg, #18777b, #149e9b);
 }
-
 
 /* SVG */
 
@@ -840,7 +1212,6 @@ RIGHT CARDS
   z-index: 2;
 }
 
-
 /* =========================================================
    CARD CONTENT
 ========================================================= */
@@ -849,7 +1220,6 @@ RIGHT CARDS
   position: relative;
   z-index: 3;
 }
-
 
 /* Title */
 
@@ -862,7 +1232,6 @@ RIGHT CARDS
   letter-spacing: -0.35px;
 }
 
-
 /* Small line */
 
 .why-line {
@@ -870,15 +1239,12 @@ RIGHT CARDS
   height: 2px;
   margin: 15px 0 20px;
   background: #18777b;
-  transition:
-    width 0.4s ease;
+  transition: width 0.4s ease;
 }
-
 
 .why-card:hover .why-line {
   width: 55px;
 }
-
 
 /* Description */
 
@@ -890,7 +1256,6 @@ RIGHT CARDS
   font-weight: 400;
 }
 
-
 /* =========================================================
    CARD REVEAL ANIMATION
 ========================================================= */
@@ -900,25 +1265,23 @@ RIGHT CARDS
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
 .why-card {
-  animation:
-    whyCardReveal 0.8s cubic-bezier(.2, .8, .2, 1) both;
+  animation: whyCardReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
-
 
 .why-card:nth-child(1) {
   animation-delay: 0.05s;
 }
 
 .why-card:nth-child(2) {
-  animation-delay: 0.10s;
+  animation-delay: 0.1s;
 }
 
 .why-card:nth-child(3) {
@@ -926,7 +1289,7 @@ RIGHT CARDS
 }
 
 .why-card:nth-child(4) {
-  animation-delay: 0.20s;
+  animation-delay: 0.2s;
 }
 
 .why-card:nth-child(5) {
@@ -934,7 +1297,7 @@ RIGHT CARDS
 }
 
 .why-card:nth-child(6) {
-  animation-delay: 0.30s;
+  animation-delay: 0.3s;
 }
 
 /* ***********************************************
@@ -969,13 +1332,11 @@ RIGHT CARDS
   margin-bottom: 3rem;
 }
 
-
 /*===============================
    TABLET
 ================================ */
 
 @media (max-width: 1100px) {
-
   .services-container {
     width: min(100% - 50px, 900px);
   }
@@ -989,13 +1350,11 @@ RIGHT CARDS
   }
 }
 
-
 /* ================================
    MOBILE
 ================================ */
 
 @media (max-width: 650px) {
-
   .services-section {
     padding: 75px 0 55px;
   }
@@ -1053,7 +1412,6 @@ RIGHT CARDS
 ========================================================= */
 
 @media (max-width: 1100px) {
-
   .why-section {
     padding: 90px 0 75px;
   }
@@ -1062,15 +1420,15 @@ RIGHT CARDS
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
   }
+
   .why-card {
     min-height: 340px;
   }
-  
+
   .why-header p {
     font-size: 17px;
   }
 }
-
 
 /* =========================================================
    SMALL TABLET
@@ -1088,22 +1446,25 @@ RIGHT CARDS
   .why-grid {
     gap: 20px;
   }
+
   .why-card {
     padding: 30px 28px 38px;
   }
+
   .why-icon {
     width: 72px;
     height: 72px;
   }
+
   .why-icon svg {
     width: 36px;
     height: 36px;
   }
+
   .why-number {
     font-size: 52px;
   }
 }
-
 
 /* =========================================================
    MOBILE
@@ -1113,84 +1474,99 @@ RIGHT CARDS
   .why-section {
     padding: 70px 0 55px;
   }
- 
+
   /* Header */
   .why-header {
     margin-bottom: 34px;
   }
+
   .why-label {
     gap: 12px;
     font-size: 11px;
     letter-spacing: 1.5px;
   }
+
   .why-label i {
     width: 35px;
     height: 3px;
   }
+
   .why-header p {
     max-width: 100%;
     margin-top: 18px;
     font-size: 16px;
     line-height: 1.6;
   }
+
   /* Grid */
   .why-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
   /* Card */
   .why-card {
     min-height: auto;
     padding: 30px 27px 36px;
     border-radius: 18px;
   }
+
   .why-card::after {
     height: 6px;
     border-radius: 0 0 18px 18px;
   }
+
   .why-card:hover {
     transform: translateY(-5px);
   }
+
   .why-card:hover::after {
     height: 8px;
   }
+
   /* Number */
   .why-number {
     top: 20px;
     right: 20px;
     font-size: 48px;
   }
+
   /* Icon */
   .why-icon {
     width: 68px;
     height: 68px;
     margin-bottom: 25px;
   }
+
   .why-icon::before {
     inset: -6px;
   }
+
   .why-icon svg {
     width: 34px;
     height: 34px;
   }
+
   /* Content */
   .why-content h3 {
     font-size: 21px;
   }
+
   .why-line {
     margin: 13px 0 18px;
   }
+
   .why-content p {
     font-size: 15px;
     line-height: 1.62;
   }
+
   /* Hide dots */
   .why-section::after,
   .services-section::after {
     display: none;
   }
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -1204,29 +1580,36 @@ RIGHT CARDS
   .why-header p {
     font-size: 15px;
   }
+
   .why-card {
     padding: 27px 23px 34px;
   }
+
   .why-number {
     font-size: 43px;
     top: 18px;
     right: 18px;
   }
+
   .why-icon {
     width: 64px;
     height: 64px;
   }
+
   .why-icon svg {
     width: 31px;
     height: 31px;
   }
+
   .why-content h3 {
     font-size: 20px;
   }
+
   .why-content p {
     font-size: 14.5px;
   }
 }
+
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
@@ -1242,12 +1625,9 @@ RIGHT CARDS
   }
 }
 
-
 /*==================================
           For Tablet Devices
 ===================================*/
-
-
 
 @media (max-width: 992px) {
   /* ***********************************************
@@ -1287,15 +1667,9 @@ RIGHT CARDS
   .about__content__wrapper p {
     font-size: 1.5rem;
   }
-
-
-  /* ***********************************************
-  About End
-*********************************************** */
 }
 
 @media (max-width: 991px) {
-
   /* counter */
   .stats__wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -1311,7 +1685,6 @@ RIGHT CARDS
   .explore__btn {
     padding: 1rem 1.6rem;
     background: var(--green-1);
-
     font-size: 1.3rem;
     font-family: Poppins;
     border-radius: 4px;
@@ -1320,8 +1693,6 @@ RIGHT CARDS
     transition: 0.3s;
     text-transform: uppercase;
   }
-
-
 
   /*  Our Projects */
 
@@ -1334,6 +1705,7 @@ RIGHT CARDS
   .category-section h3 {
     font-size: 1.6rem;
   }
+
   hr {
     margin: 15px 0;
   }
@@ -1395,6 +1767,7 @@ RIGHT CARDS
     font-size: 1.5rem;
     margin-bottom: 25px;
   }
+
   .about__list__items {
     margin-bottom: 30px;
   }
@@ -1418,8 +1791,6 @@ RIGHT CARDS
 /* ---------- Mobile ---------- */
 
 @media (max-width: 600px) {
-  
-
   /* counter */
   .stats__wrapper {
     grid-template-columns: 1fr;
@@ -1439,8 +1810,6 @@ RIGHT CARDS
     height: 42px;
   }
 }
-
-
 
 /* ===============================
    Small Mobile

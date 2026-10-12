@@ -8,10 +8,6 @@
   background-size: cover;
   background-position: center;
 }
-
-/* =========================================
-   RESOURCES SECTION
-========================================= */
 /* =========================================
    MANAGEMENT / LEADERSHIP SECTION
 ========================================= */
@@ -19,7 +15,6 @@
 .management-section {
   width: 100%;
   padding: 90px 0;
-  /* background: var(--lightGreen-1); */
   overflow: hidden;
 }
 
@@ -27,11 +22,9 @@
   width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
 }
-
 /* =========================================
    SECTION HEADING
 ========================================= */
-
 .management-heading {
   max-width: 650px;
   margin-bottom: 45px;
@@ -67,18 +60,14 @@
   font-size: 16px;
   line-height: 1.7;
 }
-
 /* =========================================
    OWL CAROUSEL
 ========================================= */
-
 .management-carousel {
   position: relative;
   width: 100%;
 }
-
 /* Remove Owl default outline */
-
 .management-carousel .owl-stage-outer {
   padding: 10px 5px 25px;
 }
@@ -141,7 +130,6 @@
 /* =========================================
    PROFILE IMAGE
 ========================================= */
-
 .management-image {
   width: 120px;
   height: 120px;

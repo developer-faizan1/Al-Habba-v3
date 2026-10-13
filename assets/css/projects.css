@@ -1,21 +1,7 @@
-
-/* =====================================================
-   AL HABBAI CONTRACTING — PROJECTS PAGE
-   Existing Design | 2 Cards Per Row | 6 Per Page
-===================================================== */
-
-:root {
-  --green-1: #1A6469;
-  --green-2: #a2de96;
-  --lightGreen-1: #F0F9F3;
-  --black-1: #3b413a;
-  --black-2: #3f3c3c;
-  --black-3: #5b6359;
-  --white-1: #e8e8e8;
-}
-
 /* BASE */
-
+.project__map{
+  color: var(--green-1);
+}
 .projects-section,
 .projects-section * {
   box-sizing: border-box;

@@ -1,13 +1,50 @@
 
+/* =====================================================
+   AL HABBAI CONTRACTING — PROJECT DETAILS
+   Responsive desktop, tablet and mobile
+===================================================== */
 
-/* Shimmer */
+:root {
+  --green-1: #1A6469;
+  --green-2: #a2de96;
+  --lightGreen-1: #F0F9F3;
+  --black-1: #3b413a;
+  --black-2: #3f3c3c;
+  --black-3: #5b6359;
+  --white-1: #e8e8e8;
+}
+
+/* Prevent padding and borders from increasing widths */
+.project-about__wrapper,
+.project-about__wrapper *,
+.project-gallery,
+.project-gallery *,
+.project__details__grid__card__wrapper,
+.project__details__grid__card__wrapper *,
+.project__decs__wrapper,
+.project__decs__wrapper * {
+  box-sizing: border-box;
+}
+
+.project-about__wrapper img,
+.project-gallery img {
+  max-width: 100%;
+}
+
+/* =====================================================
+   IMAGE SHIMMER
+===================================================== */
+
 .image-shimmer {
   position: absolute;
   inset: 0;
   z-index: 2;
-
-  background: linear-gradient(90deg, #eeeeee 25%, #f8f8f8 50%, #eeeeee 75%);
-
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #f8f8f8 50%,
+    #eeeeee 75%
+  );
   background-size: 200% 100%;
   animation: imageShimmer 1.5s infinite;
 }
@@ -20,84 +57,365 @@
   0% {
     background-position: 200% 0;
   }
-
   100% {
     background-position: -200% 0;
   }
 }
 
 /* =====================================================
-   PROJECT ABOUT
-   ===================================================== */
+   PROJECT ABOUT LAYOUT
+===================================================== */
 
 .project-about__wrapper {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: clamp(30px, 5vw, 90px);
+}
 
-  grid-template-columns: 1fr 1.15fr;
-
-  gap: 4rem;
-  margin-top: 90px;
-  align-items: center;
+.project-about__wrapper > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .project-about__image {
-  max-height: 600px;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.project-about__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* =====================================================
    PROJECT GALLERY
-   ===================================================== */
+===================================================== */
 
 .project-gallery {
+  position: relative;
   width: 100% !important;
-
+  max-width: 100%;
+  min-width: 0;
   height: auto !important;
-
   min-height: 0 !important;
-
   overflow: visible !important;
+}
 
+.project-gallery .project-main-image {
   position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  border-radius: 16px !important;
+  background: transparent !important;
+  line-height: 0 !important;
+}
+
+.project-gallery .project-main-image #projectImage {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
 }
 
 /* =====================================================
-   MAIN IMAGE CONTAINER
-   ===================================================== */
+   GALLERY THUMBNAILS
+===================================================== */
 
-/*
-   IMPORTANT
-
-   The container does NOT have a fixed height.
-
-   The actual image determines the height.
-
-   This prevents:
-   - cropping
-   - stretching
-   - empty space
-   - different image ratios breaking the layout
-*/
-
-.project-gallery .project-main-image {
+.project-gallery .project-thumbnails {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 12px !important;
   width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 16px !important;
+  padding: 3px 2px 8px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
 
-  height: auto !important;
-
-  min-height: 0 !important;
-
-  position: relative !important;
-
-  overflow: hidden !important;
-
-  border-radius: 20px !important;
-
+.project-gallery .project-thumbnail {
+  flex: 0 0 100px !important;
+  width: 100px !important;
+  min-width: 100px !important;
+  max-width: 100px !important;
+  height: 74px !important;
+  min-height: 74px !important;
+  max-height: 74px !important;
   display: block !important;
-
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: 2px solid transparent !important;
+  border-radius: 10px !important;
   background: transparent !important;
+  cursor: pointer !important;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
 
-  line-height: 0 !important;
+.project-gallery .project-thumbnail img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-  box-sizing: border-box !important;
+.project-gallery .project-thumbnail.active,
+.project-gallery .project-thumbnail:hover {
+  border-color: var(--green-1) !important;
+}
+
+.project-gallery .project-thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   PROJECT STATUS
+===================================================== */
+
+.project__status__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0 !important;
+  margin-bottom: 22px;
+}
+
+.project__status__bg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background-color: #e4efdc;
+  color: var(--green-1);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.project__status__bg svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.small-svg-icon {
+  width: 24px;
+  height: 24px;
+  max-width: 100%;
+}
+
+/* =====================================================
+   PROJECT TITLE
+===================================================== */
+
+.project__details__title {
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 0 18px;
+  color: var(--black-2);
+  font-family: Poppins, sans-serif;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.project__details__title br {
+  display: initial;
+}
+
+/* =====================================================
+   FULL ADDRESS
+===================================================== */
+
+.project__details__full__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--black-3);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.project__details__full__address > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.project__details__svg {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--green-1);
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.project__line {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 1px;
+  margin: 18px 0 24px;
+  background-color: #cccccc;
+  border: 0;
+}
+
+/* =====================================================
+   PROJECT DETAILS GRID
+===================================================== */
+
+.project__details__grid__card__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: clamp(12px, 2vw, 24px);
+}
+
+.box__shadow__wrapper {
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 16px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 5px;
+  border-radius: 8px;
+}
+
+.project__details__grid__card__items {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 12px 0;
+}
+
+.project__svg__circle {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #eaf5e5;
+  color: var(--green-1);
+}
+
+.project__svg__circle svg {
+  width: 22px;
+  height: 22px;
+  max-width: 100%;
+  stroke-width: 2;
+}
+
+.project__details__grid__card__items h4 {
+  margin: 0 0 6px;
+  color: var(--black-2);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.project__details__grid__card__items p {
+  margin: 0;
+  color: var(--black-3);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.project__details__grid__card__items > div,
+.project__details__grid__card__items > span {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =====================================================
+   PROJECT DESCRIPTION CARDS
+===================================================== */
+
+.project__decs__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.project__desc__items {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  padding: 20px;
+  overflow-wrap: anywhere;
+  border-radius: 10px;
+}
+
+/* =====================================================
+   MAP BUTTON
+===================================================== */
+
+#googleMapButton {
+  max-width: 100%;
 }
 
 #googleMapButton:hover h4 {
@@ -105,692 +423,191 @@
   transform: translateY(-2px);
   transition: 0.3s;
 }
-/* =====================================================
-   MAIN PROJECT IMAGE
-   ===================================================== */
-
-.project-gallery .project-main-image #projectImage {
-  width: 100% !important;
-
-  /*
-     IMPORTANT:
-     Never use height: 100%.
-
-     The image keeps its original ratio.
-  */
-  height: auto !important;
-
-  min-width: 0 !important;
-
-  min-height: 0 !important;
-
-  max-width: 100% !important;
-
-  max-height: none !important;
-
-  display: block !important;
-
-  visibility: visible !important;
-
-  opacity: 1 !important;
-
-  position: relative !important;
-
-  /*
-     No forced cropping.
-     No distortion.
-  */
-  object-fit: contain !important;
-
-  object-position: center center !important;
-
-  margin: 0 !important;
-
-  padding: 0 !important;
-
-  border: 0 !important;
-
-  box-sizing: border-box !important;
-}
 
 /* =====================================================
-   THUMBNAILS CONTAINER
-   ===================================================== */
-
-.project-gallery .project-thumbnails {
-  width: 100% !important;
-
-  display: flex !important;
-
-  justify-content: center !important;
-
-  align-items: center !important;
-
-  flex-direction: row !important;
-
-  gap: 15px !important;
-
-  margin-top: 20px !important;
-
-  padding: 0 5px !important;
-
-  overflow-x: auto !important;
-
-  overflow-y: hidden !important;
-
-  box-sizing: border-box !important;
-
-  scrollbar-width: thin;
-}
-
-/* =====================================================
-   THUMBNAIL BUTTON
-   ===================================================== */
-
-.project-gallery .project-thumbnail {
-  width: 110px !important;
-
-  height: 80px !important;
-
-  min-width: 110px !important;
-
-  min-height: 80px !important;
-
-  max-width: 110px !important;
-
-  max-height: 80px !important;
-
-  padding: 0 !important;
-
-  margin: 0 !important;
-
-  border: 2px solid transparent !important;
-
-  border-radius: 10px !important;
-
-  overflow: hidden !important;
-
-  background: transparent !important;
-
-  cursor: pointer !important;
-
-  flex: 0 0 auto !important;
-
-  display: block !important;
-
-  box-sizing: border-box !important;
-
-  transition:
-    border-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-/* =====================================================
-   THUMBNAIL IMAGE
-   ===================================================== */
-
-.project-gallery .project-thumbnail img {
-  width: 100% !important;
-
-  height: 100% !important;
-
-  min-width: 0 !important;
-
-  min-height: 0 !important;
-
-  max-width: 100% !important;
-
-  max-height: 100% !important;
-
-  display: block !important;
-
-  visibility: visible !important;
-
-  opacity: 1 !important;
-
-  /*
-     Thumbnails can use cover because
-     they are only previews.
-  */
-  object-fit: cover !important;
-
-  object-position: center center !important;
-
-  margin: 0 !important;
-
-  padding: 0 !important;
-
-  box-sizing: border-box !important;
-}
-
-/* =====================================================
-   ACTIVE THUMBNAIL
-   ===================================================== */
-
-.project-gallery .project-thumbnail.active {
-  border-color: #176d73 !important;
-}
-
-/* =====================================================
-   THUMBNAIL HOVER
-   ===================================================== */
-
-.project-gallery .project-thumbnail:hover {
-  border-color: #176d73 !important;
-
-  transform: translateY(-2px);
-}
-
-/* =====================================================
-   PROJECT DETAILS RIGHT
-   ===================================================== */
-
-.project__status__wrapper {
-  display: flex;
-
-  justify-content: space-between;
-
-  margin-bottom: 2rem;
-  margin-top: 10rem;
-}
-
-.project__status__bg {
-  background-color: #e4efdc;
-
-  padding: 0.8rem 1.6rem;
-
-  color: var(--green-1);
-
-  border-radius: 20px;
-
-  font-size: 1.4rem;
-
-  font-family: Poppins;
-}
-
-.project__status__bg svg {
-  vertical-align: middle;
-
-  height: 16px;
-}
-
-.small-svg-icon {
-  height: 26px;
-}
-
-/* =====================================================
-   PROJECT TITLE
-   ===================================================== */
-
-.project__details__title {
-  font-family: Poppins;
-
-  font-size: 3rem;
-
-  color: var(--black-2);
-
-  margin-bottom: 2rem;
-}
-
-/* =====================================================
-   FULL ADDRESS
-   ===================================================== */
-
-.project__details__full__address {
-  color: var(--black-3);
-
-  font-size: 1.6rem;
-
-  display: flex;
-
-  gap: 2rem;
-
-  font-family: Poppins;
-}
-
-.project__details__svg {
-  color: var(--green-1);
-}
-
-/* =====================================================
-   DIVIDER
-   ===================================================== */
-
-.project__line {
-  display: block;
-
-  width: 100%;
-
-  height: 0.6px;
-
-  background-color: #ccc;
-
-  margin: 1rem 0 2rem;
-}
-
-/* =====================================================
-   DETAILS GRID
-   ===================================================== */
-
-.project__details__grid__card__wrapper {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  padding: 2rem;
-
-  gap: 1rem;
-}
-
-.box__shadow__wrapper {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-  margin-top: 1.3rem;
-}
-
-.project__details__grid__card__items {
-  padding: 1.2rem 0;
-
-  display: flex;
-
-  gap: 1.4rem;
-
-  align-items: center;
-}
-
-.project__svg__circle {
-  width: 48px;
-
-  height: 48px;
-
-  min-width: 48px;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #eaf5e5;
-
-  color: var(--green-1);
-}
-
-.project__svg__circle svg {
-  width: 23px;
-
-  height: 23px;
-
-  stroke-width: 2;
-}
-
-.project__details__grid__card__items h4 {
-  margin: 0 0 5px;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  color: var(--black-2);
-}
-
-.project__details__grid__card__items p {
-  margin: 0;
-
-  font-size: 15px;
-
-  color: var(--black-3);
-}
-
-/* =====================================================
-   TABLET
-   769px - 1024px
-   ===================================================== */
+   TABLET — 769px TO 1024px
+===================================================== */
 
 @media (max-width: 1024px) {
-  /* =========================
-     HERO
-     ========================= */
-
-  .project-hero {
-    height: 650px;
-  }
-
-  .hero-image {
-    width: 100%;
-  }
-
-  .hero-content {
-    width: 55%;
-
-    padding-top: 70px;
-  }
-
-  .hero-content h1 {
-    margin-top: 35px;
-
-    font-size: 4.5rem;
-
-    line-height: 1.08;
-  }
-
-  /* =========================
-     PROJECT ABOUT
-     ========================= */
-
   .project-about__wrapper {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 100px;
   }
-
-  .project-about__image {
-    max-height: 520px;
-
-    border-radius: 20px;
-  }
-
-  /* =========================
-     PROJECT DETAILS
-     ========================= */
 
   .project__details__title {
-    font-size: 2.5rem;
-
-    line-height: 1.2;
+    font-size: clamp(22px, 2.7vw, 29px);
   }
 
   .project__details__full__address {
-    font-size: 1.4rem;
-
-    gap: 1.2rem;
+    font-size: 14px;
+    gap: 10px;
   }
 
   .project__details__grid__card__wrapper {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 0.5rem;
+    gap: 10px;
+    padding: 14px;
   }
 
   .project__details__grid__card__items {
-    gap: 1rem;
-
-    padding: 1rem 0;
-  }
-
-  .project__details__grid__card__items h4 {
-    font-size: 14px;
-  }
-
-  .project__details__grid__card__items p {
-    font-size: 13px;
+    gap: 10px;
   }
 
   .project__svg__circle {
-    width: 44px;
-
-    height: 44px;
-
-    min-width: 44px;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
   }
 
   .project__svg__circle svg {
-    width: 20px;
-
-    height: 20px;
+    width: 19px;
+    height: 19px;
   }
 
-  /* =========================
-     DESCRIPTION GRID
-     ========================= */
+  .project__details__grid__card__items h4 {
+    font-size: 13px;
+  }
+
+  .project__details__grid__card__items p {
+    font-size: 12px;
+  }
 
   .project__decs__wrapper {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
-  }
-
-  .project__desc__items {
-    width: 100%;
-
-    height: auto;
-
-    min-height: 180px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* =====================================================
-   SMALL TABLET
-   577px - 768px
-   ===================================================== */
+   TABLET / LARGE PHONE — 768px AND BELOW
+===================================================== */
 
 @media (max-width: 768px) {
-  /* =========================
-     HERO
-     ========================= */
-
-  .project-hero {
-    height: 600px;
-  }
-
-  .hero-image {
-    width: 100%;
-
-    height: 100%;
-  }
-
-  .hero-content {
-    width: 70%;
-
-    padding-top: 70px;
-  }
-
-  .hero-content h1 {
-    font-size: 4rem;
-
-    line-height: 1.08;
-
-    margin-top: 30px;
-  }
-
-  /* =========================
-     PROJECT ABOUT
-     ========================= */
-
   .project-about__wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 80px;
+  }
 
-    gap: 4rem;
+  .project-about__wrapper > * {
+    width: 100%;
+    min-width: 0;
   }
 
   .project-about__image {
-    max-height: 550px;
-
     width: 100%;
+    max-height: none;
+    border-radius: 16px;
   }
 
-  /* =========================
-     DETAILS
-     ========================= */
+  .project__status__wrapper {
+    justify-content: flex-start;
+    margin-top: 0 !important;
+    margin-bottom: 16px;
+  }
 
   .project__details__title {
-    font-size: 3rem;
-  }
-
-  .project__details__full__address {
-    font-size: 1.5rem;
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 14px;
   }
 
   .project__details__grid__card__wrapper {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 0.5rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
-
-  /* =========================
-     DESCRIPTION
-     ========================= */
 
   .project__decs__wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project__desc__items {
-    width: 100%;
-
-    min-height: 170px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* =====================================================
-   MOBILE
-   576px AND BELOW
-   ===================================================== */
+   MOBILE — 576px AND BELOW
+===================================================== */
 
 @media (max-width: 576px) {
-  /* =========================
-     HERO
-     ========================= */
-
-  .project-hero {
-    height: 560px;
-  }
-
-  .hero-image {
-    width: 100%;
-
-    height: 100%;
-  }
-
-  .hero-content {
-    width: 100%;
-
-    padding-top: 50px;
-
-    padding-right: 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 3.2rem;
-
-    line-height: 1.1;
-
-    margin-top: 25px;
-  }
-
-  /* =========================
-     PROJECT ABOUT
-     ========================= */
-  .project__status__wrapper {
-    margin-top: 15rem;
-  }
-
   .project-about__wrapper {
-    grid-template-columns: 1fr;
-
-    gap: 3rem;
+    gap: 22px;
+    margin-top: 90px;
   }
 
-  .project-about__image {
-    max-height: 420px;
-
-    border-radius: 18px;
+  .project-gallery .project-main-image {
+    border-radius: 12px !important;
   }
 
-  /* =========================
-     PROJECT STATUS
-     ========================= */
+  .project-gallery .project-thumbnails {
+    justify-content: flex-start !important;
+    gap: 9px !important;
+    margin-top: 12px !important;
+  }
+
+  .project-gallery .project-thumbnail {
+    flex-basis: 82px !important;
+    width: 82px !important;
+    min-width: 82px !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+  }
 
   .project__status__wrapper {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 1rem;
-
-    margin-bottom: 1.8rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0 !important;
+    margin-bottom: 14px;
   }
 
-  .project__status__wrapper span {
-    padding: 0.7rem 1.3rem;
-
-    font-size: 1.2rem;
+  .project__status__bg {
+    padding: 8px 13px;
+    font-size: 12px;
   }
-
-  /* =========================
-     TITLE
-     ========================= */
 
   .project__details__title {
-    font-size: 2.5rem;
-
-    line-height: 1.2;
-
-    margin-bottom: 1.8rem;
+    font-size: 22px;
+    line-height: 1.35;
+    margin-bottom: 12px;
   }
 
   .project__details__title br {
     display: none;
   }
 
-  /* =========================
-     ADDRESS
-     ========================= */
-
   .project__details__full__address {
-    font-size: 1.35rem;
-
-    gap: 1rem;
-
+    font-size: 14px;
     line-height: 1.6;
+    gap: 9px;
   }
 
   .project__details__svg {
-    width: 20px;
-
-    height: 20px;
-
-    min-width: 20px;
+    flex-basis: 19px;
+    width: 19px;
+    height: 19px;
   }
-
-  /* =========================
-     DIVIDER
-     ========================= */
 
   .project__line {
-    margin: 1.5rem 0;
+    margin: 14px 0 18px;
   }
 
-  /* =========================
-     DETAILS GRID
-     ========================= */
-
   .project__details__grid__card__wrapper {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 12px 14px;
   }
 
   .project__details__grid__card__items {
-    padding: 1.2rem 0;
-
-    gap: 1.2rem;
+    gap: 12px;
+    padding: 12px 0;
   }
 
   .project__svg__circle {
-    width: 46px;
-
-    height: 46px;
-
-    min-width: 46px;
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
   }
 
   .project__svg__circle svg {
-    width: 21px;
-
-    height: 21px;
+    width: 20px;
+    height: 20px;
   }
 
   .project__details__grid__card__items h4 {
@@ -799,99 +616,101 @@
 
   .project__details__grid__card__items p {
     font-size: 13px;
-
-    line-height: 1.5;
   }
 
-  /* =========================
-     DESCRIPTION GRID
-     ========================= */
-
   .project__decs__wrapper {
-    grid-template-columns: 1fr;
-
-    gap: 15px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
   }
 
   .project__desc__items {
-    width: 100%;
-
-    min-height: 150px;
+    padding: 16px;
   }
 }
 
 /* =====================================================
-   VERY SMALL MOBILE
-   400px AND BELOW
-   ===================================================== */
+   SMALL PHONES — 380px AND BELOW
+===================================================== */
 
-@media (max-width: 400px) {
-  .project-hero {
-    height: 520px;
-  }
-
-  .hero-content {
-    padding-top: 40px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.7rem;
+@media (max-width: 380px) {
+  .project-about__wrapper {
+    gap: 18px;
+    margin-top: 100px;
   }
 
   .project__details__title {
-    font-size: 2.2rem;
+    font-size: 20px;
   }
 
   .project__details__full__address {
-    font-size: 1.25rem;
-  }
-
-  .project-about__image {
-    max-height: 350px;
-  }
-
-  .project__svg__circle {
-    width: 42px;
-
-    height: 42px;
-
-    min-width: 42px;
+    font-size: 13px;
   }
 
   .project__details__grid__card__wrapper {
-    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .project__svg__circle {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .project__details__grid__card__items {
+    gap: 10px;
+  }
+
+  .project-gallery .project-thumbnail {
+    flex-basis: 72px !important;
+    width: 72px !important;
+    min-width: 72px !important;
+    height: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
   }
 }
 
 /* =====================================================
-   DESKTOP
-   1025px AND ABOVE
-   ===================================================== */
+   EXTRA SAFETY — PREVENT PAGE HORIZONTAL OVERFLOW
+===================================================== */
 
-/*
-   IMPORTANT:
+.project-about__wrapper,
+.project-about__wrapper > *,
+.project__details__grid__card__wrapper,
+.project__decs__wrapper {
+  overflow-wrap: anywhere;
+}
 
-   Do NOT force the project image to 700px height.
+.project-about__wrapper iframe,
+.project-about__wrapper video,
+.project-about__wrapper canvas {
+  max-width: 100%;
+}
 
-   The image now keeps its own natural aspect ratio.
-*/
-
-@media (min-width: 1025px) {
-  .project-about__image {
-    width: 100%;
-
-    height: auto;
-
-    max-height: none;
+@media (max-width: 768px) {
+  .project-about__wrapper {
+    padding-left: 0;
+    padding-right: 0;
   }
+}
 
-  .project-about__image img {
-    width: 100%;
+/* Fix selected main image cropping */
+.project-gallery .project-main-image {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+}
 
-    height: auto;
-
-    display: block;
-
-    object-fit: contain;
-  }
+.project-gallery .project-main-image #projectImage {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  aspect-ratio: auto !important;
 }

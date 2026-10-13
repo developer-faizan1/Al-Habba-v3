@@ -1,5 +1,5 @@
 /* BASE */
-.project__map{
+.project__map {
   color: var(--green-1);
 }
 .projects-section,
@@ -62,7 +62,7 @@
   gap: 12px;
   margin-bottom: 24px;
   padding: 16px;
-  border: 1px solid rgba(26, 100, 105, 0.10);
+  border: 1px solid rgba(26, 100, 105, 0.1);
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 5px 20px rgba(26, 100, 105, 0.035);
@@ -95,7 +95,8 @@
   background: transparent;
   color: var(--black-1);
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
+    font-family: Raleway;
 }
 
 .project-search:focus-within {
@@ -133,8 +134,9 @@
   background: #fff;
   color: var(--black-1);
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
+  font-family: Raleway;
 }
 
 .project-select:focus {
@@ -153,10 +155,11 @@
   background: #fff;
   color: var(--green-1);
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.25s ease;
+  font-family: Raleway;
 }
 
 .clear-filter-btn:hover {
@@ -408,6 +411,7 @@
   letter-spacing: 1.4px;
   line-height: 1.5;
   text-transform: uppercase;
+  font-family: Poppins;
 }
 
 .projects-section .project-card-title {
@@ -416,17 +420,18 @@
   margin: 0 0 14px;
   overflow: hidden;
   color: var(--black-2);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(25px, 2vw, 34px);
+  font-size: clamp(18px, 1.3vw, 22px);
   font-weight: 700;
   line-height: 1.25;
   overflow-wrap: anywhere;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  font-family: Poppins;
 }
 
 .projects-section .project-card-title span {
   color: var(--green-1);
+  font-family: Poppins;
 }
 
 .projects-section .project-card-accent {
@@ -474,6 +479,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-family: Poppins;
 }
 
 .projects-section .project-view-link:hover {

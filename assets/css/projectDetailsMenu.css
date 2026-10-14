@@ -372,9 +372,8 @@ footer {
   .footer__wrapper {
     flex-direction: row;
   }
-  .footer__col1 {
-    flex: 4;
-  }
+
+  .footer__col1,
   .footer__col2,
   .footer__col3,
   .footer__col4 {

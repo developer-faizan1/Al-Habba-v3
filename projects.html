@@ -88,96 +88,67 @@
     <!-- Nav End -->
 
     <!-- Our Projects -->
-    <section class="projects-section">
+
+    <section class="projects-section" id="projects">
       <div class="container">
-        <div class="projects-intro">
-          <span class="section-eyebrow">OUR PORTFOLIO</span>
-          <h2>Our <span>Projects</span></h2>
-          <p>Explore our construction projects across Dubai.</p>
+        <div class="projects-heading">
+          <div>
+            <span class="projects-eyebrow">OUR PORTFOLIO</span>
+            <h2>Featured Projects</h2>
+            <p>Explore our completed and ongoing developments.</p>
+          </div>
+          <span id="projectResultsCount">Loading projects...</span>
         </div>
 
-        <!-- FILTER TOOLBAR -->
         <div class="projects-toolbar">
-          <div class="project-search">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input
-              type="search"
-              id="projectSearch"
-              placeholder="Search projects..."
-              autocomplete="off"
-              aria-label="Search projects"
-            />
-          </div>
+          <input
+            type="search"
+            id="projectSearch"
+            placeholder="Search projects..."
+            aria-label="Search projects"
+          />
 
-          <div class="project-select-wrapper">
-            <select id="projectTypeFilter" class="project-select">
-              <option value="">All Types</option>
-            </select>
-          </div>
+          <select id="projectTypeFilter">
+            <option value="">All Types</option>
+          </select>
 
-          <div class="project-select-wrapper">
-            <select id="projectStatusFilter" class="project-select">
-              <option value="">All Status</option>
-            </select>
-          </div>
+          <select id="projectStatusFilter">
+            <option value="">All Status</option>
+          </select>
 
-          <div class="project-select-wrapper">
-            <select id="projectLocationFilter" class="project-select">
-              <option value="">All Locations</option>
-            </select>
-          </div>
+          <select id="projectLocationFilter">
+            <option value="">All Locations</option>
+          </select>
 
-          <div class="project-select-wrapper">
-            <select id="projectSort" class="project-select">
-              <option value="default">Default Order</option>
-              <option value="latest">Latest Projects</option>
-              <option value="oldest">Oldest Projects</option>
-              <option value="title-asc">Title: A–Z</option>
-              <option value="title-desc">Title: Z–A</option>
-            </select>
-          </div>
+          <select id="projectSort">
+            <option value="default">Default order</option>
+            <option value="latest">Latest projects</option>
+            <option value="oldest">Oldest projects</option>
+            <option value="title-asc">Title A–Z</option>
+            <option value="title-desc">Title Z–A</option>
+          </select>
 
-          <button
-            type="button"
-            class="clear-filter-btn"
-            id="clearProjectFilters"
-          >
-            <span aria-hidden="true">×</span> Clear
-          </button>
+          <button type="button" id="clearProjectFilters">Clear filters</button>
         </div>
 
-        <!-- RESULTS SUMMARY -->
-        <div class="projects-results">
-          <p id="projectResultsCount" aria-live="polite">Loading projects...</p>
-          <span>PROJECT PORTFOLIO</span>
+        <div id="projectsEmpty" hidden>
+          <h3>No projects found</h3>
+          <p>Try another search or change your filters.</p>
+          <button type="button" id="resetEmptyFilters">Reset filters</button>
         </div>
 
-        <!-- PROJECT GRID -->
-        <div class="projects-grid" id="projectsGrid">
-          <div class="projects-loading">Loading projects...</div>
+        <!-- The large horizontal project cards render here -->
+        <div id="projectsGrid" class="projects-grid"></div>
+        <div class="projects-pagination">
+          <button type="button" id="previousProject">Previous</button>
+          <div id="projectPagination"></div>
+          <button type="button" id="nextProject">Next</button>
         </div>
 
-        <!-- EMPTY RESULTS -->
-        <div class="projects-empty" id="projectsEmpty" hidden>
-          <div class="empty-icon">⌕</div>
-          <h3>No Projects Found</h3>
-          <p>Try changing your search or filter.</p>
-          <button type="button" id="resetEmptyFilters">
-            View All Projects
-          </button>
-        </div>
-
-        <!-- PAGINATION -->
-        <nav class="projects-pagination" aria-label="Project pagination">
-          <button type="button" id="previousProject" disabled>
-            ← Previous
-          </button>
-          <div id="projectPagination" class="pagination-numbers"></div>
-          <span id="projectCounter">Page 1</span>
-          <button type="button" id="nextProject">Next →</button>
-        </nav>
+        <p id="projectCounter" class="project-counter"></p>
       </div>
     </section>
+
     <!-- Our Projects End -->
 
     <!-- Gmail -->
@@ -241,14 +212,143 @@
     <footer>
       <div class="container">
         <div class="footer__wrapper" data-aos="fade-up">
-          
+          <div class="footer__col1">
+            <div class="footer__logo">
+              <img
+                src="./assets/images/alhabbai-dark-logo.png"
+                alt="AL Habbai Contracting"
+              />
+            </div>
+            <p class="footer__desc">
+              Al Habbai is a progressively private owned company was established
+              in Dubai since 1993 by Al Habbai Family and represented by
+              <i>CEO Mr. Ali Al Habbai.</i>
+            </p>
+            <div class="footer__socials">
+              <h4 class="footer__socials__title">Follow us</h4>
+              <ol class="footer__socials__list">
+                <li>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-facebook"
+                    >
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                      />
+                      <rect x="2" y="9" width="4" height="12" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path
+                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                      />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                      />
+                      <polygon
+                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                      />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-twitter"
+                    >
+                      <path
+                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
           <div class="footer__col2">
             <h3 class="footer__text__title">Quick Links</h3>
             <ol class="footer__text">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">HOME</a></li>
               <li><a href="./projects.html">Projects</a></li>
               <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./about.html">About Us</a></li>
               <li><a href="./awardsNews.html">Awards & News</a></li>
+              <li><a href="./principals.html">Principals</a></li>
+              <li><a href="./careers.html">Careers</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ol>
           </div>
           <div class="footer__col3">
@@ -271,6 +371,11 @@
                   href="https://dms.alhabbai.app:444/dms/#/login"
                   target="_blank"
                   >DMS</a
+                >
+              </li>
+              <li>
+                <a href="https://ezbuz.alhabbai.net/" target="_blank"
+                  >Al Habbai – ERP</a
                 >
               </li>
             </ol>
@@ -351,78 +456,6 @@
                 <a href="#">P.O Box 21313, Dubai – UAE</a>
               </li>
             </ol>
-          </div>
-          <div class="footer__col1">
-            <div class="footer__socials">
-              <h4 class="footer__socials__title">Follow us</h4>
-              <ol class="footer__socials__list">
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-facebook"
-                    >
-                      <path
-                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                      />
-                    </svg>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path
-                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                      />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
-                      />
-                      <polygon
-                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                      />
-                    </svg>
-                  </a>
-                </li>
-              </ol>
-            </div>
           </div>
         </div>
       </div>

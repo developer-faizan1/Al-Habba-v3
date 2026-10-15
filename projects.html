@@ -89,65 +89,97 @@
 
     <!-- Our Projects -->
 
-    <section class="projects-section" id="projects">
-      <div class="container">
-        <div class="projects-heading">
-          <div>
-            <span class="projects-eyebrow">OUR PORTFOLIO</span>
-            <h2>Our <span style="color: #1A6469;">Projects</span> </h2>
-            <p>Explore our construction projects across Dubai.</p>
-          </div>
-          <span id="projectResultsCount">Loading projects...</span>
-        </div>
+  
+<section class="projects-section" id="projects">
+  <div class="container">
 
-        <div class="projects-toolbar">
-          <input
-            type="search"
-            id="projectSearch"
-            placeholder="Search projects..."
-            aria-label="Search projects"
-          />
-
-          <select id="projectTypeFilter">
-            <option value="">All Types</option>
-          </select>
-
-          <select id="projectStatusFilter">
-            <option value="">All Status</option>
-          </select>
-
-          <select id="projectLocationFilter">
-            <option value="">All Locations</option>
-          </select>
-
-          <select id="projectSort">
-            <option value="default">Default order</option>
-            <option value="latest">Latest projects</option>
-            <option value="oldest">Oldest projects</option>
-            <option value="title-asc">Title A–Z</option>
-            <option value="title-desc">Title Z–A</option>
-          </select>
-
-          <button type="button" id="clearProjectFilters">Clear filters</button>
-        </div>
-
-        <div id="projectsEmpty" hidden>
-          <h3>No projects found</h3>
-          <p>Try another search or change your filters.</p>
-          <button type="button" id="resetEmptyFilters">Reset filters</button>
-        </div>
-
-        <!-- The large horizontal project cards render here -->
-        <div id="projectsGrid" class="projects-grid"></div>
-        <div class="projects-pagination">
-          <button type="button" id="previousProject">Previous</button>
-          <div id="projectPagination"></div>
-          <button type="button" id="nextProject">Next</button>
-        </div>
-
-        <p id="projectCounter" class="project-counter"></p>
+    <!-- Section heading -->
+    <div class="projects-heading">
+      <div>
+        <span class="section-eyebrow">OUR PORTFOLIO</span>
+        <h1>Our <span>Projects</span></h1>
+        <p>Explore our construction projects across Dubai.</p>
       </div>
-    </section>
+
+      <div class="projects-count" id="projectsCount">
+        Loading projects...
+      </div>
+    </div>
+
+    <!-- Search and filters -->
+    <div class="projects-toolbar">
+      <input
+        type="search"
+        id="projectSearch"
+        placeholder="Search projects..."
+        aria-label="Search projects"
+      >
+
+      <select id="projectTypeFilter" aria-label="Filter by project type">
+        <option value="">All Types</option>
+      </select>
+
+      <select id="projectStatusFilter" aria-label="Filter by status">
+        <option value="">All Status</option>
+      </select>
+
+      <select id="projectLocationFilter" aria-label="Filter by location">
+        <option value="">All Locations</option>
+      </select>
+
+      <select id="projectSort" aria-label="Sort projects">
+        <option value="default">Default order</option>
+        <option value="latest">Latest projects</option>
+        <option value="oldest">Oldest projects</option>
+        <option value="title">Title A–Z</option>
+      </select>
+
+      <button type="button" class="clear-filters" id="clearFilters">
+        Clear filters
+      </button>
+    </div>
+
+    <!-- Project cards generated using JavaScript -->
+    <div class="projects-list" id="projectsList">
+      <div class="projects-loading">Loading projects...</div>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="projects-pagination" id="projectsPagination"
+      aria-label="Project pagination"></nav>
+
+    <div class="projects-empty" id="projectsEmpty" hidden>
+      <h3>No projects found</h3>
+      <p>Try changing your search or filters.</p>
+      <button type="button" class="clear-filters"
+        id="emptyClearFilters">Clear filters</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Image lightbox -->
+<div class="project-lightbox" id="projectLightbox"
+  role="dialog" aria-modal="true" aria-label="Project image viewer"
+  aria-hidden="true">
+
+  <button type="button" class="lightbox-close"
+    id="lightboxClose" aria-label="Close image viewer">&times;</button>
+
+  <button type="button" class="lightbox-arrow lightbox-prev"
+    id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+
+  <div class="lightbox-content">
+    <img id="lightboxImage" src="" alt="Project image">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <button type="button" class="lightbox-arrow lightbox-next"
+    id="lightboxNext" aria-label="Next image">&#10095;</button>
+</div>
+
+<script src="assets/js/projects.js"></script>
+
 
     <!-- Our Projects End -->
 

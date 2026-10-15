@@ -6,12 +6,9 @@
   color: var(--black-1);
 }
 
-
-
 /* =========================================
    SECTION HEADING
 ========================================= */
-
 
 .projects-heading {
   display: flex;
@@ -64,7 +61,6 @@
 .projects-toolbar {
   margin-bottom: 24px;
 }
-
 
 /* =========================================
    SEARCH AND FILTER TOOLBAR
@@ -142,7 +138,9 @@
   overflow: hidden;
   border: 1px solid #e0e5e2;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(29, 51, 44, 0.025);
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   transition: box-shadow 0.25s;
 }
 
@@ -337,7 +335,7 @@
   margin: 0 0 15px;
   color: #222c2b;
   font-family: Georgia, "Times New Roman", serif;
- font-size: clamp(18px, 2.3vw, 18px);
+  font-size: clamp(18px, 2.3vw, 18px);
   font-weight: 400;
   line-height: 1.25;
   overflow-wrap: anywhere;
@@ -502,7 +500,7 @@
   color: #6a756f;
   font-size: 16px;
   line-height: 1.5;
-  	font-family: Raleway;
+  font-family: Raleway;
 }
 
 .meta-item svg {
@@ -621,8 +619,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 55px 30px 30px;
+  padding: 55px 20px 30px;
   background: rgba(9, 17, 15, 0.94);
 }
 
@@ -630,11 +627,15 @@
   display: flex;
 }
 
+/* Image and caption */
+
 .lightbox-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 14px;
+  width: 100%;
   max-width: 90%;
   max-height: 100%;
 }
@@ -652,34 +653,67 @@
   text-align: center;
 }
 
-.lightbox-close,
-.lightbox-arrow {
+/* Close button */
+
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 25px;
+  z-index: 5;
   display: grid;
-  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
   place-items: center;
   border: 0;
   background: transparent;
   color: #fff;
+  font-size: 42px;
+  line-height: 1;
   cursor: pointer;
 }
 
-.lightbox-close {
-  position: absolute;
-  top: 13px;
-  right: 25px;
-  font-size: 42px;
-}
+/* Left and right arrows fixed to screen edges */
 
 .lightbox-arrow {
-  width: 45px;
-  height: 55px;
-  font-size: 30px;
+  position: fixed;
+  top: 50%;
+  z-index: 5;
+  display: grid;
+  width: 56px;
+  height: 64px;
+  padding: 0;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
-.lightbox-close:hover,
+.lightbox-prev {
+  left: 15px;
+}
+
+.lightbox-next {
+  right: 15px;
+}
+
 .lightbox-arrow:hover {
+  background: var(--green-1);
+  color: #fff;
+}
+
+.lightbox-close:hover {
   color: var(--green-2);
 }
+
+/* Prevent background scrolling */
 
 body.lightbox-open {
   overflow: hidden;
@@ -733,7 +767,7 @@ body.lightbox-open {
 ========================================= */
 
 @media (max-width: 767px) {
- .projects-section {
+  .projects-section {
     padding: 32px 0 35px;
   }
 
@@ -913,21 +947,35 @@ body.lightbox-open {
   /* Lightbox */
 
   .project-lightbox {
-    gap: 5px;
-    padding: 50px 8px 20px;
+    padding: 50px 8px 25px;
   }
 
   .lightbox-content {
-    max-width: calc(100% - 75px);
-  }
-
-  .lightbox-arrow {
-    width: 30px;
-    font-size: 23px;
+    max-width: calc(100% - 60px);
   }
 
   .lightbox-content img {
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 110px);
+  }
+
+  .lightbox-arrow {
+    width: 36px;
+    height: 50px;
+    font-size: 27px;
+  }
+
+  .lightbox-prev {
+    left: 3px;
+  }
+
+  .lightbox-next {
+    right: 3px;
+  }
+
+  .lightbox-close {
+    top: 8px;
+    right: 8px;
+    font-size: 36px;
   }
 }
 
@@ -936,7 +984,6 @@ body.lightbox-open {
 ========================================= */
 
 @media (max-width: 380px) {
-    
   .projects-container {
     width: calc(100% - 22px);
   }

@@ -36,42 +36,6 @@
     "longitude": null
   },
   {
-    "id": 140,
-    "projectNumber": "P-140",
-    "slug": "P-140 (2B+G+19) HOTEL BUILDING",
-    "title": "(2B+G+19)",
-    "image": "assets/images/img_gallery/140v1.webp",
-    "images": [
-      "assets/images/img_gallery/140v1.webp",
-      "assets/images/intr_img/140iv1.webp",
-      "assets/images/intr_img/140iv2.webp",
-      "assets/images/intr_img/140iv3.webp",
-      "assets/images/intr_img/140iv4.webp"
-    ],
-    "projectValue": "AED 77,000,000",
-    "client": "M/s. New Dubai Properties LLC",
-    "consultant": "M/S. Rimal Engineering Consultant",
-    "projectLocation": "Canal Central Hotel Business Bay",
-    "startDate": "02 November 2015",
-    "completionDate": "10 April 2018",
-    "status": "Completed",
-    "projectType": "Hotel",
-    "projectDescription": "2B+G+19 Hotel building",
-    "projectComprisesOf": [
-      "Hotel Tower",
-      "2 Basement Level",
-      "Ground Floor",
-      "19 Floors",
-      "Roof Level"
-    ],
-    "fullAddress": "Canal Central Hotel, Business Bay, Dubai",
-    "plot": "346-556",
-    "area": "Canal Central Hotel Business Bay Dubai",
-    "state": "Dubai",
-    "latitude": null,
-    "longitude": null
-  },
-  {
     "id": 147,
     "projectNumber": "P-147",
     "slug": "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
@@ -107,6 +71,41 @@
     "state": "Dubai",
     "latitude": null,
     "longitude": null
+  },
+    {
+    "id": 140,
+    "projectNumber": "P-140",
+    "slug": "P-140 (2B+G+19) HOTEL BUILDING",
+    "title": "(2B+G+19)",
+    "image": "assets/images/img_gallery/140v1.webp",
+    "images": [
+      "assets/images/img_gallery/140v1.webp",
+      "assets/images/intr_img/140iv1.webp",
+      "assets/images/intr_img/140iv2.webp",
+      "assets/images/intr_img/140iv3.webp",
+      "assets/images/intr_img/140iv4.webp"
+    ],
+    "projectValue": "AED 77,000,000",
+    "client": "M/s. New Dubai Properties LLC",
+    "consultant": "M/S. Rimal Engineering Consultant",
+    "projectLocation": "Canal Central Hotel Business Bay",
+    "startDate": "02 November 2015",
+    "completionDate": "10 April 2018",
+    "status": "Completed",
+    "projectType": "Hotel",
+    "projectDescription": "2B+G+19 Hotel building",
+    "projectComprisesOf": [
+      "Hotel Tower",
+      "2 Basement Level",
+      "Ground Floor",
+      "19 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Canal Central Hotel, Business Bay, Dubai",
+    "plot": "346-556",
+    "area": "Canal Central Hotel Business Bay Dubai",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
   }
-  
 ]

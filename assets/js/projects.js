@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   const DATA_URL = "./assets/js/projectsData.json";
-  const PROJECTS_PER_PAGE = 1;
+  const PROJECTS_PER_PAGE = 4;
   const SAVED_KEY = "alHabbaiSavedProjects";
 
   const $ = (selector) => document.querySelector(selector);

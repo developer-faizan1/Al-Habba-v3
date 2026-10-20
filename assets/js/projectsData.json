@@ -3,7 +3,7 @@
     "id": 136,
     "projectNumber": "P-136",
     "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
-    "title": "(2B+G+3P+16+R) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/136v1.webp",
     "images": [
       "assets/images/img_gallery/136v1.webp",
@@ -39,7 +39,7 @@
     "id": 140,
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
-    "title": "(2B+G+19) Hotel building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/140v1.webp",
     "images": [
       "assets/images/img_gallery/140v1.webp",
@@ -75,7 +75,7 @@
     "id": 147,
     "projectNumber": "P-147",
     "slug": "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
-    "title": "(B+G+8+R+U+R) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/147v1.webp",
     "images": [
       "assets/images/img_gallery/147v1.webp",
@@ -112,7 +112,7 @@
     "id": 142,
     "projectNumber": "P-142",
     "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
-    "title": "Proposed (B+G+22 Floors + R) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/142v2.webp",
     "images": [
       "assets/images/img_gallery/142v2.webp",
@@ -147,7 +147,7 @@
     "id": 129,
     "projectNumber": "P-129",
     "slug": "P-129 (B+G+32) HOTEL-BUILDING",
-    "title": "(B+G+32) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/129v1.webp",
     "images": [
       "assets/images/img_gallery/129v2.webp",
@@ -182,7 +182,7 @@
     "id": 146,
     "projectNumber": "P-146",
     "slug": "P-146 (B+G+1P+16+R) HOTEL TOWER",
-    "title": "(B+G+1P+16+R) Hotel Tower",
+    "title": "Hotel Tower",
     "image": "assets/images/img_gallery/146.jfif",
     "images": [
       "assets/images/img_gallery/146.jfif",
@@ -214,12 +214,11 @@
     "latitude": null,
     "longitude": null
   },
- 
   {
     "id": 154,
     "projectNumber": "P-154",
     "slug": "P-154 (3B+G+6) STORIES HOTEL BUILDING",
-    "title": "(3B+G+6 Stories) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/154v2.webp",
     "images": [
       "assets/images/img_gallery/154v2.webp",
@@ -254,7 +253,7 @@
     "id": 137,
     "projectNumber": "P-137",
     "slug": "P-137 (B+G+9F) HOTEL BUILDING",
-    "title": "(B+G+9F) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/137v1.webp",
     "images": [
       "assets/images/img_gallery/137v1.webp",
@@ -289,7 +288,7 @@
     "id": 167,
     "projectNumber": "P-167",
     "slug": "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
-    "title": "Proposed (2B+G+P+8+R) Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/167v1.webp",
     "images": [
       "assets/images/img_gallery/167v1.webp",
@@ -326,7 +325,7 @@
     "id": 85,
     "projectNumber": "P-085",
     "slug": "P-085 (2B+G+M+12+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(2B+G+M+12+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/img_gallery/p85.jpg",
     "images": [
       "assets/images/intr_img/85iv1.jpg",
@@ -356,12 +355,11 @@
     "latitude": null,
     "longitude": null
   },
-
   {
     "id": 153,
     "projectNumber": "P-153",
     "slug": "P-153 (2B+G+5 Stories) STORIES HOTEL BUILDING",
-    "title": "(2B+G+5) Stories Hotel Building",
+    "title": "Hotel Building",
     "image": "assets/images/img_gallery/153v1.webp",
     "images": [
       "assets/images/img_gallery/153v1.webp",
@@ -398,7 +396,7 @@
     "id": 96,
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
-    "title": "(3B+G+19) Storey Hotel Tower",
+    "title": "Hotel Tower",
     "image": "assets/images/projects/p96.jpg",
     "projectValue": "AED  171,500,000",
     "client": "SRG Holding Limited",
@@ -422,12 +420,11 @@
     "latitude": null,
     "longitude": null
   },
-
   {
     "id": 102,
     "projectNumber": "P-102",
     "slug": "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
-    "title": "(2B+G+11) Penthehouse - Hotel Tower",
+    "title": "Hotel Tower",
     "image": "assets/images/img_gallery/102v1.webp",
     "images": [
       "assets/images/img_gallery/102v1.webp",
@@ -456,12 +453,11 @@
     "latitude": null,
     "longitude": null
   },
-
   {
     "id": 82,
     "projectNumber": "P-082",
     "slug": "P-082 (2B+G+14+FLOORS)",
-    "title": "(2B+G+14 FLOORS)",
+    "title": "Hotel Tower",
     "image": "assets/images/projects/p82.jpg",
     "projectValue": "AED 50,000,000",
     "client": "M/R. Mohd Jaber Abdulla Mohd Al Harbi",
@@ -490,7 +486,7 @@
     "id": 155,
     "projectNumber": "P-155",
     "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
-    "title": "(2B+G+9F) Stories Soho Apartment",
+    "title": "Soho Apartment",
     "image": "assets/images/img_gallery/155v1.webp",
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
@@ -514,12 +510,11 @@
     "latitude": null,
     "longitude": null
   },
-
   {
     "id": 99,
     "projectNumber": "P-099",
     "slug": "P-099 (2B+G+30) RESIDENTIAL COMMERCIAL BUILDING",
-    "title": "(2B+G+30) Residential & Commercial Building",
+    "title": "Residential & Commercial Building",
     "image": "assets/images/projects/p99.jpg",
     "projectValue": "AED 169,650,000",
     "client": "M/S. Dire (Dubai I Nt’l Real Es Tate)",
@@ -547,7 +542,7 @@
     "id": 157,
     "projectNumber": "P-157",
     "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
-    "title": "(B+G+4P+MC+22+R) Residential & Retail Building",
+    "title": "Residential & Retail Building",
     "image": "assets/images/img_gallery/157v1.webp",
     "images": [
       "assets/images/img_gallery/157v1.webp",
@@ -577,12 +572,11 @@
     "latitude": null,
     "longitude": null
   },
-
   {
     "id": 109,
     "projectNumber": "P-109",
     "slug": "P-109 (3B+G+4+Gym) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(3B+G+4+Gym) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p109.jpg",
     "projectValue": "AED 205,000,000",
     "client": "M/s DIRE (Dubai International Real Estate)",
@@ -612,7 +606,7 @@
     "id": 83,
     "projectNumber": "P-083",
     "slug": "P-083 (B+G+12) Residential Building",
-    "title": "(B+G+12) Residential Building",
+    "title": "Residential Building",
     "image": "assets/images/projects/p83.jpg",
     "projectValue": "AED 40,500,000",
     "client": "Mr. Abdul La Bin HumeiDan",
@@ -640,7 +634,7 @@
     "id": 86,
     "projectNumber": "P-086",
     "slug": "P-086 (2B+G+12) RESIDENTIAL COMMERCIAL",
-    "title": "(2B+G+12) Residential & Commercial",
+    "title": "Residential & Commercial",
     "image": "assets/images/projects/p86.jpg",
     "projectValue": "AED 99,770,000",
     "client": "Mr. Abdulla Ahmed Mohammad",
@@ -669,7 +663,7 @@
     "id": 95,
     "projectNumber": "P-095",
     "slug": "P-095 (2B+G+15) RESIDENTIAL COMMERCIAL BUILDING",
-    "title": "(2B+G+15) Residential & Commercial Building",
+    "title": "Residential & Commercial Building",
     "image": "assets/images/projects/p95.jpg",
     "projectValue": "AED 97,200,000",
     "client": "Mr. Ahmad Abdulrahim Ahmad  Baker",
@@ -697,7 +691,7 @@
     "id": 77,
     "projectNumber": "P-077",
     "slug": "P-077 (B+G+UG+12) Commercial & Residential Building",
-    "title": "Commercial & Residential Building (B+G+UG+12)",
+    "title": "Commercial & Residential Building ",
     "image": "assets/images/projects/p77.jpg",
     "projectValue": "AED 46,500,000",
     "client": "Mr. Ali Ahmed Mo H A Mad Abdul Rah Man",
@@ -725,7 +719,7 @@
     "id": 117,
     "projectNumber": "P-117",
     "slug": "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(2B+G+11+R) Residential & Commercial Building",
+    "title": "Residential & Commercial Building",
     "image": "assets/images/projects/p117.jpg",
     "projectValue": "AED 40,500,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rah Man",
@@ -753,7 +747,7 @@
     "id": 118,
     "projectNumber": "P-118",
     "slug": "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
-    "title": "(B+G+M+3) Residential & Commercial Building",
+    "title": "Residential & Commercial Building",
     "image": "assets/images/projects/p118.jpg",
     "projectValue": "AED 46,200,000",
     "client": "Mr. Ali Ahmed Mohamed",
@@ -782,7 +776,7 @@
     "id": "P-119",
     "projectNumber": "P-119",
     "slug": "p-119 (2B+G+M+11)  Residential Buildin",
-    "title": "(2B+G+M+11) Residential Buildin",
+    "title": "Residential Building",
     "image": "assets/images/projects/p119.jpg",
     "projectValue": "AED 37,000,000",
     "client": "Mr. Saif Abdul Lah Ali Saif Al Shafar",
@@ -810,7 +804,7 @@
     "id": "P-121",
     "projectNumber": "P-121",
     "slug": "p-121 (B+G+7+R) Commercial & Residential Building",
-    "title": "(B+G+7+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p121.jpg",
     "projectValue": "AED 38,500,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rahman",
@@ -838,7 +832,7 @@
     "id": 132,
     "projectNumber": "P-132",
     "slug": "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(B+G+7F+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/img_gallery/132v1.webp",
     "projectValue": "AED 51,100,000",
     "client": "M/s. New Dubai Properties LLC",
@@ -866,7 +860,7 @@
     "id": 133,
     "projectNumber": "P-133",
     "slug": "P-133 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(B+G+7+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p133.png",
     "projectValue": "AED 40,200,000",
     "client": "Mr. Ahmed Abdul Rahman Ahmed Arif",
@@ -894,7 +888,7 @@
     "id": 134,
     "projectNumber": "P-134",
     "slug": "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(B+G+7+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p134.jpg",
     "projectValue": "AED 66,500,000",
     "client": "M/S. SRG PROPERTIES LLC",
@@ -978,7 +972,7 @@
     "id": 143,
     "projectNumber": "P-143",
     "slug": "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(2B+G+14F) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p143.png",
     "projectValue": "AED 59,500,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
@@ -1006,7 +1000,7 @@
     "id": 149,
     "projectNumber": "P-149",
     "slug": "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(B+G+6+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/img_gallery/149v4.webp",
     "images": [
       "assets/images/img_gallery/149v4.webp",
@@ -1038,7 +1032,7 @@
     "id": 151,
     "projectNumber": "P-151",
     "slug": "P-151 (3B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "(3B+G+8+R) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/img_gallery/151v1.webp",
     "images": [
       "assets/images/img_gallery/151v1.webp",
@@ -1070,7 +1064,7 @@
     "id": 152,
     "projectNumber": "P-152",
     "slug": "P-152 (3B+G+13) COMMERCIAL-RESIDENTIAL-BUILDING",
-    "title": "(3B+G+13) Commercial & Residential Building",
+    "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p152.jpg",
     "projectValue": "AED 40,000,000",
     "client": "Mr. Abdul Magied Ahmed Siddique",
@@ -1098,7 +1092,7 @@
     "id": 159,
     "projectNumber": "P-159",
     "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
-    "title": "Proposed (B+G+8+R) Commercial and Residential",
+    "title": "Commercial and Residential ",
     "image": "assets/images/img_gallery/159v1.webp",
     "images": [
       "assets/images/img_gallery/159v1.webp",

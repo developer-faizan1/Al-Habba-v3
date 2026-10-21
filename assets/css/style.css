@@ -1,23 +1,15 @@
 /* =========================================
    MANAGEMENT / LEADERSHIP SECTION
 ========================================= */
-
-.management-section {
-  width: 100%;
-  padding: 90px 0;
-  overflow: hidden;
-}
-
-.management-container {
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
+.member-space{
+  padding: 25px 0;
 }
 /* =========================================
    SECTION HEADING
 ========================================= */
 .management-heading {
   max-width: 650px;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 .section-label {

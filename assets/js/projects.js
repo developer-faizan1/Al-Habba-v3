@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const $ = (selector) => document.querySelector(selector);
 
   const list = $("#projectsList");
-  const count = $("#projectsCount");
   const pagination = $("#projectsPagination");
   const empty = $("#projectsEmpty");
 
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (
     !list ||
-    !count ||
     !pagination ||
     !empty ||
     !searchInput ||
@@ -894,13 +892,6 @@ document.addEventListener("DOMContentLoaded", () => {
       start + PROJECTS_PER_PAGE
     );
 
-    count.textContent = total
-      ? `Showing ${start + 1}–${Math.min(
-          start + PROJECTS_PER_PAGE,
-          total
-        )} of ${total} projects`
-      : "Showing 0 projects";
-
     list.innerHTML = visibleProjects
       .map(projectCard)
       .join("");
@@ -1243,7 +1234,7 @@ document.addEventListener("DOMContentLoaded", () => {
         error
       );
 
-      count.textContent = "Unable to load projects";
+    
 
       list.hidden = false;
 

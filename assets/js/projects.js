@@ -1,1257 +1,918 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================
-     CONFIGURATION
-  ========================================= */
+/* =========================================
+   PROJECTS CONFIGURATION
+========================================= */
 
-  const DATA_URL = "./assets/js/projectsData.json";
-  const PROJECTS_PER_PAGE = 4;
-  const SAVED_KEY = "alHabbaiSavedProjects";
+const PROJECTS_JSON_URL = "assets/js/projectsData.json";
+const PROJECTS_PER_PAGE = 8;
 
-  const $ = (selector) => document.querySelector(selector);
+const projectsList = document.getElementById("projectsList");
+const projectSearch = document.getElementById("projectSearch");
+const projectTypeFilter = document.getElementById("projectTypeFilter");
+const projectStatusFilter = document.getElementById("projectStatusFilter");
+const projectLocationFilter = document.getElementById("projectLocationFilter");
+const projectSort = document.getElementById("projectSort");
+const clearFilters = document.getElementById("clearFilters");
+const emptyClearFilters = document.getElementById("emptyClearFilters");
+const projectsPagination = document.getElementById("projectsPagination");
+const projectsEmpty = document.getElementById("projectsEmpty");
 
-  const list = $("#projectsList");
-  const pagination = $("#projectsPagination");
-  const empty = $("#projectsEmpty");
+const lightbox = document.getElementById("projectLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
 
-  const searchInput = $("#projectSearch");
-  const typeFilter = $("#projectTypeFilter");
-  const statusFilter = $("#projectStatusFilter");
-  const locationFilter = $("#projectLocationFilter");
-  const sortSelect = $("#projectSort");
+let allProjects = [];
+let filteredProjects = [];
+let currentPage = 1;
+let lightboxImages = [];
+let lightboxIndex = 0;
+let previousFocus = null;
 
-  const clearButton = $("#clearFilters");
-  const emptyClearButton = $("#emptyClearFilters");
+/* =========================================
+   HELPERS
+========================================= */
 
-  const lightbox = $("#projectLightbox");
-  const lightboxImage = $("#lightboxImage");
-  const lightboxCaption = $("#lightboxCaption");
-  const lightboxClose = $("#lightboxClose");
-  const lightboxPrev = $("#lightboxPrev");
-  const lightboxNext = $("#lightboxNext");
-
-  let projects = [];
-  let filteredProjects = [];
-  let currentPage = 1;
-
-  let lightboxImages = [];
-  let lightboxIndex = 0;
-  let lightboxTitle = "";
-  let lastFocusedElement = null;
-
-  if (
-    !list ||
-    !pagination ||
-    !empty ||
-    !searchInput ||
-    !typeFilter ||
-    !statusFilter ||
-    !locationFilter ||
-    !sortSelect ||
-    !lightbox
-  ) {
-    console.error("Projects section HTML elements are missing.");
-    return;
-  }
-
-  /* =========================================
-     SAVED PROJECTS
-  ========================================= */
-
-  function loadSavedProjects() {
-    try {
-      const saved = JSON.parse(
-        localStorage.getItem(SAVED_KEY) || "[]"
-      );
-
-      return new Set(
-        Array.isArray(saved) ? saved.map(String) : []
-      );
-    } catch {
-      return new Set();
-    }
-  }
-
-  const savedProjects = loadSavedProjects();
-
-  /* =========================================
-     GENERAL HELPERS
-  ========================================= */
-
-  function escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, (char) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[char]);
-  }
-
-  function formatValue(value) {
-    if (
-      value === null ||
-      value === undefined ||
-      value === ""
-    ) {
-      return "Not specified";
-    }
-
-    if (Array.isArray(value)) {
-      return value.length
-        ? value.map(String).join(", ")
-        : "Not specified";
-    }
-
-    return String(value);
-  }
-
-  function dateValue(value) {
-    if (!value) return null;
-
-    const date = new Date(value);
-
-    return Number.isNaN(date.getTime())
-      ? null
-      : date.getTime();
-  }
-
-  function displayDate(value) {
-    if (!value) return "Not specified";
-
-    const date = new Date(value);
-
-    if (Number.isNaN(date.getTime())) {
-      return String(value);
-    }
-
-    return date.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-      timeZone: "UTC"
-    });
-  }
-
-  function getProjectImages(project) {
-    const images = Array.isArray(project.images)
-      ? project.images.filter(Boolean)
-      : [];
-
-    if (
-      project.image &&
-      !images.includes(project.image)
-    ) {
-      images.unshift(project.image);
-    }
-
-    return [...new Set(images)];
-  }
-
-  function locationText(project) {
-    return (
-      project.fullAddress ||
-      project.projectLocation ||
-      project.area ||
-      project.city ||
-      project.state ||
-      "Location not specified"
-    );
-  }
-
-  function getLocationOptions(project) {
-    return (
-      project.state ||
-      project.projectLocation ||
-      project.area ||
-      ""
-    );
-  }
-
-  /* =========================================
-     GENERAL SVG ICONS
-  ========================================= */
-
-  function icon(name) {
-    const icons = {
-      pin: `
-        <svg viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-          <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
-          <circle cx="12" cy="10" r="2.5"/>
-        </svg>
-      `,
-
-      building: `
-        <svg viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-          <rect x="4" y="2.5" width="16" height="19" rx="1"/>
-          <path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2M10 21v-3h4v3"/>
-        </svg>
-      `,
-
-      calendar: `
-        <svg viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-          <rect x="3" y="5" width="18" height="16" rx="2"/>
-          <path d="M16 3v4M8 3v4M3 10h18"/>
-        </svg>
-      `,
-
-      arrow: `
-        <svg viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true">
-          <path d="M5 12h14M13 5l7 7-7 7"/>
-        </svg>
-      `
-    };
-
-    return icons[name] || "";
-  }
-
-  /* =========================================
-     FILTER DROPDOWNS
-  ========================================= */
-
-  function populateFilter(select, values) {
-    const previousValue = select.value;
-    const firstOption = select.options[0]?.outerHTML || "";
-
-    const options = [...new Set(
-      values
-        .filter(value =>
-          value !== null &&
-          value !== undefined &&
-          value !== ""
-        )
-        .map(String)
-    )].sort((a, b) =>
-      a.localeCompare(b, undefined, {
-        sensitivity: "base"
-      })
-    );
-
-    select.innerHTML =
-      firstOption +
-      options.map(value => `
-        <option value="${escapeHTML(value)}">
-          ${escapeHTML(value)}
-        </option>
-      `).join("");
-
-    if (options.includes(previousValue)) {
-      select.value = previousValue;
-    }
-  }
-
-  function initializeFilters() {
-    populateFilter(
-      typeFilter,
-      projects.map(project => project.projectType)
-    );
-
-    populateFilter(
-      statusFilter,
-      projects.map(project => project.status)
-    );
-
-    populateFilter(
-      locationFilter,
-      projects.map(getLocationOptions)
-    );
-  }
-
-  /* =========================================
-     SEARCH, FILTERS AND SORTING
-  ========================================= */
-
-  function getFilteredProjects() {
-    const search = searchInput.value.trim().toLowerCase();
-    const type = typeFilter.value;
-    const status = statusFilter.value;
-    const location = locationFilter.value;
-
-    const result = projects.filter(project => {
-      const comprises = Array.isArray(
-        project.projectComprisesOf
-      )
-        ? project.projectComprisesOf
-        : [];
-
-      const searchableText = [
-        project.projectNumber,
-        project.title,
-        project.slug,
-        project.projectType,
-        project.projectDescription,
-        project.projectValue,
-        project.client,
-        project.consultant,
-        project.projectLocation,
-        project.fullAddress,
-        project.area,
-        project.state,
-        project.city,
-        project.plotNumber,
-        project.plot,
-        project.status,
-        ...comprises
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-
-      return (
-        (!search || searchableText.includes(search)) &&
-        (!type || project.projectType === type) &&
-        (!status || project.status === status) &&
-        (
-          !location ||
-          getLocationOptions(project) === location
-        )
-      );
-    });
-
-   switch (sortSelect.value) {
-  case "latest":
-    result.sort((a, b) =>
-      (dateValue(b.completionDate) ?? -Infinity) -
-      (dateValue(a.completionDate) ?? -Infinity)
-    );
-    break;
-
-  case "oldest":
-    result.sort((a, b) =>
-      (dateValue(a.completionDate) ?? Infinity) -
-      (dateValue(b.completionDate) ?? Infinity)
-    );
-    break;
-
-  case "title":
-    result.sort((a, b) =>
-      formatValue(a.title).localeCompare(
-        formatValue(b.title)
-      )
-    );
-    break;
-
-  case "default":
-  default:
-    // Preserve the original order from the JSON file.
-    result.sort((a, b) =>
-      projects.indexOf(a) - projects.indexOf(b)
-    );
-    break;
+function escapeHTML(value) {
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    (char) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[char],
+  );
 }
 
-    return result;
+function textValue(value, fallback = "Not specified") {
+  const text = String(value ?? "").trim();
+  return text || fallback;
+}
+
+function normalizeText(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_-]+/g, " ");
+}
+
+function uniqueValues(projects, key) {
+  return [
+    ...new Set(
+      projects
+        .map((project) => String(project[key] ?? "").trim())
+        .filter(Boolean),
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+}
+
+/* =========================================
+   SVG ICONS
+========================================= */
+
+function iconSVG(name) {
+  const icons = {
+    search: '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
+
+    layers:
+      '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',
+
+    building:
+      '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/>',
+
+    home: '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
+
+    users:
+      '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
+
+    document: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
+
+    map: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+
+    calendar:
+      '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
+
+    arrow: '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+
+    filter: '<path d="M4 5h16l-6.5 7.5V19l-3 1v-7.5L4 5Z"/>',
+
+    sort: '<path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/>',
+
+    list: '<path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/>',
+  };
+
+  return `
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      ${icons[name] || icons.document}
+    </svg>
+  `;
+}
+
+/* =========================================
+   STATUS MAPPING
+========================================= */
+
+function getStatusConfig(status) {
+  const key = normalizeText(status);
+
+  const configs = {
+    completed: {
+      label: "Completed",
+      className: "status-completed",
+      icon: "✓",
+    },
+
+    complete: {
+      label: "Completed",
+      className: "status-completed",
+      icon: "✓",
+    },
+
+    running: {
+      label: "Running",
+      className: "status-running",
+      icon: "↻",
+    },
+
+    ongoing: {
+      label: "Ongoing",
+      className: "status-ongoing",
+      icon: "↻",
+    },
+
+    "in progress": {
+      label: "In Progress",
+      className: "status-in-progress",
+      icon: "↻",
+    },
+
+    pending: {
+      label: "Pending",
+      className: "status-pending",
+      icon: "◷",
+    },
+
+    cancelled: {
+      label: "Cancelled",
+      className: "status-cancelled",
+      icon: "×",
+    },
+
+    canceled: {
+      label: "Cancelled",
+      className: "status-cancelled",
+      icon: "×",
+    },
+
+    "on hold": {
+      label: "On Hold",
+      className: "status-on-hold",
+      icon: "Ⅱ",
+    },
+
+    onhold: {
+      label: "On Hold",
+      className: "status-on-hold",
+      icon: "Ⅱ",
+    },
+  };
+
+  return (
+    configs[key] || {
+      label: textValue(status, "Unknown"),
+      className: "status-default",
+      icon: "●",
+    }
+  );
+}
+
+/* =========================================
+   DATE AND VALUE HELPERS
+========================================= */
+
+function parseProjectDate(value) {
+  if (!value) return 0;
+
+  const parsed = new Date(value);
+
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.getTime();
   }
 
-  /* =========================================
-     PROJECT COMPRISES OF
-     DYNAMIC ICON MATCHING
-  ========================================= */
+  const match = String(value)
+    .trim()
+    .match(/^(\d{1,2})\s+([a-zA-Z]+)\s+(\d{4})$/);
 
-  function normalizeComprisesText(item) {
-    return String(item ?? "")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .replace(/&/g, " and ")
-      .replace(/[._-]/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
+  if (!match) return 0;
+
+  const months = {
+    january: 0,
+    february: 1,
+    march: 2,
+    april: 3,
+    may: 4,
+    june: 5,
+    july: 6,
+    august: 7,
+    september: 8,
+    october: 9,
+    november: 10,
+    december: 11,
+  };
+
+  const month = months[match[2].toLowerCase()];
+
+  if (month === undefined) return 0;
+
+  return new Date(Number(match[3]), month, Number(match[1])).getTime();
+}
+
+function formatValue(value) {
+  return textValue(value, "Not specified");
+}
+
+/* =========================================
+   DYNAMIC FILTER OPTIONS
+========================================= */
+
+function populateSelect(select, values, defaultLabel) {
+  const previousValue = select.value;
+
+  select.replaceChildren();
+
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = defaultLabel;
+  select.appendChild(defaultOption);
+
+  values.forEach((value) => {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+  });
+
+  if (values.includes(previousValue)) {
+    select.value = previousValue;
+  }
+}
+
+function populateFilters() {
+  populateSelect(
+    projectTypeFilter,
+    uniqueValues(allProjects, "projectType"),
+    "All Types",
+  );
+
+  const statuses = [
+    ...new Set(
+      allProjects
+        .map((project) => getStatusConfig(project.status).label)
+        .filter(Boolean),
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+
+  populateSelect(projectStatusFilter, statuses, "All Status");
+
+  const locations = [
+    ...new Set(
+      allProjects
+        .map((project) =>
+          String(project.projectLocation ?? project.area ?? "").trim(),
+        )
+        .filter(Boolean),
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+
+  populateSelect(projectLocationFilter, locations, "All Locations");
+}
+
+/* =========================================
+   PROJECT COMPRISES ICONS
+========================================= */
+
+function getComprisesIcon(item) {
+  const value = normalizeText(item);
+
+  if (value.includes("basement") || value.includes("parking")) {
+    return "layers";
   }
 
-  function comprisesSvg(paths) {
-    return `
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-        focusable="false">
-        ${paths}
-      </svg>
-    `;
+  if (value.includes("ground floor")) {
+    return "home";
   }
 
-  function comprisesIcon(item) {
-    const text = normalizeComprisesText(item);
-
-    /*
-      IMPORTANT:
-      Check specific keywords before general keywords.
-      Icon selection does not depend on array position.
-    */
-
-    // Basement
-    if (/\bbasement\b/.test(text)) {
-      return comprisesSvg(`
-        <path d="M3 8h18M5 8v12h14V8"/>
-        <path d="M8 12h8M8 16h8"/>
-        <path d="m9 4 3 3 3-3"/>
-      `);
-    }
-
-    // Parking
-    if (
-      /\bparking\b/.test(text) ||
-      /\bcar park\b/.test(text)
-    ) {
-      return comprisesSvg(`
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>
-      `);
-    }
-
-    // Ground floor
-    if (/\bground\b/.test(text)) {
-      return comprisesSvg(`
-        <path d="m3 10 9-7 9 7"/>
-        <path d="M5 9v12h14V9"/>
-        <path d="M9 21v-7h6v7"/>
-      `);
-    }
-
-    // Roof
-    if (/\broof\b/.test(text)) {
-      return comprisesSvg(`
-        <path d="m3 11 9-7 9 7"/>
-        <path d="M5 10v10h14V10"/>
-        <path d="M3 4h18"/>
-      `);
-    }
-
-    // Mezzanine
-    if (/\bmezzanine\b/.test(text)) {
-      return comprisesSvg(`
-        <path d="M4 21V4h16v17"/>
-        <path d="M4 12h16"/>
-        <path d="M8 8h2m4 0h2m-8 8h2m4 0h2"/>
-      `);
-    }
-
-    // Mechanical floor
-    if (/\bmech(?:anical)?\b/.test(text)) {
-      return comprisesSvg(`
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.4 15l1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4L7.3 15a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1-.1 2Z"/>
-      `);
-    }
-
-    // Showrooms
-    if (/\bshow ?rooms?\b|\bshowroom\b/.test(text)) {
-      return comprisesSvg(`
-        <path d="M3 10h18l-2-6H5l-2 6Z"/>
-        <path d="M5 10v10h14V10M9 20v-6h6v6"/>
-        <path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/>
-      `);
-    }
-
-    // Health club, gym and fitness
-    if (
-      /\bhealth club\b/.test(text) ||
-      /\bgym\b/.test(text) ||
-      /\bfitness\b/.test(text) ||
-      /\bwellness\b/.test(text) ||
-      /\bhc\b/.test(text)
-    ) {
-      return comprisesSvg(`
-        <path d="M6 9v6M3.5 10v4M18 9v6m2.5-5v4M6 12h12"/>
-      `);
-    }
-
-    // Floors and levels
-    if (
-      /\bfloor\b/.test(text) ||
-      /\blevel\b/.test(text) ||
-      /\bstorey\b/.test(text) ||
-      /\bstory\b/.test(text) ||
-      /\btypical\b/.test(text)
-    ) {
-      return comprisesSvg(`
-        <rect x="4" y="3" width="16" height="18" rx="1"/>
-        <path d="M4 9h16M4 15h16"/>
-        <path d="M9 3v6m6-6v6m-6 6v6m6-6v6"/>
-      `);
-    }
-
-    // Hotel, tower, building, apartments, residential and retail
-    if (
-      /\bhotel\b/.test(text) ||
-      /\btower\b/.test(text) ||
-      /\bbuilding\b/.test(text) ||
-      /\bapartment\b/.test(text) ||
-      /\bresidential\b/.test(text) ||
-      /\bcommercial\b/.test(text) ||
-      /\bretail\b/.test(text)
-    ) {
-      return comprisesSvg(`
-        <rect x="4" y="2.5" width="16" height="19" rx="1"/>
-        <path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2"/>
-        <path d="M10 21v-3h4v3"/>
-      `);
-    }
-
-    // Default icon for unrecognized descriptions
-    return comprisesSvg(`
-      <rect x="4" y="3" width="16" height="18" rx="1"/>
-      <path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2"/>
-      <path d="M10 21v-3h4v3"/>
-    `);
+  if (value.includes("hotel") || value.includes("building")) {
+    return "building";
   }
 
-  function getComprises(project) {
-    const items = Array.isArray(
-      project.projectComprisesOf
-    )
-      ? project.projectComprisesOf
-      : [];
+  return "document";
+}
 
-    if (!items.length) {
-      return `
-        <li class="comprises-empty">
-          Details not specified
-        </li>
-      `;
-    }
+/* =========================================
+   PROJECT CARD TEMPLATE
+========================================= */
 
-    return items
-      .filter(item =>
-        item !== null &&
-        item !== undefined &&
-        String(item).trim() !== ""
-      )
-      .map(item => {
-        const label =
-          typeof item === "object"
-            ? (
-                item.label ??
-                item.title ??
-                item.name ??
-                JSON.stringify(item)
-              )
-            : item;
+function projectCard(project) {
+  const status = getStatusConfig(project.status);
 
-        return `
-          <li class="comprises-item">
-            <span class="comprises-icon">
-              ${comprisesIcon(label)}
-            </span>
+  const images =
+    Array.isArray(project.images) && project.images.length
+      ? project.images
+      : [project.image].filter(Boolean);
 
-            <span class="comprises-text">
-              ${escapeHTML(label)}
-            </span>
-          </li>
-        `;
-      })
-      .join("");
-  }
+  const mainImage = project.image || images[0] || "";
 
-  /* =========================================
-     CLIENT AND CONSULTANT
-  ========================================= */
+  const imagesJSON = escapeHTML(
+    JSON.stringify([...new Set([mainImage, ...images].filter(Boolean))]),
+  );
 
-  function contactBlock(title, value) {
-    return `
-      <div class="project-contact">
-        <div class="contact-icon">
-          ${icon("building")}
-        </div>
+  const comprises = Array.isArray(project.projectComprisesOf)
+    ? project.projectComprisesOf
+    : [];
 
-        <div class="contact-copy">
-          <strong>${escapeHTML(title)}</strong>
-          <span>${escapeHTML(formatValue(value))}</span>
-        </div>
+  const comprisesHTML = comprises
+    .slice(0, 4)
+    .map(
+      (item) => `
+      <div class="comprises-item">
+        <span class="comprises-icon">
+          ${iconSVG(getComprisesIcon(item))}
+        </span>
+        <span>${escapeHTML(item)}</span>
       </div>
-    `;
-  }
+    `,
+    )
+    .join("");
 
-  /* =========================================
-     PROJECT CARD
-  ========================================= */
+  const location =
+    project.fullAddress ||
+    project.projectLocation ||
+    project.area ||
+    "Location not specified";
 
-  function projectCard(project) {
-    const images = getProjectImages(project);
-    const firstImage = images[0] || "";
-    const isSaved = savedProjects.has(String(project.id));
+  const slug = encodeURIComponent(project.slug || project.id || "");
 
-    const fullAddress = locationText(project);
-    const safeImage = escapeHTML(firstImage);
+  return `
+    <article class="project-card">
 
-    return `
-      <article
-        class="project-card"
-        data-project-id="${escapeHTML(project.id)}">
+      <!-- Project image -->
+      <div class="project-gallery">
 
-        <div class="project-main">
+        <button
+          type="button"
+          class="project-image-button"
+          data-images="${imagesJSON}"
+          data-title="${escapeHTML(project.title)}"
+          aria-label="View images of ${escapeHTML(project.title)}"
+        >
+          <img
+            class="project-image"
+            src="${escapeHTML(mainImage)}"
+            alt="${escapeHTML(project.title)}"
+            loading="lazy"
+            decoding="async"
+          >
+        </button>
 
-          <!-- LEFT IMAGE GALLERY -->
-          <div
-            class="project-gallery"
-            data-images="${escapeHTML(JSON.stringify(images))}"
-            data-index="0">
+        <!-- Status badge changes according to JSON -->
+        <span class="project-status ${status.className}">
+          <span class="status-icon" aria-hidden="true">
+            ${status.icon}
+          </span>
+          <span>${escapeHTML(status.label)}</span>
+        </span>
 
-            <button
-              type="button"
-              class="project-image-button"
-              data-action="lightbox"
-              aria-label="View images of ${escapeHTML(project.title)}">
-
-              <img
-                class="project-image"
-                src="${safeImage}"
-                alt="${escapeHTML(project.title)}"
-                loading="lazy"
-                decoding="async"
-                onerror="this.onerror=null;this.style.opacity='0.25';"
-              >
-            </button>
-
-            <span class="project-status">
-              ${escapeHTML(formatValue(project.status))}
-            </span>
-
-            ${images.length > 1 ? `
+        ${
+          images.length > 1
+            ? `
               <button
                 type="button"
                 class="gallery-arrow gallery-prev"
-                data-action="prev"
-                aria-label="Previous project image">
-                &#10094;
-              </button>
+                aria-label="Previous project image"
+              >&#10094;</button>
 
               <button
                 type="button"
                 class="gallery-arrow gallery-next"
-                data-action="next"
-                aria-label="Next project image">
-                &#10095;
-              </button>
-            ` : ""}
+                aria-label="Next project image"
+              >&#10095;</button>
+            `
+            : ""
+        }
 
-            <div class="gallery-bottom">
+      </div>
 
-              <span class="gallery-counter">
-                ${
-                  images.length
-                    ? "▧ " +
-                      (images.length > 1 ? "1/" : "") +
-                      images.length
-                    : "No images"
-                }
-              </span>
+      <!-- Project information -->
+      <div class="project-info">
 
-              <button
-                type="button"
-                class="gallery-save ${isSaved ? "is-saved" : ""}"
-                data-action="save"
-                aria-pressed="${isSaved}"
-                aria-label="${isSaved ? "Remove saved project" : "Save project"}">
+        <div class="project-info-top">
 
-                <span class="save-star">
-                  ${isSaved ? "★" : "☆"}
-                </span>
+          <div class="project-overview">
+            <div class="project-eyebrow">
+              Project Type
+            </div>
 
-                <span>
-                  ${isSaved ? "Saved" : "Save"}
-                </span>
-              </button>
+            <h2 class="project-title">
+              ${escapeHTML(project.title)}
+            </h2>
+          </div>
 
+          <div class="project-value">
+            <span class="project-value-label">
+              Project Value
+            </span>
+
+            <div class="project-value-amount">
+              ${escapeHTML(formatValue(project.projectValue))}
             </div>
           </div>
 
-          <!-- RIGHT PROJECT INFORMATION -->
-          <div class="project-info">
-
-            <div class="project-wrapper">
-
-              <div class="project-type-wrapper">
-                <span class="project-type-label">
-                  Project type
-                </span>
-
-                <h4 class="project-type-value">
-                  ${escapeHTML(formatValue(project.projectType))}
-                </h4>
-              </div>
-
-              <div class="project-value-wrapper">
-                <span class="project-type-label">
-                  Project Value
-                </span>
-
-                <h4 class="project-type-value">
-                  ${escapeHTML(formatValue(project.projectValue))}
-                </h4>
-              </div>
-
-            </div>
-
-            <!-- PROJECT COMPRISES OF -->
-            <div class="project-comprises">
-
-              <h4 class="comprises-heading">
-                Project comprises of
-              </h4>
-
-              <ul class="comprises-list">
-                ${getComprises(project)}
-              </ul>
-
-            </div>
-
-            <!-- CLIENT AND CONSULTANT -->
-            <div class="project-contacts">
-              ${contactBlock("Client", project.client)}
-              ${contactBlock("Consultant", project.consultant)}
-            </div>
-
-            <!-- PROJECT LOCATION -->
-            <div class="project-location">
-              ${icon("pin")}
-
-              <a
-                href="../../map.html"
-                target="_blank"
-                rel="noopener noreferrer">
-                ${escapeHTML(fullAddress)}
-              </a>
-            </div>
-
-          </div>
         </div>
 
-        <!-- BOTTOM METADATA -->
-        <div class="project-meta">
+        ${
+          comprises.length
+            ? `
+              <h3 class="project-comprises-title">
+                Project comprises of
+              </h3>
 
-          <div class="meta-item meta-project-number">
-            <span style="color:#1A6469">
+              <div class="project-comprises">
+                ${comprisesHTML}
+              </div>
+            `
+            : ""
+        }
+
+        <!-- Client and consultant -->
+        <div class="project-parties">
+
+          <div class="project-party">
+            <span class="project-meta-icon">
+              ${iconSVG("users")}
+            </span>
+
+            <div class="project-party-content">
+              <span class="project-party-label">
+                Client
+              </span>
+
+              <div class="project-party-value">
+                ${escapeHTML(formatValue(project.client))}
+              </div>
+            </div>
+          </div>
+
+          <div class="project-party">
+            <span class="project-meta-icon">
+              ${iconSVG("document")}
+            </span>
+
+            <div class="project-party-content">
+              <span class="project-party-label">
+                Consultant
+              </span>
+
+              <div class="project-party-value">
+                ${escapeHTML(formatValue(project.consultant))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Project location -->
+        <div class="project-location">
+          ${iconSVG("map")}
+
+          <span>${escapeHTML(location)}</span>
+        </div>
+
+      </div>
+
+      <!-- FULL-WIDTH FOOTER: spans both card columns -->
+      <div class="project-footer">
+
+        <!-- Metadata grouped on the left -->
+        <div class="project-footer-meta">
+
+          <div class="project-footer-item project-number">
+            ${iconSVG("document")}
+
+            <span>
               ${escapeHTML(formatValue(project.projectNumber))}
             </span>
           </div>
 
-          <div class="meta-item">
-            ${icon("calendar")}
+          <div class="project-footer-item">
+            ${iconSVG("calendar")}
 
             <span>
               Started: ${escapeHTML(formatValue(project.startDate))}
             </span>
           </div>
 
-          <div class="meta-item">
-            ${icon("calendar")}
+          <div class="project-footer-item">
+            ${iconSVG("calendar")}
 
             <span>
               Completed: ${escapeHTML(formatValue(project.completionDate))}
             </span>
           </div>
 
-          <a
-            class="project-details-link"
-            href="project-details.html?slug=${encodeURIComponent(
-              project.slug ||
-              project.projectNumber ||
-              project.id
-            )}">
-
-            View Details ${icon("arrow")}
-          </a>
-
         </div>
-      </article>
-    `;
-  }
 
-  /* =========================================
-     PAGINATION
-  ========================================= */
+        <!-- Button aligned to the far right -->
+        <a
+          class="project-details-link"
+          href="project-details.html?slug=${slug}"
+        >
+          <span>View Details</span>
+          ${iconSVG("arrow")}
+        </a>
 
-  function renderPagination(totalPages) {
-    if (totalPages <= 1) {
-      pagination.innerHTML = "";
-      return;
-    }
+      </div>
 
-    const buttons = [];
+    </article>
+  `;
+}
 
-    function addButton(
-      label,
-      page,
-      disabled = false,
-      active = false
-    ) {
-      buttons.push(`
-        <button
-          type="button"
-          class="page-button ${active ? "active" : ""}"
-          data-page="${page}"
-          ${disabled ? "disabled" : ""}
-          ${active ? 'aria-current="page"' : ""}
-          aria-label="${
-            label === "Previous" || label === "Next"
-              ? label
-              : "Page " + label
-          }">
+/* =========================================
+   SEARCH, FILTER AND SORT
+========================================= */
 
-          ${label}
-        </button>
-      `);
-    }
+function applyFilters() {
+  const search = normalizeText(projectSearch.value);
+  const type = normalizeText(projectTypeFilter.value);
+  const status = normalizeText(projectStatusFilter.value);
+  const location = normalizeText(projectLocationFilter.value);
 
-    addButton(
-      "Previous",
-      currentPage - 1,
-      currentPage === 1
+  filteredProjects = allProjects.filter((project) => {
+    const searchable = normalizeText(
+      [
+        project.projectNumber,
+        project.title,
+        project.slug,
+        project.client,
+        project.consultant,
+        project.projectLocation,
+        project.fullAddress,
+        project.area,
+        project.projectType,
+        project.projectDescription,
+        project.status,
+      ].join(" "),
     );
 
-    const pages = new Set([
-      1,
-      totalPages,
-      currentPage
-    ]);
+    const projectStatus = normalizeText(getStatusConfig(project.status).label);
 
-    for (
-      let page = currentPage - 1;
-      page <= currentPage + 1;
-      page++
-    ) {
-      if (page >= 1 && page <= totalPages) {
-        pages.add(page);
-      }
-    }
+    const projectLocation = normalizeText(
+      project.projectLocation || project.area,
+    );
 
-    const orderedPages = [...pages].sort((a, b) => a - b);
-    let previous = 0;
+    return (
+      (!search || searchable.includes(search)) &&
+      (!type || normalizeText(project.projectType) === type) &&
+      (!status || projectStatus === status) &&
+      (!location || projectLocation === location)
+    );
+  });
 
-    orderedPages.forEach(page => {
-      if (previous && page - previous > 1) {
-        buttons.push(`
-          <span class="page-ellipsis">...</span>
-        `);
-      }
-
-      addButton(
-        String(page),
-        page,
-        false,
-        page === currentPage
+  switch (projectSort.value) {
+    case "latest":
+      filteredProjects.sort(
+        (a, b) => parseProjectDate(b.startDate) - parseProjectDate(a.startDate),
       );
+      break;
 
-      previous = page;
-    });
+    case "oldest":
+      filteredProjects.sort(
+        (a, b) => parseProjectDate(a.startDate) - parseProjectDate(b.startDate),
+      );
+      break;
 
-    addButton(
-      "Next",
-      currentPage + 1,
-      currentPage === totalPages
-    );
-
-    pagination.innerHTML = buttons.join("");
+    case "title":
+      filteredProjects.sort((a, b) =>
+        String(a.title || "").localeCompare(String(b.title || "")),
+      );
+      break;
   }
 
-  function renderProjects() {
-    filteredProjects = getFilteredProjects();
+  currentPage = 1;
+  renderProjects();
+}
 
-    const total = filteredProjects.length;
-    const totalPages = Math.ceil(
-      total / PROJECTS_PER_PAGE
-    );
+/* =========================================
+   RENDER PROJECTS
+========================================= */
 
-    if (currentPage > totalPages) {
-      currentPage = Math.max(1, totalPages);
-    }
+function renderProjects() {
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
 
-    const start = (currentPage - 1) * PROJECTS_PER_PAGE;
+  if (totalPages && currentPage > totalPages) {
+    currentPage = totalPages;
+  }
 
-    const visibleProjects = filteredProjects.slice(
-      start,
-      start + PROJECTS_PER_PAGE
-    );
+  const start = (currentPage - 1) * PROJECTS_PER_PAGE;
 
-    list.innerHTML = visibleProjects
-      .map(projectCard)
-      .join("");
+  const pageProjects = filteredProjects.slice(start, start + PROJECTS_PER_PAGE);
 
-    empty.hidden = total !== 0;
-    list.hidden = total === 0;
+  projectsList.innerHTML = pageProjects.length
+    ? pageProjects.map(projectCard).join("")
+    : "";
 
+  projectsEmpty.hidden = filteredProjects.length !== 0;
+  projectsPagination.innerHTML = "";
+
+  if (filteredProjects.length) {
     renderPagination(totalPages);
   }
+}
 
-  /* =========================================
-     CLEAR FILTERS
-  ========================================= */
+/* =========================================
+   PAGINATION
+========================================= */
 
-  function resetFilters() {
-    searchInput.value = "";
-    typeFilter.value = "";
-    statusFilter.value = "";
-    locationFilter.value = "";
-    sortSelect.value = "default";
+function renderPagination(totalPages) {
+  if (totalPages <= 1) return;
 
-    currentPage = 1;
+  function addButton(label, page, options = {}) {
+    const button = document.createElement("button");
 
-    renderProjects();
-  }
+    button.type = "button";
+    button.className = "page-button" + (options.active ? " active" : "");
 
-  /* =========================================
-     IMAGE GALLERY NAVIGATION
-  ========================================= */
+    button.textContent = label;
+    button.disabled = Boolean(options.disabled);
 
-  function updateGallery(card, newIndex) {
-    const gallery = card.querySelector(".project-gallery");
-
-    if (!gallery) return;
-
-    const images = JSON.parse(
-      gallery.dataset.images || "[]"
-    );
-
-    if (!images.length) return;
-
-    const index =
-      (newIndex + images.length) % images.length;
-
-    gallery.dataset.index = index;
-
-    const image = gallery.querySelector(".project-image");
-    const counter = gallery.querySelector(".gallery-counter");
-
-    if (image) {
-      image.src = images[index];
+    if (options.active) {
+      button.setAttribute("aria-current", "page");
     }
 
-    if (counter) {
-      counter.textContent = images.length > 1
-        ? `▧ ${index + 1}/${images.length}`
-        : `▧ ${images.length}`;
-    }
-  }
-
-  /* =========================================
-     SAVE PROJECT
-  ========================================= */
-
-  function saveProject(card) {
-    const id = String(card.dataset.projectId);
-
-    if (savedProjects.has(id)) {
-      savedProjects.delete(id);
-    } else {
-      savedProjects.add(id);
-    }
-
-    try {
-      localStorage.setItem(
-        SAVED_KEY,
-        JSON.stringify([...savedProjects])
-      );
-    } catch (error) {
-      console.warn(
-        "Could not save project preferences.",
-        error
-      );
-    }
-
-    const button = card.querySelector(
-      '[data-action="save"]'
-    );
-
-    if (!button) return;
-
-    const isSaved = savedProjects.has(id);
-
-    button.classList.toggle("is-saved", isSaved);
-
-    button.setAttribute(
-      "aria-pressed",
-      String(isSaved)
-    );
-
-    button.setAttribute(
-      "aria-label",
-      isSaved ? "Remove saved project" : "Save project"
-    );
-
-    const star = button.querySelector(".save-star");
-
-    if (star) {
-      star.textContent = isSaved ? "★" : "☆";
-    }
-
-    const label = button.querySelector("span:last-child");
-
-    if (label) {
-      label.textContent = isSaved ? "Saved" : "Save";
-    }
-  }
-
-  /* =========================================
-     LIGHTBOX
-  ========================================= */
-
-  function openLightbox(images, index, title) {
-    if (!images.length) return;
-
-    lightboxImages = images;
-    lightboxIndex = index;
-    lightboxTitle = title || "";
-
-    lastFocusedElement = document.activeElement;
-
-    lightbox.classList.add("is-open");
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-    document.body.classList.add("lightbox-open");
-
-    showLightboxImage();
-
-    lightboxClose?.focus();
-  }
-
-  function showLightboxImage() {
-    if (!lightboxImages.length) return;
-
-    lightboxIndex =
-      (lightboxIndex + lightboxImages.length) %
-      lightboxImages.length;
-
-    lightboxImage.src = lightboxImages[lightboxIndex];
-
-    lightboxImage.alt =
-      lightboxTitle || "Project image";
-
-    lightboxCaption.textContent =
-      `${lightboxTitle ? lightboxTitle + " — " : ""}` +
-      `${lightboxIndex + 1} of ${lightboxImages.length}`;
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove("is-open");
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-    document.body.classList.remove("lightbox-open");
-
-    lastFocusedElement?.focus();
-  }
-
-  function moveLightbox(direction) {
-    lightboxIndex += direction;
-    showLightboxImage();
-  }
-
-  /* =========================================
-     EVENT LISTENERS
-  ========================================= */
-
-  [
-    searchInput,
-    typeFilter,
-    statusFilter,
-    locationFilter,
-    sortSelect
-  ].forEach(element => {
-    element.addEventListener(
-      element === searchInput ? "input" : "change",
-      () => {
-        currentPage = 1;
-        renderProjects();
-      }
-    );
-  });
-
-  clearButton?.addEventListener(
-    "click",
-    resetFilters
-  );
-
-  emptyClearButton?.addEventListener(
-    "click",
-    resetFilters
-  );
-
-  pagination.addEventListener("click", event => {
-    const button = event.target.closest("[data-page]");
-
-    if (!button || button.disabled) return;
-
-    currentPage = Number(button.dataset.page);
-
-    renderProjects();
-
-    $("#projects")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
-
-  list.addEventListener("click", event => {
-    const button = event.target.closest("[data-action]");
-
-    if (!button) return;
-
-    const card = button.closest(".project-card");
-
-    if (!card) return;
-
-    const gallery = card.querySelector(".project-gallery");
-
-    const images = JSON.parse(
-      gallery?.dataset.images || "[]"
-    );
-
-    const index = Number(
-      gallery?.dataset.index || 0
-    );
-
-    const project = filteredProjects.find(
-      item =>
-        String(item.id) === String(card.dataset.projectId)
-    );
-
-    switch (button.dataset.action) {
-      case "prev":
-        updateGallery(card, index - 1);
-        break;
-
-      case "next":
-        updateGallery(card, index + 1);
-        break;
-
-      case "lightbox":
-        openLightbox(
-          images,
-          index,
-          project?.title || ""
-        );
-        break;
-
-      case "save":
-        saveProject(card);
-        break;
-    }
-  });
-
-  lightboxClose?.addEventListener(
-    "click",
-    closeLightbox
-  );
-
-  lightboxPrev?.addEventListener("click", () => {
-    moveLightbox(-1);
-  });
-
-  lightboxNext?.addEventListener("click", () => {
-    moveLightbox(1);
-  });
-
-  lightbox.addEventListener("click", event => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", event => {
-    if (!lightbox.classList.contains("is-open")) {
-      return;
-    }
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowLeft") {
-      moveLightbox(-1);
-    }
-
-    if (event.key === "ArrowRight") {
-      moveLightbox(1);
-    }
-  });
-
-  /* =========================================
-     LOAD JSON DATA
-  ========================================= */
-
-  async function loadProjects() {
-    try {
-      const response = await fetch(DATA_URL);
-
-      if (!response.ok) {
-        throw new Error(
-          `Failed to load projects: ${response.status}`
-        );
-      }
-
-      const data = await response.json();
-
-      if (!Array.isArray(data)) {
-        throw new Error(
-          "The projects JSON must contain an array."
-        );
-      }
-
-      projects = data;
-
-      initializeFilters();
+    button.addEventListener("click", () => {
+      currentPage = page;
       renderProjects();
 
-    } catch (error) {
-      console.error(
-        "Project loading error:",
-        error
-      );
+      document.getElementById("projects").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
 
-    
-
-      list.hidden = false;
-
-      list.innerHTML = `
-        <div class="projects-loading">
-          <h3>Projects could not be loaded</h3>
-
-          <p>
-            Check the JSON file path and ensure the website
-            is running through a web server.
-          </p>
-        </div>
-      `;
-
-      pagination.innerHTML = "";
-    }
+    projectsPagination.appendChild(button);
   }
 
-  loadProjects();
+  addButton("‹", Math.max(1, currentPage - 1), {
+    disabled: currentPage === 1,
+  });
+
+  const pages = new Set([
+    1,
+    totalPages,
+    currentPage,
+    currentPage - 1,
+    currentPage + 1,
+  ]);
+
+  let previousPage = 0;
+
+  [...pages]
+    .filter((page) => page >= 1 && page <= totalPages)
+    .sort((a, b) => a - b)
+    .forEach((page) => {
+      if (previousPage && page - previousPage > 1) {
+        const dots = document.createElement("span");
+        dots.className = "page-ellipsis";
+        dots.textContent = "…";
+
+        projectsPagination.appendChild(dots);
+      }
+
+      addButton(String(page), page, {
+        active: page === currentPage,
+      });
+
+      previousPage = page;
+    });
+
+  addButton("›", Math.min(totalPages, currentPage + 1), {
+    disabled: currentPage === totalPages,
+  });
+}
+
+/* =========================================
+   CLEAR FILTERS
+========================================= */
+
+function resetFilters() {
+  projectSearch.value = "";
+  projectTypeFilter.value = "";
+  projectStatusFilter.value = "";
+  projectLocationFilter.value = "";
+  projectSort.value = "default";
+
+  currentPage = 1;
+  applyFilters();
+}
+
+clearFilters.addEventListener("click", resetFilters);
+emptyClearFilters.addEventListener("click", resetFilters);
+
+[
+  projectSearch,
+  projectTypeFilter,
+  projectStatusFilter,
+  projectLocationFilter,
+  projectSort,
+].forEach((control) => {
+  control.addEventListener(
+    control === projectSearch ? "input" : "change",
+    applyFilters,
+  );
 });
+
+/* =========================================
+   IMAGE LIGHTBOX
+========================================= */
+
+function showLightboxImage() {
+  if (!lightboxImages.length) return;
+
+  lightboxIndex =
+    (lightboxIndex + lightboxImages.length) % lightboxImages.length;
+
+  lightboxImage.src = lightboxImages[lightboxIndex].src;
+  lightboxImage.alt = lightboxImages[lightboxIndex].alt;
+  lightboxCaption.textContent = lightboxImages[lightboxIndex].alt;
+
+  const multiple = lightboxImages.length > 1;
+
+  lightboxPrev.hidden = !multiple;
+  lightboxNext.hidden = !multiple;
+}
+
+function openLightbox(images, startIndex = 0) {
+  if (!images.length) return;
+
+  previousFocus = document.activeElement;
+  lightboxImages = images;
+  lightboxIndex = startIndex;
+
+  showLightboxImage();
+
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  lightboxImage.src = "";
+  lightboxImages = [];
+
+  if (previousFocus && previousFocus.isConnected) {
+    previousFocus.focus();
+  }
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightboxPrev.addEventListener("click", () => {
+  lightboxIndex--;
+  showLightboxImage();
+});
+
+lightboxNext.addEventListener("click", () => {
+  lightboxIndex++;
+  showLightboxImage();
+});
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!lightbox.classList.contains("is-open")) return;
+
+  if (event.key === "Escape") {
+    closeLightbox();
+  } else if (event.key === "ArrowLeft") {
+    lightboxIndex--;
+    showLightboxImage();
+  } else if (event.key === "ArrowRight") {
+    lightboxIndex++;
+    showLightboxImage();
+  }
+});
+
+/* =========================================
+   PROJECT GALLERY NAVIGATION
+========================================= */
+
+projectsList.addEventListener("click", (event) => {
+  const gallery = event.target.closest(".project-gallery");
+  if (!gallery) return;
+
+  const imageButton = gallery.querySelector(".project-image-button");
+
+  if (!imageButton) return;
+
+  let images;
+
+  try {
+    images = JSON.parse(imageButton.dataset.images || "[]");
+  } catch {
+    images = [];
+  }
+
+  if (!images.length) return;
+
+  const img = gallery.querySelector(".project-image");
+  const currentSrc = img.getAttribute("src");
+
+  let index = images.indexOf(currentSrc);
+
+  if (index < 0) {
+    index = images.findIndex(
+      (src) => new URL(src, document.baseURI).href === img.src,
+    );
+  }
+
+  if (event.target.closest(".gallery-prev")) {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+    return;
+  }
+
+  if (event.target.closest(".gallery-next")) {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+    return;
+  }
+
+  if (event.target.closest(".project-image-button")) {
+    const title = imageButton.dataset.title || "Project image";
+
+    openLightbox(
+      images.map((src) => ({ src, alt: title })),
+      Math.max(0, index),
+    );
+  }
+});
+
+/* =========================================
+   LOAD PROJECTS JSON
+========================================= */
+
+async function loadProjects() {
+  try {
+    const response = await fetch(PROJECTS_JSON_URL, {
+      cache: "no-cache",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Could not load projects: HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("The projects JSON must contain an array.");
+    }
+
+    allProjects = data.filter(
+      (project) => project && typeof project === "object",
+    );
+
+    populateFilters();
+    applyFilters();
+  } catch (error) {
+    console.error("Projects loading error:", error);
+
+    projectsList.innerHTML = `
+      <div class="projects-loading">
+        Unable to load projects. Check the JSON file path and format.
+      </div>
+    `;
+
+    projectsPagination.innerHTML = "";
+  }
+}
+
+loadProjects();

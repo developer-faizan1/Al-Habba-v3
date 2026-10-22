@@ -1,10 +1,9 @@
-
 /* =========================================
    PROJECTS SECTION
 ========================================= */
 
 .projects-section {
-  --project-teal: #07585b;
+  --project-teal: #1E665E;
   --project-teal-dark: #06494c;
   --project-text: #102a3a;
   --project-muted: #617087;
@@ -34,7 +33,8 @@
 
 .projects-toolbar {
   display: grid;
-  grid-template-columns: minmax(220px, 1.55fr)
+  grid-template-columns:
+    minmax(220px, 1.55fr)
     repeat(3, minmax(145px, 0.9fr))
     minmax(190px, 1.1fr)
     minmax(155px, 0.8fr);
@@ -54,7 +54,9 @@
   border: 1px solid var(--project-border);
   border-radius: 10px;
   background: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .toolbar-control:focus-within {
@@ -125,7 +127,9 @@
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .clear-filters:hover {
@@ -176,7 +180,9 @@
   border-radius: 22px;
   background: #fff;
   box-shadow: 0 8px 28px rgb(16 42 58 / 8%);
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s;
 }
 
 .project-card:hover {
@@ -223,15 +229,15 @@
   z-index: 3;
   top: 50%;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   place-items: center;
   transform: translateY(-50%);
   border: 1px solid rgb(255 255 255 / 75%);
   border-radius: 50%;
   background: rgb(16 42 58 / 65%);
   color: #fff;
-  font-size: 27px;
+  font-size: 18px;
   line-height: 1;
   cursor: pointer;
   transition: background 0.2s;
@@ -250,7 +256,7 @@
 }
 
 /* =========================================
-   STATUS BADGES
+   STATUS BADGES — NO ICONS
 ========================================= */
 
 .project-status {
@@ -258,88 +264,49 @@
   z-index: 4;
   top: 22px;
   right: 22px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+
   max-width: calc(100% - 36px);
-  min-height: 25px;
-  padding: 6px 16px;
+  min-height: 30px;
+  padding: 7px 16px;
+
   border-radius: 30px;
-  color: #fff;
+
+  font-family: Raleway, sans-serif;
   font-size: 13px;
-  	font-family: Raleway;
   font-weight: 800;
   letter-spacing: 0.5px;
   line-height: 1.2;
   text-transform: uppercase;
+
   pointer-events: none;
 }
 
-.status-icon {
-  display: inline-grid;
-  flex: 0 0 20px;
-  width: 18px;
-  height: 18px;
-  place-items: center;
-  border-radius: 50%;
-  background: #fff;
-  font-size: 12px;
-  font-weight: 900;
+/* Completed status */
+.project-status.status-completed {
+  background: #1E665E;
+  color: #ffffff;
 }
 
-.status-completed {
-  background: #147c3d;
+/* Running status */
+.project-status.status-running {
+  background: #D99A20;
+  color: #102A3A;
 }
 
-.status-completed .status-icon {
-  color: #147c3d;
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .project-status {
+    top: 12px;
+    right: 12px;
+    min-height: 28px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
 }
-
-.status-running,
-.status-ongoing,
-.status-in-progress {
-  background: #087f8c;
-}
-
-.status-running .status-icon,
-.status-ongoing .status-icon,
-.status-in-progress .status-icon {
-  color: #087f8c;
-}
-
-.status-pending {
-  background: #d99a20;
-}
-
-.status-pending .status-icon {
-  color: #b87a08;
-}
-
-.status-cancelled {
-  background: #c0392b;
-}
-
-.status-cancelled .status-icon {
-  color: #c0392b;
-}
-
-.status-on-hold {
-  background: #64748b;
-}
-
-.status-on-hold .status-icon {
-  color: #64748b;
-}
-
-.status-default {
-  background: #526575;
-}
-
-.status-default .status-icon {
-  color: #526575;
-}
-
 /* =========================================
    PROJECT INFORMATION
 ========================================= */
@@ -385,10 +352,11 @@
 .project-title {
   margin: 0;
   color: var(--project-text);
-font-size: clamp(14px, 1.5vw, 20px);
+  font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 800;
   line-height: 1.2;
   overflow-wrap: anywhere;
+  font-family: Poppins, sans-serif;
 }
 
 .project-value {
@@ -408,10 +376,11 @@ font-size: clamp(14px, 1.5vw, 20px);
 
 .project-value-amount {
   color: var(--project-teal);
-  font-size: clamp(19px, 2vw, 34px);
+  font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 800;
   line-height: 1.25;
   overflow-wrap: anywhere;
+  font-family: Poppins, sans-serif;
 }
 
 /* Project comprises */
@@ -856,12 +825,12 @@ font-size: clamp(14px, 1.5vw, 20px);
     font-size: 10px;
   }
 
-  .status-icon {
-    flex-basis: 17px;
-    width: 17px;
-    height: 17px;
-    font-size: 11px;
-  }
+.status-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+}
 
   .gallery-arrow {
     width: 36px;
@@ -888,7 +857,7 @@ font-size: clamp(14px, 1.5vw, 20px);
   }
 
   .project-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .project-value {
@@ -896,7 +865,7 @@ font-size: clamp(14px, 1.5vw, 20px);
   }
 
   .project-value-amount {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .project-comprises {

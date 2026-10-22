@@ -1,3 +1,4 @@
+
 /* =========================================
    PROJECTS CONFIGURATION
 ========================================= */
@@ -73,11 +74,14 @@ function uniqueValues(projects, key) {
 
 /* =========================================
    SVG ICONS
+   Used for project information only.
+   Status badges have NO icons.
 ========================================= */
 
 function iconSVG(name) {
   const icons = {
-    search: '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
+    search:
+      '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
 
     layers:
       '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',
@@ -85,25 +89,32 @@ function iconSVG(name) {
     building:
       '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/>',
 
-    home: '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
+    home:
+      '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
 
     users:
       '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
 
-    document: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
+    document:
+      '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
 
-    map: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+    map:
+      '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
 
     calendar:
       '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
 
-    arrow: '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+    arrow:
+      '<path d="M5 12h14m-6-6 6 6-6 6"/>',
 
-    filter: '<path d="M4 5h16l-6.5 7.5V19l-3 1v-7.5L4 5Z"/>',
+    filter:
+      '<path d="M4 5h16l-6.5 7.5V19l-3 1v-7.5L4 5Z"/>',
 
-    sort: '<path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/>',
+    sort:
+      '<path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/>',
 
-    list: '<path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/>',
+    list:
+      '<path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/>',
   };
 
   return `
@@ -119,80 +130,30 @@ function iconSVG(name) {
 
 /* =========================================
    STATUS MAPPING
+   ONLY COMPLETED AND RUNNING
+   NO STATUS ICONS
 ========================================= */
 
 function getStatusConfig(status) {
   const key = normalizeText(status);
 
-  const configs = {
-    completed: {
+  const completedStatuses = [
+    "completed",
+    "complete",
+  ];
+
+  if (completedStatuses.includes(key)) {
+    return {
       label: "Completed",
       className: "status-completed",
-      icon: "✓",
-    },
+    };
+  }
 
-    complete: {
-      label: "Completed",
-      className: "status-completed",
-      icon: "✓",
-    },
-
-    running: {
-      label: "Running",
-      className: "status-running",
-      icon: "↻",
-    },
-
-    ongoing: {
-      label: "Ongoing",
-      className: "status-ongoing",
-      icon: "↻",
-    },
-
-    "in progress": {
-      label: "In Progress",
-      className: "status-in-progress",
-      icon: "↻",
-    },
-
-    pending: {
-      label: "Pending",
-      className: "status-pending",
-      icon: "◷",
-    },
-
-    cancelled: {
-      label: "Cancelled",
-      className: "status-cancelled",
-      icon: "×",
-    },
-
-    canceled: {
-      label: "Cancelled",
-      className: "status-cancelled",
-      icon: "×",
-    },
-
-    "on hold": {
-      label: "On Hold",
-      className: "status-on-hold",
-      icon: "Ⅱ",
-    },
-
-    onhold: {
-      label: "On Hold",
-      className: "status-on-hold",
-      icon: "Ⅱ",
-    },
+  // All other statuses are displayed as Running.
+  return {
+    label: "Running",
+    className: "status-running",
   };
-
-  return (
-    configs[key] || {
-      label: textValue(status, "Unknown"),
-      className: "status-default",
-      icon: "●",
-    }
-  );
 }
 
 /* =========================================
@@ -233,7 +194,11 @@ function parseProjectDate(value) {
 
   if (month === undefined) return 0;
 
-  return new Date(Number(match[3]), month, Number(match[1])).getTime();
+  return new Date(
+    Number(match[3]),
+    month,
+    Number(match[1]),
+  ).getTime();
 }
 
 function formatValue(value) {
@@ -273,27 +238,30 @@ function populateFilters() {
     "All Types",
   );
 
-  const statuses = [
-    ...new Set(
-      allProjects
-        .map((project) => getStatusConfig(project.status).label)
-        .filter(Boolean),
-    ),
-  ].sort((a, b) => a.localeCompare(b));
-
-  populateSelect(projectStatusFilter, statuses, "All Status");
+  // Only two status options.
+  populateSelect(
+    projectStatusFilter,
+    ["Completed", "Running"],
+    "All Status",
+  );
 
   const locations = [
     ...new Set(
       allProjects
         .map((project) =>
-          String(project.projectLocation ?? project.area ?? "").trim(),
+          String(
+            project.projectLocation ?? project.area ?? "",
+          ).trim(),
         )
         .filter(Boolean),
     ),
   ].sort((a, b) => a.localeCompare(b));
 
-  populateSelect(projectLocationFilter, locations, "All Locations");
+  populateSelect(
+    projectLocationFilter,
+    locations,
+    "All Locations",
+  );
 }
 
 /* =========================================
@@ -303,7 +271,10 @@ function populateFilters() {
 function getComprisesIcon(item) {
   const value = normalizeText(item);
 
-  if (value.includes("basement") || value.includes("parking")) {
+  if (
+    value.includes("basement") ||
+    value.includes("parking")
+  ) {
     return "layers";
   }
 
@@ -311,7 +282,10 @@ function getComprisesIcon(item) {
     return "home";
   }
 
-  if (value.includes("hotel") || value.includes("building")) {
+  if (
+    value.includes("hotel") ||
+    value.includes("building")
+  ) {
     return "building";
   }
 
@@ -333,7 +307,9 @@ function projectCard(project) {
   const mainImage = project.image || images[0] || "";
 
   const imagesJSON = escapeHTML(
-    JSON.stringify([...new Set([mainImage, ...images].filter(Boolean))]),
+    JSON.stringify(
+      [...new Set([mainImage, ...images].filter(Boolean))],
+    ),
   );
 
   const comprises = Array.isArray(project.projectComprisesOf)
@@ -344,13 +320,13 @@ function projectCard(project) {
     .slice(0, 4)
     .map(
       (item) => `
-      <div class="comprises-item">
-        <span class="comprises-icon">
-          ${iconSVG(getComprisesIcon(item))}
-        </span>
-        <span>${escapeHTML(item)}</span>
-      </div>
-    `,
+        <div class="comprises-item">
+          <span class="comprises-icon">
+            ${iconSVG(getComprisesIcon(item))}
+          </span>
+          <span>${escapeHTML(item)}</span>
+        </div>
+      `,
     )
     .join("");
 
@@ -360,7 +336,9 @@ function projectCard(project) {
     project.area ||
     "Location not specified";
 
-  const slug = encodeURIComponent(project.slug || project.id || "");
+  const slug = encodeURIComponent(
+    project.slug || project.id || "",
+  );
 
   return `
     <article class="project-card">
@@ -384,12 +362,9 @@ function projectCard(project) {
           >
         </button>
 
-        <!-- Status badge changes according to JSON -->
+        <!-- Status badge: no icon -->
         <span class="project-status ${status.className}">
-          <span class="status-icon" aria-hidden="true">
-            ${status.icon}
-          </span>
-          <span>${escapeHTML(status.label)}</span>
+          ${escapeHTML(status.label)}
         </span>
 
         ${
@@ -493,16 +468,14 @@ function projectCard(project) {
         <!-- Project location -->
         <div class="project-location">
           ${iconSVG("map")}
-
           <span>${escapeHTML(location)}</span>
         </div>
 
       </div>
 
-      <!-- FULL-WIDTH FOOTER: spans both card columns -->
+      <!-- Full-width footer -->
       <div class="project-footer">
 
-        <!-- Metadata grouped on the left -->
         <div class="project-footer-meta">
 
           <div class="project-footer-item project-number">
@@ -531,7 +504,7 @@ function projectCard(project) {
 
         </div>
 
-        <!-- Button aligned to the far right -->
+        <!-- Details button -->
         <a
           class="project-details-link"
           href="project-details.html?slug=${slug}"
@@ -573,7 +546,9 @@ function applyFilters() {
       ].join(" "),
     );
 
-    const projectStatus = normalizeText(getStatusConfig(project.status).label);
+    const projectStatus = normalizeText(
+      getStatusConfig(project.status).label,
+    );
 
     const projectLocation = normalizeText(
       project.projectLocation || project.area,
@@ -590,19 +565,25 @@ function applyFilters() {
   switch (projectSort.value) {
     case "latest":
       filteredProjects.sort(
-        (a, b) => parseProjectDate(b.startDate) - parseProjectDate(a.startDate),
+        (a, b) =>
+          parseProjectDate(b.startDate) -
+          parseProjectDate(a.startDate),
       );
       break;
 
     case "oldest":
       filteredProjects.sort(
-        (a, b) => parseProjectDate(a.startDate) - parseProjectDate(b.startDate),
+        (a, b) =>
+          parseProjectDate(a.startDate) -
+          parseProjectDate(b.startDate),
       );
       break;
 
     case "title":
       filteredProjects.sort((a, b) =>
-        String(a.title || "").localeCompare(String(b.title || "")),
+        String(a.title || "").localeCompare(
+          String(b.title || ""),
+        ),
       );
       break;
   }
@@ -616,7 +597,9 @@ function applyFilters() {
 ========================================= */
 
 function renderProjects() {
-  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
+  const totalPages = Math.ceil(
+    filteredProjects.length / PROJECTS_PER_PAGE,
+  );
 
   if (totalPages && currentPage > totalPages) {
     currentPage = totalPages;
@@ -624,7 +607,10 @@ function renderProjects() {
 
   const start = (currentPage - 1) * PROJECTS_PER_PAGE;
 
-  const pageProjects = filteredProjects.slice(start, start + PROJECTS_PER_PAGE);
+  const pageProjects = filteredProjects.slice(
+    start,
+    start + PROJECTS_PER_PAGE,
+  );
 
   projectsList.innerHTML = pageProjects.length
     ? pageProjects.map(projectCard).join("")
@@ -649,7 +635,8 @@ function renderPagination(totalPages) {
     const button = document.createElement("button");
 
     button.type = "button";
-    button.className = "page-button" + (options.active ? " active" : "");
+    button.className =
+      "page-button" + (options.active ? " active" : "");
 
     button.textContent = label;
     button.disabled = Boolean(options.disabled);
@@ -748,11 +735,13 @@ function showLightboxImage() {
   if (!lightboxImages.length) return;
 
   lightboxIndex =
-    (lightboxIndex + lightboxImages.length) % lightboxImages.length;
+    (lightboxIndex + lightboxImages.length) %
+    lightboxImages.length;
 
   lightboxImage.src = lightboxImages[lightboxIndex].src;
   lightboxImage.alt = lightboxImages[lightboxIndex].alt;
-  lightboxCaption.textContent = lightboxImages[lightboxIndex].alt;
+  lightboxCaption.textContent =
+    lightboxImages[lightboxIndex].alt;
 
   const multiple = lightboxImages.length > 1;
 
@@ -829,7 +818,9 @@ projectsList.addEventListener("click", (event) => {
   const gallery = event.target.closest(".project-gallery");
   if (!gallery) return;
 
-  const imageButton = gallery.querySelector(".project-image-button");
+  const imageButton = gallery.querySelector(
+    ".project-image-button",
+  );
 
   if (!imageButton) return;
 
@@ -850,7 +841,8 @@ projectsList.addEventListener("click", (event) => {
 
   if (index < 0) {
     index = images.findIndex(
-      (src) => new URL(src, document.baseURI).href === img.src,
+      (src) =>
+        new URL(src, document.baseURI).href === img.src,
     );
   }
 
@@ -867,10 +859,14 @@ projectsList.addEventListener("click", (event) => {
   }
 
   if (event.target.closest(".project-image-button")) {
-    const title = imageButton.dataset.title || "Project image";
+    const title =
+      imageButton.dataset.title || "Project image";
 
     openLightbox(
-      images.map((src) => ({ src, alt: title })),
+      images.map((src) => ({
+        src,
+        alt: title,
+      })),
       Math.max(0, index),
     );
   }
@@ -887,17 +883,22 @@ async function loadProjects() {
     });
 
     if (!response.ok) {
-      throw new Error(`Could not load projects: HTTP ${response.status}`);
+      throw new Error(
+        `Could not load projects: HTTP ${response.status}`,
+      );
     }
 
     const data = await response.json();
 
     if (!Array.isArray(data)) {
-      throw new Error("The projects JSON must contain an array.");
+      throw new Error(
+        "The projects JSON must contain an array.",
+      );
     }
 
     allProjects = data.filter(
-      (project) => project && typeof project === "object",
+      (project) =>
+        project && typeof project === "object",
     );
 
     populateFilters();

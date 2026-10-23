@@ -1,12 +1,11 @@
 [
-  
   {
     "id": 215,
     "projectNumber": "P-215",
     "slug": "P-215 PROPOSED MIXED USE DEVELOPMENT",
     "title": "Proposed Mixed Use Development",
-    "image": "assets/images/img_gallery/p215v1.webp",
-    "images": ["assets/images/img_gallery/p215v1.webp"],
+    "image": "assets/images/img_gallery/215v1.jpg",
+    "images": ["assets/images/img_gallery/215v1.jpg"],
     "projectValue": "AED 400,300,000",
     "client": "M/S. Srg Holding Limited",
     "consultant": "M/S. Loci Architecture & Design",
@@ -208,9 +207,9 @@
     "projectNumber": "P-209",
     "slug": "p-209 Al Habbai Headquarters",
     "title": "Al Habbai Headquarters",
-    "image": "assets/images/img_gallery/p209v1.webp",
+    "image": "assets/images/img_gallery/209v1.jpg",
     "images": [
-      "assets/images/img_gallery/p209v1.webp",
+      "assets/images/img_gallery/209v1.jpg",
       "assets/images/img_gallery/p209v2.webp"
     ],
     "projectValue": "AED 33,000,000",
@@ -261,14 +260,16 @@
     "state": "Dubai",
     "latitude": 25.139605,
     "longitude": 55.313251
-  }
-  ,{
+  },
+  {
     "id": 96,
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/p96v1.jpg",
+    "image": "assets/images/img_gallery/96v1.jpg",
     "images": [
+      "assets/images/img_gallery/96v1.jpg",
+      "assets/images/img_gallery/96v2.jpg",
       "assets/images/intr_img/96iv1.webp",
       "assets/images/intr_img/96iv2.webp",
       "assets/images/intr_img/96iv3.webp",
@@ -338,9 +339,10 @@
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/140v1.webp",
+    "image": "assets/images/img_gallery/140v1.jpg",
     "images": [
-      "assets/images/img_gallery/140v1.webp",
+      "assets/images/img_gallery/140v1.jpg",
+      "assets/images/img_gallery/140v2.jpg",
       "assets/images/intr_img/140iv1.webp",
       "assets/images/intr_img/140iv2.webp",
       "assets/images/intr_img/140iv3.webp",
@@ -550,10 +552,9 @@
     "projectNumber": "P-167",
     "slug": "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/167v1.webp",
+    "image": "assets/images/img_gallery/167v1.JPG",
     "images": [
-      "assets/images/img_gallery/167v1.webp",
-      "assets/images/img_gallery/167v2.webp",
+      "assets/images/img_gallery/167v1.JPG",
       "assets/images/intr_img/167iv1.webp",
       "assets/images/intr_img/167iv2.webp",
       "assets/images/intr_img/167iv3.webp",
@@ -1020,7 +1021,7 @@
     "projectNumber": "P-118",
     "slug": "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
     "title": "Residential & Commercial Building",
-    "image": "assets/images/img_gallery/p118v1.jpg",
+    "image": "assets/images/img_gallery/118v1.jpg",
     "projectValue": "AED 46,200,000",
     "client": "Mr. Ali Ahmed Mohamed",
     "consultant": "M/s Style Engineers Consultant",
@@ -1745,7 +1746,7 @@
     "projectNumber": "P-162",
     "slug": "P-162 SRG ALT TOWER",
     "title": "SRG Alt Tower",
-    "image": "assets/images/projects/p162.jpg",
+    "image": "assets/images/img_gallery/162v2.jpg",
     "projectValue": "AED 218,500,000",
     "client": "SRG Holding Limited",
     "consultant": "M/S. ERGA Engineering Consultant",
@@ -1773,9 +1774,9 @@
     "projectNumber": "P-171",
     "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     "title": "HOTEL Building",
-    "image": "assets/images/img_gallery/171v1.webp",
+    "image": "assets/images/img_gallery/171v1.png",
     "images": [
-      "assets/images/img_gallery/171v1.webp",
+      "assets/images/img_gallery/171v1.png",
       "assets/images/img_gallery/171v3.webp",
       "assets/images/img_gallery/171v2.webp"
     ],
@@ -1934,12 +1935,8 @@
     "projectNumber": "P-195",
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "Shopping Mall",
-    "image": "assets/images/img_gallery/195v3.webp",
-    "images": [
-      "assets/images/img_gallery/195v3.webp",
-      "assets/images/img_gallery/195v1.webp",
-      "assets/images/img_gallery/195v2.webp"
-    ],
+    "image": "assets/images/img_gallery/195v1.jpg",
+    "images": ["assets/images/img_gallery/195v1.jpg"],
     "projectValue": "AED 30,500,000",
     "client": "M/s. SRG Holding Limited",
     "consultant": "M/S. Loci Architecture & Design",

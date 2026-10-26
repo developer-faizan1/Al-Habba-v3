@@ -815,9 +815,9 @@
     "projectNumber": "P-146",
     "slug": "P-146 (B+G+1P+16+R) HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/146.jfif",
+    "image": "assets/images/img_gallery/146.jpg",
     "images": [
-      "assets/images/img_gallery/146.jfif",
+      "assets/images/img_gallery/146.jpg",
       "assets/images/intr_img/146iv1.webp",
       "assets/images/intr_img/146iv2.webp",
       "assets/images/intr_img/146iv3.webp",
@@ -1837,7 +1837,7 @@
     "projectNumber": "P-189",
     "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/189v1.webp",
+    "image": "assets/images/img_gallery/189.jpg",
     "images": [
       "assets/images/img_gallery/189v1.webp",
       "assets/images/img_gallery/189v2.webp",
@@ -1955,11 +1955,10 @@
     "projectNumber": "P-197",
     "slug": "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/p197.jpg",
+    "image": "assets/images/projects/197.jpg",
     "images": [
-      "assets/images/img_gallery/197v1.webp",
-      "assets/images/img_gallery/197v2.webp",
-      "assets/images/img_gallery/197v3.webp"
+      "assets/images/img_gallery/197.jpg",
+      "assets/images/img_gallery/197v2.jpg"
     ],
     "projectValue": "AED 38,100,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rahman",
@@ -1990,8 +1989,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/projects/p198.jpg",
     "images": [
-      "assets/images/img_gallery/198v1.webp",
-      "assets/images/img_gallery/198v2.webp"
+      "assets/images/img_gallery/198.jpg",
+      "assets/images/img_gallery/198v2.png"
     ],
     "projectValue": "AED 36,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",

@@ -31,7 +31,11 @@ section {
   margin: 0 auto;
 }
 :root {
-  /* --green-1: #1A6469; */
+  --border: #e3e7ea;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --gold: #c9a15f;
+  --gold-light: #e9d3a6;
+  --mint: #dcefe6;
   --green-1: #1e665e;
   --green-2: #a2de96;
   --lightGreen-1: #f0f9f3;

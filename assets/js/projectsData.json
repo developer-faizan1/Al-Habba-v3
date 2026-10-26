@@ -122,7 +122,7 @@
     "projectNumber": "P-205",
     "slug": "P-205 SRG JVC (G+3P+16 +R)",
     "title": "Residential Building",
-    "image": "assets/images/projects/205.webp",
+    "image": "assets/images/img_gallery/205v1.jpg",
     "projectValue": "AED 98,100,000",
     "client": "M/S. Srg Holding Limited",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -482,10 +482,11 @@
     "projectNumber": "P-102",
     "slug": "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/102v1.webp",
+    "image": "assets/images/img_gallery/102.jpg",
     "images": [
       "assets/images/img_gallery/102v1.webp",
       "assets/images/intr_img/102iv1.jpg",
+      "assets/images/img_gallery/102.jpg",
       "assets/images/intr_img/102iv2.jpg",
       "assets/images/intr_img/102iv3.jpg"
     ],
@@ -1562,11 +1563,7 @@
     "projectNumber": "P-172",
     "slug": "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/p172.jpg",
-    "images": [
-      "assets/images/img_gallery/172v1.webp",
-      "assets/images/img_gallery/172v2.webp"
-    ],
+    "image": "assets/images/img_gallery/172.jpg",
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1873,13 +1870,7 @@
     "projectNumber": "P-190",
     "slug": "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/190v3.webp",
-    "images": [
-      "assets/images/img_gallery/190v1.webp",
-      "assets/images/img_gallery/190v4.webp",
-      "assets/images/img_gallery/190v2.webp",
-      "assets/images/img_gallery/190v3.webp"
-    ],
+    "image": "assets/images/img_gallery/190.jpg",
     "projectValue": "AED 76,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "M/s Style Engineers Consultant",

@@ -1,4 +1,3 @@
-
 /* =========================================
    PROJECTS CONFIGURATION
 ========================================= */
@@ -65,140 +64,9 @@ function normalizeText(value) {
 function uniqueValues(projects, key) {
   return [
     ...new Set(
-      projects
-        .map((project) => String(project[key] ?? "").trim())
-        .filter(Boolean),
+      projects.map((p) => String(p[key] ?? "").trim()).filter(Boolean),
     ),
   ].sort((a, b) => a.localeCompare(b));
-}
-
-/* =========================================
-   SVG ICONS
-   Used for project information only.
-   Status badges have NO icons.
-========================================= */
-
-function iconSVG(name) {
-  const icons = {
-    search:
-      '<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
-
-    layers:
-      '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',
-
-    building:
-      '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/>',
-
-    home:
-      '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
-
-    users:
-      '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
-
-    document:
-      '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
-
-    map:
-      '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
-
-    calendar:
-      '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
-
-    arrow:
-      '<path d="M5 12h14m-6-6 6 6-6 6"/>',
-
-    filter:
-      '<path d="M4 5h16l-6.5 7.5V19l-3 1v-7.5L4 5Z"/>',
-
-    sort:
-      '<path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/>',
-
-    list:
-      '<path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/>',
-  };
-
-  return `
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      focusable="false"
-    >
-      ${icons[name] || icons.document}
-    </svg>
-  `;
-}
-
-/* =========================================
-   STATUS MAPPING
-   ONLY COMPLETED AND RUNNING
-   NO STATUS ICONS
-========================================= */
-
-function getStatusConfig(status) {
-  const key = normalizeText(status);
-
-  const completedStatuses = [
-    "completed",
-    "complete",
-  ];
-
-  if (completedStatuses.includes(key)) {
-    return {
-      label: "Completed",
-      className: "status-completed",
-    };
-  }
-
-  // All other statuses are displayed as Running.
-  return {
-    label: "Running",
-    className: "status-running",
-  };
-}
-
-/* =========================================
-   DATE AND VALUE HELPERS
-========================================= */
-
-function parseProjectDate(value) {
-  if (!value) return 0;
-
-  const parsed = new Date(value);
-
-  if (!Number.isNaN(parsed.getTime())) {
-    return parsed.getTime();
-  }
-
-  const match = String(value)
-    .trim()
-    .match(/^(\d{1,2})\s+([a-zA-Z]+)\s+(\d{4})$/);
-
-  if (!match) return 0;
-
-  const months = {
-    january: 0,
-    february: 1,
-    march: 2,
-    april: 3,
-    may: 4,
-    june: 5,
-    july: 6,
-    august: 7,
-    september: 8,
-    october: 9,
-    november: 10,
-    december: 11,
-  };
-
-  const month = months[match[2].toLowerCase()];
-
-  if (month === undefined) return 0;
-
-  return new Date(
-    Number(match[3]),
-    month,
-    Number(match[1]),
-  ).getTime();
 }
 
 function formatValue(value) {
@@ -206,12 +74,83 @@ function formatValue(value) {
 }
 
 /* =========================================
-   DYNAMIC FILTER OPTIONS
+   SVG ICONS
+========================================= */
+
+function iconSVG(name) {
+  const icons = {
+    layers:
+      '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',
+    building:
+      '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/>',
+    home:
+      '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
+    roof:
+      '<path d="m3 14 9-9 9 9"/><path d="m14 5 5-3 1 4"/><path d="M6 12v8h12v-8"/>',
+    users:
+      '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
+    document:
+      '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
+    map:
+      '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+    calendar:
+      '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>',
+    arrow: '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+    image:
+      '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/>',
+    coins:
+      '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v4c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 10v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/><path d="M5 14v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/>',
+  };
+
+  return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${icons[name] || icons.document}</svg>`;
+}
+
+/* =========================================
+   STATUS (Completed / Running)
+========================================= */
+
+function getStatusConfig(status) {
+  const key = normalizeText(status);
+
+  if (key.includes("complete")) {
+    return { label: "Completed", className: "status-completed" };
+  }
+
+  return { label: "Running", className: "status-running" };
+}
+
+/* =========================================
+   DATE HELPERS
+========================================= */
+
+function parseProjectDate(value) {
+  if (!value) return 0;
+
+  const parsed = new Date(value);
+  if (!Number.isNaN(parsed.getTime())) return parsed.getTime();
+
+  const match = String(value)
+    .trim()
+    .match(/^(\d{1,2})\s+([a-zA-Z]+)\s+(\d{4})$/);
+  if (!match) return 0;
+
+  const months = {
+    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+  };
+
+  const month = months[match[2].toLowerCase()];
+  if (month === undefined) return 0;
+
+  return new Date(Number(match[3]), month, Number(match[1])).getTime();
+}
+
+/* =========================================
+   FILTER OPTIONS
 ========================================= */
 
 function populateSelect(select, values, defaultLabel) {
   const previousValue = select.value;
-
   select.replaceChildren();
 
   const defaultOption = document.createElement("option");
@@ -226,74 +165,141 @@ function populateSelect(select, values, defaultLabel) {
     select.appendChild(option);
   });
 
-  if (values.includes(previousValue)) {
-    select.value = previousValue;
-  }
+  if (values.includes(previousValue)) select.value = previousValue;
 }
 
 function populateFilters() {
-  populateSelect(
-    projectTypeFilter,
-    uniqueValues(allProjects, "projectType"),
-    "All Types",
-  );
-
-  // Only two status options.
-  populateSelect(
-    projectStatusFilter,
-    ["Completed", "Running"],
-    "All Status",
-  );
+  populateSelect(projectTypeFilter, uniqueValues(allProjects, "projectType"), "All Types");
+  populateSelect(projectStatusFilter, ["Completed", "Running"], "All Status");
 
   const locations = [
     ...new Set(
       allProjects
-        .map((project) =>
-          String(
-            project.projectLocation ?? project.area ?? "",
-          ).trim(),
-        )
+        .map((p) => String(p.projectLocation ?? p.area ?? "").trim())
         .filter(Boolean),
     ),
   ].sort((a, b) => a.localeCompare(b));
 
-  populateSelect(
-    projectLocationFilter,
-    locations,
-    "All Locations",
-  );
+  populateSelect(projectLocationFilter, locations, "All Locations");
 }
 
 /* =========================================
-   PROJECT COMPRISES ICONS
+   PROJECT COMPRISES
+   Accepts strings ("14 Floors") or objects
+   ({ "title": "14 Floors", "subtitle": "Residential" })
 ========================================= */
 
-function getComprisesIcon(item) {
-  const value = normalizeText(item);
+function getComprisesIcon(title) {
+  const v = normalizeText(title);
 
-  if (
-    value.includes("basement") ||
-    value.includes("parking")
-  ) {
-    return "layers";
+  if (v.includes("roof")) return "roof";
+  if (v.includes("ground floor")) return "home";
+  if (v.includes("basement") || v.includes("under ground") || v.includes("underground")) return "layers";
+  return "building";
+}
+
+function getComprisesSubtitle(title, project) {
+  const v = normalizeText(title);
+
+  if (v.includes("roof")) return "Top Level";
+  if (v.includes("ground floor")) return "Ground Level";
+  if (v.includes("basement") || v.includes("under ground") || v.includes("underground")) return "Below Ground";
+  if (v.includes("podium")) return "Podium Level";
+  if (v.includes("parking")) return "Parking Level";
+  if (/\bfloors?\b/.test(v)) {
+    return normalizeText(project.projectType).includes("residential")
+      ? "Residential"
+      : "Typical Floors";
   }
+  return "";
+}
 
-  if (value.includes("ground floor")) {
-    return "home";
-  }
+function normalizeComprises(project) {
+  const list = Array.isArray(project.projectComprisesOf)
+    ? project.projectComprisesOf
+    : [];
 
-  if (
-    value.includes("hotel") ||
-    value.includes("building")
-  ) {
-    return "building";
-  }
+  return list
+    .map((item) => {
+      if (item && typeof item === "object") {
+        const title = String(item.title ?? item.name ?? "").trim();
+        return {
+          title,
+          subtitle: String(item.subtitle ?? "").trim() || getComprisesSubtitle(title, project),
+        };
+      }
+      const title = String(item ?? "").trim();
+      return { title, subtitle: getComprisesSubtitle(title, project) };
+    })
+    .filter((item) => item.title)
+    .slice(0, 4);
+}
 
-  return "document";
+let waveCounter = 0;
+
+function waveSVG() {
+  const id = `comprisesWave${++waveCounter}`;
+
+  return `
+    <svg class="comprises-wave" viewBox="0 0 400 76" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="${id}Glow">
+          <stop offset="0%" stop-color="#fff3d1" stop-opacity="1"/>
+          <stop offset="45%" stop-color="#e3b865" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#c9a15f" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Base curve -->
+      <path id="${id}" class="wave-base" vector-effect="non-scaling-stroke"
+        d="M0 44 C 20 30, 30 20, 50 38 S 90 66, 150 56 S 215 18, 280 30 S 350 56, 400 36"/>
+
+      <!-- Flowing dashes -->
+      <use href="#${id}" class="wave-flow" vector-effect="non-scaling-stroke"/>
+
+      <!-- Travelling glow dots (run forever) -->
+      <circle r="9" fill="url(#${id}Glow)" class="wave-dot">
+        <animateMotion dur="7s" repeatCount="indefinite" begin="0s">
+          <mpath href="#${id}"/>
+        </animateMotion>
+      </circle>
+      <circle r="9" fill="url(#${id}Glow)" class="wave-dot">
+        <animateMotion dur="7s" repeatCount="indefinite" begin="-3.5s">
+          <mpath href="#${id}"/>
+        </animateMotion>
+      </circle>
+    </svg>
+  `;
+}
+
+/* Split title into animated words (never breaks inside a word) */
+function titleWordsHTML(title) {
+  return String(title ?? "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(
+      (word, i) =>
+        `<span class="title-word"><span style="--i:${i}">${escapeHTML(word)}</span></span>`,
+    )
+    .join(" ");
+}
+
+/* Split "AED 400,300,000" into currency + number */
+function valueHTML(value) {
+  const text = formatValue(value);
+  const match = text.match(/^([A-Za-z]{2,4})\s+(.+)$/);
+
+  if (!match) return `<span class="value-number">${escapeHTML(text)}</span>`;
+
+  return `
+    <span class="value-currency">${escapeHTML(match[1])}</span>
+    <span class="value-number">${escapeHTML(match[2])}</span>
+  `;
 }
 
 /* =========================================
-   PROJECT CARD TEMPLATE
+   PROJECT CARD
 ========================================= */
 
 function projectCard(project) {
@@ -307,24 +313,18 @@ function projectCard(project) {
   const mainImage = project.image || images[0] || "";
 
   const imagesJSON = escapeHTML(
-    JSON.stringify(
-      [...new Set([mainImage, ...images].filter(Boolean))],
-    ),
+    JSON.stringify([...new Set([mainImage, ...images].filter(Boolean))]),
   );
 
-  const comprises = Array.isArray(project.projectComprisesOf)
-    ? project.projectComprisesOf
-    : [];
+  const comprises = normalizeComprises(project);
 
   const comprisesHTML = comprises
-    .slice(0, 4)
     .map(
       (item) => `
         <div class="comprises-item">
-          <span class="comprises-icon">
-            ${iconSVG(getComprisesIcon(item))}
-          </span>
-          <span>${escapeHTML(item)}</span>
+          <span class="comprises-icon">${iconSVG(getComprisesIcon(item.title))}</span>
+          <span class="comprises-name">${escapeHTML(item.title)}</span>
+          ${item.subtitle ? `<span class="comprises-sub">${escapeHTML(item.subtitle)}</span>` : ""}
         </div>
       `,
     )
@@ -336,16 +336,25 @@ function projectCard(project) {
     project.area ||
     "Location not specified";
 
-  const slug = encodeURIComponent(
-    project.slug || project.id || "",
-  );
+  const slug = encodeURIComponent(project.slug || project.id || "");
+
+  const hasCoords =
+    Number.isFinite(Number(project.latitude)) &&
+    Number.isFinite(Number(project.longitude)) &&
+    project.latitude !== "" &&
+    project.longitude !== "";
+
+  const mapLink = hasCoords
+    ? `<a class="info-map" href="../../map.html" target="_blank" rel="noopener">
+         <span>View on map</span>${iconSVG("arrow")}
+       </a>`
+    : "";
 
   return `
     <article class="project-card">
 
-      <!-- Project image -->
+      <!-- Image -->
       <div class="project-gallery">
-
         <button
           type="button"
           class="project-image-button"
@@ -362,157 +371,110 @@ function projectCard(project) {
           >
         </button>
 
-        <!-- Status badge: no icon -->
         <span class="project-status ${status.className}">
           ${escapeHTML(status.label)}
         </span>
 
-        ${
-          images.length > 1
-            ? `
-              <button
-                type="button"
-                class="gallery-arrow gallery-prev"
-                aria-label="Previous project image"
-              >&#10094;</button>
-
-              <button
-                type="button"
-                class="gallery-arrow gallery-next"
-                aria-label="Next project image"
-              >&#10095;</button>
-            `
-            : ""
-        }
-
+        <button type="button" class="gallery-trigger">
+          ${iconSVG("image")}
+          <span>View Gallery</span>
+          <span class="circle-arrow">${iconSVG("arrow")}</span>
+        </button>
       </div>
 
-      <!-- Project information -->
+      <!-- Info -->
       <div class="project-info">
 
         <div class="project-info-top">
-
           <div class="project-overview">
-            <div class="project-eyebrow">
-              Project Type
+            <div class="project-eyebrow">Project Type</div>
+            <h2 class="project-title" aria-label="${escapeHTML(project.title)}">${titleWordsHTML(project.title)}</h2>
             </div>
-
-            <h2 class="project-title">
-              ${escapeHTML(project.title)}
-            </h2>
-          </div>
 
           <div class="project-value">
-            <span class="project-value-label">
-              Project Value
-            </span>
-
+            <div class="project-value-head">
+              ${iconSVG("coins")}
+              <span class="project-value-label">Project Value</span>
+            </div>
             <div class="project-value-amount">
-              ${escapeHTML(formatValue(project.projectValue))}
+              ${valueHTML(project.projectValue)}
             </div>
           </div>
-
         </div>
 
         ${
           comprises.length
             ? `
-              <h3 class="project-comprises-title">
-                Project comprises of
-              </h3>
-
-              <div class="project-comprises">
+              <h3 class="project-comprises-title">Project comprises of</h3>
+              <div class="project-comprises" style="--count:${comprises.length}">
+                ${comprises.length > 1 ? waveSVG() : ""}
                 ${comprisesHTML}
               </div>
             `
             : ""
         }
 
-        <!-- Client and consultant -->
         <div class="project-parties">
-
-          <div class="project-party">
-            <span class="project-meta-icon">
-              ${iconSVG("users")}
-            </span>
-
-            <div class="project-party-content">
-              <span class="project-party-label">
-                Client
-              </span>
-
-              <div class="project-party-value">
-                ${escapeHTML(formatValue(project.client))}
-              </div>
+          <div class="info-tile">
+            <span class="info-icon">${iconSVG("users")}</span>
+            <div class="info-text">
+              <span class="info-label">Client</span>
+              <strong class="info-value">${escapeHTML(formatValue(project.client))}</strong>
             </div>
           </div>
 
-          <div class="project-party">
-            <span class="project-meta-icon">
-              ${iconSVG("document")}
-            </span>
-
-            <div class="project-party-content">
-              <span class="project-party-label">
-                Consultant
-              </span>
-
-              <div class="project-party-value">
-                ${escapeHTML(formatValue(project.consultant))}
-              </div>
+          <div class="info-tile">
+            <span class="info-icon">${iconSVG("document")}</span>
+            <div class="info-text">
+              <span class="info-label">Consultant</span>
+              <strong class="info-value">${escapeHTML(formatValue(project.consultant))}</strong>
             </div>
           </div>
 
-        </div>
-
-        <!-- Project location -->
-        <div class="project-location">
-          ${iconSVG("map")}
-          <span>${escapeHTML(location)}</span>
+          <div class="info-tile info-tile--wide">
+            <span class="info-icon">${iconSVG("map")}</span>
+            <div class="info-text">
+              <span class="info-label">Location</span>
+              <strong class="info-value">${escapeHTML(location)}</strong>
+            </div>
+            ${mapLink}
+          </div>
         </div>
 
       </div>
 
-      <!-- Full-width footer -->
+      <!-- Footer -->
       <div class="project-footer">
-
         <div class="project-footer-meta">
-
-          <div class="project-footer-item project-number">
-            ${iconSVG("document")}
-
-            <span>
-              ${escapeHTML(formatValue(project.projectNumber))}
-            </span>
+          <div class="meta-item">
+            <span class="meta-icon">${iconSVG("document")}</span>
+            <div>
+              <span class="meta-label">Project No.</span>
+              <strong class="meta-value">${escapeHTML(formatValue(project.projectNumber))}</strong>
+            </div>
           </div>
 
-          <div class="project-footer-item">
-            ${iconSVG("calendar")}
-
-            <span>
-              Started: ${escapeHTML(formatValue(project.startDate))}
-            </span>
+          <div class="meta-item">
+            <span class="meta-icon">${iconSVG("calendar")}</span>
+            <div>
+              <span class="meta-label">Start Date</span>
+              <strong class="meta-value">${escapeHTML(formatValue(project.startDate))}</strong>
+            </div>
           </div>
 
-          <div class="project-footer-item">
-            ${iconSVG("calendar")}
-
-            <span>
-              Completed: ${escapeHTML(formatValue(project.completionDate))}
-            </span>
+          <div class="meta-item">
+            <span class="meta-icon">${iconSVG("calendar")}</span>
+            <div>
+              <span class="meta-label">Completion Date</span>
+              <strong class="meta-value">${escapeHTML(formatValue(project.completionDate))}</strong>
+            </div>
           </div>
-
         </div>
 
-        <!-- Details button -->
-        <a
-          class="project-details-link"
-          href="project-details.html?slug=${slug}"
-        >
-          <span>View Details</span>
-          ${iconSVG("arrow")}
+        <a class="info-map" href="project-details.html?slug=${slug}">
+          <span>View Project Details</span>
+          <span class="circle-arrow">${iconSVG("arrow")}</span>
         </a>
-
       </div>
 
     </article>
@@ -546,13 +508,8 @@ function applyFilters() {
       ].join(" "),
     );
 
-    const projectStatus = normalizeText(
-      getStatusConfig(project.status).label,
-    );
-
-    const projectLocation = normalizeText(
-      project.projectLocation || project.area,
-    );
+    const projectStatus = normalizeText(getStatusConfig(project.status).label);
+    const projectLocation = normalizeText(project.projectLocation || project.area);
 
     return (
       (!search || searchable.includes(search)) &&
@@ -564,27 +521,13 @@ function applyFilters() {
 
   switch (projectSort.value) {
     case "latest":
-      filteredProjects.sort(
-        (a, b) =>
-          parseProjectDate(b.startDate) -
-          parseProjectDate(a.startDate),
-      );
+      filteredProjects.sort((a, b) => parseProjectDate(b.startDate) - parseProjectDate(a.startDate));
       break;
-
     case "oldest":
-      filteredProjects.sort(
-        (a, b) =>
-          parseProjectDate(a.startDate) -
-          parseProjectDate(b.startDate),
-      );
+      filteredProjects.sort((a, b) => parseProjectDate(a.startDate) - parseProjectDate(b.startDate));
       break;
-
     case "title":
-      filteredProjects.sort((a, b) =>
-        String(a.title || "").localeCompare(
-          String(b.title || ""),
-        ),
-      );
+      filteredProjects.sort((a, b) => String(a.title || "").localeCompare(String(b.title || "")));
       break;
   }
 
@@ -593,24 +536,16 @@ function applyFilters() {
 }
 
 /* =========================================
-   RENDER PROJECTS
+   RENDER
 ========================================= */
 
 function renderProjects() {
-  const totalPages = Math.ceil(
-    filteredProjects.length / PROJECTS_PER_PAGE,
-  );
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
 
-  if (totalPages && currentPage > totalPages) {
-    currentPage = totalPages;
-  }
+  if (totalPages && currentPage > totalPages) currentPage = totalPages;
 
   const start = (currentPage - 1) * PROJECTS_PER_PAGE;
-
-  const pageProjects = filteredProjects.slice(
-    start,
-    start + PROJECTS_PER_PAGE,
-  );
+  const pageProjects = filteredProjects.slice(start, start + PROJECTS_PER_PAGE);
 
   projectsList.innerHTML = pageProjects.length
     ? pageProjects.map(projectCard).join("")
@@ -619,9 +554,7 @@ function renderProjects() {
   projectsEmpty.hidden = filteredProjects.length !== 0;
   projectsPagination.innerHTML = "";
 
-  if (filteredProjects.length) {
-    renderPagination(totalPages);
-  }
+  if (filteredProjects.length) renderPagination(totalPages);
 }
 
 /* =========================================
@@ -633,67 +566,42 @@ function renderPagination(totalPages) {
 
   function addButton(label, page, options = {}) {
     const button = document.createElement("button");
-
     button.type = "button";
-    button.className =
-      "page-button" + (options.active ? " active" : "");
-
+    button.className = "page-button" + (options.active ? " active" : "");
     button.textContent = label;
     button.disabled = Boolean(options.disabled);
 
-    if (options.active) {
-      button.setAttribute("aria-current", "page");
-    }
+    if (options.active) button.setAttribute("aria-current", "page");
 
     button.addEventListener("click", () => {
       currentPage = page;
       renderProjects();
-
-      document.getElementById("projects").scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      document.getElementById("projects").scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     projectsPagination.appendChild(button);
   }
 
-  addButton("‹", Math.max(1, currentPage - 1), {
-    disabled: currentPage === 1,
-  });
+  addButton("‹", Math.max(1, currentPage - 1), { disabled: currentPage === 1 });
 
-  const pages = new Set([
-    1,
-    totalPages,
-    currentPage,
-    currentPage - 1,
-    currentPage + 1,
-  ]);
-
+  const pages = new Set([1, totalPages, currentPage, currentPage - 1, currentPage + 1]);
   let previousPage = 0;
 
   [...pages]
-    .filter((page) => page >= 1 && page <= totalPages)
+    .filter((p) => p >= 1 && p <= totalPages)
     .sort((a, b) => a - b)
     .forEach((page) => {
       if (previousPage && page - previousPage > 1) {
         const dots = document.createElement("span");
         dots.className = "page-ellipsis";
         dots.textContent = "…";
-
         projectsPagination.appendChild(dots);
       }
-
-      addButton(String(page), page, {
-        active: page === currentPage,
-      });
-
+      addButton(String(page), page, { active: page === currentPage });
       previousPage = page;
     });
 
-  addButton("›", Math.min(totalPages, currentPage + 1), {
-    disabled: currentPage === totalPages,
-  });
+  addButton("›", Math.min(totalPages, currentPage + 1), { disabled: currentPage === totalPages });
 }
 
 /* =========================================
@@ -714,37 +622,26 @@ function resetFilters() {
 clearFilters.addEventListener("click", resetFilters);
 emptyClearFilters.addEventListener("click", resetFilters);
 
-[
-  projectSearch,
-  projectTypeFilter,
-  projectStatusFilter,
-  projectLocationFilter,
-  projectSort,
-].forEach((control) => {
-  control.addEventListener(
-    control === projectSearch ? "input" : "change",
-    applyFilters,
-  );
-});
+[projectSearch, projectTypeFilter, projectStatusFilter, projectLocationFilter, projectSort].forEach(
+  (control) => {
+    control.addEventListener(control === projectSearch ? "input" : "change", applyFilters);
+  },
+);
 
 /* =========================================
-   IMAGE LIGHTBOX
+   LIGHTBOX
 ========================================= */
 
 function showLightboxImage() {
   if (!lightboxImages.length) return;
 
-  lightboxIndex =
-    (lightboxIndex + lightboxImages.length) %
-    lightboxImages.length;
+  lightboxIndex = (lightboxIndex + lightboxImages.length) % lightboxImages.length;
 
   lightboxImage.src = lightboxImages[lightboxIndex].src;
   lightboxImage.alt = lightboxImages[lightboxIndex].alt;
-  lightboxCaption.textContent =
-    lightboxImages[lightboxIndex].alt;
+  lightboxCaption.textContent = lightboxImages[lightboxIndex].alt;
 
   const multiple = lightboxImages.length > 1;
-
   lightboxPrev.hidden = !multiple;
   lightboxNext.hidden = !multiple;
 }
@@ -773,9 +670,7 @@ function closeLightbox() {
   lightboxImage.src = "";
   lightboxImages = [];
 
-  if (previousFocus && previousFocus.isConnected) {
-    previousFocus.focus();
-  }
+  if (previousFocus && previousFocus.isConnected) previousFocus.focus();
 }
 
 lightboxClose.addEventListener("click", closeLightbox);
@@ -791,85 +686,37 @@ lightboxNext.addEventListener("click", () => {
 });
 
 lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
+  if (event.target === lightbox) closeLightbox();
 });
 
 document.addEventListener("keydown", (event) => {
   if (!lightbox.classList.contains("is-open")) return;
 
-  if (event.key === "Escape") {
-    closeLightbox();
-  } else if (event.key === "ArrowLeft") {
-    lightboxIndex--;
-    showLightboxImage();
-  } else if (event.key === "ArrowRight") {
-    lightboxIndex++;
-    showLightboxImage();
-  }
+  if (event.key === "Escape") closeLightbox();
+  else if (event.key === "ArrowLeft") { lightboxIndex--; showLightboxImage(); }
+  else if (event.key === "ArrowRight") { lightboxIndex++; showLightboxImage(); }
 });
 
-/* =========================================
-   PROJECT GALLERY NAVIGATION
-========================================= */
+/* Clicking the image or "View Gallery" opens the lightbox */
 
 projectsList.addEventListener("click", (event) => {
   const gallery = event.target.closest(".project-gallery");
   if (!gallery) return;
 
-  const imageButton = gallery.querySelector(
-    ".project-image-button",
-  );
-
+  const imageButton = gallery.querySelector(".project-image-button");
   if (!imageButton) return;
 
   let images;
-
   try {
     images = JSON.parse(imageButton.dataset.images || "[]");
   } catch {
     images = [];
   }
-
   if (!images.length) return;
 
-  const img = gallery.querySelector(".project-image");
-  const currentSrc = img.getAttribute("src");
+  const title = imageButton.dataset.title || "Project image";
 
-  let index = images.indexOf(currentSrc);
-
-  if (index < 0) {
-    index = images.findIndex(
-      (src) =>
-        new URL(src, document.baseURI).href === img.src,
-    );
-  }
-
-  if (event.target.closest(".gallery-prev")) {
-    index = (index - 1 + images.length) % images.length;
-    img.src = images[index];
-    return;
-  }
-
-  if (event.target.closest(".gallery-next")) {
-    index = (index + 1) % images.length;
-    img.src = images[index];
-    return;
-  }
-
-  if (event.target.closest(".project-image-button")) {
-    const title =
-      imageButton.dataset.title || "Project image";
-
-    openLightbox(
-      images.map((src) => ({
-        src,
-        alt: title,
-      })),
-      Math.max(0, index),
-    );
-  }
+  openLightbox(images.map((src) => ({ src, alt: title })), 0);
 });
 
 /* =========================================
@@ -878,28 +725,19 @@ projectsList.addEventListener("click", (event) => {
 
 async function loadProjects() {
   try {
-    const response = await fetch(PROJECTS_JSON_URL, {
-      cache: "no-cache",
-    });
+    const response = await fetch(PROJECTS_JSON_URL, { cache: "no-cache" });
 
     if (!response.ok) {
-      throw new Error(
-        `Could not load projects: HTTP ${response.status}`,
-      );
+      throw new Error(`Could not load projects: HTTP ${response.status}`);
     }
 
     const data = await response.json();
 
     if (!Array.isArray(data)) {
-      throw new Error(
-        "The projects JSON must contain an array.",
-      );
+      throw new Error("The projects JSON must contain an array.");
     }
 
-    allProjects = data.filter(
-      (project) =>
-        project && typeof project === "object",
-    );
+    allProjects = data.filter((p) => p && typeof p === "object");
 
     populateFilters();
     applyFilters();
@@ -911,7 +749,6 @@ async function loadProjects() {
         Unable to load projects. Check the JSON file path and format.
       </div>
     `;
-
     projectsPagination.innerHTML = "";
   }
 }

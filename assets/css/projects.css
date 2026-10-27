@@ -166,12 +166,16 @@
 
 /* =========================================
    IMAGE CAROUSEL
+   Images are 1500 x 1000 (3:2). The gallery
+   keeps a 3:2 box and uses object-fit: contain
+   so the full image is always visible.
 ========================================= */
 
 .project-gallery {
   position: relative;
   min-width: 0;
-  min-height: 320px;
+  aspect-ratio: 3 / 2;
+  min-height: 0;
   overflow: hidden;
   /* border-radius: 18px; */
   background: #e9eef0;
@@ -189,7 +193,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   user-select: none;
   -webkit-user-drag: none;
@@ -995,29 +999,59 @@
    DESKTOP
 ========================================= */
 
+
+/* DESKTOP: LARGER IMAGE WITH 3:2 RATIO */
+
 @media (min-width: 1200px) {
   .project-card {
-    grid-template-columns:
-      minmax(0, 0.95fr)
-      minmax(0, 1.05fr);
-  }
+    display: grid;
 
-  .project-gallery {
-    min-height: 400px;
-  }
-}
+    /* Make the image side larger */
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
 
-@media (min-width: 1600px) {
-  .project-info-top {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(320px, 360px);
+    align-items: stretch;
     gap: 24px;
   }
 
+  .project-gallery {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    height: auto;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .project-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+/* EXTRA LARGE SCREENS */
+@media (min-width: 1600px) {
+  .project-card {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+}
+
+
+
+@media (min-width: 1600px) {
+  .project-card {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  }
+
+  .project-info-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
   .project-value {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -1032,11 +1066,6 @@
 
   .projects-toolbar .search-control {
     grid-column: span 2;
-  }
-
-  .project-gallery {
-    aspect-ratio: 16 / 10;
-    min-height: 0;
   }
 }
 
@@ -1097,8 +1126,6 @@
   }
 
   .project-gallery {
-    aspect-ratio: 4 / 3;
-    min-height: 0;
     border-radius: 13px;
   }
 

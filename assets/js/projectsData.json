@@ -680,7 +680,7 @@
     "projectNumber": "P-155",
     "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
     "title": "Soho Apartment",
-    "image": "assets/images/img_gallery/155v1.webp",
+    "image": "assets/images/img_gallery/155.jpg",
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
     "consultant": "M/s Naga Engineering Consultant",
@@ -708,10 +708,9 @@
     "projectNumber": "P-153",
     "slug": "P-153 (2B+G+5 Stories) STORIES HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/153v1.webp",
+    "image": "assets/images/img_gallery/153.jpg",
     "images": [
-      "assets/images/img_gallery/153v1.webp",
-      "assets/images/img_gallery/153v2.webp",
+      "assets/images/img_gallery/153.jpg",
       "assets/images/intr_img/153iv1.webp",
       "assets/images/intr_img/153iv2.webp",
       "assets/images/intr_img/153iv3.webp",
@@ -1388,11 +1387,10 @@
     "projectNumber": "P-159",
     "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/159v1.webp",
+    "image": "assets/images/img_gallery/159v1.jpg",
     "images": [
-      "assets/images/img_gallery/159v1.webp",
-      "assets/images/img_gallery/159v2.webp",
-      "assets/images/img_gallery/159v3.webp"
+      "assets/images/img_gallery/159v1.jpg",
+      "assets/images/img_gallery/159v2.jpg"
     ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -1421,10 +1419,10 @@
     "projectNumber": "P-163",
     "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     "title": "Dialysis Center",
-    "image": "assets/images/img_gallery/163v2.webp",
+    "image": "assets/images/img_gallery/163v1.jpg",
     "images": [
-      "assets/images/img_gallery/163v2.webp",
-      "assets/images/img_gallery/163v1.webp"
+      "assets/images/img_gallery/163v1.jpg",
+      "assets/images/img_gallery/163v2.jpg"
     ],
     "projectValue": "AED 32,000,000",
     "client": "M/S Dubai Health Authority & Srg",
@@ -1471,12 +1469,7 @@
     "projectNumber": "P-165",
     "slug": "P-165 PROPOSED (G+M+7F+Gym)",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/165v1.webp",
-    "images": [
-      "assets/images/img_gallery/165v1.webp",
-      "assets/images/img_gallery/165v2.webp",
-      "assets/images/img_gallery/165v3.webp"
-    ],
+    "image": "assets/images/img_gallery/165v1.jpg",
     "projectValue": "AED 37,300,000",
     "client": "Mr. HUSSAIN ALI FARDAN AL FARDAN",
     "consultant": "M/s. CHAWLA Architectural & Consulting Engineers",
@@ -1578,7 +1571,7 @@
     "projectNumber": "P-173",
     "slug": "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/173v1.jpg",
+    "image": "assets/images/img_gallery/173v1.jpg",
     "images": [
       "assets/images/img_gallery/173v1.jpg",
       "assets/images/img_gallery/173v2.jpg"
@@ -1786,7 +1779,7 @@
     "projectNumber": "P-188",
     "slug": "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/188v1.jpg",
+    "image": "assets/images/img_gallery/188v1.jpg",
     "images": [
       "assets/images/img_gallery/188v1.jpg",
       "assets/images/img_gallery/188v2.jpg"
@@ -1906,7 +1899,8 @@
     "projectNumber": "P-195",
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "Shopping Mall",
-    "image": "assets/images/img_gallery/195.jpg",
+    "image": "assets/images/img_gallery/195v1.jpg",
+    "images":["assets/images/img_gallery/195v1.jpg","assets/images/img_gallery/195v2.jpg"],
     "projectValue": "AED 30,500,000",
     "client": "M/s. SRG Holding Limited",
     "consultant": "M/S. Loci Architecture & Design",

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
      1. CONFIG
   ========================================= */
   const PROJECTS_JSON_URL = "./assets/js/projectsData.json";
+  const MAP_PAGE_URL = "map.html"; // used when a project has no latitude / longitude
 
   const PLACEHOLDER =
     "data:image/svg+xml;utf8," +
@@ -57,12 +58,6 @@ document.addEventListener("DOMContentLoaded", async () => {
      3. ICONS
   ========================================= */
   const ICONS = {
-    layers:
-      '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>',
-    building:
-      '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/>',
-    home: '<path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9M9 21v-7h6v7"/>',
-    roof: '<path d="m3 14 9-9 9 9"/><path d="m14 5 5-3 1 4"/><path d="M6 12v8h12v-8"/>',
     users:
       '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
     document: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7m-7 4h7"/>',
@@ -74,10 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/>',
     coins:
       '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v4c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 10v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/><path d="M5 14v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/>',
-    hash: '<path d="M5 9h14M5 15h14M10 3 8 21M16 3l-2 18"/>',
-    tag: '<path d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.5" cy="8.5" r="1.2"/>',
-    ruler:
-      '<path d="M3 17 17 3l4 4L7 21l-4-4Z"/><path d="m8 12 2 2m1-5 2 2m1-5 2 2"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     check: '<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
     flag: '<path d="M5 21V4m0 0h12l-2 4 2 4H5"/>',
@@ -120,6 +111,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const pad = (n) => String(n).padStart(2, "0");
 
+  const hasValue = (v) =>
+    v !== null && v !== undefined && String(v).trim() !== "";
+
   /* =========================================
      5. STATE
   ========================================= */
@@ -154,7 +148,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderValue(project);
     renderStats(project);
     renderBento(project);
-    renderComprises(project);
     renderLocation(project);
     renderSiblings(projects, position);
     prepareGallery(project);
@@ -167,7 +160,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   initReveal();
-  initProgress();
   requestAnimationFrame(() => el.hero.classList.add("ready"));
 
   /* =========================================
@@ -308,20 +300,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         value: p.consultant,
         cls: "bento--wide bento--mint",
       },
-      {
-        icon: "tag",
-        label: "Project Type",
-        value: p.projectType,
-        cls: "bento--soft",
-      },
-      { icon: "hash", label: "Project Number", value: p.projectNumber },
-      { icon: "pin", label: "Area", value: p.area, sub: p.state },
-      {
-        icon: "ruler",
-        label: "Plot Number",
-        value: p.plotNumber ?? p.plot,
-        cls: "bento--soft",
-      },
     ];
 
     const box = $("pdBento");
@@ -356,79 +334,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* =========================================
-     11. PROJECT COMPRISES (animated timeline)
-  ========================================= */
-  function isBelow(v) {
-    return (
-      v.includes("basement") ||
-      v.includes("under ground") ||
-      v.includes("underground")
-    );
-  }
-
-  function comprisesIcon(title) {
-    const v = norm(title);
-    if (v.includes("roof")) return "roof";
-    if (v.includes("ground") && !isBelow(v)) return "home";
-    if (isBelow(v)) return "layers";
-    return "building";
-  }
-
-  function comprisesSub(title, p) {
-    const v = norm(title);
-    if (v.includes("roof")) return "Top Level";
-    if (v.includes("ground") && !isBelow(v)) return "Ground Level";
-    if (isBelow(v)) return "Below Ground";
-    if (v.includes("podium")) return "Podium Level";
-    if (v.includes("parking")) return "Parking Level";
-    if (v.includes("mezzanine")) return "Mezzanine Level";
-    if (/\bfloors?\b/.test(v))
-      return norm(p.projectType).includes("residential")
-        ? "Residential"
-        : "Typical Floors";
-    return "";
-  }
-
-  function renderComprises(p) {
-    const list = Array.isArray(p.projectComprisesOf)
-      ? p.projectComprisesOf
-      : [];
-
-    const items = list
-      .map((item) => {
-        const title =
-          item && typeof item === "object"
-            ? String(item.title ?? item.name ?? "").trim()
-            : String(item ?? "").trim();
-        const subtitle =
-          item && typeof item === "object" && item.subtitle
-            ? String(item.subtitle).trim()
-            : comprisesSub(title, p);
-        return { title, subtitle };
-      })
-      .filter((i) => i.title);
-
-    if (!items.length) return;
-
-    $("pdSteps").innerHTML = items
-      .map(
-        (it, i) => `
-        <li class="pd-step reveal" style="--i:${i};--n:${i}">
-          <span class="pd-step-rail" aria-hidden="true"></span>
-          <span class="pd-step-node">${svg(comprisesIcon(it.title))}</span>
-          <div class="pd-step-card">
-            <span class="pd-step-no">${pad(i + 1)}</span>
-            <span class="pd-step-name">${esc(it.title)}</span>
-            ${it.subtitle ? `<span class="pd-step-sub">${esc(it.subtitle)}</span>` : ""}
-          </div>
-        </li>`,
-      )
-      .join("");
-
-    $("pdComprises").hidden = false;
-  }
-
-  /* =========================================
      12. LOCATION + MAP
   ========================================= */
   function renderLocation(p) {
@@ -449,51 +354,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     const lat = Number(p.latitude);
     const lng = Number(p.longitude);
     const hasCoords =
-      p.latitude !== null &&
-      p.longitude !== null &&
-      p.latitude !== "" &&
-      p.longitude !== "" &&
+      hasValue(p.latitude) &&
+      hasValue(p.longitude) &&
       Number.isFinite(lat) &&
       Number.isFinite(lng);
 
-    if (hasCoords) meta.push(`${lat.toFixed(5)}°, ${lng.toFixed(5)}°`);
     $("mapMeta").textContent = meta.join("  •  ");
 
-    $("mapLink").href = hasCoords
-      ? `https://www.google.com/maps?q=${lat},${lng}`
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-
-    const card = $("pdMapCard");
+    const link = $("mapLink");
 
     if (hasCoords) {
-      const dx = 0.008;
-      const dy = 0.005;
-      const bbox = [lng - dx, lat - dy, lng + dx, lat + dy].join("%2C");
-
-      const frame = document.createElement("iframe");
-      frame.src =
-        `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}` +
-        `&layer=mapnik`; // marker removed
-      // ...
-      $("pdMap").appendChild(frame);
-
-      // custom red pin
-      const pin = document.createElement("span");
-      pin.className = "pd-map-pin";
-      pin.setAttribute("aria-hidden", "true");
-      pin.innerHTML =
-        '<svg viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.2 0 11.7 0 20.4 12 32 12 32s12-11.6 12-20.3C24 5.2 18.6 0 12 0z"/><circle cx="12" cy="11.7" r="4.5"/></svg>';
-      $("pdMap").appendChild(pin);
-
-      $("pdMap").hidden = false;
-      frame.title = `Map of ${address}`;
-      frame.loading = "lazy";
-      frame.referrerPolicy = "no-referrer";
-
-      $("pdMap").appendChild(frame);
-      $("pdMap").hidden = false;
+      /* Has coordinates: open Google Maps in a new tab */
+      link.href = `https://www.google.com/maps?q=${lat},${lng}`;
+      link.target = "_blank";
+      link.rel = "noopener";
     } else {
-      card.classList.add("no-map");
+      /* No coordinates: go to map.html */
+      const slug = String(p.slug ?? "").trim();
+      link.href = slug
+        ? `${MAP_PAGE_URL}?slug=${encodeURIComponent(slug)}`
+        : MAP_PAGE_URL;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+
+      const label = link.querySelector("span");
+      if (label) label.textContent = "View on Map";
     }
   }
 
@@ -777,37 +662,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* =========================================
-     17. SCROLL PROGRESS
-  ========================================= */
-  function initProgress() {
-    const bar = $("pdProgress");
-    if (!bar) return;
-
-    let ticking = false;
-
-    const update = () => {
-      const h = document.documentElement;
-      const max = h.scrollHeight - h.clientHeight;
-      bar.style.transform = `scaleX(${max > 0 ? Math.min(h.scrollTop / max, 1) : 0})`;
-      ticking = false;
-    };
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(update);
-        }
-      },
-      { passive: true },
-    );
-
-    update();
-  }
-
-  /* =========================================
-     18. SCROLL REVEAL
+     17. SCROLL REVEAL
   ========================================= */
   function initReveal() {
     const items = document.querySelectorAll(".reveal");

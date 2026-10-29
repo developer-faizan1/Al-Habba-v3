@@ -1,4 +1,3 @@
-
 /* =========================================
    PROJECTS CONFIGURATION
 ========================================= */
@@ -618,68 +617,48 @@ function projectCard(project) {
 
         <div class="project-parties">
 
-          <div class="info-tile">
+          <div class="party-item" style="--d:0">
+            <span class="party-icon">${iconSVG("users")}</span>
 
-            <span class="info-icon">
-              ${iconSVG("users")}
-            </span>
-
-            <div class="info-text">
-              <span class="info-label">Client</span>
-
-              <strong class="info-value">
-                ${escapeHTML(formatValue(project.client))}
-              </strong>
+            <div class="party-text">
+              <span class="party-label">Client</span>
+              <strong class="party-value">${escapeHTML(formatValue(project.client))}</strong>
             </div>
-
           </div>
 
-          <div class="info-tile">
+          <div class="party-item" style="--d:1">
+            <span class="party-icon">${iconSVG("document")}</span>
 
-            <span class="info-icon">
-              ${iconSVG("document")}
-            </span>
-
-            <div class="info-text">
-              <span class="info-label">Consultant</span>
-
-              <strong class="info-value">
-                ${escapeHTML(formatValue(project.consultant))}
-              </strong>
+            <div class="party-text">
+              <span class="party-label">Consultant</span>
+              <strong class="party-value">${escapeHTML(formatValue(project.consultant))}</strong>
             </div>
-
           </div>
 
-          <div class="info-tile info-tile--wide">
+          <div class="party-item party-item--location" style="--d:2">
+            <span class="party-icon">${iconSVG("map")}</span>
 
-            <span class="info-icon">
-              ${iconSVG("map")}
-            </span>
-
-            <div class="info-text">
-              <span class="info-label">Location</span>
-
-              <strong class="info-value">
-                ${escapeHTML(location)}
-              </strong>
+            <div class="party-text">
+              <span class="party-label">Location</span>
+              <strong class="party-value">${escapeHTML(location)}</strong>
             </div>
 
             ${
               projectSlug
                 ? `
                   <a
-                    class="info-map"
-                    href="project-details.html?slug=${slug}">
-                    <span>View Project Details</span>
+                    class="party-go"
+                    href="project-details.html?slug=${slug}"
+                    aria-label="View project details">
+                    <span>Details</span>
 
-                    <span class="circle-arrow">
+                    <span class="party-go-arrow">
                       ${iconSVG("arrow")}
                     </span>
                   </a>
                 `
                 : ""
             }
-
           </div>
 
         </div>

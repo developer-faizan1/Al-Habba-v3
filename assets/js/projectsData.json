@@ -13,6 +13,9 @@
     "startDate": "05 May 2026",
     "completionDate": "Under Construction",
     "status": "Running Project",
+     "progress": {
+      "overall": 6
+    },
     "projectType": "Mixed Use",
     "projectDescription": "Proposed Mixed Use Development",
     "projectComprisesOf": ["Community Mall", "6 Buildings"],
@@ -40,6 +43,9 @@
     "startDate": "13 May 2025",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 55
+    },
     "projectType": "Residential",
     "projectDescription": "(UG+GF+2P+8 Floors) Residential Building",
     "projectComprisesOf": [
@@ -72,6 +78,9 @@
     "startDate": "11 August 2025",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 60
+    },
     "projectType": "Residential",
     "projectDescription": "G+2P+14F+R - Residential Building",
     "projectComprisesOf": [
@@ -100,6 +109,9 @@
     "startDate": "18 October 2025",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 30
+    },
     "projectType": "Hotel",
     "projectDescription": "G+2P+7F+R - Hotel Tower",
     "projectComprisesOf": [
@@ -128,6 +140,9 @@
     "startDate": "12 May 2025",
     "completionDate": "",
     "status": "Running Project",
+    "progress": {
+      "overall": 60
+    },
     "projectType": "Building",
     "projectDescription": "SRG JVC - G+3P+16 + R)",
     "projectComprisesOf": [
@@ -156,6 +171,9 @@
     "startDate": "18 June 2025",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 70
+    },
     "projectType": "Residential",
     "projectDescription": "1B+G+1P+9F+R - Residential Building",
     "projectComprisesOf": [
@@ -185,6 +203,9 @@
     "startDate": "20 November 2024",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 40
+    },
     "projectType": "Residential",
     "projectDescription": "G+7+R Residential Building",
     "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
@@ -212,6 +233,9 @@
     "startDate": "01-February-2026",
     "completionDate": "Under Construction",
     "status": "Running Project",
+    "progress": {
+      "overall": 40
+    },
     "projectType": "Headquarters",
     "projectDescription": "Al Habbai Headquarters",
     "projectComprisesOf": [
@@ -237,6 +261,9 @@
     "consultant": "M/S. Style Engineering Consultant",
     "projectLocation": "NAD ALSHIBA",
     "startDate": "01 May 2025",
+    "progress": {
+      "overall": 50
+    },
     "completionDate": "Under Construction",
     "status": "Running Project",
     "projectType": "Residential",
@@ -405,8 +432,9 @@
     "projectNumber": "P-085",
     "slug": "P-085 (2B+G+M+12+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/p85.jpg",
+    "image": "assets/images/img_gallery/85.jpg",
     "images": [
+      "assets/images/img_gallery/85.jpg",
       "assets/images/intr_img/85iv1.jpg",
       "assets/images/intr_img/85iv2.jpeg",
       "assets/images/intr_img/85iv3.jpg"
@@ -1154,7 +1182,7 @@
     "projectNumber": "P-134",
     "slug": "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/p134.jpg",
+    "image": "assets/images/img_gallery/134.jpg",
     "projectValue": "AED 66,500,000",
     "client": "M/S. SRG PROPERTIES LLC",
     "consultant": "M/s. Al Jabal Engineering Consultnat",
@@ -1267,7 +1295,7 @@
     "projectNumber": "P-143",
     "slug": "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/p143.png",
+    "image": "assets/images/img_gallery/143.jpg",
     "projectValue": "AED 59,500,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
     "consultant": "M/s. Dubai Consultant",
@@ -1492,7 +1520,7 @@
     "projectNumber": "P-166",
     "slug": "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/projects/p166.jpg",
+    "image": "assets/images/img_gallery/166.jpg",
     "projectValue": "AED 122,300,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s. Al Ajmi Engineering Consultant",
@@ -1515,7 +1543,11 @@
     "projectNumber": "P-170",
     "slug": "P-170 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/projects/p170.jpg",
+    "image": "assets/images/img_gallery/170v1.jpg",
+    "images": [
+      "assets/images/img_gallery/170v1.jpg",
+      "assets/images/img_gallery/170v2.jpg"
+    ],
     "projectValue": "AED 21,800,000",
     "client": "MR. MOHAMED RASHED MUBARAK SALEM ALKETBI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1603,7 +1635,7 @@
     "projectNumber": "P-174",
     "slug": "P-174 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/projects/p174.jpg",
+    "image": "assets/images/img_gallery/174.jpg",
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1631,7 +1663,11 @@
     "projectNumber": "P-175",
     "slug": "P-175 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/projects/p175.jpg",
+    "image": "assets/images/img_gallery/175.jpg",
+    "images": [
+      "assets/images/img_gallery/175.jpg",
+      "assets/images/img_gallery/175v2.jpg"
+    ],
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1659,11 +1695,7 @@
     "projectNumber": "P-176",
     "slug": "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/176v1.webp",
-    "images": [
-      "assets/images/img_gallery/176v1.webp",
-      "assets/images/img_gallery/176v2.webp"
-    ],
+    "image": "assets/images/img_gallery/176.jpg",
     "projectValue": "AED 30,100,000",
     "client": "Mr. Ahmad Ali Al Abdulla Al Ansari",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1900,7 +1932,10 @@
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "Shopping Mall",
     "image": "assets/images/img_gallery/195v1.jpg",
-    "images":["assets/images/img_gallery/195v1.jpg","assets/images/img_gallery/195v2.jpg"],
+    "images": [
+      "assets/images/img_gallery/195v1.jpg",
+      "assets/images/img_gallery/195v2.jpg"
+    ],
     "projectValue": "AED 30,500,000",
     "client": "M/s. SRG Holding Limited",
     "consultant": "M/S. Loci Architecture & Design",
@@ -1959,7 +1994,7 @@
     "image": "assets/images/img_gallery/198v1.jpg",
     "images": [
       "assets/images/img_gallery/198v1.jpg",
-      "assets/images/img_gallery/198v2.png"
+      "assets/images/img_gallery/198v2.jpg"
     ],
     "projectValue": "AED 36,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",

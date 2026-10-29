@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     renderHeader(project);
     renderValue(project);
+    renderProgress(project);
     renderStats(project);
     renderBento(project);
     renderLocation(project);
@@ -187,12 +188,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       lead.textContent = desc;
       lead.hidden = false;
     }
-
-    $("heroPin").innerHTML = svg("pin");
-    $("heroLocation").textContent = clean(
-      p.fullAddress || p.projectLocation || p.area,
-      "Location not specified",
-    );
 
     const status = clean(p.status, "Not specified");
     $("projectStatusText").textContent = status;
@@ -248,6 +243,64 @@ document.addEventListener("DOMContentLoaded", async () => {
         { threshold: 0.3 },
       );
       io.observe($("projectValue"));
+    } else {
+      run();
+    }
+  }
+
+  /* =========================================
+     8b. PROGRESS RING (reads progress.overall)
+  ========================================= */
+  function renderProgress(p) {
+    const box = $("pdProgress");
+    const raw = p.progress?.overall;
+
+    if (!hasValue(raw) || !Number.isFinite(Number(raw))) {
+      box.hidden = true;
+      return;
+    }
+
+    const pct = Math.min(100, Math.max(0, Number(raw)));
+    box.hidden = false;
+
+    const bar = $("ringBar");
+    const num = $("progressNum");
+
+    if (reduceMotion) {
+      bar.style.transition = "none";
+      bar.style.strokeDashoffset = 100 - pct;
+      num.textContent = `${pct}%`;
+      return;
+    }
+
+    const run = () => {
+      bar.style.strokeDashoffset = 100 - pct;
+
+      const duration = 1800;
+      let start = null;
+
+      const tick = (now) => {
+        if (start === null) start = now;
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 4);
+        num.textContent = `${Math.round(pct * eased)}%`;
+        if (t < 1) requestAnimationFrame(tick);
+        else num.textContent = `${pct}%`;
+      };
+      requestAnimationFrame(tick);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            io.disconnect();
+            setTimeout(run, 350);
+          }
+        },
+        { threshold: 0.3 },
+      );
+      io.observe(box);
     } else {
       run();
     }

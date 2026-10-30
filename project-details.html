@@ -92,9 +92,7 @@
             <!-- Error state -->
             <div class="pd-error" id="pdError" hidden>
               <h1 id="pdErrorText">Project not found</h1>
-              <a class="pd-btn pd-btn--gold" href="projects.html"
-                >Back to projects</a
-              >
+              <a class="pd-btn" href="projects.html">Back to projects</a>
             </div>
 
             <div class="pd-hero-grid" id="pdLayout">
@@ -162,14 +160,8 @@
               </div>
 
               <!-- Gallery -->
-              <div class="pd-gallery project-gallery reveal" style="--i: 2">
+              <div class="pd-gallery reveal" style="--i: 2">
                 <div class="pd-stage" id="pdStage">
-                  <div
-                    class="pd-stage-bg"
-                    id="stageBg"
-                    aria-hidden="true"
-                  ></div>
-
                   <img
                     id="mainProjectImage"
                     class="pd-main-img"
@@ -214,7 +206,7 @@
                   </button>
                 </div>
 
-                <div class="pd-thumbs-wrap" id="thumbsWrap">
+                <div class="pd-thumbs-wrap">
                   <button
                     type="button"
                     class="pd-thumb-nav"
@@ -238,60 +230,31 @@
           </header>
 
           <div class="pd-wrap" id="pdBody">
-            <!-- Location -->
-            <div class="pd-section" aria-labelledby="hLoc" data-aos="fade-up">
-              <div class="pd-head reveal">
-                <span class="pd-eyebrow">Where</span>
-                <h2 class="pd-h2" id="hLoc">Project location</h2>
-              </div>
-
-              <div class="pd-mapcard reveal" id="pdMapCard">
-                <div class="pd-mapcard-info">
-                  <span class="pd-mapcard-icon" id="locationIcon"></span>
-                  <span class="pd-label">Address</span>
-                  <strong class="pd-mapcard-address" id="projectLocation"
-                    >—</strong
-                  >
-                  <p class="pd-mapcard-meta" id="mapMeta"></p>
-                  <div class="pd-mapcard-actions">
-                    <a
-                      class="pd-btn pd-btn--gold"
-                      id="mapLink"
-                      href="#"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <span>Open in Maps</span>
-                      <i class="pd-btn-arrow" id="mapArrow"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Key information -->
-            <div class="pd-section" aria-labelledby="hInfo" data-aos="fade-up">
+            <!-- Key information: client, consultant, location (rendered by JS) -->
+            <section
+              class="pd-section"
+              aria-labelledby="hInfo"
+              data-aos="fade-up"
+            >
               <div class="pd-head reveal">
                 <span class="pd-eyebrow">Project Details</span>
                 <h2 class="pd-h2" id="hInfo">Key information</h2>
               </div>
               <div class="pd-bento" id="pdBento"></div>
-            </div>
+            </section>
 
-            <!-- Previous / next (icons, rendered by JS) -->
-            <div
+            <!-- Previous / all / next (rendered by JS) -->
+            <nav
               data-aos="fade-up"
               class="pd-sibs reveal"
               id="pdSiblings"
-              role="navigation"
               aria-label="More projects"
               hidden
-            ></div>
+            ></nav>
           </div>
         </main>
 
-        <!-- LIGHTBOX -->
-
+        <!-- Lightbox -->
         <div
           class="lightbox"
           id="galleryLightbox"

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
   /* =========================================
-     1. CONFIG
+     CONFIG
   ========================================= */
-  const PROJECTS_JSON_URL = "./assets/js/projectsData.json";
-  const MAP_PAGE_URL = "map.html"; // used when a project has no latitude / longitude
+  const PROJECTS_URL = "./assets/js/projectsData.json";
+  const MAP_PAGE = "map.html"; // fallback when a project has no coordinates
 
   const PLACEHOLDER =
     "data:image/svg+xml;utf8," +
@@ -16,47 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         "</g></svg>",
     );
 
-  const $ = (id) => document.getElementById(id);
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-  const canHover = window.matchMedia("(hover: hover)").matches;
-
-  /* =========================================
-     2. DOM
-  ========================================= */
-  const el = {
-    hero: $("pdHero"),
-    layout: $("pdLayout"),
-    body: $("pdBody"),
-    error: $("pdError"),
-    errorText: $("pdErrorText"),
-    gallery: document.querySelector(".pd-gallery"),
-    stage: $("pdStage"),
-    stageBg: $("stageBg"),
-    mainImage: $("mainProjectImage"),
-    counter: $("galleryCounter"),
-    thumbs: $("galleryThumbnails"),
-    prev: $("galleryPrev"),
-    next: $("galleryNext"),
-    thumbPrev: $("thumbnailPrev"),
-    thumbNext: $("thumbnailNext"),
-    fullscreen: $("galleryFullscreen"),
-
-    lightbox: $("galleryLightbox"),
-    lbFigure: $("lbFigure"),
-    lbImage: $("lightboxImage"),
-    lbThumbs: $("lbThumbs"),
-    lbCounter: $("lightboxCounter"),
-    lbCaption: $("lightboxCaption"),
-    lbClose: $("lightboxClose"),
-    lbPrev: $("lightboxPrev"),
-    lbNext: $("lightboxNext"),
-  };
-
-  /* =========================================
-     3. ICONS
-  ========================================= */
   const ICONS = {
     users:
       '<circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2"/><path d="M17 4a4 4 0 0 1 0 8m2 3a6 6 0 0 1 3 5v1"/>',
@@ -74,16 +33,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     flag: '<path d="M5 21V4m0 0h12l-2 4 2 4H5"/>',
   };
 
-  const svg = (name) =>
-    `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ICONS.document}</svg>`;
+  /* =========================================
+     HELPERS
+  ========================================= */
+  const $ = (id) => document.getElementById(id);
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const canHover = matchMedia("(hover: hover)").matches;
 
-  // Explicit-attribute icon (used for the prev / all / next buttons)
+  const svg = (name) =>
+    `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] ?? ICONS.document}</svg>`;
+
+  // Icon with explicit attributes, so it still renders if other site CSS targets bare <svg>
   const iconSvg = (name) =>
     `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block">${ICONS[name]}</svg>`;
 
-  /* =========================================
-     4. HELPERS
-  ========================================= */
   const esc = (v) =>
     String(v ?? "").replace(
       /[&<>"']/g,
@@ -97,10 +60,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         })[c],
     );
 
-  const clean = (v, fallback = "Not specified") => {
-    const t = String(v ?? "").trim();
-    return t || fallback;
-  };
+  const clean = (v, fallback = "Not specified") =>
+    String(v ?? "").trim() || fallback;
 
   const norm = (v) =>
     String(v ?? "")
@@ -110,26 +71,79 @@ document.addEventListener("DOMContentLoaded", async () => {
       .replace(/[\s_-]+/g, " ");
 
   const pad = (n) => String(n).padStart(2, "0");
+  const hasValue = (v) => v != null && String(v).trim() !== "";
+  const isComplete = (status) => norm(status).includes("complete");
 
-  const hasValue = (v) =>
-    v !== null && v !== undefined && String(v).trim() !== "";
+  /** Run `fn` once when `target` scrolls into view. */
+  const whenVisible = (target, fn, delay = 350) => {
+    if (!("IntersectionObserver" in window)) return fn();
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        setTimeout(fn, delay);
+      },
+      { threshold: 0.3 },
+    );
+    io.observe(target);
+  };
+
+  /** Ease-out animation: calls `draw(progress 0 → 1)`. */
+  const tween = (duration, draw) => {
+    let start = null;
+    const tick = (now) => {
+      start ??= now;
+      const t = Math.min((now - start) / duration, 1);
+      draw(1 - (1 - t) ** 4);
+      if (t < 1) requestAnimationFrame(tick);
+      else draw(1);
+    };
+    requestAnimationFrame(tick);
+  };
 
   /* =========================================
-     5. STATE
+     DOM + STATE
   ========================================= */
+  const el = {
+    hero: $("pdHero"),
+    layout: $("pdLayout"),
+    body: $("pdBody"),
+    error: $("pdError"),
+    errorText: $("pdErrorText"),
+    gallery: document.querySelector(".pd-gallery"),
+    stage: $("pdStage"),
+    mainImage: $("mainProjectImage"),
+    counter: $("galleryCounter"),
+    thumbs: $("galleryThumbnails"),
+    prev: $("galleryPrev"),
+    next: $("galleryNext"),
+    thumbPrev: $("thumbnailPrev"),
+    thumbNext: $("thumbnailNext"),
+    fullscreen: $("galleryFullscreen"),
+    lightbox: $("galleryLightbox"),
+    lbFigure: $("lbFigure"),
+    lbImage: $("lightboxImage"),
+    lbThumbs: $("lbThumbs"),
+    lbCounter: $("lightboxCounter"),
+    lbCaption: $("lightboxCaption"),
+    lbClose: $("lightboxClose"),
+    lbPrev: $("lightboxPrev"),
+    lbNext: $("lightboxNext"),
+  };
+
   let images = [];
   let index = 0;
   let previousFocus = null;
   let titleText = "";
 
   /* =========================================
-     6. LOAD PROJECT
+     LOAD PROJECT
   ========================================= */
   try {
-    const slug = new URLSearchParams(window.location.search).get("slug");
+    const slug = new URLSearchParams(location.search).get("slug")?.trim();
     if (!slug) throw new Error("Project slug is missing from the URL.");
 
-    const res = await fetch(PROJECTS_JSON_URL, { cache: "no-cache" });
+    const res = await fetch(PROJECTS_URL, { cache: "no-cache" });
     if (!res.ok)
       throw new Error(`Unable to load project data (${res.status}).`);
 
@@ -138,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!Array.isArray(projects)) throw new Error("Invalid JSON format.");
 
     const position = projects.findIndex(
-      (p) => String(p.slug ?? "").trim() === slug.trim(),
+      (p) => String(p.slug ?? "").trim() === slug,
     );
     if (position === -1) throw new Error("Project not found.");
 
@@ -149,7 +163,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderProgress(project);
     renderStats(project);
     renderBento(project);
-    renderLocation(project);
     renderSiblings(projects, position);
     prepareGallery(project);
   } catch (err) {
@@ -164,7 +177,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   requestAnimationFrame(() => el.hero.classList.add("ready"));
 
   /* =========================================
-     7. HEADER
+     HEADER
   ========================================= */
   function renderHeader(p) {
     titleText = clean(p.title, "Untitled Project");
@@ -173,14 +186,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     $("projectNumber").textContent = clean(p.projectNumber, "Project");
     $("projectTypeChip").textContent = clean(p.projectType, "Project");
 
-    $("projectTitle").innerHTML = titleText
+    const title = $("projectTitle");
+    title.innerHTML = titleText
       .split(/\s+/)
       .map(
         (w, i) =>
           `<span class="w"><span style="--w:${i}">${esc(w)}</span></span>`,
       )
       .join(" ");
-    $("projectTitle").setAttribute("aria-label", titleText);
+    title.setAttribute("aria-label", titleText);
 
     const desc = String(p.projectDescription ?? "").trim();
     if (desc && norm(desc) !== norm(titleText)) {
@@ -189,16 +203,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       lead.hidden = false;
     }
 
-    const status = clean(p.status, "Not specified");
+    const status = clean(p.status);
     $("projectStatusText").textContent = status;
-    $("projectStatus").classList.toggle(
-      "is-completed",
-      norm(status).includes("complete"),
-    );
+    $("projectStatus").classList.toggle("is-completed", isComplete(status));
   }
 
   /* =========================================
-     8. VALUE (count-up)
+     VALUE (count-up)
   ========================================= */
   function renderValue(p) {
     $("valueIcon").innerHTML = ICONS.coins;
@@ -206,9 +217,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const text = clean(p.projectValue);
     const match = text.match(/^([A-Za-z]{2,4})\s+(.+)$/);
     const amountText = match ? match[2].trim() : text;
-
-    $("valueCurrency").textContent = match ? match[1] : "";
     const numberEl = $("valueNumber");
+
+    $("valueCurrency").textContent = match?.[1] ?? "";
     numberEl.textContent = amountText;
 
     const amount = Number(amountText.replace(/,/g, ""));
@@ -217,39 +228,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     const fmt = new Intl.NumberFormat("en-US");
     numberEl.textContent = "0";
 
-    const run = () => {
-      const duration = 1800;
-      let startTime = null;
-
-      const tick = (now) => {
-        if (startTime === null) startTime = now;
-        const t = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 4);
-        numberEl.textContent = fmt.format(Math.round(amount * eased));
-        if (t < 1) requestAnimationFrame(tick);
-        else numberEl.textContent = amountText;
-      };
-      requestAnimationFrame(tick);
-    };
-
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            io.disconnect();
-            setTimeout(run, 350);
-          }
-        },
-        { threshold: 0.3 },
-      );
-      io.observe($("projectValue"));
-    } else {
-      run();
-    }
+    whenVisible($("projectValue"), () =>
+      tween(1800, (t) => {
+        numberEl.textContent =
+          t === 1 ? amountText : fmt.format(Math.round(amount * t));
+      }),
+    );
   }
 
   /* =========================================
-     8b. PROGRESS RING (reads progress.overall)
+     PROGRESS RING (progress.overall)
   ========================================= */
   function renderProgress(p) {
     const box = $("pdProgress");
@@ -261,10 +249,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const pct = Math.min(100, Math.max(0, Number(raw)));
-    box.hidden = false;
-
     const bar = $("ringBar");
     const num = $("progressNum");
+    box.hidden = false;
 
     if (reduceMotion) {
       bar.style.transition = "none";
@@ -273,51 +260,24 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    const run = () => {
+    whenVisible(box, () => {
       bar.style.strokeDashoffset = 100 - pct;
-
-      const duration = 1800;
-      let start = null;
-
-      const tick = (now) => {
-        if (start === null) start = now;
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 4);
-        num.textContent = `${Math.round(pct * eased)}%`;
-        if (t < 1) requestAnimationFrame(tick);
-        else num.textContent = `${pct}%`;
-      };
-      requestAnimationFrame(tick);
-    };
-
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            io.disconnect();
-            setTimeout(run, 350);
-          }
-        },
-        { threshold: 0.3 },
-      );
-      io.observe(box);
-    } else {
-      run();
-    }
+      tween(1800, (t) => (num.textContent = `${Math.round(pct * t)}%`));
+    });
   }
 
   /* =========================================
-     9. HERO STATS
+     HERO STATS
   ========================================= */
   function renderStats(p) {
-    const completed = norm(p.status).includes("complete");
+    const done = isComplete(p.status);
 
     const stats = [
-      { icon: completed ? "check" : "flag", label: "Status", value: p.status },
+      { icon: done ? "check" : "flag", label: "Status", value: p.status },
       { icon: "calendar", label: "Start Date", value: p.startDate },
       {
-        icon: completed ? "check" : "clock",
-        label: completed ? "Completed On" : "Completion",
+        icon: done ? "check" : "clock",
+        label: done ? "Completed On" : "Completion",
         value: p.completionDate,
       },
     ];
@@ -337,21 +297,60 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* =========================================
-     10. KEY INFORMATION (bento)
+     KEY INFORMATION: client, consultant, location
   ========================================= */
   function renderBento(p) {
+    const address = clean(
+      p.fullAddress || p.projectLocation || p.area,
+      "Location not specified",
+    );
+
+    const addrNorm = norm(address);
+    const meta = [
+      ...new Set(
+        [p.area, p.state].map((v) => String(v ?? "").trim()).filter(Boolean),
+      ),
+    ].filter((v) => !addrNorm.includes(norm(v)));
+
+    // Coordinates open Google Maps; otherwise fall back to the site's map page
+    const lat = Number(p.latitude);
+    const lng = Number(p.longitude);
+    const hasCoords =
+      hasValue(p.latitude) &&
+      hasValue(p.longitude) &&
+      Number.isFinite(lat) &&
+      Number.isFinite(lng);
+    const slug = String(p.slug ?? "").trim();
+
+    const link = hasCoords
+      ? {
+          href: `https://www.google.com/maps?q=${lat},${lng}`,
+          text: "Open in Maps",
+          external: true,
+        }
+      : {
+          href: slug
+            ? `${MAP_PAGE}?slug=${encodeURIComponent(slug)}`
+            : MAP_PAGE,
+          text: "View on Map",
+          external: false,
+        };
+
     const cards = [
-      {
-        icon: "users",
-        label: "Client",
-        value: p.client,
-        cls: "bento--wide bento--dark",
-      },
+      { icon: "users", label: "Client", value: p.client, cls: "bento--dark" },
       {
         icon: "document",
         label: "Consultant",
         value: p.consultant,
-        cls: "bento--wide bento--mint",
+        cls: "bento--mint",
+      },
+      {
+        icon: "pin",
+        label: "Location",
+        value: address,
+        sub: meta.join("  •  "),
+        cls: "bento--light",
+        link,
       },
     ];
 
@@ -360,23 +359,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     box.innerHTML = cards
       .map(
         (c, i) => `
-        <article class="bento ${c.cls || ""} reveal" style="--i:${i}">
+        <article class="bento ${c.cls} reveal" style="--i:${i}">
           <span class="bento-mark">${svg(c.icon)}</span>
           <div class="bento-top">
             <span class="bento-icon">${svg(c.icon)}</span>
             <span class="pd-label">${esc(c.label)}</span>
           </div>
-          <div>
-            <strong class="bento-value">${esc(clean(c.value))}</strong>
-            ${String(c.sub ?? "").trim() ? `<span class="bento-sub">${esc(String(c.sub).trim())}</span>` : ""}
-            <i class="bento-line"></i>
+          <div class="bento-foot">
+            <div class="bento-text">
+              <strong class="bento-value">${esc(clean(c.value))}</strong>
+              ${c.sub ? `<span class="bento-sub">${esc(c.sub)}</span>` : ""}
+              <i class="bento-line"></i>
+            </div>
+            ${
+              c.link
+                ? `<a class="pd-btn" href="${esc(c.link.href)}"${c.link.external ? ' target="_blank" rel="noopener"' : ""}>
+                     <span>${esc(c.link.text)}</span>${svg("arrow")}
+                   </a>`
+                : ""
+            }
           </div>
         </article>`,
       )
       .join("");
 
     if (canHover) {
-      box.addEventListener("mousemove", (e) => {
+      box.addEventListener("pointermove", (e) => {
         const card = e.target.closest(".bento");
         if (!card) return;
         const r = card.getBoundingClientRect();
@@ -387,56 +395,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* =========================================
-     12. LOCATION + MAP
-  ========================================= */
-  function renderLocation(p) {
-    $("locationIcon").innerHTML = svg("pin");
-    $("mapArrow").innerHTML = svg("arrow");
-
-    const address = clean(
-      p.fullAddress || p.projectLocation || p.area,
-      "Location not specified",
-    );
-    $("projectLocation").textContent = address;
-
-    const meta = [p.area, p.state]
-      .map((v) => String(v ?? "").trim())
-      .filter(Boolean)
-      .filter((v, i, a) => a.indexOf(v) === i);
-
-    const lat = Number(p.latitude);
-    const lng = Number(p.longitude);
-    const hasCoords =
-      hasValue(p.latitude) &&
-      hasValue(p.longitude) &&
-      Number.isFinite(lat) &&
-      Number.isFinite(lng);
-
-    $("mapMeta").textContent = meta.join("  •  ");
-
-    const link = $("mapLink");
-
-    if (hasCoords) {
-      /* Has coordinates: open Google Maps in a new tab */
-      link.href = `https://www.google.com/maps?q=${lat},${lng}`;
-      link.target = "_blank";
-      link.rel = "noopener";
-    } else {
-      /* No coordinates: go to map.html */
-      const slug = String(p.slug ?? "").trim();
-      link.href = slug
-        ? `${MAP_PAGE_URL}?slug=${encodeURIComponent(slug)}`
-        : MAP_PAGE_URL;
-      link.removeAttribute("target");
-      link.removeAttribute("rel");
-
-      const label = link.querySelector("span");
-      if (label) label.textContent = "View on Map";
-    }
-  }
-
-  /* =========================================
-     13. PREVIOUS / ALL / NEXT  (icons only)
+     PREVIOUS / ALL / NEXT
   ========================================= */
   function renderSiblings(projects, pos) {
     if (projects.length < 2) return;
@@ -447,22 +406,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     const href = (proj) =>
       `project-details.html?slug=${encodeURIComponent(String(proj.slug ?? proj.id ?? ""))}`;
 
-    const prevTip = `Previous: ${clean(prevP.title, "Project")}`;
-    const nextTip = `Next: ${clean(nextP.title, "Project")}`;
+    const item = (cls, url, tip, icon) =>
+      `<a class="pd-ico ${cls}" href="${esc(url)}" aria-label="${esc(tip)}" data-tip="${esc(tip)}">${iconSvg(icon)}</a>`;
 
     const box = $("pdSiblings");
-    box.innerHTML = `
-      <a class="pd-ico pd-ico--prev" href="${esc(href(prevP))}"
-         aria-label="${esc(prevTip)}" data-tip="${esc(prevTip)}">${iconSvg("arrowLeft")}</a>
-      <a class="pd-ico pd-ico--all" href="projects.html"
-         aria-label="All projects" data-tip="All projects">${iconSvg("grid")}</a>
-      <a class="pd-ico pd-ico--next" href="${esc(href(nextP))}"
-         aria-label="${esc(nextTip)}" data-tip="${esc(nextTip)}">${iconSvg("arrow")}</a>`;
+    box.innerHTML =
+      item(
+        "pd-ico--prev",
+        href(prevP),
+        `Previous: ${clean(prevP.title, "Project")}`,
+        "arrowLeft",
+      ) +
+      item("pd-ico--all", "projects.html", "All projects", "grid") +
+      item(
+        "pd-ico--next",
+        href(nextP),
+        `Next: ${clean(nextP.title, "Project")}`,
+        "arrow",
+      );
     box.hidden = false;
   }
 
   /* =========================================
-     14. GALLERY
+     GALLERY
   ========================================= */
   function prepareGallery(p) {
     const list = [
@@ -494,22 +460,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         btn.className = cls;
         btn.setAttribute("aria-label", `View image ${i + 1}`);
 
-        const img = document.createElement("img");
+        const img = new Image();
         img.src = src;
         img.alt = "";
         img.loading = i === 0 ? "eager" : "lazy";
         img.decoding = "async";
-        img.addEventListener("error", () => {
+        img.onerror = () => {
           if (img.src !== PLACEHOLDER) img.src = PLACEHOLDER;
-        });
+        };
 
-        btn.appendChild(img);
+        btn.append(img);
         btn.addEventListener("click", () => show(i));
         return btn;
       };
 
-      el.thumbs.appendChild(make("pd-thumb"));
-      el.lbThumbs.appendChild(make("lb-thumb"));
+      el.thumbs.append(make("pd-thumb"));
+      el.lbThumbs.append(make("lb-thumb"));
     });
 
     show(0);
@@ -523,16 +489,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  // Restart the fade-in animation on an <img>
+  function swapImage(img, src, alt) {
+    img.classList.remove("fade-in");
+    void img.offsetWidth;
+    img.src = src;
+    img.alt = alt;
+    img.classList.add("fade-in");
+  }
+
   function show(i) {
     index = (i + images.length) % images.length;
-    const src = images[index];
 
-    el.mainImage.classList.remove("fade-in");
-    void el.mainImage.offsetWidth;
-    el.mainImage.src = src;
-    el.mainImage.alt = `${titleText} - image ${index + 1}`;
-    el.mainImage.classList.add("fade-in");
-
+    swapImage(el.mainImage, images[index], `${titleText} - image ${index + 1}`);
     el.counter.textContent = `${pad(index + 1)} / ${pad(images.length)}`;
 
     const thumbs = el.thumbs.querySelectorAll(".pd-thumb");
@@ -549,57 +518,40 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (el.mainImage.src !== PLACEHOLDER) el.mainImage.src = PLACEHOLDER;
   });
 
-  el.prev.addEventListener("click", (e) => {
+  const go = (step) => (e) => {
     e.stopPropagation();
-    show(index - 1);
-  });
-  el.next.addEventListener("click", (e) => {
-    e.stopPropagation();
-    show(index + 1);
-  });
+    show(index + step);
+  };
+  el.prev.addEventListener("click", go(-1));
+  el.next.addEventListener("click", go(1));
 
-  el.thumbPrev.addEventListener("click", () =>
+  const scrollThumbs = (dir) => () =>
     el.thumbs.scrollBy({
-      left: -el.thumbs.clientWidth * 0.75,
+      left: dir * el.thumbs.clientWidth * 0.75,
       behavior: "smooth",
-    }),
-  );
-  el.thumbNext.addEventListener("click", () =>
-    el.thumbs.scrollBy({
-      left: el.thumbs.clientWidth * 0.75,
-      behavior: "smooth",
-    }),
-  );
+    });
+  el.thumbPrev.addEventListener("click", scrollThumbs(-1));
+  el.thumbNext.addEventListener("click", scrollThumbs(1));
 
-  // Click the main image (not a button) to open the lightbox
+  // Click the stage (not a button) to open the lightbox
   el.stage.addEventListener("click", (e) => {
-    if (e.target.closest("button")) return;
-    openLightbox();
+    if (!e.target.closest("button")) openLightbox();
   });
   el.fullscreen.addEventListener("click", (e) => {
     e.stopPropagation();
     openLightbox();
   });
 
-  addSwipe(
-    el.stage,
-    () => show(index + 1),
-    () => show(index - 1),
-  );
+  addSwipe(el.stage);
 
   /* =========================================
-     15. LIGHTBOX (full image visible)
+     LIGHTBOX
   ========================================= */
   function updateLightbox() {
     el.lbFigure.classList.remove("zoomed");
     el.lbImage.style.transformOrigin = "";
 
-    el.lbImage.classList.remove("fade-in");
-    void el.lbImage.offsetWidth;
-    el.lbImage.src = images[index];
-    el.lbImage.alt = el.mainImage.alt;
-    el.lbImage.classList.add("fade-in");
-
+    swapImage(el.lbImage, images[index], el.mainImage.alt);
     el.lbCounter.textContent = `${pad(index + 1)} / ${pad(images.length)}`;
     el.lbCaption.textContent = titleText;
 
@@ -624,8 +576,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     el.lightbox.inert = true;
     el.lbFigure.classList.remove("zoomed");
     document.body.style.overflow = "";
-    if (previousFocus && previousFocus.isConnected)
+    if (previousFocus?.isConnected)
       previousFocus.focus({ preventScroll: true });
+  }
+
+  function setOrigin(e) {
+    const r = el.lbImage.getBoundingClientRect();
+    const pct = (value, size) =>
+      Math.min(Math.max((value / size) * 100, 0), 100);
+    el.lbImage.style.transformOrigin = `${pct(e.clientX - r.left, r.width)}% ${pct(e.clientY - r.top, r.height)}%`;
   }
 
   el.lbClose.addEventListener("click", closeLightbox);
@@ -633,11 +592,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   el.lbNext.addEventListener("click", () => show(index + 1));
 
   el.lightbox.addEventListener("click", (e) => {
-    if (e.target === el.lightbox || e.target === el.lbFigure) {
-      if (el.lbFigure.classList.contains("zoomed"))
-        el.lbFigure.classList.remove("zoomed");
-      else closeLightbox();
-    }
+    if (e.target !== el.lightbox && e.target !== el.lbFigure) return;
+    if (el.lbFigure.classList.contains("zoomed"))
+      el.lbFigure.classList.remove("zoomed");
+    else closeLightbox();
   });
 
   el.lbImage.addEventListener("click", (e) => {
@@ -650,51 +608,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (el.lbFigure.classList.contains("zoomed")) setOrigin(e);
   });
 
-  function setOrigin(e) {
-    const r = el.lbImage.getBoundingClientRect();
-    const x = Math.min(
-      Math.max(((e.clientX - r.left) / r.width) * 100, 0),
-      100,
-    );
-    const y = Math.min(
-      Math.max(((e.clientY - r.top) / r.height) * 100, 0),
-      100,
-    );
-    el.lbImage.style.transformOrigin = `${x}% ${y}%`;
-  }
-
-  addSwipe(
-    el.lightbox,
-    () => show(index + 1),
-    () => show(index - 1),
-  );
+  addSwipe(el.lightbox);
 
   document.addEventListener("keydown", (e) => {
     if (!el.lightbox.classList.contains("open")) return;
-    if (e.key === "Escape") {
+    const actions = {
+      Escape: closeLightbox,
+      ArrowLeft: () => show(index - 1),
+      ArrowRight: () => show(index + 1),
+    };
+    if (actions[e.key]) {
       e.preventDefault();
-      closeLightbox();
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      show(index - 1);
-    } else if (e.key === "ArrowRight") {
-      e.preventDefault();
-      show(index + 1);
+      actions[e.key]();
     }
   });
 
   /* =========================================
-     16. SWIPE HELPER
+     SWIPE
   ========================================= */
-  function addSwipe(target, onLeft, onRight) {
+  function addSwipe(target) {
     let x = 0;
     let y = 0;
 
     target.addEventListener(
       "touchstart",
       (e) => {
-        x = e.changedTouches[0].clientX;
-        y = e.changedTouches[0].clientY;
+        ({ clientX: x, clientY: y } = e.changedTouches[0]);
       },
       { passive: true },
     );
@@ -705,17 +644,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (images.length < 2) return;
         const dx = e.changedTouches[0].clientX - x;
         const dy = e.changedTouches[0].clientY - y;
-        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
-          if (dx < 0) onLeft();
-          else onRight();
-        }
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy))
+          show(index + (dx < 0 ? 1 : -1));
       },
       { passive: true },
     );
   }
 
   /* =========================================
-     17. SCROLL REVEAL
+     SCROLL REVEAL
   ========================================= */
   function initReveal() {
     const items = document.querySelectorAll(".reveal");
@@ -727,12 +664,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
-          }
-        });
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
       },
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );

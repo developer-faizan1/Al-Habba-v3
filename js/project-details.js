@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* =========================================
      CONFIG
   ========================================= */
-  const PROJECTS_URL = "./assets/js/projectsData.json";
+  const PROJECTS_URL = "./projectsData.json";
   const MAP_PAGE = "map.html"; // fallback when a project has no coordinates
 
   const PLACEHOLDER =

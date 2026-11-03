@@ -4,7 +4,7 @@
     "projectNumber": "P-215",
     "slug": "P-215 PROPOSED MIXED USE DEVELOPMENT",
     "title": "Proposed Mixed Use Development",
-    "image": "assets/images/img_gallery/215v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/215v1.jpg",
     "images": ["assets/images/img_gallery/215v1.jpg"],
     "projectValue": "AED 400,300,000",
     "client": "M/S. Srg Holding Limited",
@@ -13,7 +13,7 @@
     "startDate": "05 May 2026",
     "completionDate": "Under Construction",
     "status": "Running Project",
-     "progress": {
+     "progress": { 
       "overall": 6
     },
     "projectType": "Mixed Use",
@@ -31,10 +31,10 @@
     "projectNumber": "P-208",
     "slug": "P-208 (UG+GF+2P+8 Floors) RESIDENTIAL BUILDING",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/208v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/208v1.jpg",
     "images": [
-      "assets/images/img_gallery/208v1.jpg",
-      "assets/images/img_gallery/208u1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/208v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/208v2.jpg",
       "assets/images/img_gallery/208u2.jpg",
       "assets/images/img_gallery/208u3.jpg"
     ],
@@ -68,10 +68,10 @@
     "projectNumber": "P-211",
     "slug": "P-211 (G+2P+14F+R) RESIDENTIAL BUILDING",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/211v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/211v1.jpg",
     "images": [
-      "assets/images/img_gallery/211v1.jpg",
-      "assets/images/img_gallery/211v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/211v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/211v2.jpg"
     ],
     "projectValue": "AED 113,000,000",
     "client": "M/S Ahmed Al Ansari Real Estate Development L.L.C",
@@ -103,7 +103,7 @@
     "projectNumber": "P-212",
     "slug": "P-212 (G+2P+7F+R) Hotel Building",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/212.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/212.jpg",
     "projectValue": "AED 82,000,000",
     "client": "M/S. Central One Properties LLC",
     "consultant": "M/s RIMAL Engineering Consultant",
@@ -134,7 +134,7 @@
     "projectNumber": "P-205",
     "slug": "P-205 SRG JVC (G+3P+16 +R)",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/205v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/205v1.jpg",
     "projectValue": "AED 98,100,000",
     "client": "M/S. Srg Holding Limited",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -165,7 +165,7 @@
     "projectNumber": "P-210",
     "slug": "P-210 (1B+G+1P+9F+R) Residential & Commercial Building",
     "title": "Residential & Commercial Building",
-    "image": "assets/images/img_gallery/210.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/210.jpg",
     "projectValue": "AED 75,100,000",
     "client": "Mr. AbdulRahman Mohd Taher Mohd Wali & Mr. Abdul Halim AbdulRahim Abdulla Muhawid",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -197,7 +197,7 @@
     "projectNumber": "P-204",
     "slug": "P-204 (G+7+R) RESIDENTIAL BUILDING",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/204.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/204.jpg",
     "projectValue": "AED 48,100,000",
     "client": "M/S. Mohmad Rafi Mohd Saeed LLC",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -223,10 +223,10 @@
     "projectNumber": "P-209",
     "slug": "p-209 Al Habbai Headquarters",
     "title": "Al Habbai Headquarters",
-    "image": "assets/images/img_gallery/209v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/209v1.jpg",
     "images": [
-      "assets/images/img_gallery/209v1.jpg",
-      "assets/images/img_gallery/209v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/209v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/209v2.jpg"
     ],
     "projectValue": "AED 33,000,000",
     "client": "Mr. Ahmed Mohammad Al Habbai",
@@ -288,10 +288,10 @@
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/96v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/96v1.jpg",
     "images": [
-      "assets/images/img_gallery/96v1.jpg",
-      "assets/images/img_gallery/96v2.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/96v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/96v2.jpg",
       "assets/images/intr_img/96iv1.webp",
       "assets/images/intr_img/96iv2.webp",
       "assets/images/intr_img/96iv3.webp",
@@ -325,9 +325,9 @@
     "projectNumber": "P-136",
     "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/136.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/136.jpg",
     "images": [
-      "assets/images/img_gallery/136.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/136.jpg",
       "assets/images/intr_img/136iv1.webp",
       "assets/images/intr_img/136iv2.webp",
       "assets/images/intr_img/136iv3.webp"
@@ -360,11 +360,11 @@
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/140v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/140v1.jpg",
     "images": [
-      "assets/images/img_gallery/140v1.jpg",
-      "assets/images/img_gallery/140v2.jpg",
-      "assets/images/img_gallery/140v3.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/140v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/140v2.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/140v3.jpg",
       "assets/images/intr_img/140iv1.webp",
       "assets/images/intr_img/140iv2.webp",
       "assets/images/intr_img/140iv3.webp",
@@ -398,7 +398,7 @@
     "projectNumber": "P-147",
     "slug": "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/147v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/147v1.jpg",
     "images": [
       "assets/images/img_gallery/147v1.jpg",
       "assets/images/intr_img/147iv1.webp",
@@ -434,7 +434,7 @@
     "projectNumber": "P-085",
     "slug": "P-085 (2B+G+M+12+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/85.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/85.jpg",
     "images": [
       "assets/images/img_gallery/85.jpg",
       "assets/images/intr_img/85iv1.jpg",
@@ -469,9 +469,10 @@
     "projectNumber": "P-129",
     "slug": "P-129 (B+G+32) HOTEL-BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/129v1.webp",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/129v1.webp",
     "images": [
-      "assets/images/img_gallery/129v2.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/129v1.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/129v2.webp",
       "assets/images/intr_img/129iv1.webp",
       "assets/images/intr_img/129iv2.webp",
       "assets/images/intr_img/129iv4.webp"
@@ -504,9 +505,9 @@
     "projectNumber": "P-102",
     "slug": "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/102.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/102.jpg",
     "images": [
-      "assets/images/img_gallery/102.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/102.jpgg",
       "assets/images/intr_img/102iv1.jpg",
       "assets/images/img_gallery/102.jpg",
       "assets/images/intr_img/102iv2.jpg",
@@ -540,10 +541,10 @@
     "projectNumber": "P-154",
     "slug": "P-154 (3B+G+6) STORIES HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/154v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/154v1.jpg",
     "images": [
-      "assets/images/img_gallery/154v1.jpg",
-      "assets/images/img_gallery/154v2.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/154v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/154v1.jpg",
       "assets/images/intr_img/154iv1.webp",
       "assets/images/intr_img/154iv2.webp"
     ],
@@ -575,9 +576,9 @@
     "projectNumber": "P-167",
     "slug": "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/167v1.JPG",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/167v1.jpg",
     "images": [
-      "assets/images/img_gallery/167v1.JPG",
+      "https://faizanahmad.in/al-habbai/images/projects/167v1.jpg",
       "assets/images/intr_img/167iv1.webp",
       "assets/images/intr_img/167iv2.webp",
       "assets/images/intr_img/167iv3.webp",
@@ -640,9 +641,9 @@
     "projectNumber": "P-142",
     "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/142.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/142.jpg",
     "images": [
-      "assets/images/img_gallery/142.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/142.jpg",
       "assets/images/intr_img/142iv1.webp",
       "assets/images/intr_img/142iv2.webp",
       "assets/images/intr_img/142iv3.webp"
@@ -675,10 +676,11 @@
     "projectNumber": "P-137",
     "slug": "P-137 (B+G+9F) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/137v1.webp",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/137v1.webp",
     "images": [
-      "assets/images/img_gallery/137v1.webp",
-      "assets/images/img_gallery/137v3.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/137v1.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/137v2.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/137v3.webp",
       "assets/images/intr_img/137iv1.webp",
       "assets/images/intr_img/137iv2.webp"
     ],
@@ -710,7 +712,7 @@
     "projectNumber": "P-155",
     "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
     "title": "Soho Apartment",
-    "image": "assets/images/img_gallery/155.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/155.jpg",
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
     "consultant": "M/s Naga Engineering Consultant",
@@ -738,7 +740,7 @@
     "projectNumber": "P-153",
     "slug": "P-153 (2B+G+5 Stories) STORIES HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "assets/images/img_gallery/153.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/153.jpg",
     "images": [
       "assets/images/img_gallery/153.jpg",
       "assets/images/intr_img/153iv1.webp",
@@ -802,10 +804,10 @@
     "projectNumber": "P-157",
     "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
     "title": "Residential & Retail Building",
-    "image": "assets/images/img_gallery/157v1.webp",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/157v1.webp",
     "images": [
-      "assets/images/img_gallery/157v1.webp",
-      "assets/images/img_gallery/157v2.webp"
+      "https://faizanahmad.in/al-habbai/images/projects/157v1.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/157v2.webp"
     ],
     "projectValue": "AED 116,500,000",
     "client": "M/s Al Sandos Real Estate",
@@ -836,9 +838,9 @@
     "projectNumber": "P-146",
     "slug": "P-146 (B+G+1P+16+R) HOTEL TOWER",
     "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/146.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/146.jpg",
     "images": [
-      "assets/images/img_gallery/146.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/146.jpg",
       "assets/images/intr_img/146iv1.webp",
       "assets/images/intr_img/146iv2.webp",
       "assets/images/intr_img/146iv3.webp",
@@ -1043,7 +1045,7 @@
     "projectNumber": "P-118",
     "slug": "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
     "title": "Residential & Commercial Building",
-    "image": "assets/images/img_gallery/118v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/118v1.jpg",
     "projectValue": "AED 46,200,000",
     "client": "Mr. Ali Ahmed Mohamed",
     "consultant": "M/s Style Engineers Consultant",
@@ -1128,7 +1130,7 @@
     "projectNumber": "P-132",
     "slug": "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/132v1.webp",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/132v1.webp",
     "projectValue": "AED 51,100,000",
     "client": "M/s. New Dubai Properties LLC",
     "consultant": "M/S. Rimal Engineering Consultant",
@@ -1184,7 +1186,7 @@
     "projectNumber": "P-134",
     "slug": "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/134.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/134.jpg",
     "projectValue": "AED 66,500,000",
     "client": "M/S. SRG PROPERTIES LLC",
     "consultant": "M/s. Al Jabal Engineering Consultnat",
@@ -1297,7 +1299,7 @@
     "projectNumber": "P-143",
     "slug": "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/143.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/143.jpg",
     "projectValue": "AED 59,500,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
     "consultant": "M/s. Dubai Consultant",
@@ -1325,9 +1327,9 @@
     "projectNumber": "P-149",
     "slug": "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/149v4.webp",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/149v3.webp",
     "images": [
-      "assets/images/img_gallery/149v4.webp",
+      "https://faizanahmad.in/al-habbai/images/projects/149v4.webp",
       "assets/images/img_gallery/149v3.webp"
     ],
     "projectValue": "AED 73,600,000",
@@ -1357,10 +1359,10 @@
     "projectNumber": "P-151",
     "slug": "P-151 (3B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/151v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/151v1.jpg",
     "images": [
-      "assets/images/img_gallery/151v1.jpg",
-      "assets/images/img_gallery/151v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/151v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/152v2.jpg"
     ],
     "projectValue": "AED 62,000,000",
     "client": "Mr. Ahmed Abdulla Al Ansari",
@@ -1417,10 +1419,10 @@
     "projectNumber": "P-159",
     "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/159v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/159v1.jpg",
     "images": [
-      "assets/images/img_gallery/159v1.jpg",
-      "assets/images/img_gallery/159v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/159v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/159v2.jpg"
     ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -1449,10 +1451,10 @@
     "projectNumber": "P-163",
     "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     "title": "Dialysis Center",
-    "image": "assets/images/img_gallery/163v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/163v1.jpg",
     "images": [
-      "assets/images/img_gallery/163v1.jpg",
-      "assets/images/img_gallery/163v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/163v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/163v2.jpg"
     ],
     "projectValue": "AED 32,000,000",
     "client": "M/S Dubai Health Authority & Srg",
@@ -1476,7 +1478,7 @@
     "projectNumber": "P-164",
     "slug": "P-164 PROPOSED (G+4F+R)",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/164.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/164.jpg",
     "projectValue": "AED 34,200,000",
     "client": "Mr. Saleh Mohd Ramadan Al Rafi",
     "consultant": "M/s. Dubai Consultant",
@@ -1499,7 +1501,7 @@
     "projectNumber": "P-165",
     "slug": "P-165 PROPOSED (G+M+7F+Gym)",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/165v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/165v1.jpg",
     "projectValue": "AED 37,300,000",
     "client": "Mr. HUSSAIN ALI FARDAN AL FARDAN",
     "consultant": "M/s. CHAWLA Architectural & Consulting Engineers",
@@ -1522,7 +1524,7 @@
     "projectNumber": "P-166",
     "slug": "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/166.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/166.jpg",
     "projectValue": "AED 122,300,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s. Al Ajmi Engineering Consultant",
@@ -1545,10 +1547,10 @@
     "projectNumber": "P-170",
     "slug": "P-170 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/170v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/170v1.jpg",
     "images": [
-      "assets/images/img_gallery/170v1.jpg",
-      "assets/images/img_gallery/170v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/170v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/170v2.jpg"
     ],
     "projectValue": "AED 21,800,000",
     "client": "MR. MOHAMED RASHED MUBARAK SALEM ALKETBI",
@@ -1577,7 +1579,7 @@
     "projectNumber": "P-172",
     "slug": "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/172.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/172.jpg",
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1605,10 +1607,10 @@
     "projectNumber": "P-173",
     "slug": "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/173v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/173v1.jpg",
     "images": [
-      "assets/images/img_gallery/173v1.jpg",
-      "assets/images/img_gallery/173v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/173v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/173v2.jpg"
     ],
     "projectValue": "AED 40,768,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -1637,7 +1639,7 @@
     "projectNumber": "P-174",
     "slug": "P-174 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/174.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/174.jpg",
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1665,10 +1667,10 @@
     "projectNumber": "P-175",
     "slug": "P-175 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/img_gallery/175.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/175.jpg",
     "images": [
-      "assets/images/img_gallery/175.jpg",
-      "assets/images/img_gallery/175v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/175.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/175v2.jpg"
     ],
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
@@ -1697,7 +1699,7 @@
     "projectNumber": "P-176",
     "slug": "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/176.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/176.jpg",
     "projectValue": "AED 30,100,000",
     "client": "Mr. Ahmad Ali Al Abdulla Al Ansari",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1725,11 +1727,7 @@
     "projectNumber": "P-177",
     "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/177v1.webp",
-    "images": [
-      "assets/images/img_gallery/177v1.webp",
-      "assets/images/img_gallery/177v2.webp"
-    ],
+    "image": "https://faizanahmad.in/al-habbai/images/projects/177v1.webp",
     "projectValue": "AED 75,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -1757,7 +1755,7 @@
     "projectNumber": "P-162",
     "slug": "P-162 SRG ALT TOWER",
     "title": "SRG Alt Tower",
-    "image": "assets/images/img_gallery/162.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/162.jpg",
     "projectValue": "AED 218,500,000",
     "client": "SRG Holding Limited",
     "consultant": "M/S. ERGA Engineering Consultant",
@@ -1785,7 +1783,7 @@
     "projectNumber": "P-171",
     "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     "title": "HOTEL Building",
-    "image": "assets/images/img_gallery/171.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/171.jpg",
     "projectValue": "AED 81,000,000",
     "client": "Mr. Central One Properties LLC",
     "consultant": "M/s RIMAL Engineering Consultant",
@@ -1813,10 +1811,10 @@
     "projectNumber": "P-188",
     "slug": "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/188v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/188v1.jpg",
     "images": [
-      "assets/images/img_gallery/188v1.jpg",
-      "assets/images/img_gallery/188v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/188v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/188v2.jpg"
     ],
     "projectValue": "AED 33,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
@@ -1845,10 +1843,10 @@
     "projectNumber": "P-189",
     "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/189v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/189v1.jpg",
     "images": [
-      "assets/images/img_gallery/189v1.jpg",
-      "assets/images/img_gallery/189v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/189v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/189v2.jpg"
     ],
     "projectValue": "AED 35,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
@@ -1877,7 +1875,7 @@
     "projectNumber": "P-190",
     "slug": "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/190.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/190.jpg",
     "projectValue": "AED 76,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "M/s Style Engineers Consultant",
@@ -1933,10 +1931,10 @@
     "projectNumber": "P-195",
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "Shopping Mall",
-    "image": "assets/images/img_gallery/195v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/195v1.jpg",
     "images": [
-      "assets/images/img_gallery/195v1.jpg",
-      "assets/images/img_gallery/195v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/195v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/195v2.jpg"
     ],
     "projectValue": "AED 30,500,000",
     "client": "M/s. SRG Holding Limited",
@@ -1965,7 +1963,7 @@
     "projectNumber": "P-197",
     "slug": "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/197.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/197.jpg",
     "projectValue": "AED 38,100,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rahman",
     "consultant": "M/S. Style Engineering Consultant",
@@ -1993,10 +1991,10 @@
     "projectNumber": "P-198",
     "slug": "P-198 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/img_gallery/198v1.jpg",
+    "image": "https://faizanahmad.in/al-habbai/images/projects/198v1.jpg",
     "images": [
-      "assets/images/img_gallery/198v1.jpg",
-      "assets/images/img_gallery/198v2.jpg"
+      "https://faizanahmad.in/al-habbai/images/projects/198v1.jpg",
+      "https://faizanahmad.in/al-habbai/images/projects/198v2.jpg"
     ],
     "projectValue": "AED 36,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",

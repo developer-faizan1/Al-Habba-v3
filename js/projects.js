@@ -2,7 +2,7 @@
    PROJECTS CONFIGURATION
 ========================================= */
 
-const PROJECTS_JSON_URL = "assets/js/projectsData.json";
+const PROJECTS_JSON_URL = "./projectsData.json";
 const PROJECTS_PER_PAGE = 8;
 
 const projectsList = document.getElementById("projectsList");

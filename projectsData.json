@@ -5,7 +5,6 @@
     "slug": "P-215 PROPOSED MIXED USE DEVELOPMENT",
     "title": "Proposed Mixed Use Development",
     "image": "https://faizanahmad.in/al-habbai/images/projects/215v1.jpg",
-    "images": ["assets/images/img_gallery/215v1.jpg"],
     "projectValue": "AED 400,300,000",
     "client": "M/S. Srg Holding Limited",
     "consultant": "M/S. Loci Architecture & Design",
@@ -640,9 +639,9 @@
     "projectNumber": "P-142",
     "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
     "title": "Hotel Building",
-    "image": "https://faizanahmad.in/al-habbai/images/projects/142.jpg",
+    "image": "assets/images/img_gallery/142.jpg",
     "images": [
-      "https://faizanahmad.in/al-habbai/images/projects/142.jpg",
+      "assets/images/img_gallery/142.jpg",
       "assets/images/intr_img/142iv1.webp",
       "assets/images/intr_img/142iv2.webp",
       "assets/images/intr_img/142iv3.webp"

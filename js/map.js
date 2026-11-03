@@ -3,7 +3,7 @@
    CURRENT PROJECTS LOCATION MAP
 ============================================================ */
 
-const DATA_URL = "./assets/js/projectsData.json";
+const DATA_URL = "./projectsData.json";
 
 
 /* ============================================================

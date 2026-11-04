@@ -1298,10 +1298,10 @@ RIGHT CARDS
 .projects__header {
   background-image:
     linear-gradient(rgba(4, 9, 30, 0.3), rgba(4, 9, 30, 0.1)),
-    url("https://faizanahmad.in/al-habbai/images/projects/208v1.jpg");
+    url("../assets/images/img_gallery/Banner.jpg");
   position: relative;
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
 }

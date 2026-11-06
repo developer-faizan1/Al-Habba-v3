@@ -347,7 +347,6 @@
 .projects-section {
   position: relative;
   overflow: clip;
-  background: var(--lightGreen-1);
 }
 
 .projects-section > .container {

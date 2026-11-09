@@ -1,11 +1,13 @@
 /* =========================================
    AL HABBAI CONTRACTING
-   SINGLE CAROUSEL CARD - ONE SLIDE PER PROJECT
-   (uses only the "image" field from projectsData.json)
+   CAROUSEL CARD - ONE SLIDE PER IMAGE
+   The "image" field can be a single string OR an array of strings.
+   Every image is its own slide, so all images use the same interval.
+   (the "images" array is ignored)
 ========================================= */
 
 const PROJECTS_JSON_URL = "./projectsData.json";
-const AUTOPLAY_INTERVAL = 6000; // ms each slide stays on screen
+const AUTOPLAY_INTERVAL = 6000; // ms each project slide stays on screen
 
 /* =========================================
    DOM ELEMENTS
@@ -69,9 +71,20 @@ function getProjectSlug(project) {
     return String(project.slug ?? project.id ?? "").trim();
 }
 
-/* Only the main "image" field is used (the "images" array is ignored) */
+/* "image" can be a single string OR an array of strings.
+   Always return a clean array. */
+function getProjectImages(project) {
+    const raw = project.image;
+    const list = Array.isArray(raw) ? raw : [raw];
+
+    return list
+        .map(src => String(src ?? "").trim())
+        .filter(Boolean);
+}
+
+/* First image (used to skip projects that have no image at all) */
 function getProjectImage(project) {
-    return String(project.image ?? "").trim();
+    return getProjectImages(project)[0] || "";
 }
 
 /* =========================================
@@ -209,7 +222,7 @@ function statusChipHTML(project) {
     `;
 }
 
-function slideHTML(project, index) {
+function slideHTML(project, index, imageSrc) {
 
     const title = escapeHTML(project.title || "Project");
     // "096", "P-096" or "Project 096" all become "096" so we can show "P-096"
@@ -226,7 +239,7 @@ function slideHTML(project, index) {
 
             <img
                 class="pc-image"
-                src="${escapeHTML(getProjectImage(project))}"
+                src="${escapeHTML(imageSrc)}"
                 alt="${title}"
                 width="${IMG_WIDTH}"
                 height="${IMG_HEIGHT}"
@@ -269,16 +282,25 @@ function slideHTML(project, index) {
     `;
 }
 
+/* Every image becomes its own slide, so each one stays on screen
+   for exactly AUTOPLAY_INTERVAL (same time for all images). */
+function buildSlides(projects) {
+    return projects.flatMap(project =>
+        getProjectImages(project).map(src => ({ project, src }))
+    );
+}
+
 function carouselHTML(projects) {
 
-    const multiple = projects.length > 1;
+    const slides = buildSlides(projects);
+    const multiple = slides.length > 1;
 
     return `
         <article class="project-card">
             <div class="pc-gallery">
 
                 <div class="owl-carousel pc-owl" data-multiple="${multiple}">
-                    ${projects.map(slideHTML).join("")}
+                    ${slides.map((s, index) => slideHTML(s.project, index, s.src)).join("")}
                 </div>
 
                 ${multiple ? `
@@ -324,7 +346,7 @@ function initCarousel() {
         smartSpeed: 900,
         autoplay: multiple,
         autoplayTimeout: AUTOPLAY_INTERVAL,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         animateOut: "pcFadeOut",
         animateIn: "pcFadeIn"
     });
@@ -429,7 +451,7 @@ function renderProjects() {
 
     if (!projectsList) return;
 
-    // remove the previous carousel cleanly before re-rendering
+    // remove the previous carousels cleanly before re-rendering
     const oldOwl = projectsList.querySelector(".pc-owl");
     if (oldOwl && window.jQuery) {
         jQuery(oldOwl).trigger("destroy.owl.carousel");

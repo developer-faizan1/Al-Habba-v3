@@ -102,7 +102,7 @@
 .pc-gallery:hover .pc-owl .owl-item.active .pc-image,
 .pc-gallery:hover .pc-owl .owl-item.owl-animated-in .pc-image,
 .pc-gallery:hover .pc-owl .owl-item.owl-animated-out .pc-image {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 /* Smooth cross-fade between slides.

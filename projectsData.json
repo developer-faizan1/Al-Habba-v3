@@ -35,11 +35,41 @@
     "longitude": null
   },
   {
+    "id": 215,
+    "projectNumber": "P-215",
+    "slug": "P-215 PROPOSED MIXED USE DEVELOPMENT",
+    "title": "Proposed Mixed Use Development",
+    "image": "assets/images/img_gallery/215.jpg",
+    "projectValue": "AED 400,300,000",
+    "client": "M/S. Srg Holding Limited",
+    "consultant": "M/S. Loci Architecture & Design",
+    "projectLocation": "Studio City - Al Hebiah Second",
+    "startDate": "05 May 2026",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 6
+    },
+    "projectType": "Mixed Use",
+    "projectDescription": "Proposed Mixed Use Development",
+    "projectComprisesOf": ["Community Mall", "6 Buildings"],
+    "fullAddress": "Studio City - Al Hebiah Second",
+    "plot": "6750299",
+    "area": "Studio City - Al Hebiah Second",
+    "state": "Dubai",
+    "latitude": 25.036667,
+    "longitude": 55.24225
+  },
+  {
     "id": 96,
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Pullman Hotel",
-    "image": "assets/images/img_gallery/96.png",
+    "image": [
+      "assets/images/img_gallery/96.png",
+      "assets/images/img_gallery/96v2.jpg",
+      "assets/images/img_gallery/96v3.jpg"
+    ],
     "images": [
       "assets/images/img_gallery/96.png",
       "https://faizanahmad.in/al-habbai/images/projects/96v2.jpg",
@@ -70,17 +100,19 @@
     "state": "Dubai",
     "latitude": null,
     "longitude": null
-  },  
+  },
   {
     "id": 140,
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "Canal Central Hotel",
-    "image": "assets/images/img_gallery/140.jpg",
+    "image": [
+      "assets/images/img_gallery/140v2.jpg",
+      "assets/images/img_gallery/140.jpg"
+    ],
     "images": [
-      "https://faizanahmad.in/al-habbai/images/projects/140v1.jpg",
-      "https://faizanahmad.in/al-habbai/images/projects/140v2.jpg",
-      "https://faizanahmad.in/al-habbai/images/projects/140v3.jpg",
+       "assets/images/img_gallery/140v2.jpg",
+      "assets/images/img_gallery/140.jpg",
       "assets/images/intr_img/140iv1.webp",
       "assets/images/intr_img/140iv2.webp",
       "assets/images/intr_img/140iv3.webp",
@@ -108,6 +140,96 @@
     "state": "Dubai",
     "latitude": null,
     "longitude": null
+  },
+  {
+    "id": 142,
+    "projectNumber": "P-142",
+    "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
+    "title": "Millennium Place",
+    "image": ["assets/images/img_gallery/142.jpg"],
+    "images": [
+      "assets/images/img_gallery/142.jpg",
+      "assets/images/intr_img/142iv1.webp",
+      "assets/images/intr_img/142iv2.webp",
+      "assets/images/intr_img/142iv3.webp"
+    ],
+    "projectValue": "AED 107,000,000",
+    "client": "M/s. New Dubai Properties",
+    "consultant": "Al Ajmi Engineering Consultants",
+    "projectLocation": "Marsa Marina",
+    "startDate": "19 December 2015",
+    "completionDate": "18 April 2018",
+    "status": "Completed",
+    "projectType": "Hotel",
+    "projectDescription": "Proposed (B+G+22 Floors +R) Hotel Building",
+    "projectComprisesOf": [
+      "Hotel Tower",
+      "2 Basement Floor",
+      "Ground Floor",
+      "22 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Millennium Place, Marsa Marina - Dubai",
+    "plot": "3920454",
+    "area": "Marsa Dubai - Marina",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "id": 162,
+    "projectNumber": "P-162",
+    "slug": "P-162 SRG ALT TOWER",
+    "title": "SRG Alt Tower",
+    "image": "assets/images/img_gallery/162.jpg",
+    "projectValue": "AED 218,500,000",
+    "client": "SRG Holding Limited",
+    "consultant": "M/S. ERGA Engineering Consultant",
+    "projectLocation": "Business Bay",
+    "startDate": "1 May 2018",
+    "completionDate": "26 May 2023",
+    "status": "Completed",
+    "projectType": "Residential",
+    "projectDescription": "SRG Alt Tower",
+    "projectComprisesOf": [
+      "Basement Level",
+      "Ground Floor",
+      "28 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Business Bay, Dubai",
+    "plot": null,
+    "area": "Business Bay",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "id": 99,
+    "projectNumber": "P-099",
+    "slug": "P-099 (2B+G+30) RESIDENTIAL COMMERCIAL BUILDING",
+    "title": "Residential & Commercial Building",
+    "image": "assets/images/img_gallery/99.jpg",
+    "projectValue": "AED 169,650,000",
+    "client": "M/S. Dire (Dubai I Nt’l Real Es Tate)",
+    "consultant": "M/s. Group Consultant International ",
+    "projectLocation": "Al Nahda First",
+    "startDate": "15 October 2007",
+    "completionDate": "01 September 2009",
+    "status": "Completed",
+    "projectType": "Commercial & Residential",
+    "projectDescription": "2B+G+30 Residential & Commercial Building",
+    "projectComprisesOf": [
+      "2 Basement Floor",
+      "Ground Floor",
+      "30 Typical Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Al Nahda First, Dubai",
+    "plot": "231-129",
+    "area": "Al Nahda First",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
   }
-  
 ]

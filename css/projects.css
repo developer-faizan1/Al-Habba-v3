@@ -62,23 +62,53 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* SLOW ZOOM-IN on every slide (1 -> 1.12, 10s).
-   Each image starts at scale(1), so it is shown uncropped at first.
-   The animation keeps running during the fade, so the image never snaps
-   back while it is still on screen. */
+/* CINEMATIC ZOOM-IN + SLOW DRIFT (Ken Burns, zoom-in only).
+   Every image starts at scale(1) => fully visible, uncropped.
+   It then zooms in to 1.1 while drifting a tiny bit; the drift direction
+   changes per slide so the gallery feels alive but never repetitive.
+   Drift (max 1.5%) is always smaller than the zoom margin (5%), so no
+   empty edges ever show. Only transform/opacity are animated (GPU smooth). */
 .pc-owl .owl-item.active .pc-image,
 .pc-owl .owl-item.owl-animated-in .pc-image,
 .pc-owl .owl-item.owl-animated-out .pc-image {
-  animation-name: pcZoomIn;
-  animation-duration: 10s; /* slow zoom: 8–12s range */
-  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
+  /* two animations run together: slow zoom (10s) + focus pull (1.4s) */
+  animation-name: pcZoomDriftA, pcFocus;
+  animation-duration: 10s, 1.4s;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1), cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both, both;
+  animation-iteration-count: 1, 1;
 }
 
-@keyframes pcZoomIn {
-  from { transform: scale(1) translateZ(0); }
-  to   { transform: scale(1.12) translateZ(0); }
+.pc-owl .owl-item:nth-child(3n+2).active .pc-image,
+.pc-owl .owl-item:nth-child(3n+2).owl-animated-in .pc-image,
+.pc-owl .owl-item:nth-child(3n+2).owl-animated-out .pc-image {
+  animation-name: pcZoomDriftB, pcFocus;
+}
+
+.pc-owl .owl-item:nth-child(3n).active .pc-image,
+.pc-owl .owl-item:nth-child(3n).owl-animated-in .pc-image,
+.pc-owl .owl-item:nth-child(3n).owl-animated-out .pc-image {
+  animation-name: pcZoomDriftC, pcFocus;
+}
+
+@keyframes pcFocus { /* image "pulls into focus" as it appears */
+  from { filter: blur(6px) brightness(1.15); }
+  to   { filter: blur(0) brightness(1); }
+}
+
+@keyframes pcZoomDriftA { /* zoom in, drift up-left */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-1.2%, -0.8%, 0) scale(1.1); }
+}
+
+@keyframes pcZoomDriftB { /* zoom in, drift up-right */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(1.2%, -0.8%, 0) scale(1.1); }
+}
+
+@keyframes pcZoomDriftC { /* pure centered zoom in */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(0, 0, 0) scale(1.1); }
 }
 
 /* Pause (not speed up) on hover – changing duration mid-run causes a jump */
@@ -130,9 +160,33 @@
 .pc-side-arrow.pc-prev { left: 20px; }
 .pc-side-arrow.pc-next { right: 20px; }
 
-.pc-owl .owl-item.active .pc-slide .pc-info,
-.pc-owl .owl-item.active .pc-slide .pc-controls {
-  animation: pcFadeIn 1.1s ease both;
+/* Staggered text reveal: each element rises + fades in one after another */
+.pc-owl .owl-item.active .pc-slide .pc-meta,
+.pc-owl .owl-item.active .pc-slide .pc-title,
+.pc-owl .owl-item.active .pc-slide .pc-location,
+.pc-owl .owl-item.active .pc-slide .pc-controls,
+.pc-owl .owl-item.active .pc-slide .project-status {
+  animation: pcRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pc-owl .owl-item.active .pc-slide .pc-meta     { animation-delay: 0.35s; }
+.pc-owl .owl-item.active .pc-slide .pc-title    { animation-delay: 0.5s; }
+.pc-owl .owl-item.active .pc-slide .pc-location { animation-delay: 0.65s; }
+.pc-owl .owl-item.active .pc-slide .pc-controls { animation-delay: 0.8s; }
+
+/* the small line next to the number draws itself */
+.pc-owl .owl-item.active .pc-slide .pc-line {
+  animation: pcLineDraw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+@keyframes pcRise {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes pcLineDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
 /* ---------- Status chip ---------- */
@@ -307,7 +361,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pc-owl .owl-item .pc-image { animation: none !important; }
+  .pc-owl .owl-item .pc-image,
+  .pc-owl .owl-item .pc-meta,
+  .pc-owl .owl-item .pc-title,
+  .pc-owl .owl-item .pc-location,
+  .pc-owl .owl-item .pc-controls,
+  .pc-owl .owl-item .pc-line,
+  .pc-owl .owl-item .project-status { animation: none !important; }
 }
 
 /* =========================================

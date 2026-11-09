@@ -3,7 +3,6 @@
    Images 1500 x 758 are shown in full (no crop)
 ========================================= */
 .projects-container{
-  max-width: 1500px;
   width: 100%;
   margin: 0 auto;
 }
@@ -445,3 +444,4 @@
   .projects-section .toolbar-control.search-control { flex: 1 1 100%; }
   .projects-section .clear-filters { flex: 1 1 100%; }
 }
+

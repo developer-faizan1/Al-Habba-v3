@@ -1,5 +1,77 @@
 [
-    {
+  {
+    "id": 136,
+    "projectNumber": "P-136",
+    "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
+    "title": "Mövenpick Hotel Downtown",
+    "image": "assets/images/img_gallery/136.png",
+    "images": [
+      "https://faizanahmad.in/al-habbai/images/projects/136.jpg",
+      "assets/images/intr_img/136iv1.webp",
+      "assets/images/intr_img/136iv2.webp",
+      "assets/images/intr_img/136iv3.webp"
+    ],
+    "projectValue": "AED 133,200,000",
+    "client": "M/s. El Housein Limited",
+    "consultant": "Al Ajmi Engineering Consultants",
+    "projectLocation": "Business Bay",
+    "startDate": "01 April 2015",
+    "completionDate": "20 April 2018",
+    "status": "Completed",
+    "projectType": "Hotel",
+    "projectDescription": "2B+G+3P+16+R Hotel Bldg",
+    "projectComprisesOf": [
+      "2 Basement Levels",
+      "Ground Floor",
+      "3 Parking Levels",
+      "16 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Mövenpick Hotel Apartments Downtown, Business Bay, Dubai",
+    "plot": "345-411",
+    "area": "Mövenpick Hotel Apartments Downtown",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "id": 96,
+    "projectNumber": "P-096",
+    "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
+    "title": "Pullman Hotel",
+    "image": "assets/images/img_gallery/96.png",
+    "images": [
+      "assets/images/img_gallery/96.png",
+      "https://faizanahmad.in/al-habbai/images/projects/96v2.jpg",
+      "assets/images/intr_img/96iv1.webp",
+      "assets/images/intr_img/96iv2.webp",
+      "assets/images/intr_img/96iv3.webp",
+      "assets/images/intr_img/96iv4.webp",
+      "assets/images/intr_img/96iv5.webp"
+    ],
+    "projectValue": "AED  171,500,000",
+    "client": "SRG Holding Limited",
+    "consultant": "M/S. Arch Group Engineering Consultant",
+    "projectLocation": "Business Bay",
+    "startDate": "21 September 2010",
+    "completionDate": "03 November 2012",
+    "status": "Completed",
+    "projectType": "Hotel",
+    "projectDescription": "(3B+G+19) Storey Hotel Tower",
+    "projectComprisesOf": [
+      "Hotel Tower",
+      "3 Basement Level",
+      "Ground Floor",
+      "19 Floors"
+    ],
+    "fullAddress": "Business Bay, Dubai",
+    "plot": "BB A03 – 041",
+    "area": "Business Bay",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },  
+  {
     "id": 140,
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
@@ -36,77 +108,6 @@
     "state": "Dubai",
     "latitude": null,
     "longitude": null
-  },
-  {
-    "id": 96,
-    "projectNumber": "P-096",
-    "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
-    "title": "Hotel Tower",
-    "image": "assets/images/img_gallery/96.png",
-    "images": [
-      "assets/images/img_gallery/96.jpg",
-      "https://faizanahmad.in/al-habbai/images/projects/96v2.jpg",
-      "assets/images/intr_img/96iv1.webp",
-      "assets/images/intr_img/96iv2.webp",
-      "assets/images/intr_img/96iv3.webp",
-      "assets/images/intr_img/96iv4.webp",
-      "assets/images/intr_img/96iv5.webp"
-    ],
-    "projectValue": "AED  171,500,000",
-    "client": "SRG Holding Limited",
-    "consultant": "M/S. Arch Group Engineering Consultant",
-    "projectLocation": "Business Bay",
-    "startDate": "21 September 2010",
-    "completionDate": "03 November 2012",
-    "status": "Completed",
-    "projectType": "Hotel",
-    "projectDescription": "(3B+G+19) Storey Hotel Tower",
-    "projectComprisesOf": [
-      "Hotel Tower",
-      "3 Basement Level",
-      "Ground Floor",
-      "19 Floors"
-    ],
-    "fullAddress": "Business Bay, Dubai",
-    "plot": "BB A03 – 041",
-    "area": "Business Bay",
-    "state": "Dubai",
-    "latitude": null,
-    "longitude": null
-  },
-  {
-    "id": 136,
-    "projectNumber": "P-136",
-    "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
-    "title": "Mövenpick Hotel Apartments Downtown",
-    "image": "assets/images/img_gallery/136.png",
-    "images": [
-      "https://faizanahmad.in/al-habbai/images/projects/136.jpg",
-      "assets/images/intr_img/136iv1.webp",
-      "assets/images/intr_img/136iv2.webp",
-      "assets/images/intr_img/136iv3.webp"
-    ],
-    "projectValue": "AED 133,200,000",
-    "client": "M/s. El Housein Limited",
-    "consultant": "Al Ajmi Engineering Consultants",
-    "projectLocation": "Business Bay",
-    "startDate": "01 April 2015",
-    "completionDate": "20 April 2018",
-    "status": "Completed",
-    "projectType": "Hotel",
-    "projectDescription": "2B+G+3P+16+R Hotel Bldg",
-    "projectComprisesOf": [
-      "2 Basement Levels",
-      "Ground Floor",
-      "3 Parking Levels",
-      "16 Floors",
-      "Roof Level"
-    ],
-    "fullAddress": "Mövenpick Hotel Apartments Downtown, Business Bay, Dubai",
-    "plot": "345-411",
-    "area": "Mövenpick Hotel Apartments Downtown",
-    "state": "Dubai",
-    "latitude": null,
-    "longitude": null
   }
+  
 ]

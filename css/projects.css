@@ -62,40 +62,23 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* Both effects, alternating slide by slide:
-   - odd slides  => ZOOM IN  (1 -> 1.08)
-   - even slides => ZOOM OUT (1.08 -> 1)
+/* SLOW ZOOM-IN on every slide (1 -> 1.12, 10s).
+   Each image starts at scale(1), so it is shown uncropped at first.
    The animation keeps running during the fade, so the image never snaps
    back while it is still on screen. */
 .pc-owl .owl-item.active .pc-image,
 .pc-owl .owl-item.owl-animated-in .pc-image,
 .pc-owl .owl-item.owl-animated-out .pc-image {
-  animation-duration: 8s;
+  animation-name: pcZoomIn;
+  animation-duration: 10s; /* slow zoom: 8–12s range */
   animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
   animation-fill-mode: both;
   animation-iteration-count: 1;
 }
 
-.pc-owl .owl-item:nth-child(odd).active .pc-image,
-.pc-owl .owl-item:nth-child(odd).owl-animated-in .pc-image,
-.pc-owl .owl-item:nth-child(odd).owl-animated-out .pc-image {
-  animation-name: pcZoomIn;
-}
-
-.pc-owl .owl-item:nth-child(even).active .pc-image,
-.pc-owl .owl-item:nth-child(even).owl-animated-in .pc-image,
-.pc-owl .owl-item:nth-child(even).owl-animated-out .pc-image {
-  animation-name: pcZoomOut;
-}
-
 @keyframes pcZoomIn {
   from { transform: scale(1) translateZ(0); }
-  to   { transform: scale(1.1) translateZ(0); }
-}
-
-@keyframes pcZoomOut {
-  from { transform: scale(1.1) translateZ(0); }
-  to   { transform: scale(1) translateZ(0); }
+  to   { transform: scale(1.12) translateZ(0); }
 }
 
 /* Pause (not speed up) on hover – changing duration mid-run causes a jump */
@@ -444,4 +427,3 @@
   .projects-section .toolbar-control.search-control { flex: 1 1 100%; }
   .projects-section .clear-filters { flex: 1 1 100%; }
 }
-

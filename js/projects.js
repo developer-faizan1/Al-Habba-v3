@@ -1,10 +1,11 @@
 /* =========================================
    AL HABBAI CONTRACTING
-   IMAGE-FOCUSED PROJECT SHOWCASE
+   SINGLE CAROUSEL CARD - ONE SLIDE PER PROJECT
+   (uses only the "image" field from projectsData.json)
 ========================================= */
 
 const PROJECTS_JSON_URL = "./projectsData.json";
-const PROJECTS_PER_PAGE = 8;
+const AUTOPLAY_INTERVAL = 6000; // ms each slide stays on screen
 
 /* =========================================
    DOM ELEMENTS
@@ -29,7 +30,6 @@ const projectsEmpty = document.getElementById("projectsEmpty");
 
 let allProjects = [];
 let filteredProjects = [];
-let currentPage = 1;
 
 /* =========================================
    HELPER FUNCTIONS
@@ -69,6 +69,11 @@ function getProjectSlug(project) {
     return String(project.slug ?? project.id ?? "").trim();
 }
 
+/* Only the main "image" field is used (the "images" array is ignored) */
+function getProjectImage(project) {
+    return String(project.image ?? "").trim();
+}
+
 /* =========================================
    PROJECT STATUS
 ========================================= */
@@ -103,18 +108,9 @@ function parseProjectDate(value) {
     if (!match) return 0;
 
     const months = {
-        january: 0,
-        february: 1,
-        march: 2,
-        april: 3,
-        may: 4,
-        june: 5,
-        july: 6,
-        august: 7,
-        september: 8,
-        october: 9,
-        november: 10,
-        december: 11
+        january: 0, february: 1, march: 2, april: 3,
+        may: 4, june: 5, july: 6, august: 7,
+        september: 8, october: 9, november: 10, december: 11
     };
 
     const month = months[match[2].toLowerCase()];
@@ -126,24 +122,6 @@ function parseProjectDate(value) {
         month,
         Number(match[1])
     ).getTime();
-}
-
-/* =========================================
-   PROJECT IMAGES
-========================================= */
-
-function getProjectImages(project) {
-    const images = [
-        project.image,
-        ...(Array.isArray(project.images) ? project.images : [])
-    ];
-
-    return [...new Set(
-        images
-            .filter(Boolean)
-            .map(image => String(image).trim())
-            .filter(Boolean)
-    )];
 }
 
 /* =========================================
@@ -212,10 +190,13 @@ function populateFilters() {
     );
 }
 
-
 /* =========================================
-   PROJECT STATUS CHIP
+   SLIDE (one project = one slide)
+   Images are 1500 x 758 - shown fully, never cropped
 ========================================= */
+
+const IMG_WIDTH = 1500;
+const IMG_HEIGHT = 758;
 
 function statusChipHTML(project) {
 
@@ -228,11 +209,7 @@ function statusChipHTML(project) {
     `;
 }
 
-/* =========================================
-   IMAGE CAROUSEL HTML
-========================================= */
-
-function carouselHTML(project, images) {
+function slideHTML(project, index) {
 
     const title = escapeHTML(project.title || "Project");
     // "096", "P-096" or "Project 096" all become "096" so we can show "P-096"
@@ -242,114 +219,125 @@ function carouselHTML(project, images) {
             .replace(/^(?:project[\s-]*|p[-\s]+)/i, "")
     );
     const projectType = escapeHTML(project.projectType || "");
-
-    const firstImage = images[0];
-
-    const imageData = JSON.stringify(images)
-        .replace(/</g, "\\u003c");
+    const location = escapeHTML(project.projectLocation || project.area || "");
 
     return `
-        <div class="project-gallery" data-carousel>
+        <div class="pc-slide">
 
-            <div class="project-carousel-track">
-
-                <img
-                    class="project-image"
-                    src="${escapeHTML(firstImage)}"
-                    alt="${title}"
-                    loading="lazy"
-                    decoding="async"
-                    draggable="false"
-                >
-
-            </div>
+            <img
+                class="pc-image"
+                src="${escapeHTML(getProjectImage(project))}"
+                alt="${title}"
+                width="${IMG_WIDTH}"
+                height="${IMG_HEIGHT}"
+                loading="${index === 0 ? "eager" : "lazy"}"
+                decoding="async"
+                draggable="false"
+            >
 
             ${statusChipHTML(project)}
 
-            <div class="project-info">
-
-                <div class="project-meta">
-
-                    ${numberLabel ? `<span class="project-number">P-${numberLabel}</span>` : ""}
-
-                    <span class="project-line" aria-hidden="true"></span>
-
-                    ${projectType ? `<span class="project-type">${projectType}</span>` : ""}
-
+            <!-- bottom-left: project info -->
+            <div class="pc-info">
+                <div class="pc-meta">
+                    ${numberLabel ? `<span class="pc-number">P-${numberLabel}</span>` : ""}
+                    ${numberLabel && projectType ? `<span class="pc-line" aria-hidden="true"></span>` : ""}
+                    ${projectType ? `<span class="pc-type">${projectType}</span>` : ""}
                 </div>
-
-                <h2 class="project-title">
-                    ${title}
-                </h2>
-
-                <a
-                    href="project-details.html?slug=${encodeURIComponent(getProjectSlug(project))}"
-                    class="project-details-btn"
-                    aria-label="View details for ${title}"
-                >
-                    <span class="project-details-text">View Details</span>
-                    <span class="project-details-arrow" aria-hidden="true">&#8594;</span>
-                </a>
-
+                <h2 class="pc-title">${title}</h2>
+                ${location ? `
+                    <p class="pc-location">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <span>${location}</span>
+                    </p>
+                ` : ""}
             </div>
 
-            ${
-                images.length > 1
-                    ? `
-                        <button
-                            type="button"
-                            class="carousel-arrow carousel-prev"
-                            aria-label="Previous image"
-                        >
-                            &#8249;
-                        </button>
-
-                        <button
-                            type="button"
-                            class="carousel-arrow carousel-next"
-                            aria-label="Next image"
-                        >
-                            &#8250;
-                        </button>
-
-                        <div class="carousel-dots">
-
-                            ${images.map((_, index) => `
-                                <button
-                                    type="button"
-                                    class="carousel-dot ${index === 0 ? "is-active" : ""}"
-                                    data-slide="${index}"
-                                    aria-label="Show image ${index + 1}"
-                                    aria-pressed="${index === 0}"
-                                ></button>
-                            `).join("")}
-
-                        </div>
-                    `
-                    : ""
-            }
-
-            <script type="application/json" class="carousel-images">${imageData}</script>
+            <!-- bottom-right: details button -->
+            <div class="pc-controls">
+                <a
+                    href="project-details.html?slug=${encodeURIComponent(getProjectSlug(project))}"
+                    class="pc-details-btn"
+                    aria-label="View details for ${title}"
+                >
+                    <span>View Details</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
 
         </div>
     `;
 }
 
-/* =========================================
-   PROJECT CARD
-========================================= */
+function carouselHTML(projects) {
 
-function projectCard(project) {
-
-    const images = getProjectImages(project);
+    const multiple = projects.length > 1;
 
     return `
         <article class="project-card">
+            <div class="pc-gallery">
 
-            ${carouselHTML(project, images)}
+                <div class="owl-carousel pc-owl" data-multiple="${multiple}">
+                    ${projects.map(slideHTML).join("")}
+                </div>
 
+                ${multiple ? `
+                    <button type="button" class="pc-arrow pc-side-arrow pc-prev" aria-label="Previous project">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button type="button" class="pc-arrow pc-side-arrow pc-next" aria-label="Next project">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                ` : ""}
+
+            </div>
         </article>
     `;
+}
+
+/* =========================================
+   INIT OWL CAROUSEL
+========================================= */
+
+function initCarousel() {
+
+    if (!window.jQuery || !jQuery.fn.owlCarousel) {
+        console.error("Owl Carousel / jQuery not loaded.");
+        return;
+    }
+
+    const el = projectsList.querySelector(".pc-owl");
+    if (!el) return;
+
+    const $owl = jQuery(el);
+    const multiple = el.dataset.multiple === "true";
+
+    $owl.owlCarousel({
+        items: 1,
+        loop: multiple,
+        nav: false,
+        dots: false,
+        mouseDrag: multiple,
+        touchDrag: multiple,
+        pullDrag: false,
+        margin: 0,
+        smartSpeed: 900,
+        autoplay: multiple,
+        autoplayTimeout: AUTOPLAY_INTERVAL,
+        autoplayHoverPause: true,
+        animateOut: "pcFadeOut",
+        animateIn: "pcFadeIn"
+    });
+
+    const gallery = el.closest(".pc-gallery");
+
+    gallery.querySelector(".pc-prev")?.addEventListener("click", () => {
+        $owl.trigger("prev.owl.carousel", [700]);
+    });
+
+    gallery.querySelector(".pc-next")?.addEventListener("click", () => {
+        $owl.trigger("next.owl.carousel", [700]);
+    });
 }
 
 /* =========================================
@@ -388,29 +376,15 @@ function applyFilters() {
             project.projectLocation || project.area
         );
 
-        const matchesSearch =
-            !search || searchable.includes(search);
-
-        const matchesType =
-            !type || normalizeText(project.projectType) === type;
-
-        const matchesStatus =
-            !status || projectStatus === status;
-
-        const matchesLocation =
-            !location || projectLocation === location;
-
         return (
-            matchesSearch &&
-            matchesType &&
-            matchesStatus &&
-            matchesLocation
+            (!search || searchable.includes(search)) &&
+            (!type || normalizeText(project.projectType) === type) &&
+            (!status || projectStatus === status) &&
+            (!location || projectLocation === location)
         );
     });
 
     applySorting();
-
-    currentPage = 1;
 
     renderProjects();
 }
@@ -448,30 +422,21 @@ function applySorting() {
 }
 
 /* =========================================
-   RENDER PROJECTS
+   RENDER (one card, all projects inside)
 ========================================= */
 
 function renderProjects() {
 
     if (!projectsList) return;
 
-    const totalPages = Math.ceil(
-        filteredProjects.length / PROJECTS_PER_PAGE
-    );
-
-    if (totalPages > 0 && currentPage > totalPages) {
-        currentPage = totalPages;
+    // remove the previous carousel cleanly before re-rendering
+    const oldOwl = projectsList.querySelector(".pc-owl");
+    if (oldOwl && window.jQuery) {
+        jQuery(oldOwl).trigger("destroy.owl.carousel");
     }
 
-    const start = (currentPage - 1) * PROJECTS_PER_PAGE;
-
-    const pageProjects = filteredProjects.slice(
-        start,
-        start + PROJECTS_PER_PAGE
-    );
-
-    projectsList.innerHTML = pageProjects.length
-        ? pageProjects.map(projectCard).join("")
+    projectsList.innerHTML = filteredProjects.length
+        ? carouselHTML(filteredProjects)
         : "";
 
     if (projectsEmpty) {
@@ -481,94 +446,12 @@ function renderProjects() {
     projectsList.style.display =
         filteredProjects.length ? "" : "none";
 
+    // no pagination needed - everything is inside the carousel
     if (projectsPagination) {
         projectsPagination.innerHTML = "";
-
-        if (filteredProjects.length) {
-            renderPagination(totalPages);
-        }
-    }
-}
-
-/* =========================================
-   PAGINATION
-========================================= */
-
-function renderPagination(totalPages) {
-
-    if (!projectsPagination || totalPages <= 1) return;
-
-    function addButton(label, page, options = {}) {
-
-        const button = document.createElement("button");
-
-        button.type = "button";
-
-        button.className =
-            "page-button" + (options.active ? " active" : "");
-
-        button.textContent = label;
-        button.disabled = Boolean(options.disabled);
-
-        if (options.active) {
-            button.setAttribute("aria-current", "page");
-        }
-
-        button.addEventListener("click", () => {
-
-            currentPage = page;
-
-            renderProjects();
-
-            document.getElementById("projects")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
-
-        projectsPagination.appendChild(button);
     }
 
-    addButton("‹", Math.max(1, currentPage - 1), {
-        disabled: currentPage === 1
-    });
-
-    const pages = new Set([
-        1,
-        totalPages,
-        currentPage,
-        currentPage - 1,
-        currentPage + 1
-    ]);
-
-    let previousPage = 0;
-
-    [...pages]
-        .filter(page => page >= 1 && page <= totalPages)
-        .sort((a, b) => a - b)
-        .forEach(page => {
-
-            if (previousPage && page - previousPage > 1) {
-
-                const dots = document.createElement("span");
-
-                dots.className = "page-ellipsis";
-                dots.textContent = "…";
-
-                projectsPagination.appendChild(dots);
-            }
-
-            addButton(String(page), page, {
-                active: page === currentPage
-            });
-
-            previousPage = page;
-        });
-
-    addButton("›", Math.min(totalPages, currentPage + 1), {
-        disabled: currentPage === totalPages
-    });
+    initCarousel();
 }
 
 /* =========================================
@@ -585,8 +468,6 @@ function resetFilters() {
     if (projectSort) {
         projectSort.value = "default";
     }
-
-    currentPage = 1;
 
     applyFilters();
 }
@@ -617,165 +498,6 @@ emptyClearFilters?.addEventListener("click", resetFilters);
     });
 
 /* =========================================
-   CAROUSEL IMAGE DATA
-========================================= */
-
-function getCarouselImages(gallery) {
-
-    try {
-        return JSON.parse(
-            gallery.querySelector(".carousel-images")?.textContent || "[]"
-        );
-    } catch {
-        return [];
-    }
-}
-
-/* =========================================
-   UPDATE CAROUSEL
-========================================= */
-
-function updateCarousel(gallery, index) {
-
-    const images = getCarouselImages(gallery);
-
-    const image = gallery.querySelector(".project-image");
-
-    if (!images.length || !image) return;
-
-    const activeIndex =
-        (index + images.length) % images.length;
-
-    gallery.dataset.activeSlide = String(activeIndex);
-
-    image.src = images[activeIndex];
-
-    const title =
-        gallery.querySelector(".project-title")?.textContent.trim() ||
-        "Project";
-
-    image.alt = title;
-
-    gallery.querySelectorAll(".carousel-dot").forEach(
-        (dot, dotIndex) => {
-
-            const active = dotIndex === activeIndex;
-
-            dot.classList.toggle("is-active", active);
-
-            dot.setAttribute(
-                "aria-pressed",
-                String(active)
-            );
-        }
-    );
-}
-
-/* =========================================
-   CAROUSEL BUTTON EVENTS
-========================================= */
-
-projectsList?.addEventListener("click", event => {
-
-    const target = event.target;
-
-    if (!(target instanceof Element)) return;
-
-    const gallery = target.closest("[data-carousel]");
-
-    if (!gallery) return;
-
-    const currentIndex = Number(
-        gallery.dataset.activeSlide || 0
-    );
-
-    if (target.closest(".carousel-prev")) {
-
-        event.preventDefault();
-
-        updateCarousel(gallery, currentIndex - 1);
-
-        return;
-    }
-
-    if (target.closest(".carousel-next")) {
-
-        event.preventDefault();
-
-        updateCarousel(gallery, currentIndex + 1);
-
-        return;
-    }
-
-    const dot = target.closest(".carousel-dot");
-
-    if (dot) {
-
-        event.preventDefault();
-
-        updateCarousel(
-            gallery,
-            Number(dot.dataset.slide || 0)
-        );
-    }
-});
-
-/* =========================================
-   MOBILE IMAGE SWIPE
-========================================= */
-
-let touchStartX = 0;
-let touchStartY = 0;
-let touchedGallery = null;
-
-projectsList?.addEventListener("touchstart", event => {
-
-    const target = event.target;
-
-    if (!(target instanceof Element)) return;
-
-    const gallery = target.closest("[data-carousel]");
-
-    if (!gallery) return;
-
-    touchedGallery = gallery;
-
-    touchStartX = event.changedTouches[0].clientX;
-    touchStartY = event.changedTouches[0].clientY;
-
-}, { passive: true });
-
-projectsList?.addEventListener("touchend", event => {
-
-    if (!touchedGallery) return;
-
-    const endX = event.changedTouches[0].clientX;
-    const endY = event.changedTouches[0].clientY;
-
-    const deltaX = endX - touchStartX;
-    const deltaY = endY - touchStartY;
-
-    if (
-        Math.abs(deltaX) > 45 &&
-        Math.abs(deltaX) > Math.abs(deltaY)
-    ) {
-
-        const currentIndex = Number(
-            touchedGallery.dataset.activeSlide || 0
-        );
-
-        updateCarousel(
-            touchedGallery,
-            currentIndex + (deltaX < 0 ? 1 : -1)
-        );
-    }
-
-    touchedGallery = null;
-
-}, { passive: true });
-
-
-/* =========================================
    LOAD PROJECT DATA
 ========================================= */
 
@@ -804,7 +526,7 @@ async function loadProjects() {
         allProjects = data.filter(project =>
             project &&
             typeof project === "object" &&
-            getProjectImages(project).length > 0
+            getProjectImage(project)
         );
 
         populateFilters();

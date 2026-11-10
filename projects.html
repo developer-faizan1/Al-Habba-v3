@@ -107,23 +107,28 @@
     <!-- OUR PROJECTS -->
     <section class="projects-section" id="projects">
       <div class="container">
-        <!-- Search and filters -->
+        <!-- Filters -->
         <div class="projects-toolbar">
-          <label class="toolbar-control search-control">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"></circle>
-              <path d="m16 16 5 5"></path>
+
+              <button type="button" class="status-btn status-btn--running" data-status="Running" aria-pressed="false">
+            <svg class="icon-clock" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path class="clock-hand" d="M12 12V7"></path>
+              <path class="clock-hand clock-hand--short" d="M12 12l3 2"></path>
             </svg>
-            <input
-              type="search"
-              id="projectSearch"
-              placeholder="Search projects..."
-              aria-label="Search projects"
-            />
-          </label>
+            <span>Running</span>
+          </button>
+
+          <button type="button" class="status-btn status-btn--completed" data-status="Completed" aria-pressed="false">
+            <svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path class="check-mark" d="M8 12.5l2.8 2.8L16 9.5"></path>
+            </svg>
+            <span>Completed</span>
+          </button>
 
           <label class="toolbar-control">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="icon-layers" viewBox="0 0 24 24" aria-hidden="true">
               <path d="m12 3 9 5-9 5-9-5 9-5Z"></path>
               <path d="m3 12 9 5 9-5"></path>
               <path d="m3 16 9 5 9-5"></path>
@@ -134,19 +139,7 @@
           </label>
 
           <label class="toolbar-control">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 6h12M9 12h12M9 18h12"></path>
-              <circle cx="4" cy="6" r="1"></circle>
-              <circle cx="4" cy="12" r="1"></circle>
-              <circle cx="4" cy="18" r="1"></circle>
-            </svg>
-            <select id="projectStatusFilter" aria-label="Filter by status">
-              <option value="">All Status</option>
-            </select>
-          </label>
-
-          <label class="toolbar-control">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="icon-pin" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
               <circle cx="12" cy="10" r="2.5"></circle>
             </svg>
@@ -156,7 +149,7 @@
           </label>
 
           <label class="toolbar-control">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="icon-sort" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7 3v18M3 7l4-4 4 4M17 21V3m-4 14 4 4 4-4"></path>
             </svg>
             <select id="projectSort" aria-label="Sort projects">
@@ -168,7 +161,7 @@
           </label>
 
           <button type="button" class="clear-filters" id="clearFilters">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="icon-funnel" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 4h16l-6 7v7l-4 2v-9L4 4Z"></path>
             </svg>
             <span>Clear Filters</span>
@@ -184,7 +177,7 @@
         <!-- Empty state -->
         <div class="projects-empty" id="projectsEmpty" hidden>
           <h3>No projects found</h3>
-          <p>Try changing your search or filters.</p>
+          <p>Try changing your filters.</p>
           <button type="button" class="clear-filters" id="emptyClearFilters">
             Clear Filters
           </button>

@@ -412,8 +412,6 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.projects-section .toolbar-control.search-control { flex: 2 1 320px; } /* search is wider */
-
 .projects-section .toolbar-control:hover,
 .projects-section .toolbar-control:focus-within {
   border-color: var(--green-1);    /* brand colour */
@@ -483,7 +481,209 @@
 }
 
 @media (max-width: 768px) {
-  .projects-section .toolbar-control,
-  .projects-section .toolbar-control.search-control { flex: 1 1 100%; }
+  .projects-section .toolbar-control { flex: 1 1 100%; }
   .projects-section .clear-filters { flex: 1 1 100%; }
+}
+
+/* =========================================
+   STATUS BUTTONS (Running / Completed) - separate buttons
+========================================= */
+.projects-section .status-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1 1 150px;
+  min-width: 0;
+  height: 50px;
+  padding: 0 18px;
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black-2);
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, transform 0.3s ease;
+}
+
+/* colour that wipes in from the left when the button turns on */
+.projects-section .status-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-section .status-btn--running::before   { background: #e68c14; }
+.projects-section .status-btn--completed::before { background: #22a05a; }
+
+.projects-section .status-btn--running:hover   { border-color: #e68c14; }
+.projects-section .status-btn--completed:hover { border-color: #22a05a; }
+
+.projects-section .status-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.projects-section .status-btn:active { transform: translateY(0) scale(0.97); }
+
+.projects-section .status-btn.is-active { color: #fff; border-color: transparent; }
+.projects-section .status-btn.is-active::before { transform: scaleX(1); }
+
+.projects-section .status-btn.is-active.status-btn--running   { box-shadow: 0 8px 20px rgba(230, 140, 20, 0.4); }
+.projects-section .status-btn.is-active.status-btn--completed { box-shadow: 0 8px 20px rgba(34, 160, 90, 0.4); }
+
+.projects-section .status-btn:focus-visible {
+  outline: 2px solid #1A6469;
+  outline-offset: 2px;
+}
+
+.projects-section .status-btn svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================================
+   ANIMATED ICONS (all toolbar icons)
+========================================= */
+.projects-section .toolbar-control svg,
+.projects-section .clear-filters svg,
+.projects-section .status-btn svg {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s ease;
+}
+
+.projects-section .toolbar-control:hover svg,
+.projects-section .toolbar-control:focus-within svg {
+  stroke: var(--green-1, #1A6469);
+}
+
+/* Types - layers lift up */
+.projects-section .toolbar-control:hover .icon-layers,
+.projects-section .toolbar-control:focus-within .icon-layers {
+  animation: iconBounce 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Locations - pin hops */
+.projects-section .toolbar-control:hover .icon-pin,
+.projects-section .toolbar-control:focus-within .icon-pin {
+  animation: iconHop 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Sort - arrows flip */
+.projects-section .toolbar-control:hover .icon-sort,
+.projects-section .toolbar-control:focus-within .icon-sort {
+  transform: rotate(180deg);
+}
+
+/* Clear filters - funnel wiggles */
+.projects-section .clear-filters:hover .icon-funnel {
+  animation: iconWiggle 0.6s ease-in-out;
+}
+
+/* Running - clock hands spin (hover + while active) */
+.projects-section .status-btn .clock-hand {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+.projects-section .status-btn--running:hover .clock-hand,
+.projects-section .status-btn--running.is-active .clock-hand {
+  animation: clockSpin 2s linear infinite;
+}
+.projects-section .status-btn--running:hover .clock-hand--short,
+.projects-section .status-btn--running.is-active .clock-hand--short {
+  animation-duration: 8s;
+}
+
+/* Completed - check mark draws itself, circle pops */
+.projects-section .status-btn .check-mark {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 0;
+}
+.projects-section .status-btn--completed:hover .check-mark,
+.projects-section .status-btn--completed.is-active .check-mark {
+  animation: checkDraw 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.projects-section .status-btn--completed:hover .icon-check,
+.projects-section .status-btn--completed.is-active .icon-check {
+  animation: iconPop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  35%      { transform: translateY(-5px); }
+  65%      { transform: translateY(1px); }
+}
+@keyframes iconHop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%      { transform: translateY(-6px) scale(1.12); }
+  55%      { transform: translateY(0) scale(0.94, 1.06); }
+  75%      { transform: translateY(-2px) scale(1); }
+}
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0); }
+  20%      { transform: rotate(-16deg); }
+  45%      { transform: rotate(14deg); }
+  70%      { transform: rotate(-8deg); }
+}
+@keyframes iconPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes clockSpin { to { transform: rotate(360deg); } }
+@keyframes checkDraw {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* =========================================
+   TOOLBAR ENTRANCE (staggered fade-up on load)
+   "backwards" fill so hover transforms still work afterwards
+========================================= */
+.projects-section .projects-toolbar > * {
+  animation: toolbarIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.projects-section .projects-toolbar > *:nth-child(1) { animation-delay: 0.05s; }
+.projects-section .projects-toolbar > *:nth-child(2) { animation-delay: 0.12s; }
+.projects-section .projects-toolbar > *:nth-child(3) { animation-delay: 0.19s; }
+.projects-section .projects-toolbar > *:nth-child(4) { animation-delay: 0.26s; }
+.projects-section .projects-toolbar > *:nth-child(5) { animation-delay: 0.33s; }
+.projects-section .projects-toolbar > *:nth-child(6) { animation-delay: 0.40s; }
+
+@keyframes toolbarIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .projects-section .status-btn { flex: 1 1 calc(50% - 7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-section .projects-toolbar > *,
+  .projects-section .toolbar-control svg,
+  .projects-section .clear-filters svg,
+  .projects-section .status-btn svg,
+  .projects-section .status-btn .clock-hand,
+  .projects-section .status-btn .check-mark,
+  .projects-section .status-btn::before { animation: none !important; transition: none !important; }
 }

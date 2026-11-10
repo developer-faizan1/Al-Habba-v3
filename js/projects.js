@@ -14,9 +14,9 @@ const AUTOPLAY_INTERVAL = 6000; // ms each project slide stays on screen
 ========================================= */
 
 const projectsList = document.getElementById("projectsList");
-const projectSearch = document.getElementById("projectSearch");
 const projectTypeFilter = document.getElementById("projectTypeFilter");
-const projectStatusFilter = document.getElementById("projectStatusFilter");
+const statusButtons = [...document.querySelectorAll(".projects-toolbar .status-btn")];
+let activeStatus = ""; // "", "Running" or "Completed"
 const projectLocationFilter = document.getElementById("projectLocationFilter");
 const projectSort = document.getElementById("projectSort");
 
@@ -176,11 +176,6 @@ function populateFilters() {
         "All Types"
     );
 
-    populateSelect(
-        projectStatusFilter,
-        ["Completed", "Running"],
-        "All Status"
-    );
 
     const locations = [
         ...new Set(
@@ -368,27 +363,12 @@ function initCarousel() {
 
 function applyFilters() {
 
-    const search = normalizeText(projectSearch?.value);
     const type = normalizeText(projectTypeFilter?.value);
-    const status = normalizeText(projectStatusFilter?.value);
+    const status = normalizeText(activeStatus);
     const location = normalizeText(projectLocationFilter?.value);
 
     filteredProjects = allProjects.filter(project => {
 
-        const searchable = normalizeText([
-            project.projectNumber,
-            project.id,
-            project.title,
-            project.slug,
-            project.client,
-            project.consultant,
-            project.projectLocation,
-            project.fullAddress,
-            project.area,
-            project.projectType,
-            project.projectDescription,
-            project.status
-        ].join(" "));
 
         const projectStatus = normalizeText(
             getStatusConfig(project.status)
@@ -399,7 +379,6 @@ function applyFilters() {
         );
 
         return (
-            (!search || searchable.includes(search)) &&
             (!type || normalizeText(project.projectType) === type) &&
             (!status || projectStatus === status) &&
             (!location || projectLocation === location)
@@ -482,9 +461,8 @@ function renderProjects() {
 
 function resetFilters() {
 
-    if (projectSearch) projectSearch.value = "";
     if (projectTypeFilter) projectTypeFilter.value = "";
-    if (projectStatusFilter) projectStatusFilter.value = "";
+    setActiveStatus("");
     if (projectLocationFilter) projectLocationFilter.value = "";
 
     if (projectSort) {
@@ -499,23 +477,42 @@ clearFilters?.addEventListener("click", resetFilters);
 emptyClearFilters?.addEventListener("click", resetFilters);
 
 /* =========================================
+   STATUS TOGGLE BUTTONS (Running / Completed)
+   Click the active one again to show all.
+========================================= */
+
+function setActiveStatus(value) {
+    activeStatus = value;
+
+    statusButtons.forEach(btn => {
+        const on = btn.dataset.status === value;
+        btn.classList.toggle("is-active", on);
+        btn.setAttribute("aria-pressed", String(on));
+    });
+
+}
+
+statusButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const value = btn.dataset.status;
+        setActiveStatus(activeStatus === value ? "" : value);
+        applyFilters();
+    });
+});
+
+/* =========================================
    FILTER EVENTS
 ========================================= */
 
 [
-    projectSearch,
     projectTypeFilter,
-    projectStatusFilter,
     projectLocationFilter,
     projectSort
 ]
     .filter(Boolean)
     .forEach(control => {
 
-        control.addEventListener(
-            control === projectSearch ? "input" : "change",
-            applyFilters
-        );
+        control.addEventListener("change", applyFilters);
 
     });
 

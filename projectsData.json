@@ -449,7 +449,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 171,
     "projectNumber": "P-171",
     "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
@@ -504,5 +504,236 @@
     "state": "Dubai",
     "latitude": null,
     "longitude": null
+  },
+  {
+    "id": 212,
+    "projectNumber": "P-212",
+    "slug": "P-212 (G+2P+7F+R) Hotel Building",
+    "title": "Hotel Building",
+    "image": "assets/images/running/212.jpg",
+    "projectValue": "AED 82,000,000",
+    "client": "M/S. Central One Properties LLC",
+    "consultant": "M/s RIMAL Engineering Consultant",
+    "projectLocation": "Dubai Island",
+    "startDate": "18 October 2025",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 30
+    },
+    "projectType": "Hotel",
+    "projectDescription": "G+2P+7F+R - Hotel Tower",
+    "projectComprisesOf": [
+      "Basement Level",
+      "Ground Floor",
+      "7 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Dubai Island, Dubai",
+    "plot": "1010614",
+    "area": "Dubai Island",
+    "state": "Dubai",
+    "latitude": 25.302722,
+    "longitude": 55.300306
+  },
+  {
+    "id": 211,
+    "projectNumber": "P-211",
+    "slug": "P-211 (G+2P+14F+R) RESIDENTIAL BUILDING",
+    "title": "Residential Building",
+    "image": [
+      "assets/images/running/211v2.jpg",
+      "assets/images/running/211v1.jpg"
+    ],
+    "images": [
+      "assets/images/running/211v2.jpg",
+      "assets/images/running/211v1.jpg"
+    ],
+    "projectValue": "AED 113,000,000",
+    "client": "M/S Ahmed Al Ansari Real Estate Development L.L.C",
+    "consultant": "M/s Al Ajmi Engineering Consultant",
+    "projectLocation": "Dubai Island",
+    "startDate": "11 August 2025",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 60
+    },
+    "projectType": "Residential",
+    "projectDescription": "G+2P+14F+R - Residential Building",
+    "projectComprisesOf": [
+      "Ground Floor",
+      "2 Parking",
+      "14 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Dubai Island, Dubai",
+    "plot": "1010447",
+    "area": "Dubai Island",
+    "state": "Dubai",
+    "latitude": 25.286675,
+    "longitude": 55.296047
+  },
+  {
+    "id": 210,
+    "projectNumber": "P-210",
+    "slug": "P-210 (1B+G+1P+9F+R) Residential & Commercial Building",
+    "title": "Residential & Commercial Building",
+    "image": "assets/images/running/210.jpg",
+    "projectValue": "AED 75,100,000",
+    "client": "Mr. AbdulRahman Mohd Taher Mohd Wali & Mr. Abdul Halim AbdulRahim Abdulla Muhawid",
+    "consultant": "M/s Al Ajmi Engineering Consultant",
+    "projectLocation": "Arjan - Al Barsha South 3rd",
+    "startDate": "18 June 2025",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 70
+    },
+    "projectType": "Residential",
+    "projectDescription": "1B+G+1P+9F+R - Residential Building",
+    "projectComprisesOf": [
+      "Basement Level",
+      "Ground Floor",
+      "Podium",
+      "9 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Arjan - Al Barsha South 3rd, Dubai",
+    "plot": "6731113",
+    "area": "Arjan - Al Barsha South 3rd",
+    "state": "Dubai",
+    "latitude": 25.066333,
+    "longitude": 55.247472
+  },
+  {
+    "id": 209,
+    "projectNumber": "P-209",
+    "slug": "p-209 Al Habbai Headquarters",
+    "title": "Al Habbai Headquarters",
+    "image": "assets/images/running/209v1.jpg",
+    "images": [
+      "assets/images/running/209v1.jpg",
+      "assets/images/running/209v2.jpg"
+    ],
+    "projectValue": "AED 33,000,000",
+    "client": "Mr. Ahmed Mohammad Al Habbai",
+    "consultant": "M/S. Style Engineering Consultant",
+    "projectLocation": "Mirdif First",
+    "startDate": "01-February-2026",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 40
+    },
+    "projectType": "Headquarters",
+    "projectDescription": "Al Habbai Headquarters",
+    "projectComprisesOf": [
+      "Basement Level",
+      "Ground Floor",
+      "Mezzanine Floor",
+      "2 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Mirdif First, Dubai",
+    "area": "Mirdif First",
+    "state": "Dubai",
+    "latitude": 25.2331507,
+    "longitude": 55.4327018
+  },
+  {
+    "id": 208,
+    "projectNumber": "P-208",
+    "slug": "P-208 (UG+GF+2P+8 Floors) RESIDENTIAL BUILDING",
+    "title": "Residential Building",
+    "image": [
+      "assets/images/running/208v1.jpg",
+      "assets/images/running/208v2.jpg"
+    ],
+    "images": [
+      "assets/images/running/208v1.jpg",
+      "assets/images/running/208v2.jpg"
+    ],
+    "projectValue": "AED 130,000,000",
+    "client": "M/S. Al Anwar Investment LLC",
+    "consultant": "M/S. Neb Engineering Consultant",
+    "projectLocation": "Dubai Island",
+    "startDate": "13 May 2025",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 55
+    },
+    "projectType": "Residential",
+    "projectDescription": "(UG+GF+2P+8 Floors) Residential Building",
+    "projectComprisesOf": [
+      "Under Ground",
+      "Ground 2 Parking",
+      "8 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Dubai Island, Dubai",
+    "plot": "1010581",
+    "area": "Dubai Island",
+    "state": "Dubai",
+    "latitude": 25.291291,
+    "longitude": 55.291194
+  },
+  {
+    "id": 205,
+    "projectNumber": "P-205",
+    "slug": "P-205 SRG JVC (G+3P+16 +R)",
+    "title": "Residential Building",
+    "image": "assets/images/running/205.jpg",
+    "projectValue": "AED 98,100,000",
+    "client": "M/S. Srg Holding Limited",
+    "consultant": "M/S. Erga Engineering Consultant",
+    "projectLocation": "Jumairah Village Circle",
+    "startDate": "12 May 2025",
+    "completionDate": "",
+    "status": "Running Project",
+    "progress": {
+      "overall": 60
+    },
+    "projectType": "Building",
+    "projectDescription": "SRG JVC - G+3P+16 + R)",
+    "projectComprisesOf": [
+      "Ground Floor",
+      "3 Podium",
+      "16 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Jumairah Village Circle, Dubai",
+    "plot": "6816514",
+    "area": "Jumairah Village Circle",
+    "state": "Dubai",
+    "latitude": 25.051111,
+    "longitude": 55.218472
+  },
+  {
+    "id": 204,
+    "projectNumber": "P-204",
+    "slug": "P-204 (G+7+R) RESIDENTIAL BUILDING",
+    "title": "Residential Building",
+    "image": "assets/images/running/204.jpg",
+    "projectValue": "AED 48,100,000",
+    "client": "M/S. Mohmad Rafi Mohd Saeed LLC",
+    "consultant": "M/S. Erga Engineering Consultant",
+    "projectLocation": "Al Barsha South 3rd, Arjan",
+    "startDate": "20 November 2024",
+    "completionDate": "Under Construction",
+    "status": "Running Project",
+    "progress": {
+      "overall": 40
+    },
+    "projectType": "Residential",
+    "projectDescription": "G+7+R Residential Building",
+    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
+    "fullAddress": "Al Barsha South 3rd, Arjan, Dubai",
+    "plot": "6731159",
+    "area": "Al Barsha South 3rd, Arjan",
+    "state": "Dubai",
+    "latitude": 25.064806,
+    "longitude": 55.241722
   }
 ]

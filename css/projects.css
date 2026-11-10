@@ -215,7 +215,7 @@
 .pc-info {
   position: absolute;
   left: 22px;
-  bottom: 20px;
+  bottom: 120px;
   right: 230px;
   z-index: 4;
   color: #fff;
@@ -280,7 +280,7 @@
 .pc-controls {
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 120px;
   z-index: 5;
   display: flex;
   align-items: center;

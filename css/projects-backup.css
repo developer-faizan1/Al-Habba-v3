@@ -1,0 +1,689 @@
+/* =========================================
+   MODERN OWL CAROUSEL – PROJECT CARDS
+   Images 1500 x 758 are shown in full (no crop)
+========================================= */
+.projects-container{
+  width: 100%;
+  margin: 0 auto;
+}
+.project-card {
+  padding: 0;
+  background: #0d0f12;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.3);
+}
+
+.pc-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ---------- Owl + images ---------- */
+.pc-owl,
+.pc-owl .owl-stage-outer,
+.pc-owl .owl-stage,
+.pc-owl .owl-item {
+  width: 100%;
+}
+
+/* Keeps the stage on its own layer so the zoom doesn't repaint the card */
+.pc-owl .owl-stage-outer {
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.pc-slide {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1500 / 758; /* exact image ratio => nothing is cropped */
+  background: #0d0f12;
+}
+
+.pc-owl .pc-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* never crop */
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: scale(1) translateZ(0);
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* CINEMATIC ZOOM-IN + SLOW DRIFT (Ken Burns, zoom-in only).
+   Every image starts at scale(1) => fully visible, uncropped.
+   It then zooms in to 1.1 while drifting a tiny bit; the drift direction
+   changes per slide so the gallery feels alive but never repetitive.
+   Drift (max 1.5%) is always smaller than the zoom margin (5%), so no
+   empty edges ever show. Only transform/opacity are animated (GPU smooth). */
+.pc-owl .owl-item.active .pc-image,
+.pc-owl .owl-item.owl-animated-in .pc-image,
+.pc-owl .owl-item.owl-animated-out .pc-image {
+  /* two animations run together: slow zoom (10s) + focus pull (1.4s) */
+  animation-name: pcZoomDriftA, pcFocus;
+  animation-duration: 10s, 1.4s;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1), cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both, both;
+  animation-iteration-count: 1, 1;
+}
+
+.pc-owl .owl-item:nth-child(3n+2).active .pc-image,
+.pc-owl .owl-item:nth-child(3n+2).owl-animated-in .pc-image,
+.pc-owl .owl-item:nth-child(3n+2).owl-animated-out .pc-image {
+  animation-name: pcZoomDriftB, pcFocus;
+}
+
+.pc-owl .owl-item:nth-child(3n).active .pc-image,
+.pc-owl .owl-item:nth-child(3n).owl-animated-in .pc-image,
+.pc-owl .owl-item:nth-child(3n).owl-animated-out .pc-image {
+  animation-name: pcZoomDriftC, pcFocus;
+}
+
+@keyframes pcFocus { /* image "pulls into focus" as it appears */
+  from { filter: blur(6px) brightness(1.15); }
+  to   { filter: blur(0) brightness(1); }
+}
+
+@keyframes pcZoomDriftA { /* zoom in, drift up-left */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-1.2%, -0.8%, 0) scale(1.1); }
+}
+
+@keyframes pcZoomDriftB { /* zoom in, drift up-right */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(1.2%, -0.8%, 0) scale(1.1); }
+}
+
+@keyframes pcZoomDriftC { /* pure centered zoom in */
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(0, 0, 0) scale(1.1); }
+}
+
+/* Pause (not speed up) on hover – changing duration mid-run causes a jump */
+.pc-gallery:hover .pc-owl .owl-item.active .pc-image,
+.pc-gallery:hover .pc-owl .owl-item.owl-animated-in .pc-image,
+.pc-gallery:hover .pc-owl .owl-item.owl-animated-out .pc-image {
+  animation-play-state: running;
+}
+
+/* Smooth cross-fade between slides.
+   Only the OUTGOING slide fades (on top). The incoming slide stays fully
+   visible underneath, so there is no dark "dip" in the middle of the fade. */
+.pc-owl .owl-item { animation-fill-mode: both; }
+
+.pc-owl .owl-item.owl-animated-in  { z-index: 0; }
+.pc-owl .owl-item.owl-animated-out { z-index: 1; }
+
+.pc-owl .pcFadeIn {
+  animation: pcHold 1s linear both; /* keeps Owl's animationend event, no opacity dip */
+}
+.pc-owl .pcFadeOut {
+  animation: pcFadeOut 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+  will-change: opacity;
+}
+
+@keyframes pcHold    { from { opacity: 1; } to { opacity: 1; } }
+@keyframes pcFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pcFadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* Dark gradient so bottom text/buttons stay readable (per slide) */
+.pc-slide::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Side arrows that stay fixed while slides change */
+.pc-side-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 6;
+  margin-top: -21px;
+}
+
+.pc-side-arrow.pc-prev { left: 20px; }
+.pc-side-arrow.pc-next { right: 20px; }
+
+/* Staggered text reveal: each element rises + fades in one after another */
+.pc-owl .owl-item.active .pc-slide .pc-meta,
+.pc-owl .owl-item.active .pc-slide .pc-title,
+.pc-owl .owl-item.active .pc-slide .pc-location,
+.pc-owl .owl-item.active .pc-slide .pc-controls,
+.pc-owl .owl-item.active .pc-slide .project-status {
+  animation: pcRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pc-owl .owl-item.active .pc-slide .pc-meta     { animation-delay: 0.35s; }
+.pc-owl .owl-item.active .pc-slide .pc-title    { animation-delay: 0.5s; }
+.pc-owl .owl-item.active .pc-slide .pc-location { animation-delay: 0.65s; }
+.pc-owl .owl-item.active .pc-slide .pc-controls { animation-delay: 0.8s; }
+
+/* the small line next to the number draws itself */
+.pc-owl .owl-item.active .pc-slide .pc-line {
+  animation: pcLineDraw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+@keyframes pcRise {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes pcLineDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ---------- Status chip ---------- */
+.pc-gallery .project-status {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 4;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pc-gallery .status-completed { background: rgba(34, 160, 90, 0.75); }
+.pc-gallery .status-running   { background: rgba(230, 140, 20, 0.8); }
+
+/* ---------- Info (bottom-left) ---------- */
+.pc-info {
+  position: absolute;
+  left: 22px;
+  bottom: 120px;
+  right: 230px;
+  z-index: 4;
+  color: #fff;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.pc-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.pc-number { font-weight: 700; }
+
+.pc-line {
+  width: 34px;
+  height: 2px;
+  background: #fff;
+  transform-origin: left;
+  transition: width 0.4s ease;
+}
+
+.pc-gallery:hover .pc-line { width: 56px; }
+
+.pc-title {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.25;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.pc-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pc-location svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Controls (bottom-right) ---------- */
+.pc-controls {
+  position: absolute;
+  right: 20px;
+  bottom: 120px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pc-arrows { display: flex; gap: 8px; }
+
+.pc-arrow {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.pc-arrow svg,
+.pc-details-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pc-arrow:hover {
+  background: #fff;
+  color: #111;
+  transform: scale(1.1);
+}
+
+.pc-arrow:active { transform: scale(0.94); }
+
+.pc-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #111;
+  background: #fff;
+  border-radius: 999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background 0.3s ease, color 0.3s ease;
+}
+
+.pc-details-btn svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
+
+.pc-details-btn:hover {
+  background: #1A6469; /* change to your brand colour */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.pc-details-btn:hover svg { transform: translateX(4px); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .pc-info { right: 20px; bottom: 70px; }
+  .pc-controls { left: 16px; right: 16px; bottom: 14px; justify-content: space-between; }
+  .pc-arrow { width: 38px; height: 38px; }
+  .pc-details-btn { height: 38px; padding: 0 16px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-owl .owl-item .pc-image,
+  .pc-owl .owl-item .pc-meta,
+  .pc-owl .owl-item .pc-title,
+  .pc-owl .owl-item .pc-location,
+  .pc-owl .owl-item .pc-controls,
+  .pc-owl .owl-item .pc-line,
+  .pc-owl .owl-item .project-status { animation: none !important; }
+}
+
+/* =========================================
+   CONTAINER OVERRIDE – filters + images = 1500px
+   (scoped to the projects section so the footer keeps its own width)
+========================================= */
+
+
+/* one card per row so each 1500px image fills the container */
+.projects-section .projects-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* =========================================
+   SEARCH + FILTERS (1500px wide, modern)
+========================================= */
+.projects-section .projects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 32px;
+}
+
+.projects-section .toolbar-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 180px;          /* selects share the row evenly */
+  min-width: 0;
+  height: 50px;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.projects-section .toolbar-control:hover,
+.projects-section .toolbar-control:focus-within {
+  border-color: var(--green-1);    /* brand colour */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.projects-section .toolbar-control svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #6b7280;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.projects-section .toolbar-control input,
+.projects-section .toolbar-control select {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+}
+
+.projects-section .toolbar-control input { cursor: text; }
+
+.projects-section .clear-filters {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: none;
+  height: 50px;
+  padding: 0 22px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #1A6469;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-section .clear-filters svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.projects-section .clear-filters:hover {
+  background: var(--green-1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .projects-section .toolbar-control { flex: 1 1 100%; }
+  .projects-section .clear-filters { flex: 1 1 100%; }
+}
+
+/* =========================================
+   STATUS BUTTONS (Running / Completed) - separate buttons
+========================================= */
+.projects-section .status-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1 1 150px;
+  min-width: 0;
+  height: 50px;
+  padding: 0 18px;
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black-2);
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, transform 0.3s ease;
+}
+
+/* colour that wipes in from the left when the button turns on */
+.projects-section .status-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-section .status-btn--running::before   { background: #e68c14; }
+.projects-section .status-btn--completed::before { background: #22a05a; }
+
+.projects-section .status-btn--running:hover   { border-color: #e68c14; }
+.projects-section .status-btn--completed:hover { border-color: #22a05a; }
+
+.projects-section .status-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.projects-section .status-btn:active { transform: translateY(0) scale(0.97); }
+
+.projects-section .status-btn.is-active { color: #fff; border-color: transparent; }
+.projects-section .status-btn.is-active::before { transform: scaleX(1); }
+
+.projects-section .status-btn.is-active.status-btn--running   { box-shadow: 0 8px 20px rgba(230, 140, 20, 0.4); }
+.projects-section .status-btn.is-active.status-btn--completed { box-shadow: 0 8px 20px rgba(34, 160, 90, 0.4); }
+
+.projects-section .status-btn:focus-visible {
+  outline: 2px solid #1A6469;
+  outline-offset: 2px;
+}
+
+.projects-section .status-btn svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================================
+   ANIMATED ICONS (all toolbar icons)
+========================================= */
+.projects-section .toolbar-control svg,
+.projects-section .clear-filters svg,
+.projects-section .status-btn svg {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s ease;
+}
+
+.projects-section .toolbar-control:hover svg,
+.projects-section .toolbar-control:focus-within svg {
+  stroke: var(--green-1, #1A6469);
+}
+
+/* Types - layers lift up */
+.projects-section .toolbar-control:hover .icon-layers,
+.projects-section .toolbar-control:focus-within .icon-layers {
+  animation: iconBounce 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Locations - pin hops */
+.projects-section .toolbar-control:hover .icon-pin,
+.projects-section .toolbar-control:focus-within .icon-pin {
+  animation: iconHop 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Sort - arrows flip */
+.projects-section .toolbar-control:hover .icon-sort,
+.projects-section .toolbar-control:focus-within .icon-sort {
+  transform: rotate(180deg);
+}
+
+/* Clear filters - funnel wiggles */
+.projects-section .clear-filters:hover .icon-funnel {
+  animation: iconWiggle 0.6s ease-in-out;
+}
+
+/* Running - clock hands spin (hover + while active) */
+.projects-section .status-btn .clock-hand {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+.projects-section .status-btn--running:hover .clock-hand,
+.projects-section .status-btn--running.is-active .clock-hand {
+  animation: clockSpin 2s linear infinite;
+}
+.projects-section .status-btn--running:hover .clock-hand--short,
+.projects-section .status-btn--running.is-active .clock-hand--short {
+  animation-duration: 8s;
+}
+
+/* Completed - check mark draws itself, circle pops */
+.projects-section .status-btn .check-mark {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 0;
+}
+.projects-section .status-btn--completed:hover .check-mark,
+.projects-section .status-btn--completed.is-active .check-mark {
+  animation: checkDraw 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.projects-section .status-btn--completed:hover .icon-check,
+.projects-section .status-btn--completed.is-active .icon-check {
+  animation: iconPop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  35%      { transform: translateY(-5px); }
+  65%      { transform: translateY(1px); }
+}
+@keyframes iconHop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%      { transform: translateY(-6px) scale(1.12); }
+  55%      { transform: translateY(0) scale(0.94, 1.06); }
+  75%      { transform: translateY(-2px) scale(1); }
+}
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0); }
+  20%      { transform: rotate(-16deg); }
+  45%      { transform: rotate(14deg); }
+  70%      { transform: rotate(-8deg); }
+}
+@keyframes iconPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes clockSpin { to { transform: rotate(360deg); } }
+@keyframes checkDraw {
+  from { stroke-dashoffset: 20; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* =========================================
+   TOOLBAR ENTRANCE (staggered fade-up on load)
+   "backwards" fill so hover transforms still work afterwards
+========================================= */
+.projects-section .projects-toolbar > * {
+  animation: toolbarIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.projects-section .projects-toolbar > *:nth-child(1) { animation-delay: 0.05s; }
+.projects-section .projects-toolbar > *:nth-child(2) { animation-delay: 0.12s; }
+.projects-section .projects-toolbar > *:nth-child(3) { animation-delay: 0.19s; }
+.projects-section .projects-toolbar > *:nth-child(4) { animation-delay: 0.26s; }
+.projects-section .projects-toolbar > *:nth-child(5) { animation-delay: 0.33s; }
+.projects-section .projects-toolbar > *:nth-child(6) { animation-delay: 0.40s; }
+
+@keyframes toolbarIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .projects-section .status-btn { flex: 1 1 calc(50% - 7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-section .projects-toolbar > *,
+  .projects-section .toolbar-control svg,
+  .projects-section .clear-filters svg,
+  .projects-section .status-btn svg,
+  .projects-section .status-btn .clock-hand,
+  .projects-section .status-btn .check-mark,
+  .projects-section .status-btn::before { animation: none !important; transition: none !important; }
+}

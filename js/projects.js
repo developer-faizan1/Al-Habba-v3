@@ -200,11 +200,11 @@ function populateFilters() {
 
 /* =========================================
    SLIDE (one project = one slide)
-   Images are 1500 x 758 - shown fully, never cropped
+   Images are 1900 x 800 - full width, trimmed top/bottom only if the screen is short
 ========================================= */
 
-const IMG_WIDTH = 1500;
-const IMG_HEIGHT = 758;
+const IMG_WIDTH = 1900;
+const IMG_HEIGHT = 800;
 
 function statusChipHTML(project) {
 

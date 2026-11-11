@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AL Habbai Contracting | Dubai</title>
-    <!-- owl -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/components.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- NEW: redesigned homepage sections (keep AFTER style.css) -->
+    <link rel="stylesheet" href="./css/home.css" />
+
     <!-- aos library css  -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -24,7 +18,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
     <script src="./js/main.js" defer></script>
-    <script src="./js/counter.js" defer></script>
+    <!-- NEW: replaces counter.js + owl carousel -->
+    <script src="./js/home.js" defer></script>
 
     <style>
       /* FULL-SCREEN HERO */
@@ -133,30 +128,118 @@
     </header>
     <!-- ---x--- Nav End ---x--- -->
 
-    <!-- About -->
-    <section class="about__wrapper_container">
+    <!-- =====================================================
+         MARQUEE STRIP
+    ====================================================== -->
+    <div class="ah-marquee" aria-hidden="true">
+      <div class="ah-marquee__track">
+        <div class="ah-marquee__group">
+          <span>Civil Construction</span><i></i>
+          <span>MEP Services</span><i></i>
+          <span>Infrastructure</span><i></i>
+          <span>Project Management</span><i></i>
+          <span>Quality</span><i></i>
+          <span>Safety</span><i></i>
+          <span>Trust</span><i></i>
+        </div>
+        <div class="ah-marquee__group">
+          <span>Civil Construction</span><i></i>
+          <span>MEP Services</span><i></i>
+          <span>Infrastructure</span><i></i>
+          <span>Project Management</span><i></i>
+          <span>Quality</span><i></i>
+          <span>Safety</span><i></i>
+          <span>Trust</span><i></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+    <section class="ah-section ah-about">
+      <!-- animated background: right-side image, swoosh, waves -->
+      <div class="ah-about__bg" aria-hidden="true">
+        <!-- optional: put your own right-side background image here -->
+        <img class="ah-about__bgimg" src="./assets/images/about-bg.webp" alt="" onerror="this.remove()" />
+
+        <svg class="ah-swoosh" viewBox="0 0 800 500" preserveAspectRatio="xMaxYMin slice">
+          <path class="ah-swoosh__line ah-swoosh__line--g" pathLength="1" d="M800 205 C705 190 620 140 562 88 C520 50 450 20 395 0" />
+          <path class="ah-swoosh__line ah-swoosh__line--l" pathLength="1" d="M800 252 C705 235 612 175 556 118 C510 72 445 34 410 0" />
+        </svg>
+
+        <div class="ah-waves">
+          <svg class="ah-wave" viewBox="0 0 2880 220" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="ahWv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1e665e" stop-opacity=".20" />
+                <stop offset="1" stop-color="#1e665e" stop-opacity=".04" />
+              </linearGradient>
+            </defs>
+            <path d="M0,110.0 C20.0,115.0 40.0,120.7 60,125.0 C80.0,129.3 100.0,133.5 120,136.0 C140.0,138.5 160.0,140.0 180,140.0 C200.0,140.0 220.0,138.5 240,136.0 C260.0,133.5 280.0,129.3 300,125.0 C320.0,120.7 340.0,115.0 360,110.0 C380.0,105.0 400.0,99.3 420,95.0 C440.0,90.7 460.0,86.5 480,84.0 C500.0,81.5 520.0,80.0 540,80.0 C560.0,80.0 580.0,81.5 600,84.0 C620.0,86.5 640.0,90.7 660,95.0 C680.0,99.3 700.0,105.0 720,110.0 C740.0,115.0 760.0,120.7 780,125.0 C800.0,129.3 820.0,133.5 840,136.0 C860.0,138.5 880.0,140.0 900,140.0 C920.0,140.0 940.0,138.5 960,136.0 C980.0,133.5 1000.0,129.3 1020,125.0 C1040.0,120.7 1060.0,115.0 1080,110.0 C1100.0,105.0 1120.0,99.3 1140,95.0 C1160.0,90.7 1180.0,86.5 1200,84.0 C1220.0,81.5 1240.0,80.0 1260,80.0 C1280.0,80.0 1300.0,81.5 1320,84.0 C1340.0,86.5 1360.0,90.7 1380,95.0 C1400.0,99.3 1420.0,105.0 1440,110.0 C1460.0,115.0 1480.0,120.7 1500,125.0 C1520.0,129.3 1540.0,133.5 1560,136.0 C1580.0,138.5 1600.0,140.0 1620,140.0 C1640.0,140.0 1660.0,138.5 1680,136.0 C1700.0,133.5 1720.0,129.3 1740,125.0 C1760.0,120.7 1780.0,115.0 1800,110.0 C1820.0,105.0 1840.0,99.3 1860,95.0 C1880.0,90.7 1900.0,86.5 1920,84.0 C1940.0,81.5 1960.0,80.0 1980,80.0 C2000.0,80.0 2020.0,81.5 2040,84.0 C2060.0,86.5 2080.0,90.7 2100,95.0 C2120.0,99.3 2140.0,105.0 2160,110.0 C2180.0,115.0 2200.0,120.7 2220,125.0 C2240.0,129.3 2260.0,133.5 2280,136.0 C2300.0,138.5 2320.0,140.0 2340,140.0 C2360.0,140.0 2380.0,138.5 2400,136.0 C2420.0,133.5 2440.0,129.3 2460,125.0 C2480.0,120.7 2500.0,115.0 2520,110.0 C2540.0,105.0 2560.0,99.3 2580,95.0 C2600.0,90.7 2620.0,86.5 2640,84.0 C2660.0,81.5 2680.0,80.0 2700,80.0 C2720.0,80.0 2740.0,81.5 2760,84.0 C2780.0,86.5 2800.0,90.7 2820,95.0 C2840.0,99.3 2860.0,105.0 2880,110.0 L2880,220 L0,220 Z" fill="url(#ahWv)" />
+          </svg>
+        </div>
+      </div>
+
       <div class="container">
-        <div class="about__wrapper">
-          <!-- Left Image -->
-          <div class="about__image__wrapper" data-aos="fade-up">
-            <img src="./assets/images/about.webp" alt="About Al Habbai" />
-            <div class="about__experience">
-              <h2>33+</h2>
-              <p>Years of<br />Excellence</p>
-              <span></span>
+        <div class="ah-about__grid">
+          <!-- Image -->
+          <div class="ah-about__media" data-mouse data-reveal="left">
+            <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+              <clipPath id="ahFrame" clipPathUnits="objectBoundingBox"><path d="M0.2249,0.0487 L0.8951,0.0813 Q0.9700,0.0850 0.9577,0.1590 L0.8423,0.8560 Q0.8300,0.9300 0.7551,0.9258 L0.1049,0.8892 Q0.0300,0.8850 0.0406,0.8108 L0.1394,0.1192 Q0.1500,0.0450 0.2249,0.0487 Z" /></clipPath>
+            </svg>
+
+            <div class="ah-about__stage">
+              <span class="ah-about__blob"></span>
+
+
+              <div class="ah-about__img">
+                <img src="./assets/images/about.webp" alt="About Al Habbai" />
+              </div>
+
+              <svg class="ah-about__ring" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ahRingG" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#e6d3a3" />
+                    <stop offset=".5" stop-color="#c9a961" />
+                    <stop offset="1" stop-color="#e6d3a3" />
+                  </linearGradient>
+                </defs>
+                <path pathLength="1" d="M0.2249,0.0487 L0.8951,0.0813 Q0.9700,0.0850 0.9577,0.1590 L0.8423,0.8560 Q0.8300,0.9300 0.7551,0.9258 L0.1049,0.8892 Q0.0300,0.8850 0.0406,0.8108 L0.1394,0.1192 Q0.1500,0.0450 0.2249,0.0487 Z" />
+              </svg>
+
+              <div class="ah-badge">
+                <div class="ah-badge__in">
+                  <svg class="ah-badge__laurel" viewBox="0 0 170 170" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="ahLeaf" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#f0dca6" />
+                        <stop offset="1" stop-color="#b98d34" />
+                      </linearGradient>
+                    </defs>
+                    <g fill="url(#ahLeaf)"><ellipse cx="40.8" cy="134.0" rx="3.6" ry="8.6" transform="rotate(132 40.8 134.0)"/><ellipse cx="129.2" cy="134.0" rx="3.6" ry="8.6" transform="rotate(48 129.2 134.0)"/><ellipse cx="30.9" cy="122.9" rx="3.6" ry="8.6" transform="rotate(145 30.9 122.9)"/><ellipse cx="139.1" cy="122.9" rx="3.6" ry="8.6" transform="rotate(35 139.1 122.9)"/><ellipse cx="23.8" cy="109.7" rx="3.6" ry="8.6" transform="rotate(158 23.8 109.7)"/><ellipse cx="146.2" cy="109.7" rx="3.6" ry="8.6" transform="rotate(22 146.2 109.7)"/><ellipse cx="19.8" cy="95.3" rx="3.6" ry="8.6" transform="rotate(171 19.8 95.3)"/><ellipse cx="150.2" cy="95.3" rx="3.6" ry="8.6" transform="rotate(9 150.2 95.3)"/><ellipse cx="19.2" cy="80.4" rx="3.6" ry="8.6" transform="rotate(184 19.2 80.4)"/><ellipse cx="150.8" cy="80.4" rx="3.6" ry="8.6" transform="rotate(-4 150.8 80.4)"/><ellipse cx="21.9" cy="65.7" rx="3.6" ry="8.6" transform="rotate(197 21.9 65.7)"/><ellipse cx="148.1" cy="65.7" rx="3.6" ry="8.6" transform="rotate(-17 148.1 65.7)"/><ellipse cx="27.8" cy="52.0" rx="3.6" ry="8.6" transform="rotate(210 27.8 52.0)"/><ellipse cx="142.2" cy="52.0" rx="3.6" ry="8.6" transform="rotate(-30 142.2 52.0)"/><ellipse cx="36.7" cy="40.0" rx="3.6" ry="8.6" transform="rotate(223 36.7 40.0)"/><ellipse cx="133.3" cy="40.0" rx="3.6" ry="8.6" transform="rotate(-43 133.3 40.0)"/></g>
+                  </svg>
+                  <div class="ah-badge__txt">
+                    <svg class="ah-badge__bld" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 21V8l6-3v16" /><path d="M10 21V4l9 4v13" /><path d="M7 11h.01M7 15h.01M14 10h.01M14 14h.01M17 12h.01M17 16h.01" /><path d="M3 21h18" />
+                    </svg>
+                    <b><span class="ah-count" data-target="33">0</span>+</b>
+                    <span>Years of<br />Excellence</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Content -->
-          <div class="about__content__wrapper" data-aos="fade-up">
-            <span class="about__content__subtitle">ABOUT AL HABBAI</span>
+          <div class="ah-about__content" data-stagger="0.12">
+            <span class="ah-eyebrow" data-reveal>About Al Habbai</span>
 
-            <h2>
-              Building Trust,<br />
-              Delivering Excellence
+            <h2 class="ah-title" data-reveal>
+              Building Trust,<br /><em>Delivering Excellence</em>
             </h2>
 
-            <p>
+            <p class="ah-lead" data-words>
               Al Habbai Contracting, established in Dubai in 1993 by the Al
               Habbai Family, is a leading contractor known for integrity,
               teamwork, quality, and commitment. Led by CEO Mr. Ali Al Habbai,
@@ -165,98 +248,53 @@
               prominent destinations.
             </p>
 
-            <ul class="about__list__items">
-              <li>ISO 9001:2015 Certified</li>
-              <li>Unlimited Storey Building License</li>
-              <li>Highly Skilled & Experienced Team</li>
-              <li>Commitment to Quality & Safety</li>
+            <ul class="ah-feats">
+              <li class="ah-feat" data-reveal style="--k:0">
+                <span class="ah-feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.6 14.2L7 21l5-2.6 5 2.6-1.6-6.8"/><path d="M9.4 9l1.8 1.8L14.6 7.4"/></svg></span>
+                <span class="ah-feat__txt">ISO 9001:2015<br />Certified</span>
+              </li>
+              <li class="ah-feat" data-reveal style="--k:1">
+                <span class="ah-feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.2 5 2.5 5 5.3"/></svg></span>
+                <span class="ah-feat__txt">Highly Skilled &amp;<br />Experienced Team</span>
+              </li>
+              <li class="ah-feat" data-reveal style="--k:2">
+                <span class="ah-feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/></svg></span>
+                <span class="ah-feat__txt">Unlimited Storey<br />Building License</span>
+              </li>
+              <li class="ah-feat" data-reveal style="--k:3">
+                <span class="ah-feat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5L15.5 10"/></svg></span>
+                <span class="ah-feat__txt">Commitment to<br />Quality &amp; Safety</span>
+              </li>
             </ul>
 
-            <a href="./about.html" class="about__btn">
-              Learn More About Us →
+            <a href="./about.html" class="ah-btn" data-reveal>
+              Learn More About Us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-          </div>
-
-          <!--  Right Cards -->
-          <div class="about__cards__wrapper" data-aos="fade-up">
-            <div class="about__card">
-              <div class="about__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <h3>Our Vision</h3>
-              <p>To be the most trusted construction company in the region.</p>
-            </div>
-
-            <div class="about__card">
-              <div class="about__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <circle cx="12" cy="12" r="2" />
-                </svg>
-              </div>
-              <h3>Our Mission</h3>
-              <p>
-                Deliver innovative and sustainable solutions that exceed client
-                expectations.
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ---x--- About End ---x--- -->
 
-    <!-- Our Services -->
-    <section class="services-section">
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+    <section class="ah-section ah-services">
       <div class="container">
-        <!-- Section Header -->
-        <div class="services-header">
-          <div class="section-label">
-            <span data-aos="fade-down">WHAT WE DO</span>
-            <i data-aos="fade-down"></i>
-          </div>
-
-          <h2 class="page__title__text" data-aos="fade-down">Our Services</h2>
-
-          <p data-aos="fade-down">
+        <div class="ah-head" data-stagger="0.12">
+          <span class="ah-eyebrow" data-reveal>What We Do</span>
+          <h2 class="ah-title" data-reveal>Our <em>Services</em></h2>
+          <p class="ah-lead" data-reveal>
             End-to-end construction and infrastructure solutions built on
             quality, safety, and trust.
           </p>
         </div>
 
-        <!-- Services Grid -->
-        <div class="services-grid">
-          <!-- Service 01 -->
-          <article class="service-card service-card-1" data-aos="fade-up">
-            <span class="service-number">01</span>
-
-            <div class="service-icon">
+        <div class="ah-bento" data-stagger="0.12">
+          <!-- 01 -->
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M4 21V8.5L12 3L20 8.5V21" />
                 <path d="M8 21V12H16V21" />
@@ -264,25 +302,21 @@
                 <path d="M14 8H15" />
               </svg>
             </div>
-
-            <div class="service-content">
-              <h3>Civil Construction</h3>
-
-              <div class="service-line"></div>
-
-              <p>
-                Building durable residential, commercial, and industrial
-                structures with quality craftsmanship, modern engineering, and
-                strict adherence to safety standards.
-              </p>
+              <span class="ah-svc__num">01</span>
             </div>
+            <h3>Civil Construction</h3>
+            <div class="ah-svc__line"></div>
+            <p>
+              Building durable residential, commercial, and industrial
+              structures with quality craftsmanship, modern engineering, and
+              strict adherence to safety standards.
+            </p>
           </article>
 
-          <!-- Service 02 -->
-          <article class="service-card service-card-2" data-aos="fade-up">
-            <span class="service-number">02</span>
-
-            <div class="service-icon">
+          <!-- 02 -->
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <rect x="8" y="3" width="8" height="18" rx="2" />
                 <path d="M5 8H8" />
@@ -293,25 +327,21 @@
                 <path d="M9 12H15" />
               </svg>
             </div>
-
-            <div class="service-content">
-              <h3>MEP Services</h3>
-
-              <div class="service-line"></div>
-
-              <p>
-                Providing reliable mechanical, electrical, and plumbing
-                solutions that ensure efficient building performance, comfort,
-                energy savings, and long-term reliability.
-              </p>
+              <span class="ah-svc__num">02</span>
             </div>
+            <h3>MEP Services</h3>
+            <div class="ah-svc__line"></div>
+            <p>
+              Providing reliable mechanical, electrical, and plumbing solutions
+              that ensure efficient building performance, comfort, energy
+              savings, and long-term reliability.
+            </p>
           </article>
 
-          <!-- Service 03 -->
-          <article class="service-card service-card-3" data-aos="fade-up">
-            <span class="service-number">03</span>
-
-            <div class="service-icon">
+          <!-- 03 -->
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M3 17H17" />
                 <path d="M5 17V13H14L18 9L21 12V17" />
@@ -320,25 +350,21 @@
                 <path d="M18 9L20 5L22 7L20 11" />
               </svg>
             </div>
-
-            <div class="service-content">
-              <h3>Infrastructure</h3>
-
-              <div class="service-line"></div>
-
-              <p>
-                Developing roads, utilities, drainage systems, and public
-                infrastructure that support sustainable communities, economic
-                growth, and future urban development.
-              </p>
+              <span class="ah-svc__num">03</span>
             </div>
+            <h3>Infrastructure</h3>
+            <div class="ah-svc__line"></div>
+            <p>
+              Developing roads, utilities, drainage systems, and public
+              infrastructure that support sustainable communities, economic
+              growth, and future urban development.
+            </p>
           </article>
 
-          <!-- Service 04 -->
-          <article class="service-card service-card-4" data-aos="fade-up">
-            <span class="service-number">04</span>
-
-            <div class="service-icon">
+          <!-- 04 -->
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <rect x="6" y="4" width="12" height="17" rx="2" />
                 <path d="M9 4V2H15V4" />
@@ -347,101 +373,113 @@
                 <path d="M15 16V13" />
               </svg>
             </div>
-
-            <div class="service-content">
-              <h3>Project Management</h3>
-
-              <div class="service-line"></div>
-
-              <p>
-                Planning, coordinating, and supervising every project phase to
-                ensure timely completion, budget control, quality assurance, and
-                client satisfaction.
-              </p>
+              <span class="ah-svc__num">04</span>
             </div>
+            <h3>Project Management</h3>
+            <div class="ah-svc__line"></div>
+            <p>
+              Planning, coordinating, and supervising every project phase to
+              ensure timely completion, budget control, quality assurance, and
+              client satisfaction.
+            </p>
           </article>
         </div>
       </div>
     </section>
-    <!-- ---x--- Our Services End ---x--- -->
 
-    <!-- Team Members -->
-    <section id="careers" class="member-space">
+    <!-- =====================================================
+         LEADERSHIP
+    ====================================================== -->
+    <section id="careers" class="ah-section ah-leaders">
       <div class="container">
-        <div class="management-heading">
-          <span class="section-label" data-aos="fade-up"> Our Leadership </span>
-
-          <h2 data-aos="fade-up">
-            Meet Our
-            <span>Leadership</span>
-          </h2>
-
-          <p data-aos="fade-up">
+        <div class="ah-head" data-stagger="0.12">
+          <span class="ah-eyebrow" data-reveal>Our Leadership</span>
+          <h2 class="ah-title" data-reveal>Meet Our <em>Leadership</em></h2>
+          <p class="ah-lead" data-reveal>
             Experienced professionals leading our projects with expertise,
             vision and commitment.
           </p>
         </div>
 
-        <div class="owl-carousel management-carousel" data-aos="fade-up">
-          <a href="ceo.html" class="management-card">
-            <!-- Photo -->
-            <div class="management-image">
-              <img
-                src="./assets/images/ceo.jpg"
-                alt="Chief Executive Officer"
-              />
+        <div class="ah-lcar" data-carousel data-reveal>
+          <div class="ah-lcar__viewport">
+            <div class="ah-lcar__track">
+              <article class="ah-slide is-active">
+                <span class="ah-slide__word" aria-hidden="true">CEO</span>
+
+                <div class="ah-slide__media">
+                  <span class="ah-slide__orbit"></span>
+                  <div class="ah-slide__photo">
+                    <img src="./assets/images/ceo.jpg" alt="Chief Executive Officer" draggable="false" />
+                  </div>
+                  <span class="ah-slide__tag">CEO</span>
+                </div>
+
+                <div class="ah-slide__body">
+                  <span class="ah-slide__eyebrow">Chief Executive Officer</span>
+                  <h3>Mr. Ali Al Habbai</h3>
+                  <p dir="rtl" lang="ar">
+                    الحباي من الشركات الوطنية الرائدة في مجال المقاولات العامة والإنشاءات بإمارة دبي بدولة الإمارات العربية المتحدة وقد تمتأسيسها عام 1993 من قبل آل الحباي ويمثلهم الرئيس التنفيذي للشركة السيد/ على الحباي
+                  </p>
+                  <a href="ceo.html" class="ah-btn">
+                    View Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="ah-slide">
+                <span class="ah-slide__word" aria-hidden="true">GM</span>
+
+                <div class="ah-slide__media">
+                  <span class="ah-slide__orbit"></span>
+                  <div class="ah-slide__photo">
+                    <img src="./assets/images/gm.jpg" alt="General Manager" draggable="false" />
+                  </div>
+                  <span class="ah-slide__tag">GM</span>
+                </div>
+
+                <div class="ah-slide__body">
+                  <span class="ah-slide__eyebrow">General Manager</span>
+                  <h3>Eng. Walid Sayed Abbas Youssef Allam</h3>
+                  <p>
+                    Managing operations and ensuring projects are delivered efficiently and successfully.
+                  </p>
+                  <a href="./gm.html" class="ah-btn">
+                    View Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                  </a>
+                </div>
+              </article>
             </div>
+          </div>
 
-            <!-- Content -->
-            <div class="management-content">
-              <h3>Mr. Ali Al Habbai</h3>
-
-              <span class="management-role"> CEO </span>
-
-              <p style="text-align: right">
-                الحباي من الشركات الوطنية الرائدة في مجال المقاولات العامة
-                والإنشاءات بإمارة دبي بدولة الإمارات العربية المتحدة وقد
-                تمتأسيسها عام 1993 من قبل آل الحباي ويمثلهم الرئيس التنفيذي
-                للشركة السيد/ على الحباي
-              </p>
+          <div class="ah-lcar__ctrl">
+            <div class="ah-lcar__dots">
+              <button class="ah-dot" aria-label="Show leader 1"></button>
+              <button class="ah-dot" aria-label="Show leader 2"></button>
             </div>
-          </a>
-
-          <a href="./gm.html" class="management-card">
-            <!-- Photo -->
-            <div class="management-image">
-              <img src="./assets/images/gm.jpg" alt="General Manager" />
-            </div>
-
-            <!-- Content -->
-            <div class="management-content">
-              <h3>Eng. Walid Sayed Abbas Youssef Allam</h3>
-              <span class="management-role"> GM </span>
-              <p>
-                Managing operations and ensuring projects are delivered
-                efficiently and successfully.
-              </p>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
-    <!-- ---x--- Team Members ---x--- -->
 
-    <!-- Counter -->
-    <section class="stats__wrapper__container" data-aos="fade-up">
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+    <section class="ah-section ah-stats">
+      <span class="ah-stats__orb ah-stats__orb--1"></span>
+      <span class="ah-stats__orb ah-stats__orb--2"></span>
+
       <div class="container">
-        <div class="stats__wrapper">
-          <div class="stat__items">
-            <div class="stat__icon">
+        <div class="ah-stats__grid" data-stagger="0.15">
+          <div class="ah-stat" data-reveal="zoom">
+            <div class="ah-stat__icon">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.8"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -449,23 +487,17 @@
                 <rect x="13" y="4" width="9" height="16" rx="2"></rect>
               </svg>
             </div>
-
-            <div class="stat__content">
-              <h2><span class="counter" data-target="215">0</span>+</h2>
-              <p>Projects Completed</p>
-            </div>
+            <h2><span class="ah-count" data-target="215">0</span><sup>+</sup></h2>
+            <p>Projects Completed</p>
           </div>
 
-          <div class="stat__items">
-            <div class="stat__icon">
+          <div class="ah-stat" data-reveal="zoom">
+            <div class="ah-stat__icon">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.8"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -473,23 +505,17 @@
                 <path d="M12 6v6l4 2"></path>
               </svg>
             </div>
-
-            <div class="stat__content">
-              <h2><span class="counter" data-target="33">0</span>+</h2>
-              <p>Years Experience</p>
-            </div>
+            <h2><span class="ah-count" data-target="33">0</span><sup>+</sup></h2>
+            <p>Years Experience</p>
           </div>
 
-          <div class="stat__items">
-            <div class="stat__icon">
+          <div class="ah-stat" data-reveal="zoom">
+            <div class="ah-stat__icon">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.8"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -499,23 +525,17 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </div>
-
-            <div class="stat__content">
-              <h2><span class="counter" data-target="450">0</span>+</h2>
-              <p>Skilled Professionals</p>
-            </div>
+            <h2><span class="ah-count" data-target="450">0</span><sup>+</sup></h2>
+            <p>Skilled Professionals</p>
           </div>
 
-          <div class="stat__items">
-            <div class="stat__icon">
+          <div class="ah-stat" data-reveal="zoom">
+            <div class="ah-stat__icon">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.8"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
@@ -524,252 +544,126 @@
                 <path d="M16 11l2 2 4-4"></path>
               </svg>
             </div>
-
-            <div class="stat__content">
-              <h2><span class="counter" data-target="80">0</span>+</h2>
-              <p>Satisfied Clients</p>
-            </div>
+            <h2><span class="ah-count" data-target="80">0</span><sup>+</sup></h2>
+            <p>Satisfied Clients</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- ---x--- Counter End ---x--- -->
 
-    <!-- Why Choose Us -->
-    <section class="why-section">
+    <!-- =====================================================
+         WHY CHOOSE US
+    ====================================================== -->
+    <section class="ah-section ah-why">
       <div class="container">
-        <div class="why-header">
-          <div class="why-label">
-            <span data-aos="fade-down">OUR ADVANTAGES</span>
-            <i data-aos="fade-down"></i>
-          </div>
-
-          <h2 class="page__title__text" data-aos="fade-down">Why Choose Us</h2>
-
-          <p data-aos="fade-down">
+        <div class="ah-head" data-stagger="0.12">
+          <span class="ah-eyebrow" data-reveal>Our Advantages</span>
+          <h2 class="ah-title" data-reveal>Why <em>Choose Us</em></h2>
+          <p class="ah-lead" data-reveal>
             We are committed to delivering excellence through quality, safety,
             expertise, and trust.
           </p>
         </div>
 
-        <!-- ================================
-         WHY CHOOSE US GRID
-    ================================= -->
-
-        <div class="why-grid" data-aos="fade-up">
-          <!-- ================================
-           01 - QUALITY ASSURANCE
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">01</span>
-
-            <div class="why-icon">
-              <!-- Shield Check Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 3L19 6V11C19 15.5 16.2 19.2 12 21C7.8 19.2 5 15.5 5 11V6L12 3Z"
-                />
-
-                <path d="M8.5 12L10.8 14.3L15.8 9.5" />
-              </svg>
+        <div class="ah-bento ah-bento--3" data-stagger="0.1">
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M12 3L19 6V11C19 15.5 16.2 19.2 12 21C7.8 19.2 5 15.5 5 11V6L12 3Z"
+                    />
+                    <path d="M8.5 12L10.8 14.3L15.8 9.5" />
+                  </svg></div>
+              <span class="ah-svc__num">01</span>
             </div>
-
-            <div class="why-content">
-              <h3>Quality Assurance</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                We maintain the highest standards through strict quality
-                control, premium materials, skilled craftsmanship, and detailed
-                inspections to deliver reliable, durable, and exceptional
-                construction projects.
-              </p>
-            </div>
+            <h3>Quality Assurance</h3>
+            <div class="ah-svc__line"></div>
+            <p>We maintain the highest standards through strict quality control, premium materials, skilled craftsmanship, and detailed inspections to deliver reliable, durable, and exceptional construction projects.</p>
           </article>
 
-          <!-- ================================
-           02 - SAFETY FIRST
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">02</span>
-
-            <div class="why-icon">
-              <!-- Safety Helmet Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 17H20" />
-
-                <path d="M5 17C5 11.5 8.1 7 12 7C15.9 7 19 11.5 19 17" />
-
-                <path d="M8 10V8" />
-
-                <path d="M16 10V8" />
-
-                <path d="M12 7V4" />
-
-                <path d="M3 17H21" />
-              </svg>
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 17H20" />
+                    <path d="M5 17C5 11.5 8.1 7 12 7C15.9 7 19 11.5 19 17" />
+                    <path d="M8 10V8" />
+                    <path d="M16 10V8" />
+                    <path d="M12 7V4" />
+                    <path d="M3 17H21" />
+                  </svg></div>
+              <span class="ah-svc__num">02</span>
             </div>
-
-            <div class="why-content">
-              <h3>Safety First</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                Safety is our highest priority, with strict compliance, regular
-                training, advanced protective measures, and continuous
-                monitoring to ensure a secure working environment for everyone
-                on every project.
-              </p>
-            </div>
+            <h3>Safety First</h3>
+            <div class="ah-svc__line"></div>
+            <p>Safety is our highest priority, with strict compliance, regular training, advanced protective measures, and continuous monitoring to ensure a secure working environment for everyone on every project.</p>
           </article>
 
-          <!-- ================================
-           03 - EXPERT TEAM
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">03</span>
-
-            <div class="why-icon">
-              <!-- Team Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="9" cy="8" r="3" />
-
-                <path
-                  d="M3 21V19C3 15.7 5.7 13 9 13C12.3 13 15 15.7 15 19V21"
-                />
-
-                <circle cx="17" cy="9" r="2.5" />
-
-                <path d="M16 14C19 14 21 16.2 21 19V21" />
-              </svg>
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="9" cy="8" r="3" />
+                    <path
+                      d="M3 21V19C3 15.7 5.7 13 9 13C12.3 13 15 15.7 15 19V21"
+                    />
+                    <circle cx="17" cy="9" r="2.5" />
+                    <path d="M16 14C19 14 21 16.2 21 19V21" />
+                  </svg></div>
+              <span class="ah-svc__num">03</span>
             </div>
-
-            <div class="why-content">
-              <h3>Expert Team</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                Our highly skilled engineers, architects, and construction
-                professionals bring extensive experience, technical expertise,
-                and dedication to successfully deliver projects with precision,
-                quality, and efficiency.
-              </p>
-            </div>
+            <h3>Expert Team</h3>
+            <div class="ah-svc__line"></div>
+            <p>Our highly skilled engineers, architects, and construction professionals bring extensive experience, technical expertise, and dedication to successfully deliver projects with precision, quality, and efficiency.</p>
           </article>
 
-          <!-- ================================
-           04 - ON-TIME DELIVERY
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">04</span>
-
-            <div class="why-icon">
-              <!-- Clock Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="12" r="8" />
-
-                <path d="M12 7V12L15 14" />
-              </svg>
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 7V12L15 14" />
+                  </svg></div>
+              <span class="ah-svc__num">04</span>
             </div>
-
-            <div class="why-content">
-              <h3>On-Time Delivery</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                We are committed to completing every project on schedule through
-                efficient planning, effective project management, skilled
-                execution, and seamless coordination without compromising
-                quality or safety.
-              </p>
-            </div>
+            <h3>On-Time Delivery</h3>
+            <div class="ah-svc__line"></div>
+            <p>We are committed to completing every project on schedule through efficient planning, effective project management, skilled execution, and seamless coordination without compromising quality or safety.</p>
           </article>
 
-          <!-- ================================
-           05 - SUSTAINABLE SOLUTIONS
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">05</span>
-
-            <div class="why-icon">
-              <!-- Leaf Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M20 4C12 4 6 7.5 6 13C6 16.3 8.7 19 12 19C17.5 19 20 12 20 4Z"
-                />
-
-                <path d="M4 21C7 16 10.5 12.5 16 9" />
-              </svg>
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M20 4C12 4 6 7.5 6 13C6 16.3 8.7 19 12 19C17.5 19 20 12 20 4Z"
+                    />
+                    <path d="M4 21C7 16 10.5 12.5 16 9" />
+                  </svg></div>
+              <span class="ah-svc__num">05</span>
             </div>
-
-            <div class="why-content">
-              <h3>Sustainable Solutions</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                We implement environmentally responsible construction practices,
-                energy-efficient solutions, and sustainable materials to create
-                durable, innovative projects while minimizing environmental
-                impact for future generations.
-              </p>
-            </div>
+            <h3>Sustainable Solutions</h3>
+            <div class="ah-svc__line"></div>
+            <p>We implement environmentally responsible construction practices, energy-efficient solutions, and sustainable materials to create durable, innovative projects while minimizing environmental impact for future generations.</p>
           </article>
 
-          <!-- ================================
-           06 - CLIENT SATISFACTION
-      ================================= -->
-
-          <article class="why-card" data-aos="fade-up">
-            <span class="why-number">06</span>
-
-            <div class="why-icon">
-              <!-- Handshake Icon -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 8L7 5L11 8" />
-
-                <path d="M20 8L17 5L13 8" />
-
-                <path d="M7 5L10 3L14 7L17 5" />
-
-                <path d="M4 8L8 12L10 10L13 13" />
-
-                <path d="M20 8L16 12L14 10L11 13" />
-
-                <path d="M8 12L10 14L12 12" />
-
-                <path d="M16 12L14 14L12 12" />
-
-                <path d="M10 14L12 16L14 14" />
-              </svg>
+          <article class="ah-svc" data-spot data-reveal>
+            <div class="ah-svc__top">
+              <div class="ah-svc__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 8L7 5L11 8" />
+                    <path d="M20 8L17 5L13 8" />
+                    <path d="M7 5L10 3L14 7L17 5" />
+                    <path d="M4 8L8 12L10 10L13 13" />
+                    <path d="M20 8L16 12L14 10L11 13" />
+                    <path d="M8 12L10 14L12 12" />
+                    <path d="M16 12L14 14L12 12" />
+                    <path d="M10 14L12 16L14 14" />
+                  </svg></div>
+              <span class="ah-svc__num">06</span>
             </div>
-
-            <div class="why-content">
-              <h3>Client Satisfaction</h3>
-
-              <div class="why-line"></div>
-
-              <p>
-                Client satisfaction is our priority, achieved through
-                transparent communication, reliable service, exceptional
-                workmanship, and delivering projects that consistently exceed
-                expectations, budgets, and timelines.
-              </p>
-            </div>
+            <h3>Client Satisfaction</h3>
+            <div class="ah-svc__line"></div>
+            <p>Client satisfaction is our priority, achieved through transparent communication, reliable service, exceptional workmanship, and delivering projects that consistently exceed expectations, budgets, and timelines.</p>
           </article>
         </div>
       </div>
     </section>
-    <!-- ---x--- Why Choose Us End ---x--- -->
 
     <!-- Gmail -->
     <a
@@ -1017,43 +911,5 @@
       </div>
     </footer>
     <!-- ---x--- Footer Section End ---x--- -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- =========================================
-     OWL CAROUSEL INITIALIZATION
-========================================= -->
-
-    <script>
-      $(document).ready(function () {
-        $(".management-carousel").owlCarousel({
-          loop: true,
-          margin: 20,
-          nav: true,
-          dots: true,
-          autoplay: true,
-          autoplayTimeout: 4000,
-          autoplayHoverPause: true,
-          smartSpeed: 700,
-          responsive: {
-            0: {
-              items: 1,
-            },
-
-            600: {
-              items: 1,
-            },
-
-            900: {
-              items: 2,
-            },
-
-            1200: {
-              items: 2,
-            },
-          },
-        });
-      });
-    </script>
   </body>
 </html>

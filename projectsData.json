@@ -3,7 +3,7 @@
     "id": 136,
     "projectNumber": "P-136",
     "slug": "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
-    "title": "Hotel Building",
+    "title": "Mövenpick Hotel Downtown, ",
     "image": "assets/images/test_img/136.jpg",
     "images": [
       "assets/images/test_img/136.jpg",
@@ -14,7 +14,7 @@
     "projectValue": "AED 133,200,000",
     "client": "M/s. El Housein Limited",
     "consultant": "Al Ajmi Engineering Consultants",
-    "projectLocation": "Mövenpick Hotel Apartments Downtown, Business Bay",
+    "projectLocation": "Business Bay",
     "startDate": "01 April 2015",
     "completionDate": "20 April 2018",
     "status": "Completed",
@@ -27,9 +27,9 @@
       "16 Floors",
       "Roof Level"
     ],
-    "fullAddress": "Mövenpick Hotel Apartments Downtown, Business Bay, Dubai",
+    "fullAddress": "Mövenpick Hotel Downtown, Business Bay, Dubai",
     "plot": "345-411",
-    "area": "Mövenpick Hotel Apartments Downtown",
+    "area": "Mövenpick Hotel Downtown",
     "state": "Dubai",
     "latitude": null,
     "longitude": null
@@ -60,12 +60,15 @@
     "latitude": 25.036667,
     "longitude": 55.24225
   },
-   {
+  {
     "id": 96,
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Pullman Hotel",
-    "image": ["assets/images/test_img/96.jpg", "assets/images/test_img/96v2.jpg"],
+    "image": [
+      "assets/images/test_img/96.jpg",
+      "assets/images/test_img/96v2.jpg"
+    ],
     "images": [
       "assets/images/hotels/96v1.jpg",
       "assets/images/hotels/96v2.jpg",
@@ -102,10 +105,13 @@
     "projectNumber": "P-140",
     "slug": "P-140 (2B+G+19) HOTEL BUILDING",
     "title": "Canal Central Hotel",
-    "image": "assets/images/test_img/140.jpg",
+    "image": [
+      "assets/images/test_img/140v1.jpg",
+      "assets/images/test_img/140v2.jpg"
+    ],
     "images": [
-      "assets/images/hotels/140v2.jpg",
-      "assets/images/test_img/140.jpg",
+      "assets/images/test_img/140v1.jpg",
+      "assets/images/test_img/140v2.jpg",
       "assets/images/intr_img/140iv1.webp",
       "assets/images/intr_img/140iv2.webp",
       "assets/images/intr_img/140iv3.webp",
@@ -130,6 +136,69 @@
     "fullAddress": "Canal Central Hotel, Business Bay, Dubai",
     "plot": "346-556",
     "area": "Canal Central Hotel Business Bay Dubai",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "id": 142,
+    "projectNumber": "P-142",
+    "slug": "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
+    "title": "Millennium Place",
+    "image": ["assets/images/test_img/142.jpg"],
+    "images": [
+      "assets/images/hotels/142.jpg",
+      "assets/images/intr_img/142iv1.webp",
+      "assets/images/intr_img/142iv2.webp",
+      "assets/images/intr_img/142iv3.webp"
+    ],
+    "projectValue": "AED 107,000,000",
+    "client": "M/s. New Dubai Properties",
+    "consultant": "Al Ajmi Engineering Consultants",
+    "projectLocation": "Marsa Marina",
+    "startDate": "19 December 2015",
+    "completionDate": "18 April 2018",
+    "status": "Completed",
+    "projectType": "Hotel",
+    "projectDescription": "Proposed (B+G+22 Floors +R) Hotel Building",
+    "projectComprisesOf": [
+      "Hotel Tower",
+      "2 Basement Floor",
+      "Ground Floor",
+      "22 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Millennium Place, Marsa Marina - Dubai",
+    "plot": "3920454",
+    "area": "Marsa Dubai - Marina",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "id": 162,
+    "projectNumber": "P-162",
+    "slug": "P-162 SRG ALT TOWER",
+    "title": "SRG Alt Tower",
+    "image": "assets/images/test_img/162.jpg",
+    "projectValue": "AED 218,500,000",
+    "client": "SRG Holding Limited",
+    "consultant": "M/S. ERGA Engineering Consultant",
+    "projectLocation": "Business Bay",
+    "startDate": "1 May 2018",
+    "completionDate": "26 May 2023",
+    "status": "Completed",
+    "projectType": "Residential",
+    "projectDescription": "SRG Alt Tower",
+    "projectComprisesOf": [
+      "Basement Level",
+      "Ground Floor",
+      "28 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Business Bay, Dubai",
+    "plot": null,
+    "area": "Business Bay",
     "state": "Dubai",
     "latitude": null,
     "longitude": null

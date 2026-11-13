@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- Nav -->
-    <header>
+    <header class="about__bg">
       <!-- Navigation -->
       <div class="nav__menu__wrapper" id="navbar">
         <div class="container">
@@ -82,45 +82,73 @@
     </header>
     <!-- Nav End -->
 
-    <!-- Gallery -->
-    <div class="container" id="image__gallery__link">
-      <section class="gallery-section">
-        <div class="gallery-container">
-          <div class="gallery-header">
-            <span class="gallery-subtitle" data-aos="fade-down"
-              >OUR GALLERY</span
-            >
-            <h2 data-aos="fade-down">
-              Explore Our
-              <span>Projects</span>
-            </h2>
-            <p data-aos="fade-up">
-              Take a look at our latest projects and work.
-            </p>
-          </div>
-          <!-- Gallery -->
-          <div class="gallery-grid" id="galleryGrid"></div>
-        </div>
-      </section>
+<!-- ===== In <head>, after global.css ===== -->
+<!-- <link rel="stylesheet" href="css/gallery.css"> -->
 
-      <!-- ==============================
-         LIGHTBOX
-    =============================== -->
+<!-- ===== Replace your old gallery section + lightbox markup with this ===== -->
+<section class="gl-section" id="gallery">
+  <div class="gl-wrap">
+    <header class="gl-head">
+      <span class="gl-eyebrow" data-gl-reveal>Our Portfolio</span>
+      <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+        Project <em>Gallery</em>
+      </h2>
+      <p class="gl-sub" data-gl-reveal style="--d: 160ms">
+        A look at the work we have delivered across the UAE: precision,
+        quality and craftsmanship on every site.
+      </p>
+      <span class="gl-count" data-gl-reveal style="--d: 240ms">
+        <span><b id="galleryCount">47</b> project photos</span>
+      </span>
+    </header>
 
-      <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="closeBtn">&times;</button>
-        <button class="lightbox-btn lightbox-prev" id="prevBtn">
-          &#10094;
-        </button>
-        <div class="lightbox-content">
-          <img id="lightboxImage" src="" alt="Gallery Image" />
-          <div class="image-counter" id="imageCounter">1 / 40</div>
-        </div>
-        <button class="lightbox-btn lightbox-next" id="nextBtn">
-          &#10095;
-        </button>
-      </div>
+    <!-- cards are created by gallery.js -->
+    <div class="gl-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Lightbox (keep these IDs, gallery.js depends on them) -->
+<div
+  class="gl-lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Project gallery viewer"
+  aria-hidden="true"
+>
+  <div class="gl-lb__bar">
+    <div class="gl-lb__tools">
+      <button class="gl-lb__btn" id="playBtn" type="button" aria-pressed="false" aria-label="Start slideshow">
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="gl-lb__btn" id="closeBtn" type="button" aria-label="Close gallery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
+  </div>
+
+  <div class="gl-lb__stage" id="lightboxStage">
+    <button class="gl-lb__btn gl-lb__nav" id="prevBtn" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="gl-lb__figure">
+      <img class="gl-lb__img" id="lightboxImage" alt="" draggable="false">
+    </figure>
+    <div class="gl-lb__loader" aria-hidden="true"></div>
+    <button class="gl-lb__btn gl-lb__nav" id="nextBtn" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <div class="gl-lb__foot">
+    <div class="gl-lb__progress"><i id="lightboxProgress"></i></div>
+    <div class="gl-lb__thumbs" id="lightboxThumbs"></div>
+  </div>
+</div>
+
+<!-- ===== Before </body> ===== -->
+<!-- <script src="js/gallery.js"></script> -->
 
     <!-- Gmail -->
     <a
@@ -183,7 +211,6 @@
     <footer>
       <div class="container">
         <div class="footer__wrapper" data-aos="fade-up">
-          
           <div class="footer__col2">
             <h3 class="footer__text__title">Quick Links</h3>
             <ol class="footer__text">

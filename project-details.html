@@ -115,21 +115,6 @@
                 ></p>
 
                 <div class="pd-meter-row">
-                  <div class="pd-value reveal" style="--i: 3">
-                    <div class="pd-value-head">
-                      <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        id="valueIcon"
-                      ></svg>
-                      <span>Project Value</span>
-                    </div>
-                    <div class="pd-value-amount" id="projectValue">
-                      <span class="pd-currency" id="valueCurrency"></span>
-                      <span class="pd-number" id="valueNumber">—</span>
-                    </div>
-                  </div>
-
                   <div
                     class="pd-progress reveal"
                     id="pdProgress"
@@ -157,6 +142,26 @@
                 </div>
 
                 <div class="pd-stats" id="pdStats"></div>
+
+                <div class="pd-thumbs-wrap">
+                  <button
+                    type="button"
+                    class="pd-thumb-nav"
+                    id="thumbnailPrev"
+                    aria-label="Scroll thumbnails left"
+                  >
+                    &#8249;
+                  </button>
+                  <div class="pd-thumbs" id="galleryThumbnails"></div>
+                  <button
+                    type="button"
+                    class="pd-thumb-nav"
+                    id="thumbnailNext"
+                    aria-label="Scroll thumbnails right"
+                  >
+                    &#8250;
+                  </button>
+                </div>
               </div>
 
               <!-- Gallery -->
@@ -203,26 +208,6 @@
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
                     </svg>
-                  </button>
-                </div>
-
-                <div class="pd-thumbs-wrap">
-                  <button
-                    type="button"
-                    class="pd-thumb-nav"
-                    id="thumbnailPrev"
-                    aria-label="Scroll thumbnails left"
-                  >
-                    &#8249;
-                  </button>
-                  <div class="pd-thumbs" id="galleryThumbnails"></div>
-                  <button
-                    type="button"
-                    class="pd-thumb-nav"
-                    id="thumbnailNext"
-                    aria-label="Scroll thumbnails right"
-                  >
-                    &#8250;
                   </button>
                 </div>
               </div>

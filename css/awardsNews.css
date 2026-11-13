@@ -1,144 +1,472 @@
-.awardNews__bg {
-  background-image: linear-gradient(
-rgba(0, 0, 0, 0.65),
-rgba(0, 0, 0, 0.1)
-),
-url('../images/awards.webp');;
-width: 100%;
-height: 70vh;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-}
-
-.awards__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  gap: 35px;
-}
-
-/* CARD */
-
-.award__card {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  padding: 2px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  cursor: pointer;
-}
-
-.award__content {
-  position: relative;
-  z-index: 2;
-  background: #fff;
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(162, 222, 150, 0.15);
-}
-
-.award__image {
-  position: relative;
-  height: 350px;
-  overflow: hidden;
-}
-
-.award__image img {
+/* =========================================================
+   AWARDS & NEWS SECTION  (prefix: aw__)
+   Uses variables + fonts from global.css only.
+   Add at the END of css/awardsNews.css (or link after it).
+   Old .awards / .award__* rules are no longer used.
+   ========================================================= */
+.about__bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1)),
+    url("../assets/images/about_bg_cover.webp");
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.6s;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.aw {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 110px;
+  background: #fff;
 }
 
-.award__card:hover img {
-  transform: scale(1.08);
+/* ---------- heading ---------- */
+.aw__head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 70px;
 }
-
-.award__info {
-  padding: 30px;
-}
-
-.award__info h3 {
-  color: var(--black-3);
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-
-.award__info p {
-  color: var(--black-3);
-  line-height: 1.8;
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-}
-
-.award__btn {
+.aw__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  text-decoration: underline;
-  text-decoration-color: var(--black-3);
-  padding: 1rem 1.8rem;
-  border-radius: 2px;
-  margin-top: 1rem;
-  color: var(--white-1);
+  gap: 1rem;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-1);
+}
+.aw__eyebrow i {
+  width: 38px;
+  height: 2px;
+  background: var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.aw__eyebrow i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  animation: awSweep 2.4s var(--ease) infinite;
+}
+@keyframes awSweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.aw__title {
+  margin: 1.4rem 0 1.4rem;
+  font-size: clamp(3.6rem, 6vw, 5.6rem);
+  line-height: 1.1;
   font-weight: 600;
-  transition: 0.35s;
+  color: var(--black-1);
 }
-
-.award__btn span {
-  font-size: 1.6rem;
+.aw__title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--green-1), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.aw__sub {
   color: var(--black-3);
-font-family: Raleway;
 }
 
-.award__btn svg {
-  width: 42px;
-  height: 42px;
-  padding: 11px;
+/* ---------- list ---------- */
+.aw__list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ---------- card ---------- */
+.aw__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(30, 102, 94, 0.08);
+  overflow: hidden;
+  transition:
+    transform 0.5s var(--ease),
+    box-shadow 0.5s var(--ease);
+}
+.aw__card:nth-child(even) {
+  grid-template-columns: 1fr 1.05fr;
+}
+.aw__card:nth-child(even) .aw__media {
+  order: 2;
+}
+.aw__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(30, 102, 94, 0.16);
+}
+
+/* animated accent line along the top */
+.aw__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  z-index: 3;
+  background: linear-gradient(90deg, var(--green-1), var(--green-2), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease);
+}
+.aw__card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ---------- media ---------- */
+.aw__media {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--mint);
+}
+.aw__media img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1.2s var(--ease);
+}
+.aw__card:hover .aw__media img {
+  transform: scale(1.18) rotate(0.6deg);
+}
+.aw__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 102, 94, 0.55) 0%,
+    transparent 55%
+  );
+}
+/* shine sweep on hover */
+.aw__media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.9s var(--ease);
+}
+.aw__card:hover .aw__media::after {
+  left: 130%;
+}
+
+.aw__index {
+  position: absolute;
+  left: 24px;
+  bottom: 8px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 9rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+  transition: transform 0.6s var(--ease);
+}
+.aw__card:hover .aw__index {
+  transform: translateY(-8px);
+}
+.aw__badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  padding: 0.7rem 1.4rem;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black-1);
+  background: var(--gold-light);
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.aw__badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--green-1);
-  color: #fff;
-  transition: 0.35s;
-  box-shadow: 0 10px 20px rgba(38, 100, 59, 0.25);
+  animation: awPulse 1.8s ease-out infinite;
 }
-
-.award__btn:hover {
-  color: var(--green-2);
-  gap: 20px;
-}
-
-.award__btn:hover svg {
-  transform: rotate(45deg);
-  background: var(--green-2);
-  color: var(--black-1);
-  box-shadow: 0 0 20px rgba(162, 222, 150, 0.5);
-}
-
-.award__card:hover {
-  transform: translateY(-10px);
-  transition: 0.4s;
-}
-/* Responsive */
-
-@media (max-width: 768px) {
-  .awards {
-    padding: 70px 0;
+@keyframes awPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(30, 102, 94, 0.6);
   }
+  100% {
+    box-shadow: 0 0 0 10px rgba(30, 102, 94, 0);
+  }
+}
 
-  .awards__wrapper {
+/* ---------- body ---------- */
+.aw__body {
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.8rem;
+}
+.aw__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.aw__tags span {
+  padding: 0.5rem 1.2rem;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-1);
+  background: var(--lightGreen-1);
+  border: 1px solid var(--mint);
+  border-radius: 50px;
+}
+.aw__card-title {
+  font-size: clamp(2.2rem, 2.4vw, 3rem);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--black-1);
+}
+.aw__text {
+  color: var(--black-3);
+  font-size: 1.6rem;
+  line-height: 1.65em;
+}
+
+/* spec chips */
+.aw__specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  padding: 1.6rem 0;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+.aw__specs li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--gold);
+}
+.aw__specs small {
+  font-family: Raleway;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black-3);
+}
+.aw__specs strong {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--black-1);
+}
+
+/* button */
+.aw__btn {
+  position: relative;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2.4rem;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-1);
+  border: 1.5px solid var(--green-1);
+  border-radius: 50px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s var(--ease);
+}
+.aw__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--green-1);
+  transform: translateY(101%);
+  transition: transform 0.45s var(--ease);
+}
+.aw__btn:hover {
+  color: #fff;
+}
+.aw__btn:hover::before {
+  transform: translateY(0);
+}
+.aw__btn svg {
+  transition: transform 0.4s var(--ease);
+}
+.aw__btn:hover svg {
+  transform: translate(4px, -4px) rotate(45deg);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 991px) {
+  .aw__card,
+  .aw__card:nth-child(even) {
     grid-template-columns: 1fr;
   }
-
-  .award__image {
-    height: 220px;
+  .aw__card:nth-child(even) .aw__media {
+    order: 0;
   }
-
-  .award__info {
-    padding: 25px;
+  .aw__media {
+    min-height: 300px;
   }
+  .aw__body {
+    padding: 34px 28px;
+  }
+}
+@media (max-width: 575px) {
+  .aw {
+    padding: 60px 0 70px;
+  }
+  .aw__head {
+    margin-bottom: 44px;
+  }
+  .aw__list {
+    gap: 36px;
+  }
+  .aw__specs {
+    grid-template-columns: 1fr;
+  }
+  .aw__index {
+    font-size: 6.5rem;
+  }
+  .aw__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
-  .award__info h3 {
-    font-size: 24px;
+@media (prefers-reduced-motion: reduce) {
+  .aw *,
+  .aw *::before,
+  .aw *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   ENTRANCE ANIMATIONS (triggered by AOS adding .aos-animate)
+   Hidden state only applies once AOS has initialised, so the
+   content stays visible if the library fails to load.
+   ========================================================= */
+
+/* heading underline draws in */
+.aw__rule {
+  display: block;
+  width: 90px;
+  height: 3px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(90deg, var(--green-1), var(--gold));
+  border-radius: 3px;
+  transform-origin: center;
+  animation: awRule 1s var(--ease) 0.3s both;
+}
+@keyframes awRule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* image unveils with a clip, then settles */
+.aw__card.aos-init:not(.aos-animate) .aw__media img {
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.25);
+}
+.aw__card.aos-animate .aw__media img {
+  clip-path: inset(0 0 0 0);
+  transition:
+    clip-path 1.2s var(--ease) 0.1s,
+    transform 1.6s var(--ease) 0.1s;
+}
+.aw__card:nth-child(even).aos-init:not(.aos-animate) .aw__media img {
+  clip-path: inset(0 0 0 100%);
+}
+
+/* body content staggers in */
+.aw__card.aos-init:not(.aos-animate) .aw__body > *,
+.aw__card.aos-init:not(.aos-animate) .aw__specs li {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.aw__body > *,
+.aw__specs li {
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
+}
+.aw__card.aos-animate .aw__body > :nth-child(1) { transition-delay: 0.30s; }
+.aw__card.aos-animate .aw__body > :nth-child(2) { transition-delay: 0.40s; }
+.aw__card.aos-animate .aw__body > :nth-child(3) { transition-delay: 0.50s; }
+.aw__card.aos-animate .aw__body > :nth-child(4) { transition-delay: 0.60s; }
+.aw__card.aos-animate .aw__body > :nth-child(5) { transition-delay: 0.75s; }
+.aw__card.aos-animate .aw__specs li:nth-child(1) { transition-delay: 0.65s; }
+.aw__card.aos-animate .aw__specs li:nth-child(2) { transition-delay: 0.75s; }
+.aw__card.aos-animate .aw__specs li:nth-child(3) { transition-delay: 0.85s; }
+
+/* index number and badge slide in */
+.aw__card.aos-init:not(.aos-animate) .aw__index,
+.aw__card.aos-init:not(.aos-animate) .aw__badge {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.aw__card.aos-animate .aw__badge {
+  transition: opacity 0.7s var(--ease) 0.8s, transform 0.7s var(--ease) 0.8s;
+}
+.aw__card.aos-animate .aw__index {
+  transition: opacity 0.9s var(--ease) 0.6s, transform 0.6s var(--ease);
+}
+
+/* slow, subtle "breathing" zoom on the photo once visible */
+.aw__card.aos-animate .aw__media img {
+  animation: awDrift 18s ease-in-out 1.6s infinite alternate;
+}
+.aw__card:hover .aw__media img {
+  animation-play-state: paused;
+}
+@keyframes awDrift {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1.15) translate(-1.5%, -1%);
   }
 }

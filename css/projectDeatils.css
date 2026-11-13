@@ -1617,3 +1617,44 @@ svg {
     transform: none;
   }
 }
+
+/* =========================================
+   THUMBNAILS IN LEFT COLUMN (desktop)
+========================================= */
+.pd-hero-copy .pd-thumbs-wrap {
+  display: block;
+  margin-top: 28px;
+}
+
+.pd-hero-copy .pd-thumb-nav {
+  display: none;
+}
+
+.pd-hero-copy .pd-thumbs {
+  flex-wrap: wrap;
+  overflow: visible;
+  padding: 4px 0;
+}
+
+.pd-hero-copy .pd-thumb {
+  flex: 0 0 calc((100% - 30px) / 4);
+}
+
+/* Tablet/mobile: thumbnails sit under the main image (JS moves them) */
+.pd-gallery .pd-thumbs-wrap {
+  display: grid;
+}
+
+.pd-hero .pd-thumbs-wrap.is-single {
+  display: none;
+}
+
+/* Project Value removed: collapse the meter row when the progress ring is hidden */
+.pd-meter-row {
+  grid-template-columns: auto;
+  justify-content: start;
+}
+
+.pd-meter-row:not(:has(.pd-progress:not([hidden]))) {
+  display: none;
+}

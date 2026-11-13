@@ -12,13 +12,12 @@
 
     <!-- aos script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-
     <script src="./js/main.js" defer></script>
   </head>
 
   <body>
     <!-- Nav -->
-    <header class="awardNews__bg">
+    <header class="about__bg">
       <!-- Navigation -->
       <div class="nav__menu__wrapper" id="navbar">
         <div class="container">
@@ -85,103 +84,155 @@
     </header>
     <!-- Nav End -->
 
-    <section id="award&news" class="awards">
-      <div class="container">
-        <div class="awards__wrapper">
-          <!-- Card 1 -->
+<!-- ================= AWARDS & NEWS SECTION (replace the old <section id="award&news"> block only) ================= -->
+<section id="award&news" class="aw">
+  <div class="container">
+    <!-- Section heading -->
+    <div class="aw__head" data-aos="fade-up">
+      <span class="aw__eyebrow"><i></i> Latest Updates</span>
+      <h2 class="aw__title">Awards <em>&amp;</em> News</h2>
+      <span class="aw__rule" aria-hidden="true"></span>
+      <p class="aw__sub">
+        New contracts, milestones and landmark projects from Al Habbai
+        Contracting across Dubai.
+      </p>
+    </div>
 
-          <div class="award__card" data-aos="fade-up">
-            <div class="award__border"></div>
-
-            <div class="award__content">
-              <div class="award__image">
-                <img
-                  src="./assets/images/hatimi-news1.jpg"
-                  alt="Awards & News"
-                />
-              </div>
-
-              <div class="award__info">
-                <h3>Hatimi Residence – Dubai Islands</h3>
-
-                <p>
-                  Al Habbai Contracting LLC has recently signed a contract with
-                  M/s. Anwar Investment Limited, Dubai for the construction of a
-                  proposed (UG + GF + 2P + 8 Floors) residential building
-                  located on Plot No. 101-0581, Dubai Islands, Dubai, UAE. The
-                  project is situated within Dubai Islands, a major coastal
-                  development by Nakheel, the renowned developer, offering
-                  premium residential and lifestyle facilities.
-                </p>
-
-                <a href="./hatimi-residence.html" class="award__btn">
-                  <span>Read More</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-
-          <div class="award__card" data-aos="fade-up">
-            <div class="award__border"></div>
-
-            <div class="award__content">
-              <div class="award__image">
-                <img src="./assets/images/srg-news-2.jpg" alt="Awards & News" />
-              </div>
-
-              <div class="award__info">
-                <h3>SRG JVC – Proposed Commercial & Residential Building</h3>
-
-                <p>
-                  Al Habbai Contracting LLC has recently signed a contract with
-                  M/s. SRG Holding Limited, Dubai for the construction of a
-                  proposed SRG JVC – Commercial & Residential Building (G+3P+16
-                  Floors+Roof) on Plot No. 6816514, located at Al Barsha South
-                  Fourth, Dubai, United Arab Emirates. The project is a major
-                  development in Dubai.
-                </p>
-
-                <a href="./p162.html" class="award__btn">
-                  <span>Read More</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
+    <div class="aw__list">
+      <!-- ============ Story 1 ============ -->
+      <article class="aw__card" data-aos="fade-up">
+        <div class="aw__media">
+          <img
+            src="./assets/images/hatimi-news1.jpg"
+            alt="Hatimi Residence – Dubai Islands"
+            loading="lazy"
+          />
+          <span class="aw__shade"></span>
+          <span class="aw__index">01</span>
+          <span class="aw__badge">New Contract</span>
         </div>
-      </div>
-    </section>
+
+        <div class="aw__body">
+          <div class="aw__tags">
+            <span>Residential</span>
+            <span>Dubai Islands</span>
+          </div>
+
+          <h3 class="aw__card-title">Hatimi Residence – Dubai Islands</h3>
+
+          <p class="aw__text">
+            Al Habbai Contracting LLC has recently signed a contract with M/s.
+            Anwar Investment Limited, Dubai for the construction of a proposed
+            (UG + GF + 2P + 8 Floors) residential building on Plot No.
+            101-0581, Dubai Islands, a major coastal development by Nakheel
+            offering premium residential and lifestyle facilities.
+          </p>
+
+          <ul class="aw__specs">
+            <li>
+              <small>Client</small>
+              <strong>Anwar Investment Ltd.</strong>
+            </li>
+            <li>
+              <small>Plot No.</small>
+              <strong>101-0581</strong>
+            </li>
+            <li>
+              <small>Height</small>
+              <strong>UG + GF + 2P + 8</strong>
+            </li>
+          </ul>
+
+          <a href="./hatimi-residence.html" class="aw__btn">
+            <span>Read More</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ============ Story 2 ============ -->
+      <article class="aw__card" data-aos="fade-up">
+        <div class="aw__media">
+          <img
+            src="./assets/images/srg-news-2.jpg"
+            alt="SRG JVC – Commercial & Residential Building"
+            loading="lazy"
+          />
+          <span class="aw__shade"></span>
+          <span class="aw__index">02</span>
+          <span class="aw__badge">New Contract</span>
+        </div>
+
+        <div class="aw__body">
+          <div class="aw__tags">
+            <span>Commercial</span>
+            <span>Residential</span>
+            <span>Al Barsha South</span>
+          </div>
+
+          <h3 class="aw__card-title">
+            SRG JVC – Proposed Commercial &amp; Residential Building
+          </h3>
+
+          <p class="aw__text">
+            Al Habbai Contracting LLC has recently signed a contract with M/s.
+            SRG Holding Limited, Dubai for the construction of a proposed SRG
+            JVC – Commercial &amp; Residential Building (G + 3P + 16 Floors +
+            Roof) on Plot No. 6816514, located at Al Barsha South Fourth, Dubai.
+            The project is a major development in Dubai.
+          </p>
+
+          <ul class="aw__specs">
+            <li>
+              <small>Client</small>
+              <strong>SRG Holding Ltd.</strong>
+            </li>
+            <li>
+              <small>Plot No.</small>
+              <strong>6816514</strong>
+            </li>
+            <li>
+              <small>Height</small>
+              <strong>G + 3P + 16 + Roof</strong>
+            </li>
+          </ul>
+
+          <a href="./p162.html" class="aw__btn">
+            <span>Read More</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ================= END AWARDS & NEWS SECTION ================= -->
 
     <!-- Gmail -->
     <a
@@ -244,7 +295,6 @@
     <footer>
       <div class="container">
         <div class="footer__wrapper" data-aos="fade-up">
-          
           <div class="footer__col2">
             <h3 class="footer__text__title">Quick Links</h3>
             <ol class="footer__text">

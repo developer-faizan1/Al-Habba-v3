@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     stage: $("pdStage"),
     mainImage: $("mainProjectImage"),
     counter: $("galleryCounter"),
+    thumbsWrap: document.querySelector(".pd-thumbs-wrap"),
     thumbs: $("galleryThumbnails"),
     prev: $("galleryPrev"),
     next: $("galleryNext"),
@@ -159,7 +160,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const project = projects[position];
 
     renderHeader(project);
-    renderValue(project);
     renderProgress(project);
     renderStats(project);
     renderBento(project);
@@ -206,34 +206,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const status = clean(p.status);
     $("projectStatusText").textContent = status;
     $("projectStatus").classList.toggle("is-completed", isComplete(status));
-  }
-
-  /* =========================================
-     VALUE (count-up)
-  ========================================= */
-  function renderValue(p) {
-    $("valueIcon").innerHTML = ICONS.coins;
-
-    const text = clean(p.projectValue);
-    const match = text.match(/^([A-Za-z]{2,4})\s+(.+)$/);
-    const amountText = match ? match[2].trim() : text;
-    const numberEl = $("valueNumber");
-
-    $("valueCurrency").textContent = match?.[1] ?? "";
-    numberEl.textContent = amountText;
-
-    const amount = Number(amountText.replace(/,/g, ""));
-    if (!Number.isFinite(amount) || reduceMotion) return;
-
-    const fmt = new Intl.NumberFormat("en-US");
-    numberEl.textContent = "0";
-
-    whenVisible($("projectValue"), () =>
-      tween(1800, (t) => {
-        numberEl.textContent =
-          t === 1 ? amountText : fmt.format(Math.round(amount * t));
-      }),
-    );
   }
 
   /* =========================================
@@ -449,6 +421,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const single = images.length < 2;
     el.gallery.classList.toggle("is-single", single);
     el.lightbox.classList.toggle("single", single);
+    el.thumbsWrap.classList.toggle("is-single", single);
 
     el.thumbs.replaceChildren();
     el.lbThumbs.replaceChildren();
@@ -513,6 +486,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (el.lightbox.classList.contains("open")) updateLightbox();
   }
+
+  // Thumbnails sit at the bottom of the left column on desktop,
+  // and move under the main image on tablet/mobile (image is on top there).
+  const copyCol = document.querySelector(".pd-hero-copy");
+  const stackMQ = matchMedia("(max-width: 1100px)");
+  const placeThumbs = () =>
+    (stackMQ.matches ? el.gallery : copyCol).append(el.thumbsWrap);
+  placeThumbs();
+  stackMQ.addEventListener("change", placeThumbs);
 
   el.mainImage.addEventListener("error", () => {
     if (el.mainImage.src !== PLACEHOLDER) el.mainImage.src = PLACEHOLDER;

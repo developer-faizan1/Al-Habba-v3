@@ -89,32 +89,7 @@
   line-height: 1.8;
   color: var(--gl-muted);
 }
-.gl-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 24px;
-  padding: 9px 18px 9px 14px;
-  border: 1px solid var(--gl-line);
-  border-radius: 999px;
-  font-family: Raleway, sans-serif;
-  font-weight: 600;
-  font-size: 1.35rem;
-  color: var(--gl-muted);
-}
-.gl-count::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gl-gold);
-  animation: glPing 2.2s ease-out infinite;
-}
-.gl-count b {
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  color: var(--gl-green);
-}
+
 
 /* header reveal (only when JS is running) */
 .gl-js [data-gl-reveal] {
@@ -571,7 +546,6 @@
   .gl-card,
   .gl-card *,
   .gl-card::after,
-  .gl-count::before,
   .gl-lb__progress i {
     animation: none !important;
     transition: none !important;

@@ -7,7 +7,7 @@
 ========================================= */
 
 const PROJECTS_JSON_URL = "./projectsData.json";
-const AUTOPLAY_INTERVAL = 6000; // ms each project slide stays on screen
+const AUTOPLAY_INTERVAL = 9000; // ms each project slide stays on screen
 
 /* =========================================
    DOM ELEMENTS
@@ -245,7 +245,7 @@ function slideHTML(project, index, imageSrc) {
 
             ${statusChipHTML(project)}
 
-            <!-- bottom-left: project info -->
+            <!-- bottom-left: project info + details button (below address) -->
             <div class="pc-info">
                 <div class="pc-meta">
                     ${numberLabel ? `<span class="pc-number">P-${numberLabel}</span>` : ""}
@@ -259,18 +259,17 @@ function slideHTML(project, index, imageSrc) {
                         <span>${location}</span>
                     </p>
                 ` : ""}
-            </div>
 
-            <!-- bottom-right: details button -->
-            <div class="pc-controls">
-                <a
-                    href="project-details.html?slug=${encodeURIComponent(getProjectSlug(project))}"
-                    class="pc-details-btn"
-                    aria-label="View details for ${title}"
-                >
-                    <span>View Details</span>
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
+                <div class="pc-controls">
+                    <a
+                        href="project-details.html?slug=${encodeURIComponent(getProjectSlug(project))}"
+                        class="pc-details-btn"
+                        aria-label="View details for ${title}"
+                    >
+                        <span>View Details</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
             </div>
 
         </div>

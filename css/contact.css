@@ -361,11 +361,15 @@
   transform: translateY(0);
 }
 
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* =========================================
-   TABLET
+   VALIDATION STATES
 ========================================= */
-
-
 
 .error-message {
   display: block;
@@ -611,44 +615,52 @@
   background: #f8fcfb;
 }
 
-.activity-card.active {
-  border-color: var(--green-2);
-  background:
-    linear-gradient(
-      135deg,
-      #f8fdfc,
-      #eef9f6
-    );
-  box-shadow:
-    0 4px 12px rgba(8, 127, 112, 0.08);
+/* Selected card (class set by JS, :has() as CSS-only fallback) */
+.activity-card.active,
+.activity-card:has(input:checked) {
+  border-color: var(--green-1);
+  background: linear-gradient(135deg, #f8fdfc, #eef9f6);
+  box-shadow: 0 4px 12px rgba(8, 127, 112, 0.08);
 }
 
 .activity-card input {
   position: absolute;
   opacity: 0;
+  pointer-events: none;
 }
 
 .custom-radio {
   width: 21px;
   height: 21px;
+  flex-shrink: 0;
   border: 1.5px solid #b9c5cc;
   border-radius: 50%;
   position: relative;
+  transition: border-color 0.25s ease;
 }
 
-.activity-card.active .custom-radio {
-  border-color: var(--primary);
-}
-
-.activity-card.active .custom-radio::after {
+/* The dot (hidden until selected) */
+.custom-radio::after {
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--primary);
-  left: 4px;
-  top: 4px;
+  background: var(--green-1);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.activity-card.active .custom-radio,
+.activity-card:has(input:checked) .custom-radio {
+  border-color: var(--green-1);
+}
+
+.activity-card.active .custom-radio::after,
+.activity-card:has(input:checked) .custom-radio::after {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 

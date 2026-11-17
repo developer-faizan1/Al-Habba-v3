@@ -1,8 +1,10 @@
-/* Nav  */
+
 /* ===========================
    NAVIGATION
 =========================== */
-
+.logo{
+  margin-top: -14px;
+}
 .nav__menu__wrapper {
   position: fixed;
   top: 0;
@@ -10,36 +12,39 @@
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition:
-    background 0.35s ease,
-    box-shadow 0.35s ease,
-    backdrop-filter 0.35s ease;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
-nav {
+.nav__menu__wrapper nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   height: 90px;
   transition: all 0.35s ease;
 }
 
-nav img {
+.nav__menu__wrapper nav > a:first-child {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.nav__menu__wrapper nav > a:first-child img {
+  display: block;
   width: 220px;
   transition: all 0.35s ease;
 }
 
-nav svg {
-  display: none;
-}
-
+/* Navigation Links */
 .nav-links {
   flex: 1;
+  min-width: 0;
   text-align: right;
 }
 
 .nav-links ul {
   padding: 0;
+  margin: 0;
 }
 
 .nav-links ul li {
@@ -52,20 +57,35 @@ nav svg {
 .nav-links ul li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: color 0.3s ease;
   font-family: Poppins;
+  white-space: nowrap;
 }
 
 .nav-links ul li a:hover {
   color: var(--green-1);
 }
 
-/* ======================================
-   Sticky Navbar
-====================================== */
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--green-1);
+  display: block;
+  margin: auto;
+  transition: width 0.4s ease;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+/* ===========================
+   STICKY NAVIGATION
+=========================== */
 
 .nav__menu__wrapper.scrolled {
   background: rgba(255, 255, 255, 0.95);
@@ -78,58 +98,172 @@ nav svg {
   height: 72px;
 }
 
-.nav__menu__wrapper.scrolled img {
+.nav__menu__wrapper.scrolled nav > a:first-child img {
   width: 190px;
   margin-top: 6px;
 }
 
-.nav__menu__wrapper.scrolled .nav-links ul {
-  margin-top: 0;
-}
-
 .nav__menu__wrapper.scrolled .nav-links ul li a {
   color: var(--black-1);
-  font-family: Poppins;
 }
 
-.nav__menu__wrapper.scrolled nav svg {
-  color: var(--black-1);
-}
+/* ===========================
+   MENU ICONS
+=========================== */
 
-.nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background-color: var(--green-1);
-  display: block;
-  margin: auto;
-  transition: 0.4s;
-}
-
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
-/* Menu Icons */
-
-nav svg {
+.nav__menu__wrapper nav > svg,
+.nav-links > svg {
   display: none;
   color: #fff;
   cursor: pointer;
 }
 
 /* ===========================
-   MOBILE
+   OUR PROFILE BUTTON
+=========================== */
+
+.nav__menu__wrapper nav > a.nav-cta {
+  position: relative;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 1rem;
+  padding: 1.2rem 2.4rem;
+  margin: 0;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Normal state */
+  color: var(--green-1);
+  border: 1.5px solid var(--green-1);
+  border-radius: 50px;
+
+  transition:
+    color 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Remove previous animated overlay */
+.nav__menu__wrapper nav > a.nav-cta::before {
+  display: none !important;
+}
+
+/* Hover state */
+.nav__menu__wrapper nav > a.nav-cta:hover {
+  color: #ffffff !important;
+  background: var(--green-1) !important;
+  border-color: var(--green-1) !important;
+}
+
+/* Profile arrow */
+.nav__menu__wrapper nav > a.nav-cta svg {
+  display: block !important;
+  position: static !important;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: inherit !important;
+  transition: transform 0.35s ease;
+}
+
+.nav__menu__wrapper nav > a.nav-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ===========================
+   DESKTOP SPACING
+=========================== */
+
+@media (min-width: 1193px) {
+
+  .nav__menu__wrapper nav {
+    gap: 24px;
+  }
+
+  .nav__menu__wrapper .nav-links {
+    padding-right: 12px;
+  }
+
+  .nav__menu__wrapper .nav-links ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(12px, 1.15vw, 24px);
+    white-space: nowrap;
+  }
+
+  .nav__menu__wrapper .nav-links ul li {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+/* Smaller desktop */
+@media (min-width: 1193px) and (max-width: 1500px) {
+
+  .nav__menu__wrapper nav {
+    gap: 14px;
+  }
+
+  .nav__menu__wrapper nav > a:first-child img {
+    width: 175px;
+  }
+
+  .nav__menu__wrapper .nav-links {
+    padding-right: 4px;
+  }
+
+  .nav__menu__wrapper .nav-links ul {
+    gap: 16px;
+  }
+
+  .nav__menu__wrapper .nav-links ul li a {
+    font-size: 1.4rem;
+    font-weight: 600;
+      font-family: Poppins;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta {
+    padding: .6rem 1.4rem;
+    font-size: 1.4rem;
+    margin-top: -4px;
+    gap: 8px;
+  }
+}
+
+/* ===========================
+   TABLET NAVIGATION
 =========================== */
 
 @media (max-width: 1192px) {
-  nav img {
+
+  .nav__menu__wrapper nav {
+    gap: 12px;
+  }
+
+  .nav__menu__wrapper nav > a:first-child img {
     width: 180px;
   }
 
-  nav svg {
+  .nav__menu__wrapper nav > svg {
     display: block;
-    z-index: 9999;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    z-index: 10001;
+    color: #fff;
   }
 
   .nav-links {
@@ -140,10 +274,9 @@ nav svg {
     height: 100vh;
     background: var(--lightGreen-1);
     text-align: left;
-    transition: 0.4s;
+    transition: right 0.4s ease;
     z-index: 10000;
     padding-top: 80px;
-    transition: 0.4s ease;
   }
 
   .nav-links.active {
@@ -158,43 +291,99 @@ nav svg {
     display: block;
     margin: 22px 0;
   }
-  
+
   .nav-links ul li a {
     color: var(--black-3) !important;
     font-size: 1.6rem;
   }
 
-  .nav-links svg {
-    color: #222;
+  .nav-links > svg {
+    display: block;
     position: absolute;
     top: 20px;
     right: 20px;
+    width: 24px;
+    height: 24px;
+    color: #222;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .nav__menu__wrapper.scrolled nav > svg {
+    color: var(--black-1);
   }
 }
 
-@media (max-width: 768px) {
-  .header {
-    height: 100vh;
-  }
+/* ===========================
+   MOBILE NAVIGATION
+=========================== */
 
-  nav {
+@media (max-width: 768px) {
+
+  .nav__menu__wrapper nav {
     padding: 15px 0;
   }
 
-  nav img {
+  .nav__menu__wrapper nav > a:first-child img {
     width: 150px;
   }
 
-  nav svg {
-    display: block;
-    position: absolute;
-    top: 23px;
-    right: 20px;
-    cursor: pointer;
+  .nav__menu__wrapper nav > a.nav-cta {
+    height: 38px;
+    margin-left: auto;
+    margin-right: 8px;
+    padding: 0 1.2rem;
+    font-size: 1.2rem;
+    gap: 8px;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
-/* Nav End */
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 420px) {
+
+  .nav__menu__wrapper nav {
+    gap: 6px;
+  }
+
+  .nav__menu__wrapper nav > a:first-child img {
+    width: 112px;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin-right: 4px;
+    padding: 0 8px;
+    font-size: 1rem;
+    gap: 5px;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta svg {
+    display: block !important;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav__menu__wrapper nav > a.nav-cta,
+  .nav__menu__wrapper nav > a.nav-cta svg {
+    transition: none;
+  }
+}
+
+/* Navigation End */
+
 
 /* Global Button Styles */
 .btn {
@@ -418,7 +607,7 @@ footer {
     flex-direction: row;
   }
 
-   .footer__col1,
+  .footer__col1,
   .footer__col2,
   .footer__col3,
   .footer__col4 {

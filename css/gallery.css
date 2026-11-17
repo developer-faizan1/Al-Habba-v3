@@ -1,20 +1,28 @@
 /* ==========================================================
-   GALLERY – MODERN ANIMATED (bento grid + cinematic lightbox)
-   Load AFTER global.css. Uses variables + fonts from global.css
-   (--green-1, --gold, --black-1, --black-3, --border, --ease).
-   All classes are prefixed with .gl- so nothing clashes.
-   Replace your old gallery CSS (.gallery-card, .lightbox, etc.)
+   GALLERY – bento grid + cinematic lightbox
+   Load AFTER global.css (uses --green-1, --gold, --black-1,
+   --black-3, --border, --ease). All classes are prefixed .gl-
+
+   Sections:
+     1. Variables
+     2. Page hero
+     3. Section & header
+     4. Scroll reveal
+     5. Bento grid
+     6. Project card (image only – no overlay)
+     7. Project number tag
+     8. View Gallery button
+     9. Lightbox
+    10. Responsive
+    11. Reduced motion
+    12. Keyframes
    ========================================================== */
-.about__bg {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1)),
-    url("../assets/images/about_bg_cover.webp");
-  width: 100%;
-  height: 70vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-}
+
+
+/* ==========================================================
+   1. VARIABLES
+   ========================================================== */
+
 .gl-section,
 .gl-lightbox {
   --gl-green: var(--green-1, #1e665e);
@@ -27,24 +35,46 @@
   --gl-ease: var(--ease, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
+
+/* ==========================================================
+   2. PAGE HERO
+   ========================================================== */
+
+.about__bg {
+  width: 100%;
+  height: 70vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1)),
+    url("../assets/images/about_bg_cover.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+
+/* ==========================================================
+   3. SECTION & HEADER
+   ========================================================== */
+
 .gl-section {
   position: relative;
   padding: 90px 0 110px;
+  overflow: hidden;
   background: #fff;
   color: var(--gl-ink);
-  overflow: hidden;
 }
+
 .gl-wrap {
   width: min(1280px, 100% - 40px);
   margin-inline: auto;
 }
 
-/* ---------- Header ---------- */
 .gl-head {
-  text-align: center;
   max-width: 660px;
   margin: 0 auto 52px;
+  text-align: center;
 }
+
 .gl-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -57,6 +87,7 @@
   text-transform: uppercase;
   color: var(--gl-gold);
 }
+
 .gl-eyebrow::before,
 .gl-eyebrow::after {
   content: "";
@@ -64,9 +95,11 @@
   height: 2px;
   background: linear-gradient(90deg, var(--gl-gold), transparent);
 }
+
 .gl-eyebrow::after {
   background: linear-gradient(270deg, var(--gl-gold), transparent);
 }
+
 .gl-title {
   font-family: Poppins, sans-serif;
   font-weight: 600;
@@ -75,6 +108,7 @@
   letter-spacing: -0.01em;
   color: var(--gl-ink);
 }
+
 .gl-title em {
   font-style: normal;
   background: linear-gradient(100deg, var(--gl-green) 20%, var(--gl-gold) 90%);
@@ -82,6 +116,7 @@
   background-clip: text;
   color: transparent;
 }
+
 .gl-sub {
   margin-top: 16px;
   font-family: Raleway, sans-serif;
@@ -91,7 +126,10 @@
 }
 
 
-/* header reveal (only when JS is running) */
+/* ==========================================================
+   4. SCROLL REVEAL (header elements, only when JS runs)
+   ========================================================== */
+
 .gl-js [data-gl-reveal] {
   opacity: 0;
   transform: translateY(30px);
@@ -100,12 +138,17 @@
     transform 0.9s var(--gl-ease);
   transition-delay: var(--d, 0ms);
 }
+
 .gl-js [data-gl-reveal].is-in {
   opacity: 1;
   transform: none;
 }
 
-/* ---------- Bento grid ---------- */
+
+/* ==========================================================
+   5. BENTO GRID
+   ========================================================== */
+
 .gl-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -113,64 +156,72 @@
   grid-auto-flow: dense;
   gap: 16px;
 }
-.gl-card.is-big {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.gl-card.is-wide {
-  grid-column: span 2;
-}
-.gl-card.is-tall {
-  grid-row: span 2;
-}
+
+.gl-card.is-big  { grid-column: span 2; grid-row: span 2; }
+.gl-card.is-wide { grid-column: span 2; }
+.gl-card.is-tall { grid-row: span 2; }
+
+
+/* ==========================================================
+   6. PROJECT CARD
+   No gradient, tint or overlay is placed on top of the image.
+   ========================================================== */
 
 .gl-card {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0;
-  border: 0;
   border-radius: 18px;
   overflow: hidden;
   isolation: isolate;
-  cursor: zoom-in;
   background: #e8f0eb;
+  -webkit-tap-highlight-color: transparent;
+
+  /* initial state for reveal */
   opacity: 0;
   transform: translateY(46px) scale(0.96);
   transition:
     opacity 0.9s var(--gl-ease) var(--d, 0ms),
     transform 0.9s var(--gl-ease) var(--d, 0ms),
     box-shadow 0.5s var(--gl-ease);
-  -webkit-tap-highlight-color: transparent;
 }
+
 .gl-card.is-in {
   opacity: 1;
   transform: none;
 }
+
+.gl-card.is-in:hover {
+  transform: translateY(-6px);
+}
+
+/* loading shimmer (behind the image, removed once loaded) */
 .gl-card:not(.is-loaded) {
   background: linear-gradient(100deg, #e6eee9 30%, #f6faf7 50%, #e6eee9 70%) 0 0 / 200% 100%;
   animation: glShimmer 1.3s linear infinite;
 }
+
 .gl-card.is-error {
   display: none;
 }
-.gl-card:hover,
-.gl-card:focus-visible {
-  box-shadow: 0 30px 50px -26px rgba(13, 55, 50, 0.6);
+
+/* whole-image link → project details */
+.gl-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
 }
-.gl-card.is-in:hover {
-  transform: translateY(-6px);
-}
-.gl-card:focus-visible {
+
+.gl-card__link:focus-visible {
   outline: 3px solid var(--gl-gold);
-  outline-offset: 3px;
+  outline-offset: -3px;
 }
 
 .gl-card img {
   position: absolute;
   inset: 0;
-  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -180,105 +231,198 @@
     opacity 0.8s var(--gl-ease),
     transform 1.3s var(--gl-ease);
 }
+
 .gl-card.is-loaded img {
   opacity: 1;
   transform: scale(1);
 }
-.gl-card.is-loaded:hover img,
-.gl-card.is-loaded:focus-visible img {
-  transform: scale(1.09);
+
+.gl-card.is-loaded:hover img {
+  transform: scale(1.06);
 }
 
-.gl-card__shade {
+/* bottom-left info group (sits above the image link) */
+.gl-card__info {
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, transparent 42%, rgba(9, 43, 38, 0.85));
-  opacity: 0;
-  transition: opacity 0.5s var(--gl-ease);
-}
-/* cursor spotlight */
-.gl-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: radial-gradient(
-    300px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.24),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-.gl-card__frame {
-  position: absolute;
-  inset: 12px;
+  left: 22px;
+  bottom: 22px;
   z-index: 2;
-  border: 1.5px solid var(--gl-gold);
-  border-radius: 12px;
-  opacity: 0;
-  transform: scale(1.06);
+  display: grid;                  /* tag & button share ONE slot */
+  justify-items: start;
+  align-items: end;
+  pointer-events: none;           /* only the tag & button catch clicks */
+}
+
+.gl-card__info > * {
+  grid-area: 1 / 1;               /* stack on top of each other */
+}
+
+/* touch screens have no hover: show both, stacked vertically */
+@media (hover: none) {
+  .gl-card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+
+/* ==========================================================
+   7. PROJECT NUMBER TAG
+   Solid white pill – readable on any image, no overlay needed.
+   ========================================================== */
+
+.gl-tag {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px 9px 13px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--gl-ink);
+  font-family: Poppins, sans-serif;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   transition:
-    opacity 0.5s var(--gl-ease),
-    transform 0.7s var(--gl-ease);
+    opacity 0.4s var(--gl-ease),
+    transform 0.5s var(--gl-ease),
+    box-shadow 0.4s var(--gl-ease);
+}
+
+/* card hovered → project number slides up & hides (button takes its place) */
+.gl-card:hover .gl-tag,
+.gl-card:has(.gl-btn:focus-visible) .gl-tag {
+  opacity: 0;
+  transform: translateY(-14px);
   pointer-events: none;
 }
-.gl-card__zoom {
-  position: absolute;
-  z-index: 3;
-  right: 22px;
-  bottom: 20px;
-  width: 44px;
-  height: 44px;
+
+@media (hover: none) {
+  .gl-card .gl-tag {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+.gl-tag__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gl-gold);
+}
+
+.gl-tag__label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gl-muted);
+}
+
+.gl-tag__num {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.gl-tag:focus-visible {
+  outline: 2px solid var(--gl-gold);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   8. VIEW GALLERY BUTTON
+   Solid green pill with a gold arrow circle.
+   ========================================================== */
+
+.gl-btn {
+  /* hidden until the card is hovered / focused */
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 5px 5px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gl-green-dark);
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition:
+    opacity 0.4s var(--gl-ease),
+    background 0.35s var(--gl-ease),
+    color 0.35s var(--gl-ease),
+    transform 0.5s var(--gl-ease),
+    box-shadow 0.4s var(--gl-ease);
+}
+
+/* card hovered (or button keyboard-focused) → button slides up into the tag's place */
+.gl-card:hover .gl-btn,
+.gl-card:has(.gl-btn:focus-visible) .gl-btn {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* touch screens have no hover – keep the button visible */
+@media (hover: none) {
+  .gl-btn {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+.gl-btn__icon {
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--gl-gold);
   color: var(--gl-green-dark);
-  opacity: 0;
-  transform: scale(0.5) rotate(-40deg);
-  transition:
-    opacity 0.45s var(--gl-ease),
-    transform 0.6s var(--gl-ease);
-}
-.gl-card__zoom svg {
-  width: 20px;
-  height: 20px;
-}
-.gl-card:hover .gl-card__shade,
-.gl-card:focus-visible .gl-card__shade,
-.gl-card:hover::after,
-.gl-card:focus-visible::after,
-.gl-card:hover .gl-card__frame,
-.gl-card:focus-visible .gl-card__frame,
-.gl-card:hover .gl-card__zoom,
-.gl-card:focus-visible .gl-card__zoom {
-  opacity: 1;
-}
-.gl-card:hover .gl-card__frame,
-.gl-card:focus-visible .gl-card__frame,
-.gl-card:hover .gl-card__zoom,
-.gl-card:focus-visible .gl-card__zoom {
-  transform: none;
+  transition: transform 0.45s var(--gl-ease);
 }
 
-/* touch devices: always show a small zoom hint */
-@media (hover: none) {
-  .gl-card__zoom {
-    opacity: 1;
-    transform: none;
-    width: 38px;
-    height: 38px;
-    right: 14px;
-    bottom: 14px;
-  }
+.gl-btn__icon svg {
+  width: 14px;
+  height: 14px;
 }
+
+.gl-card .gl-btn:hover {
+  background: #fff;
+  color: var(--gl-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+}
+
+.gl-btn:hover .gl-btn__icon {
+  transform: rotate(45deg);
+}
+
+.gl-btn:focus-visible {
+  outline: 2px solid var(--gl-gold);
+  outline-offset: 3px;
+}
+
 
 /* ==========================================================
-   LIGHTBOX
+   9. LIGHTBOX
    ========================================================== */
+
 .gl-lightbox {
   position: fixed;
   inset: 0;
@@ -299,29 +443,38 @@
     opacity 0.45s var(--gl-ease),
     visibility 0s linear 0.45s;
 }
+
 .gl-lightbox.active {
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;
 }
 
+/* ---- Top bar ---- */
+
 .gl-lb__bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
   padding: 18px clamp(16px, 3vw, 36px);
 }
+
 .gl-lb__count {
   font-weight: 500;
   font-size: 1.4rem;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .gl-lb__tools {
   margin-left: auto;
   display: flex;
   gap: 10px;
 }
+
+/* ---- Round buttons (close / play / prev / next) ---- */
+
 .gl-lb__btn {
   width: 46px;
   height: 46px;
@@ -339,32 +492,33 @@
     border-color 0.35s,
     transform 0.45s var(--gl-ease);
 }
+
 .gl-lb__btn svg {
   width: 20px;
   height: 20px;
 }
+
 .gl-lb__btn:hover {
   background: var(--gl-gold);
   border-color: var(--gl-gold);
   color: var(--gl-green-dark);
   transform: scale(1.08);
 }
+
 .gl-lb__btn:focus-visible {
   outline: 2px solid var(--gl-gold);
   outline-offset: 3px;
 }
+
 #closeBtn:hover {
   transform: rotate(90deg) scale(1.08);
 }
-.gl-lb__btn .i-pause {
-  display: none;
-}
-.gl-lb__btn.is-playing .i-pause {
-  display: block;
-}
-.gl-lb__btn.is-playing .i-play {
-  display: none;
-}
+
+.gl-lb__btn .i-pause { display: none; }
+.gl-lb__btn.is-playing .i-pause { display: block; }
+.gl-lb__btn.is-playing .i-play  { display: none; }
+
+/* ---- Stage ---- */
 
 .gl-lb__stage {
   position: relative;
@@ -373,6 +527,7 @@
   place-items: center;
   padding: 0 clamp(8px, 6vw, 96px);
 }
+
 .gl-lb__figure {
   position: absolute;
   inset: 4px clamp(8px, 6vw, 96px);
@@ -381,6 +536,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .gl-lb__img {
   display: block;
   width: 100%;
@@ -389,9 +545,11 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+
 .gl-lb__img:not([src]) {
   visibility: hidden;
 }
+
 .gl-lb__nav {
   position: absolute;
   top: 50%;
@@ -400,16 +558,17 @@
   height: 56px;
   margin-top: -28px;
 }
-#prevBtn {
-  left: clamp(8px, 2vw, 28px);
-}
-#nextBtn {
-  right: clamp(8px, 2vw, 28px);
-}
+
 .gl-lb__nav svg {
   width: 24px;
   height: 24px;
 }
+
+#prevBtn { left: clamp(8px, 2vw, 28px); }
+#nextBtn { right: clamp(8px, 2vw, 28px); }
+
+/* ---- Loader ---- */
+
 .gl-lb__loader {
   position: absolute;
   top: 50%;
@@ -424,24 +583,25 @@
   pointer-events: none;
   transition: opacity 0.3s;
 }
+
 .gl-lb__stage.is-loading .gl-lb__loader {
   opacity: 1;
   animation: glSpin 0.8s linear infinite;
 }
 
-.gl-lb__bar,
-.gl-lb__foot,
-.gl-lb__thumbs {
-  min-width: 0;
-}
+/* ---- Footer: progress + thumbnails ---- */
+
 .gl-lb__foot {
-  padding-bottom: 14px;
+  min-width: 0;
   max-width: 100%;
+  padding-bottom: 14px;
 }
+
 .gl-lb__progress {
   height: 2px;
   background: rgba(255, 255, 255, 0.12);
 }
+
 .gl-lb__progress i {
   display: block;
   height: 100%;
@@ -450,22 +610,20 @@
   transform-origin: left;
   transition: transform 0.6s var(--gl-ease);
 }
+
 .gl-lb__thumbs {
   display: flex;
   gap: 8px;
+  min-width: 0;
   padding: 14px clamp(16px, 3vw, 36px) 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
+
 .gl-lb__thumbs::-webkit-scrollbar {
   display: none;
 }
-.gl-lb__thumb:first-child {
-  margin-left: auto;
-}
-.gl-lb__thumb:last-child {
-  margin-right: auto;
-}
+
 .gl-lb__thumb {
   flex: 0 0 auto;
   width: 66px;
@@ -482,74 +640,122 @@
     border-color 0.35s,
     transform 0.45s var(--gl-ease);
 }
+
+.gl-lb__thumb:first-child { margin-left: auto; }
+.gl-lb__thumb:last-child  { margin-right: auto; }
+
 .gl-lb__thumb img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .gl-lb__thumb:hover {
   opacity: 0.85;
 }
+
 .gl-lb__thumb.is-active {
   opacity: 1;
   border-color: var(--gl-gold);
   transform: translateY(-3px);
 }
 
+
 /* ==========================================================
-   RESPONSIVE
+   10. RESPONSIVE
    ========================================================== */
+
 @media (max-width: 1100px) {
   .gl-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: 230px;
   }
 }
+
 @media (max-width: 992px) {
-  .gl-section {
-    padding: 64px 0 76px;
-  }
-  .gl-head {
-    margin-bottom: 40px;
-  }
+  .gl-section { padding: 64px 0 76px; }
+  .gl-head    { margin-bottom: 40px; }
 }
+
 @media (max-width: 680px) {
   .gl-wrap {
     width: calc(100% - 28px);
   }
+
   .gl-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 170px;
     gap: 10px;
   }
+
   .gl-card {
     border-radius: 14px;
   }
+
+  /* card info */
+  .gl-card__info {
+    left: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .gl-tag {
+    gap: 6px;
+    padding: 7px 12px 7px 10px;
+  }
+
+  .gl-tag__label { font-size: 9px; }
+  .gl-tag__num   { font-size: 12px; }
+
+  .gl-btn {
+    gap: 8px;
+    padding: 4px 4px 4px 12px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .gl-btn__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .gl-btn__icon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* lightbox */
   .gl-lb__nav {
     width: 44px;
     height: 44px;
     margin-top: -22px;
     background: rgba(6, 24, 22, 0.55);
   }
+
   .gl-lb__thumb {
     width: 54px;
     height: 40px;
   }
+
   .gl-lb__stage {
     padding: 0 8px;
   }
 }
 
-/* ---------- Reduced motion ---------- */
+
+/* ==========================================================
+   11. REDUCED MOTION
+   ========================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   .gl-card,
   .gl-card *,
-  .gl-card::after,
   .gl-lb__progress i {
     animation: none !important;
     transition: none !important;
   }
+
   .gl-card,
   .gl-js [data-gl-reveal] {
     opacity: 1 !important;
@@ -557,22 +763,15 @@
   }
 }
 
-/* ---------- Keyframes ---------- */
+
+/* ==========================================================
+   12. KEYFRAMES
+   ========================================================== */
+
 @keyframes glShimmer {
-  to {
-    background-position: -200% 0;
-  }
+  to { background-position: -200% 0; }
 }
+
 @keyframes glSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes glPing {
-  0% {
-    box-shadow: 0 0 0 0 rgba(201, 161, 95, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 0 10px rgba(201, 161, 95, 0);
-  }
+  to { transform: rotate(360deg); }
 }

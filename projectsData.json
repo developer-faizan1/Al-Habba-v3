@@ -52,7 +52,10 @@
     },
     "projectType": "Mixed Use",
     "projectDescription": "Proposed Mixed Use Development",
-    "projectComprisesOf": ["Community Mall", "6 Buildings"],
+    "projectComprisesOf": [
+      "Community Mall",
+      "6 Buildings"
+    ],
     "fullAddress": "Studio City - Al Hebiah Second",
     "plot": "6750299",
     "area": "Studio City - Al Hebiah Second",
@@ -65,7 +68,10 @@
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Pullman Hotel",
-    "image": ["assets/images/hotels/96.jpg", "assets/images/hotels/96v2.jpg"],
+    "image": [
+      "assets/images/hotels/96.jpg",
+      "assets/images/hotels/96v2.jpg"
+    ],
     "images": [
       "assets/images/hotels/96.jpg",
       "assets/images/hotels/96v2.jpg",
@@ -217,7 +223,6 @@
     "images": [
       "assets/images/hotels/102.jpg",
       "assets/images/intr_img/102iv1.jpg",
-      "assets/images/img_gallery/102.jpg",
       "assets/images/intr_img/102iv2.jpg",
       "assets/images/intr_img/102iv3.jpg"
     ],
@@ -430,7 +435,9 @@
     "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     "title": "HOTEL Building",
     "image": "assets/images/hotels/171.jpg",
-    "images": ["assets/images/hotels/171.jpg"],
+    "images": [
+      "assets/images/hotels/171.jpg"
+    ],
     "projectValue": "AED 81,000,000",
     "client": "Mr. Central One Properties LLC",
     "consultant": "M/s RIMAL Engineering Consultant",
@@ -719,20 +726,31 @@
     "projectNumber": "P-204",
     "slug": "P-204 (G+7+R) RESIDENTIAL BUILDING",
     "title": "Residential Building",
-    "image": "assets/images/running/204.jpg",
+    "image": [
+      "assets/images/comm_&_residential/204v1.jpg",
+      "assets/images/comm_&_residential/204v2.jpg"
+    ],
+    "images": [
+      "assets/images/comm_&_residential/204v1.jpg",
+      "assets/images/comm_&_residential/204v2.jpg"
+    ],
     "projectValue": "AED 48,100,000",
     "client": "M/S. Mohmad Rafi Mohd Saeed LLC",
     "consultant": "M/S. Erga Engineering Consultant",
     "projectLocation": "Al Barsha South 3rd, Arjan",
     "startDate": "20 November 2024",
-    "completionDate": "Under Construction",
-    "status": "Running Project",
+    "completionDate": "28 October 2026",
+    "status": "Completed",
     "progress": {
       "overall": 40
     },
     "projectType": "Residential",
     "projectDescription": "G+7+R Residential Building",
-    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "7 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Al Barsha South 3rd, Arjan, Dubai",
     "plot": "6731159",
     "area": "Al Barsha South 3rd, Arjan",
@@ -810,7 +828,9 @@
     "slug": "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/159.jpg",
-    "images": ["assets/images/comm_&_residential/159.jpg"],
+    "images": [
+      "assets/images/comm_&_residential/159.jpg"
+    ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -867,7 +887,9 @@
     "slug": "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/173.jpg",
-    "images": ["assets/images/comm_&_residential/173.jpg"],
+    "images": [
+      "assets/images/comm_&_residential/173.jpg"
+    ],
     "projectValue": "AED 40,768,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -896,7 +918,9 @@
     "slug": "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/188.jpg",
-    "images": ["assets/images/comm_&_residential/188.jpg"],
+    "images": [
+      "assets/images/comm_&_residential/188.jpg"
+    ],
     "projectValue": "AED 33,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "M/S. Style Engineering Consultant",
@@ -925,7 +949,9 @@
     "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/189.jpg",
-    "images": ["assets/images/comm_&_residential/189.jpg"],
+    "images": [
+      "assets/images/comm_&_residential/189.jpg"
+    ],
     "projectValue": "AED 35,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "M/s Style Engineers Consultant",
@@ -1038,7 +1064,9 @@
     "slug": "P-198 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/198.jpg",
-    "images": ["assets/images/comm_&_residential/198.jpg"],
+    "images": [
+      "assets/images/comm_&_residential/198.jpg"
+    ],
     "projectValue": "AED 36,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
     "consultant": "M/S. Style Engineering Consultant",
@@ -1085,6 +1113,41 @@
     "fullAddress": "Al Nahda First, Dubai",
     "plot": "231-354",
     "area": "Al Nahda First",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+   {
+    "id": 177,
+    "projectNumber": "P-177",
+    "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "Commercial & Residential Building",
+    "image": [
+      "assets/images/comm_&_residentia/177v1.jpg",
+      "assets/images/comm_&_residentia/177v2.jpg"
+    ],
+    "images": [
+      "assets/images/comm_&_residentia/177v1.jpg",
+      "assets/images/comm_&_residentia/177v2.jpg"
+    ],
+    "projectValue": "AED 75,100,000",
+    "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
+    "consultant": "M/s Al Ajmi Engineering Consultant",
+    "projectLocation": "Al Barsha South, Arjan",
+    "startDate": "18 April 2019",
+    "completionDate": "04 April 2021",
+    "status": "Completed",
+    "projectType": "Commercial & Residential",
+    "projectDescription": "Proposed (B+G+13+R) Commercial & Residential Building",
+    "projectComprisesOf": [
+      "Ground Floor",
+      "1 Podium",
+      "13 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Al Barsha South, Arjan, Dubai",
+    "plot": "673-4086",
+    "area": "Al Barsha South, Arjan",
     "state": "Dubai",
     "latitude": null,
     "longitude": null

@@ -1,76 +1,142 @@
-/* =====================================
-   IMAGE LIST
-===================================== */
+/* ==========================================================
+   1. PROJECT DATA
+   One entry per project. `src` can be a single path or an array.
+   The first image is used as the card cover.
+   ========================================================== */
 
 const images = [
-  "https://faizanahmad.in/al-habbai/images/projects/215v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/212.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/208v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/208v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/211v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/211v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/210.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/209v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/209v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/205v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/204.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/209v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/198v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/198v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/197.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/195v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/195v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/190.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/189v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/189v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/188v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/188v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/177v1.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/176v1.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/176v2.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/173v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/173v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/172.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/171.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/167v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/165v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/164.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/163v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/163v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/162.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/159v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/159v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/157v1.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/157v2.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/155.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/154v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/154v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/153.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/151v1.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/151v2.jpg",
-  "https://faizanahmad.in/al-habbai/images/projects/149v3.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/149v4.webp",
-  "https://faizanahmad.in/al-habbai/images/projects/147v1.jpg",
+  {
+    projectNumber: "215",
+    slug: "P-215 PROPOSED MIXED USE DEVELOPMENT",
+    src: "../assets/images/running/215.jpg"
+  },
+  {
+    projectNumber: "212",
+    slug: "P-212 (G+2P+7F+R) Hotel Building",
+    src: "../assets/images/running/212.jpg"
+  },
+  {
+    projectNumber: "211",
+    slug: "P-211 (G+2P+14F+R) RESIDENTIAL BUILDING",
+    src: [
+      "../assets/images/running/211v1.jpg",
+      "../assets/images/running/211v2.jpg"
+    ],
+  },
+  {
+    projectNumber: "205",
+    slug: "P-205 SRG JVC (G+3P+16 +R)",
+    src: "../assets/images/running/205.jpg"
+  },
+  {
+    projectNumber: "209",
+    slug: "p-209 Al Habbai Headquarters",
+    src: [
+      "../assets/images/running/209v1.jpg",
+      "../assets/images/running/209v2.jpg"
+    ],
+  },
+  {
+    projectNumber: "208",
+    slug: "P-208 (UG+GF+2P+8 Floors) RESIDENTIAL BUILDING",
+    src: [
+      "../assets/images/running/208v1.jpg",
+      "../assets/images/running/208v2.jpg"
+    ],
+  },
+
+  {
+    projectNumber: "210",
+    slug: "P-210 (1B+G+1P+9F+R) Residential & Commercial Building",
+    src: "../assets/images/running/210.jpg"
+  },
+  {
+    projectNumber: "204",
+    slug: "P-204 (G+7+R) RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/204v1.jpg"
+  },
+
+  {
+    projectNumber: "140",
+    slug: "P-140 (2B+G+19) HOTEL BUILDING",
+    src: "../assets/images/hotels/140v1.jpg"
+  },
+  {
+    projectNumber: "96",
+    slug: "P-096 (3B+G+19) STOREY HOTEL TOWER",
+    src: "../assets/images/hotels/96.jpg"
+  },
+  {
+    projectNumber: "102",
+    slug: "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
+    src: "../assets/images/hotels/102.jpg"
+  },
+  {
+    projectNumber: "137",
+    slug: "P-137 (B+G+9F) HOTEL BUILDING",
+    src: "../assets/images/hotels/137.jpg"
+  },
+  {
+    projectNumber: "136",
+    slug: "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
+    src: "../assets/images/hotels/136.jpg"
+  },
+  {
+    projectNumber: "142",
+    slug: "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
+    src: "../assets/images/hotels/142.jpg"
+  },
+  {
+    projectNumber: "146",
+    slug: "P-146 (B+G+1P+16+R) HOTEL TOWER",
+    src: "../assets/images/hotels/146.jpg"
+  },
+  {
+    projectNumber: "147",
+    slug: "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
+    src: "../assets/images/hotels/147.jpg"
+  },
+  {
+    projectNumber : "153",
+    slug: "P-153 (2B+G+5 Stories) INK HOTEL",
+    src :   "../assets/images/hotels/153.jpg"
+  }
 ];
+
+/* ==========================================================
+   2. NORMALIZED IMAGE LIST
+   Flat list of every individual image (used by the lightbox).
+   ========================================================== */
+
+const toArray = (value) => (Array.isArray(value) ? value : [value]);
+
+const galleryImages = images.flatMap((project) =>
+  toArray(project.src).map((src) => ({
+    projectNumber: project.projectNumber,
+    slug: project.slug,
+    src,
+  })),
+);
 
 (function () {
   "use strict";
 
-  /* =====================================
-     ELEMENTS
-  ===================================== */
+  /* ========================================================
+     3.1  ELEMENTS & SETTINGS
+     ======================================================== */
 
   const $ = (id) => document.getElementById(id);
 
   const galleryGrid = $("galleryGrid");
   const lightbox = $("lightbox");
   const lightboxImage = $("lightboxImage");
+
   const closeBtn = $("closeBtn");
   const prevBtn = $("prevBtn");
   const nextBtn = $("nextBtn");
   const imageCounter = $("imageCounter");
 
-  // optional extras (the gallery still works if they are missing)
+  // Optional elements
   const stage = $("lightboxStage");
   const thumbsEl = $("lightboxThumbs");
   const progressEl = $("lightboxProgress");
@@ -80,245 +146,343 @@ const images = [
   if (!galleryGrid || !lightbox || !lightboxImage) return;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const AUTOPLAY_MS = 4000;
-  const total = images.length;
 
-  // bento pattern – repeats every 12 images
+  const AUTOPLAY_MS = 4000;
+  const total = galleryImages.length;
+
+  // Bento pattern – repeats every 12 projects
   const SHAPES = [
-    "is-big", "", "", "is-tall", "", "is-wide",
-    "", "", "is-tall", "", "", "is-wide",
+    "is-big",
+    "",
+    "",
+    "is-tall",
+    "",
+    "is-wide",
+    "",
+    "",
+    "is-tall",
+    "",
+    "",
+    "is-wide",
   ];
 
-  let currentIndex = 0;
-  let lastFocus = null;
-  let token = 0;
-  let playing = false;
-  let playTimer = null;
+  const ARROW_ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+  // Lightbox state
+  const state = {
+    index: 0,
+    lastFocus: null,
+    token: 0, // guards against out-of-order image loads
+    playing: false,
+    playTimer: null,
+  };
 
   document.documentElement.classList.add("gl-js");
+
   if (countEl) countEl.textContent = total;
 
-  /* =====================================
-     REVEAL ON SCROLL
-  ===================================== */
+  /* ========================================================
+     3.2  HELPERS
+     ======================================================== */
 
-  const io =
+  /* ---- Reveal on scroll ---- */
+
+  const observer =
     "IntersectionObserver" in window
       ? new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
+
               const el = entry.target;
               el.classList.add("is-in");
-              io.unobserve(el);
-              // drop the stagger delay so hover feels instant afterwards
+              observer.unobserve(el);
+
+              // Remove stagger delay once the reveal has finished
               if (el.classList.contains("gl-card")) {
                 setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
               }
             });
           },
-          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
         )
       : null;
 
   function reveal(el) {
-    if (io) io.observe(el);
+    if (observer) observer.observe(el);
     else el.classList.add("is-in");
   }
 
   document.querySelectorAll("[data-gl-reveal]").forEach(reveal);
 
-  /* =====================================
-     CREATE GALLERY
-  ===================================== */
+  /* ---- Image preloading (cached) ---- */
 
-  const ZOOM_ICON =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+  const preloadCache = new Map();
 
-  const frag = document.createDocumentFragment();
+  function preload(src) {
+    if (preloadCache.has(src)) return preloadCache.get(src);
 
-  images.forEach((src, i) => {
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = ("gl-card " + SHAPES[i % SHAPES.length]).trim();
+    const promise = new Promise((resolve) => {
+      const img = new Image();
+      img.onload = img.onerror = () => resolve();
+      img.decoding = "async";
+      img.src = src;
+    });
+
+    preloadCache.set(src, promise);
+    return promise;
+  }
+
+  /* ========================================================
+     3.3  PROJECT CARDS
+     ======================================================== */
+
+  function createCard(project, i) {
+    const { projectNumber, slug } = project;
+
+    const projectUrl = `project-details.html?slug=${encodeURIComponent(slug)}`;
+    const cover = toArray(project.src)[0];
+
+    const card = document.createElement("div");
+    card.className = `gl-card ${SHAPES[i % SHAPES.length]}`.trim();
     card.style.setProperty("--d", (i % 4) * 80 + "ms");
-    card.setAttribute("aria-label", `Open project photo ${i + 1} of ${total}`);
 
     card.innerHTML = `
-      <img src="${src}" alt="Project photo ${i + 1}" loading="lazy" decoding="async">
-      <span class="gl-card__shade"></span>
-      <span class="gl-card__frame"></span>
-      <span class="gl-card__zoom" aria-hidden="true">${ZOOM_ICON}</span>
+      <a href="${projectUrl}"
+         class="gl-card__link"
+         aria-label="View project ${projectNumber} details">
+        <img src="${cover}"
+             alt="Project P-${projectNumber}"
+             loading="lazy"
+             decoding="async">
+      </a>
+
+      <div class="gl-card__info">
+        <a href="${projectUrl}"
+           class="gl-tag"
+           aria-label="View project ${projectNumber} details">
+          <span class="gl-tag__dot"></span>
+          <span class="gl-tag__label"></span>
+          <span class="gl-tag__num">P-${projectNumber}</span>
+        </a>
+
+        <button type="button"
+                class="gl-btn"
+                aria-label="View gallery for project ${projectNumber}">
+          <span class="gl-btn__text">View Gallery</span>
+          <span class="gl-btn__icon">${ARROW_ICON}</span>
+        </button>
+      </div>
     `;
 
+    // Image loading states
     const img = card.querySelector("img");
     const markLoaded = () => card.classList.add("is-loaded");
+
     img.addEventListener("load", markLoaded, { once: true });
     img.addEventListener("error", () => card.classList.add("is-error"), {
       once: true,
     });
     if (img.complete && img.naturalWidth) markLoaded();
 
-    // cursor spotlight
-    card.addEventListener("pointermove", (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", e.clientX - r.left + "px");
-      card.style.setProperty("--my", e.clientY - r.top + "px");
+    // "View gallery" opens the lightbox at this project's first image
+    const viewBtn = card.querySelector(".gl-btn");
+
+    viewBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const firstIndex = galleryImages.findIndex(
+        (image) => image.projectNumber === projectNumber,
+      );
+
+      openLightbox(firstIndex, viewBtn);
     });
 
-    card.addEventListener("click", () => openLightbox(i, card));
-
-    frag.appendChild(card);
-    reveal(card);
-  });
-
-  galleryGrid.appendChild(frag);
-
-  /* =====================================
-     PRELOAD HELPER
-  ===================================== */
-
-  const cache = new Map();
-
-  function preload(src) {
-    if (cache.has(src)) return cache.get(src);
-    const p = new Promise((resolve) => {
-      const im = new Image();
-      im.onload = im.onerror = () => resolve();
-      im.decoding = "async";
-      im.src = src;
-    });
-    cache.set(src, p);
-    return p;
+    return card;
   }
 
-  /* =====================================
-     THUMBNAILS (built on first open)
-  ===================================== */
+  function renderCards() {
+    const frag = document.createDocumentFragment();
+
+    images.forEach((project, i) => {
+      const card = createCard(project, i);
+      frag.appendChild(card);
+      reveal(card);
+    });
+
+    galleryGrid.appendChild(frag);
+  }
+
+  renderCards();
+
+  /* ========================================================
+     3.4  LIGHTBOX
+     ======================================================== */
 
   const thumbBtns = [];
 
+  /* ---- Thumbnail strip (all images from all projects) ---- */
+
   function buildThumbs() {
     if (!thumbsEl || thumbBtns.length) return;
-    images.forEach((src, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "gl-lb__thumb";
-      b.tabIndex = -1;
-      b.setAttribute("aria-label", `Go to photo ${i + 1}`);
-      const im = document.createElement("img");
-      im.src = src;
-      im.alt = "";
-      im.loading = "lazy";
-      im.decoding = "async";
-      b.appendChild(im);
-      b.addEventListener("click", () => show(i, i > currentIndex ? 1 : -1));
-      thumbsEl.appendChild(b);
-      thumbBtns.push(b);
+
+    galleryImages.forEach((image, i) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "gl-lb__thumb";
+      btn.tabIndex = -1;
+      btn.setAttribute(
+        "aria-label",
+        `Project ${image.projectNumber}, image ${i + 1}`,
+      );
+
+      const img = document.createElement("img");
+      img.src = image.src;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      btn.appendChild(img);
+
+      btn.addEventListener("click", () => show(i, i > state.index ? 1 : -1));
+
+      thumbsEl.appendChild(btn);
+      thumbBtns.push(btn);
     });
   }
 
-  /* =====================================
-     UPDATE LIGHTBOX META
-  ===================================== */
+  /* ---- Counter, progress bar, active thumbnail ---- */
 
   function updateMeta() {
     if (imageCounter) {
-      imageCounter.textContent = `${currentIndex + 1} / ${total}`;
+      imageCounter.textContent = `${state.index + 1} / ${total}`;
     }
+
     if (progressEl) {
-      progressEl.style.transform = `scaleX(${(currentIndex + 1) / total})`;
+      progressEl.style.transform = `scaleX(${(state.index + 1) / total})`;
     }
-    thumbBtns.forEach((b, i) => {
-      const on = i === currentIndex;
-      b.classList.toggle("is-active", on);
-      if (on) {
-        b.setAttribute("aria-current", "true");
-        b.scrollIntoView({
+
+    thumbBtns.forEach((btn, i) => {
+      const active = i === state.index;
+      btn.classList.toggle("is-active", active);
+
+      if (active) {
+        btn.setAttribute("aria-current", "true");
+        btn.scrollIntoView({
           block: "nearest",
           inline: "center",
           behavior: reduceMotion.matches ? "auto" : "smooth",
         });
       } else {
-        b.removeAttribute("aria-current");
+        btn.removeAttribute("aria-current");
       }
     });
   }
 
-  /* =====================================
-     SHOW IMAGE (animated, direction aware)
-  ===================================== */
+  /* ---- Show one image ---- */
 
   async function show(index, dir = 0, instant = false) {
-    currentIndex = (index + total) % total;
-    const mine = ++token;
-    const src = images[currentIndex];
+    if (!total) return;
 
+    state.index = (index + total) % total;
+    const mine = ++state.token;
+
+    const image = galleryImages[state.index];
     updateMeta();
 
     const canAnimate =
       !reduceMotion.matches && typeof lightboxImage.animate === "function";
 
-    // old image slides out the opposite way
+    // Old image slides out
     if (canAnimate && !instant && lightboxImage.getAttribute("src")) {
       lightboxImage.animate(
         [
           { opacity: 1, transform: "none" },
           { opacity: 0, transform: `translateX(${-dir * 48}px) scale(0.97)` },
         ],
-        { duration: 200, easing: "ease-in", fill: "forwards" }
+        { duration: 200, easing: "ease-in", fill: "forwards" },
       );
     }
 
-    // show the spinner only if loading is slow
+    // Loading spinner (only if the image is slow)
     const loaderTimer = setTimeout(() => {
       if (stage) stage.classList.add("is-loading");
     }, 140);
 
-    await preload(src);
+    await preload(image.src);
     clearTimeout(loaderTimer);
-    if (mine !== token) return; // a newer request took over
+
+    if (mine !== state.token) return; // a newer request replaced this one
 
     if (stage) stage.classList.remove("is-loading");
 
-    lightboxImage.src = src;
-    lightboxImage.alt = `Project photo ${currentIndex + 1} of ${total}`;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = `Project ${image.projectNumber}`;
     lightboxImage.getAnimations().forEach((a) => a.cancel());
 
+    // New image slides in
     if (canAnimate) {
       lightboxImage.animate(
         [
           { opacity: 0, transform: `translateX(${dir * 48}px) scale(0.97)` },
           { opacity: 1, transform: "none" },
         ],
-        { duration: 460, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
+        { duration: 460, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
       );
     }
 
-    // warm the neighbours
-    preload(images[(currentIndex + 1) % total]);
-    preload(images[(currentIndex - 1 + total) % total]);
+    // Preload neighbours
+    preload(galleryImages[(state.index + 1) % total].src);
+    preload(galleryImages[(state.index - 1 + total) % total].src);
 
-    if (playing) scheduleNext();
+    if (state.playing) scheduleNext();
   }
 
-  /* =====================================
-     OPEN / CLOSE
-  ===================================== */
+  /* ---- Navigation ---- */
 
-  function isOpen() {
-    return lightbox.classList.contains("active");
+  const nextImage = () => show(state.index + 1, 1);
+  const previousImage = () => show(state.index - 1, -1);
+
+  /* ---- Slideshow ---- */
+
+  function scheduleNext() {
+    clearTimeout(state.playTimer);
+    state.playTimer = setTimeout(nextImage, AUTOPLAY_MS);
   }
+
+  function setPlaying(on) {
+    state.playing = on;
+    clearTimeout(state.playTimer);
+
+    if (playBtn) {
+      playBtn.classList.toggle("is-playing", on);
+      playBtn.setAttribute("aria-pressed", String(on));
+      playBtn.setAttribute(
+        "aria-label",
+        on ? "Pause slideshow" : "Start slideshow",
+      );
+    }
+
+    if (on) scheduleNext();
+  }
+
+  /* ---- Open / close ---- */
+
+  const isOpen = () => lightbox.classList.contains("active");
 
   function openLightbox(index, trigger) {
-    lastFocus = trigger || document.activeElement;
+    state.lastFocus = trigger || document.activeElement;
+
     buildThumbs();
 
     lightbox.classList.add("active");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
+    setPlaying(false);
     show(index, 0, true);
+
     if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
 
@@ -329,62 +493,33 @@ const images = [
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
-    token++; // cancel any pending load
+    state.token++;
     setPlaying(false);
+
     if (stage) stage.classList.remove("is-loading");
 
-    if (lastFocus && typeof lastFocus.focus === "function") {
-      lastFocus.focus({ preventScroll: true });
+    if (state.lastFocus && typeof state.lastFocus.focus === "function") {
+      state.lastFocus.focus({ preventScroll: true });
     }
   }
 
-  /* =====================================
-     NEXT / PREVIOUS
-  ===================================== */
+  /* ========================================================
+     3.5  EVENTS
+     ======================================================== */
 
-  function nextImage() {
-    show(currentIndex + 1, 1);
-  }
-
-  function previousImage() {
-    show(currentIndex - 1, -1);
-  }
-
-  /* =====================================
-     SLIDESHOW
-  ===================================== */
-
-  function scheduleNext() {
-    clearTimeout(playTimer);
-    playTimer = setTimeout(nextImage, AUTOPLAY_MS);
-  }
-
-  function setPlaying(on) {
-    playing = on;
-    clearTimeout(playTimer);
-    if (playBtn) {
-      playBtn.classList.toggle("is-playing", on);
-      playBtn.setAttribute("aria-pressed", String(on));
-      playBtn.setAttribute(
-        "aria-label",
-        on ? "Pause slideshow" : "Start slideshow"
-      );
-    }
-    if (on) scheduleNext();
-  }
-
-  /* =====================================
-     EVENTS
-  ===================================== */
+  /* ---- Buttons ---- */
 
   if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
   if (nextBtn) nextBtn.addEventListener("click", nextImage);
   if (prevBtn) prevBtn.addEventListener("click", previousImage);
-  if (playBtn) playBtn.addEventListener("click", () => setPlaying(!playing));
+  if (playBtn)
+    playBtn.addEventListener("click", () => setPlaying(!state.playing));
 
-  // click on the empty backdrop closes
+  /* ---- Backdrop click closes ---- */
+
   lightbox.addEventListener("click", (e) => {
     const t = e.target;
+
     if (
       t === lightbox ||
       t === stage ||
@@ -394,7 +529,24 @@ const images = [
     }
   });
 
-  // keyboard
+  /* ---- Keyboard ---- */
+
+  function trapFocus(e) {
+    const focusable = lightbox.querySelectorAll("button:not(.gl-lb__thumb)");
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   document.addEventListener("keydown", (e) => {
     if (!isOpen()) return;
 
@@ -414,49 +566,41 @@ const images = [
       case "End":
         show(total - 1, 1);
         break;
-      case "Tab": {
-        // keep focus inside the dialog
-        const f = lightbox.querySelectorAll("button:not(.gl-lb__thumb)");
-        if (!f.length) break;
-        const first = f[0];
-        const last = f[f.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
+      case "Tab":
+        trapFocus(e);
         break;
-      }
     }
   });
 
-  // touch swipe
+  /* ---- Touch swipe ---- */
+
   if (stage) {
-    let sx = 0;
-    let sy = 0;
+    let startX = 0;
+    let startY = 0;
+
     stage.addEventListener(
       "touchstart",
       (e) => {
         const t = e.changedTouches[0];
-        sx = t.clientX;
-        sy = t.clientY;
+        startX = t.clientX;
+        startY = t.clientY;
       },
-      { passive: true }
+      { passive: true },
     );
+
     stage.addEventListener(
       "touchend",
       (e) => {
         const t = e.changedTouches[0];
-        const dx = t.clientX - sx;
-        const dy = t.clientY - sy;
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+
         if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) {
           if (dx < 0) nextImage();
           else previousImage();
         }
       },
-      { passive: true }
+      { passive: true },
     );
   }
 })();

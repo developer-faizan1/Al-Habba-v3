@@ -170,9 +170,7 @@ svg {
 .pd-title {
   margin: 0 0 18px;
   color: var(--black-1);
-  font:
-    700 clamp(26px, 2.5vw, 38px) / 1.2 Poppins,
-    sans-serif;
+font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
   letter-spacing: -0.4px;
 
   &::after {

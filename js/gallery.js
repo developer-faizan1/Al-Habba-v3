@@ -8,32 +8,32 @@ const images = [
   {
     projectNumber: "215",
     slug: "P-215 PROPOSED MIXED USE DEVELOPMENT",
-    src: "../assets/images/running/215.jpg"
+    src: "../assets/images/running/215.jpg",
   },
   {
     projectNumber: "212",
     slug: "P-212 (G+2P+7F+R) Hotel Building",
-    src: "../assets/images/running/212.jpg"
+    src: "../assets/images/running/212.jpg",
   },
   {
     projectNumber: "211",
     slug: "P-211 (G+2P+14F+R) RESIDENTIAL BUILDING",
     src: [
       "../assets/images/running/211v1.jpg",
-      "../assets/images/running/211v2.jpg"
+      "../assets/images/running/211v2.jpg",
     ],
   },
   {
     projectNumber: "205",
     slug: "P-205 SRG JVC (G+3P+16 +R)",
-    src: "../assets/images/running/205.jpg"
+    src: "../assets/images/running/205.jpg",
   },
   {
     projectNumber: "209",
     slug: "p-209 Al Habbai Headquarters",
     src: [
       "../assets/images/running/209v1.jpg",
-      "../assets/images/running/209v2.jpg"
+      "../assets/images/running/209v2.jpg",
     ],
   },
   {
@@ -41,66 +41,84 @@ const images = [
     slug: "P-208 (UG+GF+2P+8 Floors) RESIDENTIAL BUILDING",
     src: [
       "../assets/images/running/208v1.jpg",
-      "../assets/images/running/208v2.jpg"
+      "../assets/images/running/208v2.jpg",
     ],
   },
 
   {
     projectNumber: "210",
     slug: "P-210 (1B+G+1P+9F+R) Residential & Commercial Building",
-    src: "../assets/images/running/210.jpg"
+    src: "../assets/images/running/210.jpg",
   },
   {
     projectNumber: "204",
     slug: "P-204 (G+7+R) RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/204v1.jpg"
+    src: "../assets/images/comm_&_residential/204v1.jpg",
   },
 
   {
     projectNumber: "140",
     slug: "P-140 (2B+G+19) HOTEL BUILDING",
-    src: "../assets/images/hotels/140v1.jpg"
+    src: "../assets/images/hotels/140v1.jpg",
   },
   {
     projectNumber: "96",
     slug: "P-096 (3B+G+19) STOREY HOTEL TOWER",
-    src: "../assets/images/hotels/96.jpg"
+    src: "../assets/images/hotels/96.jpg",
   },
   {
     projectNumber: "102",
     slug: "P-102 (2B+G+11) PENTHEHOUSE HOTEL TOWER",
-    src: "../assets/images/hotels/102.jpg"
+    src: "../assets/images/hotels/102.jpg",
   },
   {
     projectNumber: "137",
     slug: "P-137 (B+G+9F) HOTEL BUILDING",
-    src: "../assets/images/hotels/137.jpg"
+    src: "../assets/images/hotels/137.jpg",
   },
   {
     projectNumber: "136",
     slug: "P-136 (2B+G+3P+16+R) HOTEL BUILDING",
-    src: "../assets/images/hotels/136.jpg"
+    src: "../assets/images/hotels/136.jpg",
   },
   {
     projectNumber: "142",
     slug: "P-142-PROPOSED (B+G+22 Floors + R) HOTEL BUILDING",
-    src: "../assets/images/hotels/142.jpg"
+    src: "../assets/images/hotels/142.jpg",
   },
   {
     projectNumber: "146",
     slug: "P-146 (B+G+1P+16+R) HOTEL TOWER",
-    src: "../assets/images/hotels/146.jpg"
+    src: "../assets/images/hotels/146.jpg",
   },
   {
     projectNumber: "147",
     slug: "P-147 (B+G+8+R+U+R) HOTEL BUILDING",
-    src: "../assets/images/hotels/147.jpg"
+    src: "../assets/images/hotels/147.jpg",
   },
   {
-    projectNumber : "153",
+    projectNumber: "153",
     slug: "P-153 (2B+G+5 Stories) INK HOTEL",
-    src :   "../assets/images/hotels/153.jpg"
-  }
+    src: "../assets/images/hotels/153.jpg",
+  },
+  {
+    projectNumber: "154",
+    slug: "P-154 (3B+G+6) STORIES HOTEL BUILDING",
+    src: [
+      "../assets/images/hotels/154v1.jpg",
+      "../assets/images/hotels/154v2.jpg",
+    ],
+  },
+  {
+    projectNumber: "167",
+    slug: "P-167 PROPOSED (2B+G+P+8+R) HOTEL BUILDING",
+    src: "../assets/images/hotels/167.jpg",
+  },
+  {
+    projectNumber: "171",
+    slug: "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
+    src: "../assets/images/hotels/171.jpg",
+  },
 ];
 
 /* ==========================================================

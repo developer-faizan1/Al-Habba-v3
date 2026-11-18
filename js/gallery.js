@@ -119,6 +119,109 @@ const images = [
     slug: "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     src: "../assets/images/hotels/171.jpg",
   },
+  {
+    projectNumber: "77",
+    slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/77.jpg",
+  },
+  {
+    projectNumber: "85",
+    slug: "P-085 (2B+G+M+12+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/85.jpg",
+  },
+  {
+    projectNumber: "95",
+    slug: "P-095 (2B+G+15) RESIDENTIAL COMMERCIAL BUILDING",
+    src: "../assets/images/comm_&_residential/95.jpg",
+  },
+  {
+    projectNumber: "99",
+    slug: "P-099 (2B+G+30) RESIDENTIAL COMMERCIAL BUILDING",
+    src: "../assets/images/comm_&_residential/99.jpg",
+  },
+  {
+    projectNumber: "117",
+    slug: "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/117v1.jpg",
+  },
+  {
+    projectNumber: "118",
+    slug: "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
+    src: "../assets/images/comm_&_residential/118.jpg",
+  },
+  {
+    projectNumber: "132",
+    slug: "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/132.jpg",
+  },
+  {
+    projectNumber: "133",
+    slug: "P-133 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/133.jpg",
+  },
+  {
+    projectNumber: "134",
+    slug: "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/134.jpg",
+  },
+  {
+    projectNumber: "135",
+    slug: "P-135 (B+G+12+R) COMMERCIAL RESIDENTIAL BUILDING (2 BLDGS)",
+    src: "../assets/images/comm_&_residential/135.jpg",
+  },
+  {
+    projectNumber: "159",
+    slug: "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
+    src: "../assets/images/comm_&_residential/159.jpg",
+  },
+  {
+    projectNumber: "162",
+    slug: "P-162 SRG ALT TOWER",
+    src: "../assets/images/comm_&_residential/162.jpg",
+  },
+  {
+    projectNumber: "172",
+    slug: "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/172.jpg",
+  },
+  {
+    projectNumber: "173",
+    slug: "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/173.jpg",
+  },
+  {
+    projectNumber: "177",
+    slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: [
+      "../assets/images/comm_&_residential/177v1.jpg",
+      "../assets/images/comm_&_residential/177v2.jpg",
+    ],
+  },
+  {
+    projectNumber: "188",
+    slug: "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/188.jpg",
+  },
+  {
+    projectNumber: "189",
+    slug: "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/189.jpg",
+  },
+  {
+    projectNumber: "190",
+    slug: "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/190.jpg",
+  },
+  {
+    projectNumber: "197",
+    slug: "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/197.jpg",
+  },
+  {
+    projectNumber : "198",
+    slug: "P-198 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src : "../assets/images/comm_&_residential/198.jpg",
+  }
 ];
 
 /* ==========================================================
@@ -209,22 +312,22 @@ const galleryImages = images.flatMap((project) =>
   const observer =
     "IntersectionObserver" in window
       ? new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
 
-              const el = entry.target;
-              el.classList.add("is-in");
-              observer.unobserve(el);
+            const el = entry.target;
+            el.classList.add("is-in");
+            observer.unobserve(el);
 
-              // Remove stagger delay once the reveal has finished
-              if (el.classList.contains("gl-card")) {
-                setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
-        )
+            // Remove stagger delay once the reveal has finished
+            if (el.classList.contains("gl-card")) {
+              setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      )
       : null;
 
   function reveal(el) {

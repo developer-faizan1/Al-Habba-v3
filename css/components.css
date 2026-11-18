@@ -1,4 +1,3 @@
-
 /* ===========================
    NAVIGATION
 =========================== */
@@ -203,7 +202,7 @@
   .nav__menu__wrapper .nav-links ul li {
     display: block;
     flex: 0 0 auto;
-    margin: 0;
+    margin-left: 19px;
   }
 }
 
@@ -237,6 +236,14 @@
     font-size: 1.4rem;
     margin-top: -4px;
     gap: 8px;
+  }
+}
+
+/* Large desktop only: extra space between nav links */
+@media (min-width: 1501px) {
+
+  .nav__menu__wrapper .nav-links ul li {
+    margin-left: 19px;
   }
 }
 
@@ -436,88 +443,6 @@
   }
 }
 
-/* scroll button */
-.scroll-top {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  width: 55px;
-  height: 55px;
-  border: none;
-  border-radius: 50%;
-  background: #ffffff;
-  color: var(--green-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-  padding: 0;
-  box-shadow: 0 6px 20px rgba(25, 100, 105, 0.15);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* Progress Ring */
-.progress-ring {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-
-/* Background Ring */
-.progress-ring-bg {
-  fill: none;
-  stroke: var(--lightGreen-1);
-  stroke-width: 3;
-}
-
-/* Scroll Progress */
-.progress-ring-progress {
-  fill: none;
-  stroke: var(--green-1);
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 131.95;
-  stroke-dashoffset: 131.95;
-  transition: stroke-dashoffset 0.1s linear;
-}
-
-/* Arrow */
-.scroll-arrow {
-  position: relative;
-  z-index: 2;
-  color: var(--green-1);
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-/* Hover */
-.scroll-top:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(25, 100, 105, 0.22);
-}
-
-.scroll-top:hover .scroll-arrow {
-  transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .scroll-top {
-    width: 48px;
-    height: 48px;
-    right: 16px;
-    bottom: 20px;
-  }
-
-  .scroll-arrow {
-    font-size: 18px;
-  }
-}
 
 /*  Footer Section  */
 

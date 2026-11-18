@@ -136,6 +136,36 @@ document.addEventListener("DOMContentLoaded", async () => {
   let index = 0;
   let previousFocus = null;
   let titleText = "";
+  let projects = [];
+  let position = 0;
+
+  const findBySlug = (slug) =>
+    projects.findIndex((p) => String(p.slug ?? "").trim() === slug);
+
+  // Render one project into the page (used on first load and on Prev/Next)
+  function renderProject(pos) {
+    position = pos;
+    const project = projects[pos];
+
+    renderHeader(project);
+    renderProgress(project);
+    renderStats(project);
+    renderBento(project);
+    renderSiblings(projects, pos);
+    prepareGallery(project);
+  }
+
+  // Open another project on the same page (no reload) and update the URL
+  function openProject(pos, push = true) {
+    if (pos === position) return;
+    renderProject(pos);
+    if (push) {
+      const url = new URL(location.href);
+      url.searchParams.set("slug", String(projects[pos].slug ?? "").trim());
+      history.pushState(null, "", url);
+    }
+    initReveal();
+  }
 
   /* =========================================
      LOAD PROJECT
@@ -149,22 +179,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       throw new Error(`Unable to load project data (${res.status}).`);
 
     const data = await res.json();
-    const projects = Array.isArray(data) ? data : data.projects;
+    projects = Array.isArray(data) ? data : data.projects;
     if (!Array.isArray(projects)) throw new Error("Invalid JSON format.");
 
-    const position = projects.findIndex(
-      (p) => String(p.slug ?? "").trim() === slug,
-    );
-    if (position === -1) throw new Error("Project not found.");
+    const found = findBySlug(slug);
+    if (found === -1) throw new Error("Project not found.");
 
-    const project = projects[position];
-
-    renderHeader(project);
-    renderProgress(project);
-    renderStats(project);
-    renderBento(project);
-    renderSiblings(projects, position);
-    prepareGallery(project);
+    renderProject(found);
   } catch (err) {
     console.error(err);
     el.layout.hidden = true;
@@ -197,10 +218,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     title.setAttribute("aria-label", titleText);
 
     const desc = String(p.projectDescription ?? "").trim();
+    const lead = $("projectDescription");
     if (desc && norm(desc) !== norm(titleText)) {
-      const lead = $("projectDescription");
       lead.textContent = desc;
       lead.hidden = false;
+    } else {
+      lead.textContent = "";
+      lead.hidden = true;
     }
 
     const status = clean(p.status);
@@ -224,6 +248,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const bar = $("ringBar");
     const num = $("progressNum");
     box.hidden = false;
+
+    // reset so the ring animates again when another project is opened
+    bar.style.transition = "none";
+    bar.style.strokeDashoffset = 100;
+    num.textContent = "0%";
+    void bar.getBoundingClientRect();
+    bar.style.transition = "";
 
     if (reduceMotion) {
       bar.style.transition = "none";
@@ -272,17 +303,8 @@ document.addEventListener("DOMContentLoaded", async () => {
      KEY INFORMATION: client, consultant, location
   ========================================= */
   function renderBento(p) {
-    const address = clean(
-      p.fullAddress || p.projectLocation || p.area,
-      "Location not specified",
-    );
-
-    const addrNorm = norm(address);
-    const meta = [
-      ...new Set(
-        [p.area, p.state].map((v) => String(v ?? "").trim()).filter(Boolean),
-      ),
-    ].filter((v) => !addrNorm.includes(norm(v)));
+    // Location card prints ONLY the fullAddress key (once)
+    const address = clean(p.fullAddress, "Location not specified");
 
     // Coordinates open Google Maps; otherwise fall back to the site's map page
     const lat = Number(p.latitude);
@@ -320,7 +342,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         icon: "pin",
         label: "Location",
         value: address,
-        sub: meta.join("  •  "),
         cls: "bento--light",
         link,
       },
@@ -355,15 +376,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       )
       .join("");
 
-    if (canHover) {
-      box.addEventListener("pointermove", (e) => {
-        const card = e.target.closest(".bento");
-        if (!card) return;
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
-      });
-    }
+  }
+
+  // Cursor spotlight on the cards (attached once)
+  if (canHover) {
+    $("pdBento").addEventListener("pointermove", (e) => {
+      const card = e.target.closest(".bento");
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      card.style.setProperty("--my", `${e.clientY - r.top}px`);
+    });
   }
 
   /* =========================================
@@ -506,6 +529,30 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
   el.prev.addEventListener("click", go(-1));
   el.next.addEventListener("click", go(1));
+
+  // Small animated Prev / Next buttons below the main image
+  const gNav = document.createElement("div");
+  gNav.className = "pd-gnav";
+  gNav.innerHTML =
+    `<button type="button" class="pd-gbtn pd-gbtn--prev" aria-label="Previous image">${iconSvg("arrowLeft")}<span>Prev</span></button>` +
+    `<button type="button" class="pd-gbtn pd-gbtn--next" aria-label="Next image"><span>Next</span>${iconSvg("arrow")}</button>`;
+  el.stage.after(gNav);
+  gNav.hidden = projects.length < 2;
+
+  // Prev / Next open the previous / next PROJECT on this same page
+  const step = (dir) => () => {
+    if (projects.length < 2) return;
+    openProject((position + dir + projects.length) % projects.length);
+  };
+  gNav.querySelector(".pd-gbtn--prev").addEventListener("click", step(-1));
+  gNav.querySelector(".pd-gbtn--next").addEventListener("click", step(1));
+
+  // Browser Back / Forward between projects opened this way
+  window.addEventListener("popstate", () => {
+    const slug = new URLSearchParams(location.search).get("slug")?.trim();
+    const pos = slug ? findBySlug(slug) : -1;
+    if (pos !== -1) openProject(pos, false);
+  });
 
   const scrollThumbs = (dir) => () =>
     el.thumbs.scrollBy({

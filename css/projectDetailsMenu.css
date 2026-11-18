@@ -73,6 +73,66 @@ nav svg {
 }
 
 /* ===========================
+   OUR PROFILE BUTTON
+=========================== */
+
+.nav__menu__wrapper nav > a.nav-cta {
+  position: relative;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 1rem;
+  padding: .6rem 1.4rem;
+  margin: 0 0 0 3.2rem; /* gap between CONTACT and the button */
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Normal state */
+  color: var(--green-1);
+  border: 1.5px solid var(--green-1);
+  border-radius: 50px;
+
+  transition:
+    color 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Remove previous animated overlay */
+.nav__menu__wrapper nav > a.nav-cta::before {
+  display: none !important;
+}
+
+/* Hover state */
+.nav__menu__wrapper nav > a.nav-cta:hover {
+  color: #ffffff !important;
+  background: var(--green-1) !important;
+  border-color: var(--green-1) !important;
+}
+
+/* Profile arrow */
+.nav__menu__wrapper nav > a.nav-cta svg {
+  display: block !important;
+  position: static !important;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: inherit !important;
+  transition: transform 0.35s ease;
+}
+
+.nav__menu__wrapper nav > a.nav-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ===========================
    MOBILE
 =========================== */
 
@@ -124,6 +184,7 @@ nav svg {
     top: 20px;
     right: 20px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -145,6 +206,49 @@ nav svg {
     top: 23px;
     right: 20px;
     cursor: pointer;
+  }
+}
+
+/* ===========================
+   OUR PROFILE BUTTON - TABLET & MOBILE
+=========================== */
+
+/* Tablet: hamburger sits in the flex row, button goes beside it */
+@media (max-width: 1192px) {
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin: 0 2rem 0 auto;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile: hamburger is absolutely positioned at right: 20px,
+   so leave room for it and shrink the button */
+@media (max-width: 768px) {
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin: 0 44px 0 auto;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    gap: 0.6rem;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin-right: 40px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .nav__menu__wrapper nav > a.nav-cta svg {
+    display: none !important;
   }
 }
 

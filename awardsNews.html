@@ -5,58 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AL Habbai Contracting | Dubai</title>
     <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/projectDetailsMenu.css" />
     <link rel="stylesheet" href="./css/awardsNews.css" />
     <!-- aos library css  -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- aos script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script src="./js/projectDetailsMenu.js" defer></script>
   </head>
 
   <body>
     <!-- Nav -->
-    <header class="about__bg">
-      <!-- Navigation -->
-      <div class="nav__menu__wrapper" id="navbar">
-        <div class="container">
-          <nav>
-            <a href="index.html">
-              <img src="./assets/images/alhabbai-white-logo.png" alt="Logo" />
-            </a>
+  <header class="global-banner">
+    <!-- Navigation -->
+    <div class="nav__menu__wrapper" id="navbar">
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
+          </a>
 
-            <div class="nav-links" id="navLinks">
-              <!-- Close Icon -->
-              <svg
-                class="svgColor"
-                onclick="hideMenu()"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+          <div class="nav-links" id="navLinks">
+            <!-- Close Icon -->
+            <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
 
-              <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./awardsNews.html">Awards & News</a></li>
-                <li><a href="./principals.html">Principals</a></li>
-                <li><a href="./careers.html">Careers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-              </ul>
-            </div>
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./about.html">About US</a></li>
+              <li><a href="./awardsNews.html">Awards & News</a></li>
+              <li><a href="./principals.html">Principals</a></li>
+              <li><a href="./careers.html">Careers</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
 
+            <!-- our profile -->
             <a href="./projects.html" class="nav-cta">
               <span>Our Profile</span>
               <svg
@@ -74,239 +65,172 @@
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </a>
-            <!-- Menu Icon -->
 
-            <svg
-              onclick="showMenu()"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </nav>
-        </div>
-      </div>
-      <div class="explore__btn__wrapper">
-        <a href="#award&news" class="explore__btn">Awards & News</a>
-      </div>
-    </header>
-    <!-- Nav End -->
+          <!-- Menu Icon -->
 
-<!-- ================= AWARDS & NEWS SECTION (replace the old <section id="award&news"> block only) ================= -->
-<section id="award&news" class="aw">
-  <div class="container">
-    <!-- Section heading -->
-    <div class="aw__head" data-aos="fade-up">
-      <span class="aw__eyebrow"><i></i> Latest Updates</span>
-      <h2 class="aw__title">Awards <em>&amp;</em> News</h2>
-      <span class="aw__rule" aria-hidden="true"></span>
-      <p class="aw__sub">
-        New contracts, milestones and landmark projects from Al Habbai
-        Contracting across Dubai.
-      </p>
+          <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </nav>
+      </div>
     </div>
 
-    <div class="aw__list">
-      <!-- ============ Story 1 ============ -->
-      <article class="aw__card" data-aos="fade-up">
-        <div class="aw__media">
-          <img
-            src="./assets/images/hatimi-news1.jpg"
-            alt="Hatimi Residence – Dubai Islands"
-            loading="lazy"
-          />
-          <span class="aw__shade"></span>
-          <span class="aw__index">01</span>
-          <span class="aw__badge">New Contract</span>
-        </div>
-
-        <div class="aw__body">
-          <div class="aw__tags">
-            <span>Residential</span>
-            <span>Dubai Islands</span>
-          </div>
-
-          <h3 class="aw__card-title">Hatimi Residence – Dubai Islands</h3>
-
-          <p class="aw__text">
-            Al Habbai Contracting LLC has recently signed a contract with M/s.
-            Anwar Investment Limited, Dubai for the construction of a proposed
-            (UG + GF + 2P + 8 Floors) residential building on Plot No.
-            101-0581, Dubai Islands, a major coastal development by Nakheel
-            offering premium residential and lifestyle facilities.
-          </p>
-
-          <ul class="aw__specs">
-            <li>
-              <small>Client</small>
-              <strong>Anwar Investment Ltd.</strong>
-            </li>
-            <li>
-              <small>Plot No.</small>
-              <strong>101-0581</strong>
-            </li>
-            <li>
-              <small>Height</small>
-              <strong>UG + GF + 2P + 8</strong>
-            </li>
-          </ul>
-
-          <a href="./hatimi-residence.html" class="aw__btn">
-            <span>Read More</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- ============ Story 2 ============ -->
-      <article class="aw__card" data-aos="fade-up">
-        <div class="aw__media">
-          <img
-            src="./assets/images/srg-news-2.jpg"
-            alt="SRG JVC – Commercial & Residential Building"
-            loading="lazy"
-          />
-          <span class="aw__shade"></span>
-          <span class="aw__index">02</span>
-          <span class="aw__badge">New Contract</span>
-        </div>
-
-        <div class="aw__body">
-          <div class="aw__tags">
-            <span>Commercial</span>
-            <span>Residential</span>
-            <span>Al Barsha South</span>
-          </div>
-
-          <h3 class="aw__card-title">
-            SRG JVC – Proposed Commercial &amp; Residential Building
-          </h3>
-
-          <p class="aw__text">
-            Al Habbai Contracting LLC has recently signed a contract with M/s.
-            SRG Holding Limited, Dubai for the construction of a proposed SRG
-            JVC – Commercial &amp; Residential Building (G + 3P + 16 Floors +
-            Roof) on Plot No. 6816514, located at Al Barsha South Fourth, Dubai.
-            The project is a major development in Dubai.
-          </p>
-
-          <ul class="aw__specs">
-            <li>
-              <small>Client</small>
-              <strong>SRG Holding Ltd.</strong>
-            </li>
-            <li>
-              <small>Plot No.</small>
-              <strong>6816514</strong>
-            </li>
-            <li>
-              <small>Height</small>
-              <strong>G + 3P + 16 + Roof</strong>
-            </li>
-          </ul>
-
-          <a href="./p162.html" class="aw__btn">
-            <span>Read More</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-      </article>
+        <!-- Banner text (moved here from the gallery section) -->
+    <div class="gl-hero">
+      <div class="gl-head gl-head--hero">
+        <span class="gl-eyebrow" data-gl-reveal>Latest Updates</span>
+        <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+          Awards <em>&</em> News 
+        </h2>
+       
+      </div>
     </div>
-  </div>
-</section>
-<!-- ================= END AWARDS & NEWS SECTION ================= -->
+  </header>
+  <!-- Nav End -->
 
-    <!-- Gmail -->
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadfaizanweb@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="floating-mail"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path
-          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-        />
-        <polyline points="22,6 12,13 2,6" />
-      </svg>
-    </a>
+    <!-- ================= AWARDS & NEWS SECTION  ================= -->
+    <section id="award&news" class="aw">
+      <div class="container">
+        <!-- Section heading -->
+        <div class="aw__list">
+          <!-- ============ Story 1 ============ -->
+          <article class="aw__card" data-aos="fade-up">
+            <div class="aw__media">
+              <img
+                src="./assets/images/hatimi-news1.jpg"
+                alt="Hatimi Residence – Dubai Islands"
+                loading="lazy"
+              />
+              <span class="aw__shade"></span>
+              <span class="aw__index">01</span>
+              <span class="aw__badge">New Contract</span>
+            </div>
 
-    <!-- scroll button -->
-    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
-      <svg class="progress-ring" viewBox="0 0 50 50">
-        <circle class="progress-ring-bg" cx="25" cy="25" r="21" />
+            <div class="aw__body">
+              <div class="aw__tags">
+                <span>Residential</span>
+                <span>Dubai Islands</span>
+              </div>
 
-        <circle
-          class="progress-ring-progress"
-          id="progressRing"
-          cx="25"
-          cy="25"
-          r="21"
-        />
-      </svg>
+              <h3 class="aw__card-title">Hatimi Residence – Dubai Islands</h3>
 
-      <span class="scroll-arrow">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="30"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="12" y1="19" x2="12" y2="5" />
-          <polyline points="5 12 12 5 19 12" />
-        </svg>
-      </span>
-    </button>
+              <p class="aw__text">
+                Al Habbai Contracting LLC has recently signed a contract with
+                M/s. Anwar Investment Limited, Dubai for the construction of a
+                proposed (UG + GF + 2P + 8 Floors) residential building on Plot
+                No. 101-0581, Dubai Islands, a major coastal development by
+                Nakheel offering premium residential and lifestyle facilities.
+              </p>
+
+              <ul class="aw__specs">
+                <li>
+                  <small>Client</small>
+                  <strong>Anwar Investment Ltd.</strong>
+                </li>
+                <li>
+                  <small>Plot No.</small>
+                  <strong>101-0581</strong>
+                </li>
+                <li>
+                  <small>Height</small>
+                  <strong>UG + GF + 2P + 8</strong>
+                </li>
+              </ul>
+
+              <a href="./hatimi-residence.html" class="aw__btn">
+                <span>Read More</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ============ Story 2 ============ -->
+          <article class="aw__card" data-aos="fade-up">
+            <div class="aw__media">
+              <img
+                src="./assets/images/srg-news-2.jpg"
+                alt="SRG JVC – Commercial & Residential Building"
+                loading="lazy"
+              />
+              <span class="aw__shade"></span>
+              <span class="aw__index">02</span>
+              <span class="aw__badge">New Contract</span>
+            </div>
+
+            <div class="aw__body">
+              <div class="aw__tags">
+                <span>Commercial</span>
+                <span>Residential</span>
+                <span>Al Barsha South</span>
+              </div>
+
+              <h3 class="aw__card-title">
+                SRG JVC – Proposed Commercial &amp; Residential Building
+              </h3>
+
+              <p class="aw__text">
+                Al Habbai Contracting LLC has recently signed a contract with
+                M/s. SRG Holding Limited, Dubai for the construction of a
+                proposed SRG JVC – Commercial &amp; Residential Building (G + 3P
+                + 16 Floors + Roof) on Plot No. 6816514, located at Al Barsha
+                South Fourth, Dubai. The project is a major development in
+                Dubai.
+              </p>
+
+              <ul class="aw__specs">
+                <li>
+                  <small>Client</small>
+                  <strong>SRG Holding Ltd.</strong>
+                </li>
+                <li>
+                  <small>Plot No.</small>
+                  <strong>6816514</strong>
+                </li>
+                <li>
+                  <small>Height</small>
+                  <strong>G + 3P + 16 + Roof</strong>
+                </li>
+              </ul>
+
+              <a href="./p162.html" class="aw__btn">
+                <span>Read More</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ================= END AWARDS & NEWS SECTION ================= -->
 
     <!-- Footer Section -->
     <footer>
@@ -498,5 +422,47 @@
       </div>
     </footer>
     <!-- Footer Section End -->
+
+     <!-- Change WhatsApp number / email here if needed -->
+    <div class="fab fab--left">
+      <a
+        class="fab__btn fab__btn--email"
+        href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
+        aria-label="Send us an email"
+        data-label="Email us"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <polyline points="22,6.5 12,13 2,6.5" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="fab fab--right">
+      <button
+        type="button"
+        class="fab__btn fab__btn--top"
+        id="backToTop"
+        aria-label="Back to top"
+        data-label="Back to top"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="18 15 12 9 6 15" />
+        </svg>
+      </button>
+
+      <a
+        class="fab__btn fab__btn--whatsapp"
+        href="https://wa.me/97142628388?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        data-label="Chat with us"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z" transform="translate(.4 .25) scale(.98)" />
+        </svg>
+      </a>
+    </div>
   </body>
 </html>

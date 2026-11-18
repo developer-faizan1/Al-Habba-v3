@@ -1,132 +1,4 @@
 /* ==========================================================
-   GALLERY – bento grid + cinematic lightbox
-   Load AFTER global.css (uses --green-1, --gold, --black-1,
-   --black-3, --border, --ease). All classes are prefixed .gl-
-
-   Sections:
-     1. Variables
-     2. Page hero
-     3. Section & header
-     4. Scroll reveal
-     5. Bento grid
-     6. Project card (image only – no overlay)
-     7. Project number tag
-     8. View Gallery button
-     9. Lightbox
-    10. Responsive
-    11. Reduced motion
-    12. Keyframes
-   ========================================================== */
-
-
-/* ==========================================================
-   1. VARIABLES
-   ========================================================== */
-
-.gl-section,
-.gl-lightbox {
-  --gl-green: var(--green-1, #1e665e);
-  --gl-green-dark: #0d3732;
-  --gl-gold: var(--gold, #c9a15f);
-  --gl-gold-light: var(--gold-light, #e3c58f);
-  --gl-ink: var(--black-1, #111513);
-  --gl-muted: var(--black-3, #5d6762);
-  --gl-line: var(--border, #e3ebe6);
-  --gl-ease: var(--ease, cubic-bezier(0.22, 1, 0.36, 1));
-}
-
-
-/* ==========================================================
-   2. PAGE HERO
-   ========================================================== */
-
-.about__bg {
-  width: 100%;
-  height: 70vh;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1)),
-    url("../assets/images/about_bg_cover.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-}
-
-
-/* ==========================================================
-   3. SECTION & HEADER
-   ========================================================== */
-
-.gl-section {
-  position: relative;
-  padding: 90px 0 110px;
-  overflow: hidden;
-  background: #fff;
-  color: var(--gl-ink);
-}
-
-.gl-wrap {
-  width: min(1280px, 100% - 40px);
-  margin-inline: auto;
-}
-
-.gl-head {
-  max-width: 660px;
-  margin: 0 auto 52px;
-  text-align: center;
-}
-
-.gl-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gl-gold);
-}
-
-.gl-eyebrow::before,
-.gl-eyebrow::after {
-  content: "";
-  width: 34px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gl-gold), transparent);
-}
-
-.gl-eyebrow::after {
-  background: linear-gradient(270deg, var(--gl-gold), transparent);
-}
-
-.gl-title {
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  font-size: clamp(2.8rem, 3.4vw, 4rem);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  color: var(--gl-ink);
-}
-
-.gl-title em {
-  font-style: normal;
-  background: linear-gradient(100deg, var(--gl-green) 20%, var(--gl-gold) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.gl-sub {
-  margin-top: 16px;
-  font-family: Raleway, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.8;
-  color: var(--gl-muted);
-}
-
-
-/* ==========================================================
    4. SCROLL REVEAL (header elements, only when JS runs)
    ========================================================== */
 
@@ -674,13 +546,17 @@
 }
 
 @media (max-width: 992px) {
-  .gl-section { padding: 64px 0 76px; }
+  .gl-section { padding: 40px 0 76px; }
   .gl-head    { margin-bottom: 40px; }
 }
 
 @media (max-width: 680px) {
   .gl-wrap {
     width: calc(100% - 28px);
+  }
+
+  .gl-hero {
+    padding: 96px 14px 0;
   }
 
   .gl-grid {

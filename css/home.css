@@ -43,7 +43,7 @@
   font-size: clamp(2.6rem, 3.2vw, 3.8rem);
   line-height: 1.15;
   color: var(--ah-ink);
-  margin: 1rem 0 1.2rem;
+  margin: 1rem 0;
 }
 
 /* animated gradient text */
@@ -112,7 +112,7 @@
 
 .ah-lead {
   font-family: Raleway, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.65;
   color: var(--ah-muted);
   max-width: 62rem;
@@ -308,7 +308,7 @@
 
 .ah-about {
   isolation: isolate;
-  padding: 9rem 0 16rem;
+  padding: 6rem 0 16rem;
   background: linear-gradient(135deg, #fff 0%, #f2f9f6 55%, #fbfdfc 100%);
 }
 
@@ -654,7 +654,6 @@
 ========================================================= */
 .ah-services {
   background: #fff;
-  padding: 6rem 0;
 }
 .ah-bento {
   display: grid;
@@ -835,6 +834,10 @@
 /* =========================================================
    LEADERSHIP – carousel
 ========================================================= */
+
+.ah-leaders{
+  padding-bottom: 50px;
+}
 .ah-lcar {
   position: relative;
   max-width: 94rem;

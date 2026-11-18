@@ -144,7 +144,7 @@ svg {
   border: 0;
   background: none;
   color: var(--black-2);
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 3px;
 
   &::after {
@@ -763,6 +763,13 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
 /* =========================================
    SECTIONS
 ========================================= */
+
+.pd-section{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+
 .pd-wrap {
   width: min(100% - 32px, 1560px);
   margin: 0 auto;
@@ -1014,9 +1021,7 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
 .bento-value {
   display: block;
   color: var(--black-1);
-  font:
-    600 clamp(15px, 1.15vw, 17.5px) / 1.3 Poppins,
-    sans-serif;
+ font: 500 clamp(14px, 1.05vw, 16px) / 1.3 Raleway, sans-serif;
   overflow-wrap: anywhere;
 }
 
@@ -1032,7 +1037,7 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
   display: block;
   width: 28px;
   height: 2px;
-  margin-top: 10px;
+  margin-top: 3px;
   border-radius: 3px;
   background: linear-gradient(90deg, var(--gold), var(--green-2));
   transition: width 0.5s var(--ease);
@@ -1045,7 +1050,7 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 18px;
+  padding: 4px 14px;
   border: 1px solid var(--gold);
   border-radius: 40px;
   background: #fff;
@@ -1091,8 +1096,8 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
   display: grid;
   flex: none;
   box-sizing: border-box;
-  width: 62px;
-  height: 62px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   place-items: center;
   border: 1px solid var(--border);
@@ -1128,7 +1133,7 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
   &:hover {
     border-color: var(--green-1);
     background: var(--green-1);
-    color: #fff;
+    color: #fff !important;
     box-shadow: 0 16px 34px rgb(30 102 94 / 25%);
     transform: translateY(-5px) scale(1.07);
   }
@@ -1174,8 +1179,8 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
 }
 
 .pd-ico--all {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: var(--gold);
 
   &::after {
@@ -1655,4 +1660,88 @@ font: 700 clamp(18px, 1.6vw, 26px) / 1.2 Poppins, sans-serif;
 
 .pd-meter-row:not(:has(.pd-progress:not([hidden]))) {
   display: none;
+}
+
+/* =========================================
+   PREV / NEXT PROJECT BUTTONS (below main image)
+========================================= */
+.pd-gnav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.pd-gbtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  background: #fff;
+  color: var(--green-1);
+  font:
+    600 12px Poppins,
+    sans-serif;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 0.3s,
+    border-color 0.3s,
+    transform 0.35s var(--ease),
+    box-shadow 0.35s;
+
+  /* fill sweep */
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--green-1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease);
+    content: "";
+  }
+
+  &.pd-gbtn--next::before {
+    transform-origin: right;
+  }
+
+  &:hover {
+    border-color: var(--green-1);
+    color: #fff;
+    box-shadow: 0 10px 22px rgb(30 102 94 / 18%);
+    transform: translateY(-3px);
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.96);
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.pd-gbtn--prev svg {
+    animation: nudgeL 1.6s ease-in-out infinite;
+  }
+
+  &.pd-gbtn--next svg {
+    animation: nudgeR 1.6s ease-in-out infinite;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+  }
 }

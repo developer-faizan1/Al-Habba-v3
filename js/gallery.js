@@ -218,10 +218,52 @@ const images = [
     src: "../assets/images/comm_&_residential/197.jpg",
   },
   {
-    projectNumber : "198",
+    projectNumber: "198",
     slug: "P-198 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src : "../assets/images/comm_&_residential/198.jpg",
-  }
+    src: "../assets/images/comm_&_residential/198.jpg",
+  },
+  {
+    projectNumber: "192",
+    slug: "P-192 (G+2P+12+R+U Roof) COMMERCIAL AND RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/192.jpg"
+  },
+  {
+    projectNumber: "166",
+    src: "../assets/images/comm_&_residential/166.jpg"
+  },
+  {
+    projectNumber: "165",
+    src: "../assets/images/comm_&_residential/165.jpg"
+  },
+  {
+    projectNumber: "164",
+    src: "../assets/images/comm_&_residential/164.jpg"
+  },
+
+  {
+    projectNumber: "151",
+    src: ["../assets/images/comm_&_residential/151v1.jpg", "../assets/images/comm_&_residential/151v1.jpg"]
+  },
+  {
+    projectNumber: "155",
+    src: "../assets/images/comm_&_residential/155.jpg"
+  },
+  {
+    projectNumber: "157",
+    src: "../assets/images/comm_&_residential/157.jpg"
+  },
+  {
+    projectNumber: "149",
+    src: "../assets/images/comm_&_residential/149.jpg"
+  },
+  {
+    projectNumber: "143",
+    src: "../assets/images/comm_&_residential/143.jpg"
+  }, 
+  {
+    projectNumber: "163",
+    src: "../assets/images/comm_&_residential/163.jpg"
+  },
 ];
 
 /* ==========================================================

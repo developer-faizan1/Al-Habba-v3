@@ -1,3 +1,7 @@
+/* =========================================
+   CAREERS HERO BACKGROUND
+========================================= */
+
 .careers__bg {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1)),
@@ -8,13 +12,14 @@
   background-size: cover;
   background-position: center;
 }
+
 /* =========================================
    MANAGEMENT / LEADERSHIP SECTION
 ========================================= */
 
 .management-section {
   width: 100%;
-  padding: 90px 0;
+  padding: 40px 0 25px;
   overflow: hidden;
 }
 
@@ -22,31 +27,33 @@
   width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
 }
+
 /* =========================================
    SECTION HEADING
 ========================================= */
+
 .management-heading {
   max-width: 650px;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 .section-label {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: var(--green-1);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
 }
 
 .management-heading h2 {
   margin: 0;
   color: var(--black-1);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(24px, 2.5vw, 34px);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -1px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
 }
 
 .management-heading h2 span {
@@ -55,21 +62,23 @@
 
 .management-heading p {
   max-width: 560px;
-  margin: 16px 0 0;
+  margin: 6px 0 0;
   color: var(--black-3);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.5;
 }
+
 /* =========================================
    OWL CAROUSEL
 ========================================= */
+
 .management-carousel {
   position: relative;
   width: 100%;
 }
-/* Remove Owl default outline */
+
 .management-carousel .owl-stage-outer {
-  padding: 10px 5px 25px;
+  padding: 8px 5px 18px;
 }
 
 .management-carousel .owl-item {
@@ -88,16 +97,16 @@
     rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-columns: 110px minmax(0, 1fr);
   align-items: center;
-  gap: 25px;
-  min-height: 210px;
-  margin: 5px 10px;
-  padding: 28px;
+  gap: 20px;
+  min-height: 175px;
+  margin: 4px 8px;
+  padding: 20px;
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid rgba(25, 100, 105, 0.1);
-  border-radius: 18px;
+  border-radius: 14px;
   overflow: hidden;
   transition:
     transform 0.3s ease,
@@ -123,16 +132,17 @@
 ========================================= */
 
 .management-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 35px rgba(25, 100, 105, 0.13);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(25, 100, 105, 0.13);
 }
 
 /* =========================================
    PROFILE IMAGE
 ========================================= */
+
 .management-image {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   padding: 4px;
   box-sizing: border-box;
   border-radius: 50%;
@@ -150,7 +160,7 @@
 }
 
 /* =========================================
-   CONTENT
+   MANAGEMENT CONTENT
 ========================================= */
 
 .management-content {
@@ -161,26 +171,26 @@
 .management-content h3 {
   margin: 0;
   color: var(--black-1);
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 1.3;
 }
 
 .management-role {
   display: block;
-  margin-top: 6px;
+  margin-top: 4px;
   color: var(--green-1);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
 }
 
 .management-content p {
   max-width: 390px;
-  margin: 13px 0 0;
+  margin: 8px 0 0;
   color: var(--black-3);
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 /* =========================================
@@ -190,8 +200,6 @@
 .management-carousel .owl-nav {
   margin: 0;
 }
-
-/* Previous + Next buttons */
 
 .management-carousel .owl-nav button {
   position: absolute;
@@ -220,19 +228,13 @@
   transform: translateY(-50%) scale(1.05);
 }
 
-/* Previous */
-
 .management-carousel .owl-prev {
   left: -55px;
 }
 
-/* Next */
-
 .management-carousel .owl-next {
   right: -55px;
 }
-
-/* Remove default focus */
 
 .management-carousel .owl-nav button:focus {
   outline: none;
@@ -247,7 +249,7 @@
   justify-content: center;
   align-items: center;
   gap: 7px;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
 .management-carousel .owl-dot {
@@ -290,18 +292,18 @@
   }
 
   .management-card {
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: 20px;
-    padding: 24px;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 18px;
+    padding: 18px;
   }
 
   .management-image {
-    width: 105px;
-    height: 105px;
+    width: 100px;
+    height: 100px;
   }
 
   .management-content h3 {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 
@@ -311,14 +313,12 @@
 
 @media (max-width: 900px) {
   .management-section {
-    padding: 75px 0;
+    padding: 32px 0 20px;
   }
 
   .management-container {
-    width: calc(100% - 50px);
+    width: calc(100% - 40px);
   }
-
-  /* Hide side arrows */
 
   .management-carousel .owl-nav {
     display: none;
@@ -341,91 +341,79 @@
 
 @media (max-width: 600px) {
   .management-section {
-    padding: 60px 0;
+    padding: 25px 0 15px;
   }
 
   .management-container {
     width: calc(100% - 30px);
   }
 
-  /* ==============================
-     HEADING
-  ============================== */
+  /* HEADING */
 
   .management-heading {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   .section-label {
-    font-size: 12px;
-    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    letter-spacing: 1px;
   }
 
   .management-heading h2 {
-    font-size: 32px;
-    letter-spacing: -0.5px;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
   }
 
   .management-heading p {
-    margin-top: 12px;
-    font-size: 14px;
-    line-height: 1.6;
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
-  /* ==============================
-     CAROUSEL
-  ============================== */
+  /* CAROUSEL */
 
   .management-carousel .owl-stage-outer {
-    padding: 8px 0 22px;
+    padding: 6px 0 15px;
   }
 
-  /* ==============================
-     CARD
-  ============================== */
+  /* CARD */
 
   .management-card {
-    grid-template-columns: 85px minmax(0, 1fr);
-    gap: 16px;
-    min-height: 165px;
-    margin: 5px 3px;
-    padding: 22px 18px;
-    border-radius: 15px;
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 13px;
+    min-height: 140px;
+    margin: 4px 3px;
+    padding: 15px;
+    border-radius: 13px;
   }
 
-  /* ==============================
-     IMAGE
-  ============================== */
+  /* IMAGE */
 
   .management-image {
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
     padding: 3px;
   }
 
-  /* ==============================
-     CONTENT
-  ============================== */
+  /* CONTENT */
 
   .management-content h3 {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.3;
   }
 
   .management-role {
-    margin-top: 4px;
+    margin-top: 3px;
     font-size: 12px;
   }
 
   .management-content p {
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 1.45;
   }
-
-  /* ==============================
-     DOTS
-  ============================== */
 
   .management-carousel .owl-dots {
     margin-top: 0;
@@ -438,7 +426,7 @@
 
 @media (max-width: 380px) {
   .management-section {
-    padding: 50px 0;
+    padding: 20px 0 12px;
   }
 
   .management-container {
@@ -446,16 +434,16 @@
   }
 
   .management-card {
-    grid-template-columns: 72px minmax(0, 1fr);
-    gap: 13px;
-    min-height: 145px;
-    padding: 18px 14px;
-    border-radius: 13px;
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 11px;
+    min-height: 125px;
+    padding: 13px 12px;
+    border-radius: 12px;
   }
 
   .management-image {
-    width: 72px;
-    height: 72px;
+    width: 65px;
+    height: 65px;
   }
 
   .management-content h3 {
@@ -467,18 +455,19 @@
   }
 
   .management-content p {
-    margin-top: 6px;
+    margin-top: 5px;
     font-size: 11px;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 }
+
 /* =========================================
    RESOURCES SECTION
 ========================================= */
 
 .resources-section {
   width: 100%;
-  padding: 70px 0;
+  padding: 10px 0 30px;
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
@@ -488,26 +477,27 @@
 }
 
 /* =========================================
-   SECTION HEADING
+   RESOURCES HEADING
 ========================================= */
 
 .resources-heading {
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 .resources-heading h2 {
   margin: 0;
   color: #202525;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(20px, 1.8vw, 26px);
   font-weight: 700;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
 }
 
 .resources-heading span {
   display: block;
-  width: 58px;
-  height: 5px;
-  margin-top: 15px;
+  width: 45px;
+  height: 4px;
+  margin-top: 8px;
   border-radius: 10px;
   background: #16a085;
 }
@@ -518,11 +508,11 @@
 
 .resources-card {
   background: #ffffff;
-  border-radius: 18px;
-  padding: 34px;
+  border-radius: 14px;
+  padding: 24px;
   box-shadow:
-    0 15px 45px rgba(20, 80, 70, 0.08),
-    0 3px 12px rgba(20, 80, 70, 0.04);
+    0 12px 35px rgba(20, 80, 70, 0.07),
+    0 3px 10px rgba(20, 80, 70, 0.04);
 }
 
 /* =========================================
@@ -532,27 +522,27 @@
 .resources-card-header {
   display: flex;
   align-items: center;
-  gap: 22px;
-  margin-bottom: 28px;
+  gap: 15px;
+  margin-bottom: 18px;
 }
 
 .header-icon {
-  width: 66px;
-  height: 66px;
+  width: 54px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2px;
   color: #119b88;
   background: #e6f7f3;
-  border-radius: 15px;
-  font-size: 25px;
+  border-radius: 12px;
+  font-size: 22px;
 }
 
 .resources-card-header h3 {
   margin: 0;
   color: #0d4d48;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
 }
 
@@ -564,7 +554,7 @@
   width: 100%;
   overflow: hidden;
   border: 1px solid #dce9e6;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 /* =========================================
@@ -574,7 +564,7 @@
 .table-row {
   display: grid;
   grid-template-columns: 23% 54% 23%;
-  min-height: 59px;
+  min-height: 55px;
   border-bottom: 1px solid #dce9e6;
   transition:
     background 0.25s ease,
@@ -592,7 +582,7 @@
 .table-cell {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 9px 16px;
   color: #252a29;
   border-right: 1px solid #dce9e6;
 }
@@ -601,13 +591,12 @@
   border-right: none;
 }
 
-
 /* =========================================
    TABLE HEADER
 ========================================= */
 
 .table-header {
-  min-height: 72px;
+  min-height: 62px;
   color: #ffffff;
   background: linear-gradient(135deg, #12a98f, #08766c);
   border-bottom: none;
@@ -618,29 +607,29 @@
   border-color: rgba(255, 255, 255, 0.22);
 }
 
-.table_title{
-  font-size: 1.6rem;
+.table_title {
+  font-size: 1.4rem;
   font-family: Poppins;
 }
 
 .sr-header {
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .labor-header {
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .total-header {
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .hash-icon {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -651,7 +640,7 @@
 }
 
 .header-symbol {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 /* =========================================
@@ -661,7 +650,7 @@
 .serial {
   justify-content: center;
   color: #087c6c;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -670,21 +659,21 @@
 ========================================= */
 
 .labor {
-  gap: 18px;
-  font-size: 17px;
+  gap: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .labor-icon {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: #e6f7f3;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 /* =========================================
@@ -696,13 +685,13 @@
 }
 
 .number span {
-  min-width: 82px;
-  padding: 7px 14px;
+  min-width: 78px;
+  padding: 6px 12px;
   text-align: center;
   color: #087c6c;
   background: #e7f7f4;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 9px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -711,7 +700,7 @@
 ========================================= */
 
 .total-row {
-  min-height: 64px;
+  min-height: 58px;
   background: linear-gradient(135deg, #12a98f, #08766c);
   border-bottom: none;
 }
@@ -723,21 +712,21 @@
 
 .total-label {
   justify-content: center;
-  gap: 12px;
-  font-size: 18px;
+  gap: 10px;
+  font-size: 17px;
 }
 
 .total-label span {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .total-number {
   justify-content: center;
-  font-size: 21px;
+  font-size: 19px;
 }
 
 /* =========================================
-   RESPONSIVE
+   TABLET RESPONSIVE
 ========================================= */
 
 @media (max-width: 900px) {
@@ -746,7 +735,7 @@
   }
 
   .resources-card {
-    padding: 24px;
+    padding: 20px;
   }
 
   .table-row {
@@ -771,13 +760,9 @@
    MOBILE
 ========================================= */
 
-/* =========================================
-   SMALL DEVICES — BELOW 600px
-========================================= */
-
 @media (max-width: 600px) {
   .resources-section {
-    padding: 40px 0;
+    padding: 5px 0 20px;
   }
 
   .resources-container {
@@ -785,95 +770,82 @@
     margin: 0 auto;
   }
 
-  /* ==============================
-     SECTION TITLE
-  ============================== */
+  /* SECTION TITLE */
 
   .resources-heading {
-    margin-bottom: 24px;
+    margin-bottom: 15px;
   }
 
   .resources-heading h2 {
-    font-size: 30px;
-    letter-spacing: -0.8px;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
   }
 
   .resources-heading span {
-    width: 45px;
+    width: 40px;
     height: 4px;
-    margin-top: 10px;
+    margin-top: 7px;
   }
 
-  /* ==============================
-     MAIN CARD
-  ============================== */
+  /* MAIN CARD */
 
   .resources-card {
-    padding: 14px;
-    border-radius: 14px;
+    padding: 13px;
+    border-radius: 12px;
   }
 
-  /* ==============================
-     CARD HEADER
-  ============================== */
+  /* CARD HEADER */
 
   .resources-card-header {
-    gap: 12px;
-    margin-bottom: 18px;
+    gap: 10px;
+    margin-bottom: 12px;
   }
 
   .header-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 11px;
-    font-size: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 17px;
   }
 
   .resources-card-header h3 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
-  /* ==============================
-     TABLE
-  ============================== */
+  /* TABLE */
 
   .manpower-table {
     width: 100%;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 9px;
   }
 
-  /* ==============================
-     ROW
-  ============================== */
+  /* ROW */
 
   .table-row {
     width: 100%;
     min-width: 0;
     grid-template-columns: 55px minmax(0, 1fr) 78px;
-    min-height: 54px;
+    min-height: 50px;
   }
 
-  /* ==============================
-     CELL
-  ============================== */
+  /* CELL */
 
   .table-cell {
-    padding: 7px 8px;
-    font-size: 13px;
+    padding: 6px 8px;
+    font-size: 12px;
   }
 
-  /* ==============================
-     TABLE HEADER
-  ============================== */
+  /* TABLE HEADER */
 
   .table-header {
-    min-height: 52px;
+    min-height: 48px;
   }
 
   .table-header .table-cell {
-    font-size: 12px;
-    padding: 7px 5px;
+    font-size: 11px;
+    padding: 6px 5px;
   }
 
   .sr-header {
@@ -890,32 +862,28 @@
   }
 
   .hash-icon {
-    width: 23px;
-    height: 23px;
-    border-radius: 6px;
-    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    font-size: 11px;
   }
 
   .header-symbol {
     display: none;
   }
 
-  /* ==============================
-     SERIAL
-  ============================== */
+  /* SERIAL */
 
   .serial {
-    font-size: 13px;
+    font-size: 12px;
   }
 
-  /* ==============================
-     LABOR
-  ============================== */
+  /* LABOR */
 
   .labor {
-    gap: 8px;
+    gap: 7px;
     min-width: 0;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
   }
 
@@ -926,15 +894,13 @@
   }
 
   .labor-icon {
-    width: 31px;
-    height: 31px;
+    width: 29px;
+    height: 29px;
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  /* ==============================
-     NUMBER
-  ============================== */
+  /* NUMBER */
 
   .number {
     justify-content: center;
@@ -943,30 +909,28 @@
   .number span {
     min-width: 0;
     width: 58px;
-    padding: 5px 5px;
+    padding: 5px;
     border-radius: 7px;
     font-size: 12px;
   }
 
-  /* ==============================
-     TOTAL
-  ============================== */
+  /* TOTAL */
 
   .total-row {
-    min-height: 55px;
+    min-height: 50px;
   }
 
   .total-label {
     gap: 5px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .total-label span {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .total-number {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -984,12 +948,12 @@
   }
 
   .resources-card-header h3 {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .header-icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
   .table-row {
@@ -997,18 +961,18 @@
   }
 
   .table-cell {
-    padding: 6px 5px;
+    padding: 5px;
   }
 
   .labor {
     gap: 6px;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .labor-icon {
-    width: 27px;
-    height: 27px;
-    font-size: 12px;
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
   }
 
   .number span {
@@ -1018,11 +982,11 @@
   }
 
   .table-header .table-cell {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .total-label {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .total-number {

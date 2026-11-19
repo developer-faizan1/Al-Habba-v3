@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AL Habbai Contracting | Dubai</title>
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/projectDetailsMenu.css" />
-    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/contcat.css" />
     <!-- aos library css  -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -14,913 +15,769 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
     <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Website JavaScript -->
     <script src="./js/projectDetailsMenu.js" defer></script>
-    <script src="./js/submit.js" defer></script>
-  </head>
+    <script src="./js/contact.js" defer></script>
+</head>
 
-  <body>
+<body>
+
     <!-- Nav -->
-  <header class="global-banner">
-    <!-- Navigation -->
-    <div class="nav__menu__wrapper" id="navbar">
-      <div class="container">
-        <nav>
-          <a href="index.html">
-            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
-          </a>
+    <header class="global-banner">
+        <!-- Navigation -->
+        <div class="nav__menu__wrapper" id="navbar">
+            <div class="container">
+                <nav>
+                    <a href="index.html">
+                        <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
+                    </a>
 
-          <div class="nav-links" id="navLinks">
-            <!-- Close Icon -->
-            <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+                    <div class="nav-links" id="navLinks">
+                        <!-- Close Icon -->
+                        <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
 
-            <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="./projects.html">Projects</a></li>
-              <li><a href="./gallery.html">Gallery</a></li>
-              <li><a href="./about.html">About US</a></li>
-              <li><a href="./awardsNews.html">Awards & News</a></li>
-              <li><a href="./principals.html">Principals</a></li>
-              <li><a href="./careers.html">Careers</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-            </ul>
-          </div>
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="./projects.html">Projects</a></li>
+                            <li><a href="./gallery.html">Gallery</a></li>
+                            <li><a href="./about.html">About US</a></li>
+                            <li><a href="./awardsNews.html">Awards & News</a></li>
+                            <li><a href="./principals.html">Principals</a></li>
+                            <li><a href="./careers.html">Careers</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </div>
 
-            <!-- our profile -->
-            <a href="./projects.html" class="nav-cta">
-              <span>Our Profile</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
+                    <!-- our profile -->
+                    <a href="./projects.html" class="nav-cta">
+                        <span>Our Profile</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
 
-          <!-- Menu Icon -->
+                    <!-- Menu Icon -->
 
-          <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-        </nav>
-      </div>
-    </div>
+                    <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </nav>
+            </div>
+        </div>
 
         <!-- Banner text (moved here from the gallery section) -->
-    <div class="gl-hero">
-      <div class="gl-head gl-head--hero">
-        <span class="gl-eyebrow" data-gl-reveal>GET IN TOUCH</span>
-        <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
-         <em>Let's Talk</em> About Your Project
-        </h2>
-       
-      </div>
-    </div>
-  </header>
-  <!-- Nav End -->
+        <div class="gl-hero">
+            <div class="gl-head gl-head--hero">
+                <span class="gl-eyebrow" data-gl-reveal>GET IN TOUCH</span>
+                <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+                    <em>Let's Talk</em> About Your Project
+                </h2>
 
-    <!-- Contact -->
-    <section id="contact-us" class="contact-section">
-      <div class="contact-wrapper container">
-        <!-- =====================================
-         LEFT INFORMATION PANEL
-    ====================================== -->
-        <div class="contact-info" data-aos="fade-up">
-          <div class="mail-icon">
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-              <path d="m3 7 9 6 9-6"></path>
-            </svg>
-          </div>
-
-          <h1>Send Us a Message</h1>
-
-          <p class="intro">
-            We're here to help and answer any question you might have. We look
-            forward to hearing from you.
-          </p>
-
-          <div class="green-line"></div>
-
-          <!-- Office -->
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-                <circle cx="12" cy="10" r="2.5"></circle>
-              </svg>
             </div>
+        </div>
+    </header>
+    <!-- Nav End -->
 
-            <div>
-              <h3>Our Office</h3>
-              <p>
-                Al Yasmeen Building, 2nd Floor, Office 203 Hor Al Anz, Deira,
-                UAE
-              </p>
-            </div>
-          </div>
+    <main id="main">
+        <!-- ======================== CONTACT SECTION ======================== -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-info-title">
+            <div class="container">
+                <div class="contact-layout">
 
-          <!-- Phone -->
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2
-              19.79 19.79 0 0 1-8.63-3.07
-              19.5 19.5 0 0 1-6-6
-              19.79 19.79 0 0 1-3.07-8.67
-              A2 2 0 0 1 4.11 2h3
-              a2 2 0 0 1 2 1.72
-              12.84 12.84 0 0 0 .7 2.81
-              2 2 0 0 1-.45 2.11L8.09 9.91
-              a16 16 0 0 0 6 6l1.27-1.27
-              a2 2 0 0 1 2.11-.45
-              12.84 12.84 0 0 0 2.81.7
-              A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-            </div>
+                    <!-- Left column: contact information -->
+                    <div class="contact-info">
+                        <div class="reveal">
+                            <h2 class="panel-title" id="contact-info-title">Contact Information</h2>
+                            <p class="panel-text">Reach out through any of the channels below, or send us a message
+                                using the form.</p>
+                        </div>
 
-            <div>
-              <h3>Call Us</h3>
-              <p>+971 42628388</p>
-            </div>
-          </div>
+                        <ul class="info-list">
+                            <li class="reveal" style="--reveal-delay: 0ms">
+                                <article class="info-card">
+                                    <span class="info-card__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                    </span>
+                                    <div class="info-card__body">
+                                        <h3 class="info-card__title">Our Office</h3>
+                                        <address class="info-card__text">Al Yasmeen Building, 2nd Floor, Office 203, Hor
+                                            Al Anz, Deira, UAE</address>
+                                    </div>
+                                </article>
+                            </li>
 
-          <!-- Email -->
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <path d="m3 7 9 6 9-6"></path>
-              </svg>
-            </div>
+                            <li class="reveal" style="--reveal-delay: 80ms">
+                                <article class="info-card">
+                                    <span class="info-card__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                    </span>
+                                    <div class="info-card__body">
+                                        <h3 class="info-card__title">Call Us</h3>
+                                        <p class="info-card__text"><a class="info-card__link"
+                                                href="tel:+97142628388">+971 4 262 8388</a></p>
+                                    </div>
+                                </article>
+                            </li>
 
-            <div>
-              <h3>Email Us</h3>
-              <p>habbai@alhabbai.ae</p>
-            </div>
-          </div>
+                            <li class="reveal" style="--reveal-delay: 160ms">
+                                <article class="info-card">
+                                    <span class="info-card__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                            <polyline points="22,6 12,13 2,6" />
+                                        </svg>
+                                    </span>
+                                    <div class="info-card__body">
+                                        <h3 class="info-card__title">Email Us</h3>
+                                        <p class="info-card__text"><a class="info-card__link"
+                                                href="mailto:habbai@alhabbai.ae">habbai@alhabbai.ae</a></p>
+                                    </div>
+                                </article>
+                            </li>
 
-          <!-- Working Hours -->
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="9"></circle>
-                <polyline points="12 7 12 12 15 14"></polyline>
-              </svg>
-            </div>
+                            <li class="reveal" style="--reveal-delay: 240ms">
+                                <article class="info-card">
+                                    <span class="info-card__icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="12 6 12 12 16 14" />
+                                        </svg>
+                                    </span>
+                                    <div class="info-card__body">
+                                        <h3 class="info-card__title">Working Hours</h3>
+                                        <p class="info-card__text">Monday &ndash; Friday: 8:00 AM &ndash; 6:00 PM</p>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div>
-              <h3>Working Hours</h3>
-              <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                    <!-- Right column: enquiry form -->
+                    <div class="reveal" style="--reveal-delay: 120ms">
+                        <div class="form-card">
+                            <h2 class="panel-title" id="enquiry-title">Send Us an Enquiry</h2>
+
+                            <form class="form" id="enquiryForm" data-form="enquiry" method="post" novalidate
+                                aria-labelledby="enquiry-title">
+                                <div class="form-grid">
+
+                                    <div class="field">
+                                        <label for="enq-name">Name <span class="req" aria-hidden="true">*</span></label>
+                                        <input type="text" id="enq-name" name="name" autocomplete="name" required
+                                            minlength="2" maxlength="80" data-label="Name"
+                                            aria-describedby="enq-name-error">
+                                        <p class="field-error" id="enq-name-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="enq-email">Email <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="email" id="enq-email" name="email" autocomplete="email"
+                                            inputmode="email" autocapitalize="off" spellcheck="false" required
+                                            maxlength="120" data-label="Email" data-validate="email"
+                                            aria-describedby="enq-email-error">
+                                        <p class="field-error" id="enq-email-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="enq-phone">Phone</label>
+                                        <input type="tel" id="enq-phone" name="phone" autocomplete="tel" inputmode="tel"
+                                            maxlength="20" data-label="Phone" data-validate="phone"
+                                            aria-describedby="enq-phone-error">
+                                        <p class="field-error" id="enq-phone-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="enq-subject">Subject <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="enq-subject" name="subject" required minlength="3"
+                                            maxlength="120" data-label="Subject" aria-describedby="enq-subject-error">
+                                        <p class="field-error" id="enq-subject-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field field--full">
+                                        <label for="enq-department">Department <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <select id="enq-department" name="department" required data-label="Department"
+                                            data-required-message="Please select a department."
+                                            aria-describedby="enq-department-error">
+                                            <option value="" selected disabled>Select a department</option>
+                                            <option value="hr">HR</option>
+                                            <option value="tender">Tender</option>
+                                            <option value="account">Account</option>
+                                            <option value="general">General</option>
+                                        </select>
+                                        <p class="field-error" id="enq-department-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field field--full">
+                                        <label for="enq-message">Message <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <textarea id="enq-message" name="message" rows="6" required minlength="10"
+                                            maxlength="2000" data-label="Message"
+                                            aria-describedby="enq-message-error"></textarea>
+                                        <p class="field-error" id="enq-message-error" aria-live="polite"></p>
+                                    </div>
+
+                                </div>
+
+                                <button type="submit" class="btn" data-loading-text="Sending&hellip;">
+                                    <span class="btn__label">Submit Enquiry</span>
+                                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                    <span class="btn__spinner" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="form-status" data-status></div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!-- ================= SUBCONTRACTOR / SUPPLIER REGISTRATION ================= -->
+        <div class="registration-section" id="registration" aria-labelledby="registration-title">
+            <div class="container">
+                <div class="reg-shell reveal">
+
+                    <!-- Left: intro panel -->
+                    <aside class="reg-intro">
+                        <div class="reg-intro__inner">
+                            <span class="reg-eyebrow reg-stagger" style="--i: 0">BUSINESS OPPORTUNITIES</span>
+                            <h2 class="reg-title reg-stagger" id="registration-title" style="--i: 1"> <em>Subcontractor
+                                    & Supplier</em> Registration </h2>
+                            <p class="reg-intro__text reg-stagger" style="--i: 2">We welcome qualified subcontractors
+                                and suppliers interested in working with AL Habbai Contracting. Please complete the
+                                registration form below to introduce your company and services.</p>
+
+                            <div class="reg-checklist reg-stagger" style="--i: 3">
+                                <p class="reg-checklist__title">Have these ready</p>
+                                <ul>
+                                    <li><span class="reg-checklist__icon" aria-hidden="true"><svg viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2.6"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg></span>Trade license number and issuing authority</li>
+                                    <li><span class="reg-checklist__icon" aria-hidden="true"><svg viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2.6"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg></span>Company address and emirate</li>
+                                    <li><span class="reg-checklist__icon" aria-hidden="true"><svg viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2.6"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg></span>Contact person and mobile number</li>
+                                </ul>
+                            </div>
+                            <div class="reg-help reg-stagger" style="--i: 4">
+                                <p class="reg-help__title">Need assistance?</p>
+                                <a class="reg-help__link" href="tel:+97142628388">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    +971 4 262 8388
+                                </a>
+                                <a class="reg-help__link" href="mailto:habbai@alhabbai.ae">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                    habbai@alhabbai.ae
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right: two-step registration form -->
+                    <div class="reg-form-wrap">
+                        <form class="form reg-form" id="registrationForm" data-form="registration" data-wizard
+                            method="post" novalidate aria-labelledby="registration-title">
+
+                            <ol class="wizard-progress" aria-label="Registration progress">
+                                <li class="wizard-progress__item is-active" data-step-indicator aria-current="step">
+                                    <span class="wizard-progress__dot"><span class="wizard-progress__num">1</span><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg></span>
+                                    <span class="wizard-progress__label">Company</span>
+                                </li>
+                                <li class="wizard-progress__item" data-step-indicator>
+                                    <span class="wizard-progress__dot"><span class="wizard-progress__num">2</span><svg
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg></span>
+                                    <span class="wizard-progress__label">Contact</span>
+                                </li>
+                            </ol>
+                            <div class="wizard-track" aria-hidden="true"><span class="wizard-track__bar"></span></div>
+
+                            <!-- STEP 1: type, company information and location -->
+                            <div class="wizard-step" data-step>
+                                <p class="wizard-step__kicker">Step 1 of 2</p>
+                                <h3 class="wizard-step__title" tabindex="-1">Company Information</h3>
+
+                                <div class="field field--type">
+                                    <fieldset class="type-picker">
+                                        <legend class="type-picker__legend">I am registering as <span class="req"
+                                                aria-hidden="true">*</span></legend>
+                                        <div class="type-picker__options">
+
+                                            <label class="type-card">
+                                                <input type="radio" name="registrationType" value="subcontractor"
+                                                    required data-label="Registration type"
+                                                    data-required-message="Please choose whether you are a subcontractor or a supplier."
+                                                    data-work-label="Types of Work"
+                                                    data-work-placeholder="e.g. Civil, MEP, finishing works"
+                                                    aria-describedby="reg-type-error">
+                                                <span class="type-card__body">
+                                                    <span class="type-card__icon" aria-hidden="true">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.8" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path
+                                                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span class="type-card__text">
+                                                        <span class="type-card__title">Subcontractor</span>
+                                                        <span class="type-card__desc">Carry out trade or specialist
+                                                            works</span>
+                                                    </span>
+                                                    <span class="type-card__check" aria-hidden="true">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="3" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </label>
+
+                                            <label class="type-card">
+                                                <input type="radio" name="registrationType" value="supplier" required
+                                                    data-label="Registration type"
+                                                    data-required-message="Please choose whether you are a subcontractor or a supplier."
+                                                    data-work-label="Types of Work / Materials Supplied"
+                                                    data-work-placeholder="e.g. Steel, cement, electrical materials"
+                                                    aria-describedby="reg-type-error">
+                                                <span class="type-card__body">
+                                                    <span class="type-card__icon" aria-hidden="true">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.8" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21" />
+                                                            <path
+                                                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                                            <line x1="12" y1="22.08" x2="12" y2="12" />
+                                                        </svg>
+                                                    </span>
+                                                    <span class="type-card__text">
+                                                        <span class="type-card__title">Supplier</span>
+                                                        <span class="type-card__desc">Provide materials, equipment or
+                                                            products</span>
+                                                    </span>
+                                                    <span class="type-card__check" aria-hidden="true">
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="3" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polyline points="20 6 9 17 4 12" />
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                    </fieldset>
+                                    <p class="field-error" id="reg-type-error" aria-live="polite"></p>
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+                                        <label for="reg-company">Name of Company <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="reg-company" name="companyName"
+                                            autocomplete="organization" required minlength="2" maxlength="120"
+                                            data-label="Name of Company" aria-describedby="reg-company-error">
+                                        <p class="field-error" id="reg-company-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-work"><span data-work-target data-default="Types of Work">Types
+                                                of Work</span> <span class="req" aria-hidden="true">*</span></label>
+                                        <input type="text" id="reg-work" name="typesOfWork" required minlength="2"
+                                            maxlength="160" placeholder="e.g. Civil, MEP, materials supply"
+                                            data-default-placeholder="e.g. Civil, MEP, materials supply"
+                                            data-label="Types of Work" aria-describedby="reg-work-error">
+                                        <p class="field-error" id="reg-work-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-license">Trade License No. <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="reg-license" name="tradeLicenseNo" required
+                                            maxlength="60" autocapitalize="characters" data-label="Trade License No."
+                                            aria-describedby="reg-license-error">
+                                        <p class="field-error" id="reg-license-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-authority">Issuing Authority <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="reg-authority" name="issuingAuthority" required
+                                            maxlength="120" data-label="Issuing Authority"
+                                            aria-describedby="reg-authority-error">
+                                        <p class="field-error" id="reg-authority-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field field--full">
+                                        <label for="reg-address">Address <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <textarea id="reg-address" name="address" rows="3" autocomplete="street-address"
+                                            required minlength="5" maxlength="300" data-label="Address"
+                                            aria-describedby="reg-address-error"></textarea>
+                                        <p class="field-error" id="reg-address-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field field--full">
+                                        <label for="reg-emirate">Emirates <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <select id="reg-emirate" name="emirate" required data-label="Emirates"
+                                            data-required-message="Please select an emirate."
+                                            aria-describedby="reg-emirate-error">
+                                            <option value="" selected disabled>Select an emirate</option>
+                                            <option value="dubai">Dubai</option>
+                                            <option value="abu-dhabi">Abu Dhabi</option>
+                                            <option value="sharjah">Sharjah</option>
+                                            <option value="ajman">Ajman</option>
+                                            <option value="umm-al-quwain">Umm Al Quwain</option>
+                                            <option value="ras-al-khaimah">Ras Al Khaimah</option>
+                                            <option value="fujairah">Fujairah</option>
+                                        </select>
+                                        <p class="field-error" id="reg-emirate-error" aria-live="polite"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: contact information -->
+                            <div class="wizard-step" data-step hidden>
+                                <p class="wizard-step__kicker">Step 2 of 2</p>
+                                <h3 class="wizard-step__title" tabindex="-1">Contact Information</h3>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+                                        <label for="reg-telephone">Telephone</label>
+                                        <input type="tel" id="reg-telephone" name="telephone" autocomplete="tel"
+                                            inputmode="tel" maxlength="20" data-label="Telephone" data-validate="phone"
+                                            aria-describedby="reg-telephone-error">
+                                        <p class="field-error" id="reg-telephone-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-fax">Fax</label>
+                                        <input type="text" id="reg-fax" name="fax" inputmode="tel" maxlength="30"
+                                            data-label="Fax" aria-describedby="reg-fax-error">
+                                        <p class="field-error" id="reg-fax-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-email">Email <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="email" id="reg-email" name="email" autocomplete="email"
+                                            inputmode="email" autocapitalize="off" spellcheck="false" required
+                                            maxlength="120" data-label="Email" data-validate="email"
+                                            aria-describedby="reg-email-error">
+                                        <p class="field-error" id="reg-email-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-website">Website</label>
+                                        <input type="url" id="reg-website" name="website" autocomplete="url"
+                                            inputmode="url" autocapitalize="off" spellcheck="false" maxlength="160"
+                                            placeholder="www.example.com" data-label="Website" data-validate="url"
+                                            aria-describedby="reg-website-error">
+                                        <p class="field-error" id="reg-website-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-contact-person">Contact Person <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="text" id="reg-contact-person" name="contactPerson"
+                                            autocomplete="name" required minlength="2" maxlength="80"
+                                            data-label="Contact Person" aria-describedby="reg-contact-person-error">
+                                        <p class="field-error" id="reg-contact-person-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="reg-designation">Designation</label>
+                                        <input type="text" id="reg-designation" name="designation"
+                                            autocomplete="organization-title" maxlength="80" data-label="Designation"
+                                            aria-describedby="reg-designation-error">
+                                        <p class="field-error" id="reg-designation-error" aria-live="polite"></p>
+                                    </div>
+
+                                    <div class="field field--full">
+                                        <label for="reg-mobile">Mobile Number <span class="req"
+                                                aria-hidden="true">*</span></label>
+                                        <input type="tel" id="reg-mobile" name="mobileNumber" autocomplete="tel"
+                                            inputmode="tel" required maxlength="20" data-label="Mobile Number"
+                                            data-validate="phone" aria-describedby="reg-mobile-error">
+                                        <p class="field-error" id="reg-mobile-error" aria-live="polite"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="wizard-actions" data-actions>
+                                <button type="button" class="btn btn--ghost" data-wizard-back hidden>
+                                    <svg class="btn__icon btn__icon--back" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <line x1="19" y1="12" x2="5" y2="12" />
+                                        <polyline points="12 19 5 12 12 5" />
+                                    </svg>
+                                    <span class="btn__label">Back</span>
+                                </button>
+                                <button type="button" class="btn" data-wizard-next>
+                                    <span class="btn__label">Continue</span>
+                                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                </button>
+                                <button type="submit" class="btn" data-loading-text="Submitting&hellip;" hidden>
+                                    <span class="btn__label">Register Your Company</span>
+                                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                    <span class="btn__spinner" aria-hidden="true"></span>
+                                </button>
+                            </div>
+
+                            <div class="form-status" data-status></div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <!-- =====================================
-         RIGHT FORM
-    ====================================== -->
-        <div class="contact-form" data-aos="fade-up">
-          <form id="contactForm" novalidate>
-            <!-- Name + Email -->
-            <div class="form-row">
-              <!-- Name -->
-              <div class="form-group">
-                <label for="name"> Name <span class="required">*</span> </label>
+        <!-- ============================ GOOGLE MAP ============================ -->
+        <section class="map-section" id="location" aria-labelledby="map-title">
+            <div class="container">
 
-                <div class="input-wrapper">
-                  <div class="input-icon">
-                    <svg viewBox="0 0 24 24">
-                      <circle cx="12" cy="8" r="3"></circle>
-                      <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path>
-                    </svg>
-                  </div>
-
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    maxlength="80"
-                    autocomplete="name"
-                    required
-                  />
+                <div class="gl-head reveal">
+                    <span class="gl-eyebrow">LOCATION</span>
+                    <h2 class="gl-title" id="map-title">Find Our <em>Office</em></h2>
+                    <address class="gl-sub map-address">Al Yasmeen Building, 2nd Floor, Office 203, Hor Al Anz, Deira,
+                        UAE</address>
                 </div>
 
-                <small class="error-message" id="nameError"></small>
-              </div>
 
-              <!-- Email -->
-              <div class="form-group">
-                <label for="email">
-                  Email <span class="required">*</span>
-                </label>
 
-                <div class="input-wrapper">
-                  <div class="input-icon">
-                    <svg viewBox="0 0 24 24">
-                      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                      <path d="m3 7 9 6 9-6"></path>
-                    </svg>
-                  </div>
-
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    maxlength="120"
-                    autocomplete="email"
-                    required
-                  />
+                <div class="map-frame reveal" id="officeMap" data-embed-url="">
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3607.8487333336607!2d55.3446904!3d25.2756735!3m2!1i1024!2i768!4f13.1!2m1!1sAl%20Yasmeen%20Building%2C%202nd%20Floor%2C%20Office%20203%2C%20Hor%20Al%20Anz%2C%20Deira%2C%20Dubai!5e0!3m2!1sen!2sae!4v1795068673515!5m2!1sen!2sae"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
                 </div>
+        </section>
 
-                <small class="error-message" id="emailError"></small>
-              </div>
-            </div>
-
-            <!-- Phone + Subject -->
-            <div class="form-row">
-              <!-- Phone -->
-              <div class="form-group">
-                <label for="phone">
-                  Phone <span class="required">*</span>
-                </label>
-
-                <div class="input-wrapper">
-                  <div class="input-icon">
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2
-                    19.79 19.79 0 0 1-8.63-3.07
-                    19.5 19.5 0 0 1-6-6
-                    19.79 19.79 0 0 1-3.07-8.67
-                    A2 2 0 0 1 4.11 2h3
-                    a2 2 0 0 1 2 1.72
-                    12.84 12.84 0 0 0 .7 2.81
-                    2 2 0 0 1-.45 2.11L8.09 9.91
-                    a16 16 0 0 0 6 6l1.27-1.27
-                    a2 2 0 0 1 2.11-.45
-                    12.84 12.84 0 0 0 2.81.7
-                    A2 2 0 0 1 22 16.92z"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    maxlength="20"
-                    autocomplete="tel"
-                    required
-                  />
-                </div>
-
-                <small class="error-message" id="phoneError"></small>
-              </div>
-
-              <!-- Subject -->
-              <div class="form-group">
-                <label for="subject">
-                  Subject <span class="required">*</span>
-                </label>
-
-                <div class="input-wrapper">
-                  <div class="input-icon">
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="m4 20 4.5-1 11-11
-                    a2.1 2.1 0 0 0-3-3l-11 11L4 20Z"
-                      ></path>
-                      <path d="m14.5 6.5 3 3"></path>
-                    </svg>
-                  </div>
-
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Write the subject"
-                    maxlength="150"
-                    required
-                  />
-                </div>
-
-                <small class="error-message" id="subjectError"></small>
-              </div>
-            </div>
-
-            <!-- Department -->
-            <div class="form-group department-group">
-              <label for="department">
-                Department <span class="required">*</span>
-              </label>
-
-              <div class="input-wrapper select-wrapper">
-                <div class="input-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M4 21V4h16v17"></path>
-                    <path d="M8 8h2"></path>
-                    <path d="M14 8h2"></path>
-                    <path d="M8 12h2"></path>
-                    <path d="M14 12h2"></path>
-                    <path d="M9 21v-4h6v4"></path>
-                  </svg>
-                </div>
-
-                <select id="department" name="department" required>
-                  <option value="" selected disabled>
-                    Select a Department
-                  </option>
-
-                  <option value="HR">HR</option>
-                  <option value="Tender">Tender</option>
-                  <option value="Account">Account</option>
-                  <option value="General">General</option>
-                </select>
-              </div>
-
-              <small class="error-message" id="departmentError"></small>
-            </div>
-
-            <!-- Message -->
-            <div class="form-group message-group">
-              <label for="message">
-                Message <span class="required">*</span>
-              </label>
-
-              <div class="textarea-wrapper">
-                <div class="input-icon textarea-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M21 11.5a8.38 8.38 0 0 1-9
-                  8.5 9.4 9.4 0 0 1-4-.9L3 21l1.9-4
-                  A8.38 8.38 0 0 1 3 11.5
-                  8.38 8.38 0 0 1 12 3
-                  a8.38 8.38 0 0 1 9 8.5Z"
-                    ></path>
-                  </svg>
-                </div>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  minlength="10"
-                  maxlength="1000"
-                  placeholder="Type your message here..."
-                  required
-                ></textarea>
-
-                <span class="character-count">
-                  <span id="charCount">0</span>/1000
-                </span>
-              </div>
-
-              <small class="error-message" id="messageError"></small>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" class="submit-btn" id="submitBtn">
-              <svg viewBox="0 0 24 24">
-                <path d="m22 2-7 20-4-9-9-4Z"></path>
-                <path d="M22 2 11 13"></path>
-              </svg>
-
-              <span>Submit Message</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- map -->
-    <section class="contact-map-section">
-      <div class="contact-map-header">
-        <span class="map-eyebrow" data-aos="fade-down">FIND US</span>
-        <h2 data-aos="fade-down">Visit Our <span>Office</span></h2>
-        <p data-aos="fade-down">
-          Find us at our office in Hor Al Anz, Deira, Dubai.
-        </p>
-      </div>
-
-      <div class="modern-map-wrapper container" data-aos="fade-up">
-        <!-- Google Map -->
-        <iframe
-          src="https://www.google.com/maps?q=Salah%20Al%20Din%20St%20-%20Hor%20Al%20Anz%20-%20Deira%20-%20Dubai%20-%20United%20Arab%20Emirates&output=embed"
-          width="100%"
-          height="500"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
-      </div>
-    </section>
-
-    <div class="container">
-      <h2
-        class="page__title__text page__title__text__space"
-        data-aos="fade-down"
-      >
-        SUBCONTRACTOR / SUPPLIER REGISTRATION
-      </h2>
-    </div>
-    <!-- contact -->
-    <main class="registration-page" data-aos="fade-up">
-      <div class="registration-card">
-        <!-- ================= FORM ================= -->
-        <form class="registration-form">
-          <!-- Activity -->
-          <div class="activity-section conatiner">
-            <div class="section-heading">
-              <h2>Activity</h2>
-              <span></span>
-            </div>
-
-            <div class="activity-options">
-              <label class="activity-card active">
-                <input type="radio" name="activity" value="supplier" checked />
-                <span class="custom-radio"></span>
-                <span>Supplier</span>
-              </label>
-
-              <label class="activity-card">
-                <input type="radio" name="activity" value="subcontractor" />
-                <span class="custom-radio"></span>
-                <span>Sub Contractor</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- ================= FORM GRID ================= -->
-          <div class="form-grid">
-            <!-- Company -->
-            <div class="form-group">
-              <label>
-                Name of Company
-                <span>*</span>
-              </label>
-              <div class="input-box">
-                <input type="text" placeholder="Enter company name" required />
-              </div>
-            </div>
-
-            <!-- Type of Works -->
-            <div class="form-group">
-              <label>
-                Type of Works
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input type="text" placeholder="Enter type of works" required />
-              </div>
-            </div>
-
-            <!-- Trade License -->
-            <div class="form-group">
-              <label>
-                Trade License No.
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="text"
-                  placeholder="Enter trade license no."
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Issuing Authority -->
-            <div class="form-group">
-              <label>
-                Issuing Authority
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="text"
-                  placeholder="Enter issuing authority"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Address -->
-            <div class="form-group address-field">
-              <label>
-                Address
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="text"
-                  placeholder="Enter complete address"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Emirates -->
-            <div class="form-group">
-              <label>
-                Emirates
-                <span>*</span>
-              </label>
-
-              <div class="input-box select-box">
-                <select required>
-                  <option value="">Select Emirates</option>
-                  <option>Dubai</option>
-                  <option>Abu Dhabi</option>
-                  <option>Sharjah</option>
-                  <option>Ajman</option>
-                  <option>Umm Al Quwain</option>
-                  <option>Ras Al Khaimah</option>
-                  <option>Fujairah</option>
-                </select>
-
-                <i class="ri-arrow-down-s-line arrow"></i>
-              </div>
-            </div>
-
-            <!-- Telephone -->
-            <div class="form-group">
-              <label>
-                Telephone
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="tel"
-                  placeholder="Enter telephone number"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Fax -->
-            <div class="form-group">
-              <label>Fax</label>
-
-              <div class="input-box">
-                <input type="text" placeholder="Enter fax number" required />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-              <label>
-                Email
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="email"
-                  placeholder="Enter email address"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Website -->
-            <div class="form-group">
-              <label>Website</label>
-
-              <div class="input-box">
-                <input type="url" placeholder="Enter website" required />
-              </div>
-            </div>
-
-            <!-- Contact Person -->
-            <div class="form-group">
-              <label>
-                Contact Person
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input
-                  type="text"
-                  placeholder="Enter contact person name"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- Designation -->
-            <div class="form-group">
-              <label>Designation</label>
-
-              <div class="input-box">
-                <input type="text" placeholder="Enter designation" required />
-              </div>
-            </div>
-
-            <!-- Mobile -->
-            <div class="form-group">
-              <label>
-                Mobile Number
-                <span>*</span>
-              </label>
-
-              <div class="input-box">
-                <input type="tel" placeholder="Enter mobile number" required />
-              </div>
-            </div>
-          </div>
-          <!-- ================= FOOTER ================= -->
-          <div class="form-footer">
-            <button type="submit" class="submit-btn">Submit</button>
-            <div class="security-info">
-              <div class="security-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18" />
-                  <path
-                    d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"
-                  />
-                  <line x1="1" y1="1" x2="23" y2="23" />
-                </svg>
-              </div>
-              <div>
-                <strong>Your information is secure with us</strong>
-                <p>We respect your privacy and protect your data</p>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-      <div class="container">
-        <div class="footer__wrapper" data-aos="fade-up">
-          <div class="footer__col2">
-            <h3 class="footer__text__title">Quick Links</h3>
-            <ol class="footer__text">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="./projects.html">Projects</a></li>
-              <li><a href="./gallery.html">Gallery</a></li>
-              <li><a href="./awardsNews.html">Awards & News</a></li>
-            </ol>
-          </div>
-          <div class="footer__col3">
-            <h3 class="footer__text__title">Staff Links</h3>
-            <ol class="footer__text">
-              <li>
-                <a href="https://login.microsoftonline.com/" target="_blank"
-                  >Staff Login</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://alhabbai.fortiddns.com:6060/Dotapps/DotappsWS/Default.aspx"
-                  target="_blank"
-                  >Attendance</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://dms.alhabbai.app:444/dms/#/login"
-                  target="_blank"
-                  >DMS</a
-                >
-              </li>
-            </ol>
-          </div>
-          <div class="footer__col4">
-            <h3 class="footer__text__title">Contact</h3>
-            <ol class="footer__text">
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <a href="#"> habbai@alhabbai.ae</a>
-              </li>
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-                <a href="#">Tel : +97142628388</a>
-              </li>
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <a href="#">Fax : +97142627789</a>
-              </li>
+        <div class="container">
+            <div class="footer__wrapper" data-aos="fade-up">
+                <div class="footer__col2">
+                    <h3 class="footer__text__title">Quick Links</h3>
+                    <ol class="footer__text">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="./projects.html">Projects</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./awardsNews.html">Awards & News</a></li>
+                    </ol>
+                </div>
+                <div class="footer__col3">
+                    <h3 class="footer__text__title">Staff Links</h3>
+                    <ol class="footer__text">
+                        <li>
+                            <a href="https://login.microsoftonline.com/" target="_blank">Staff Login</a>
+                        </li>
+                        <li>
+                            <a href="http://alhabbai.fortiddns.com:6060/Dotapps/DotappsWS/Default.aspx"
+                                target="_blank">Attendance</a>
+                        </li>
+                        <li>
+                            <a href="https://dms.alhabbai.app:444/dms/#/login" target="_blank">DMS</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="footer__col4">
+                    <h3 class="footer__text__title">Contact</h3>
+                    <ol class="footer__text">
+                        <li class="footer__img__info_wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <a href="#"> habbai@alhabbai.ae</a>
+                        </li>
+                        <li class="footer__img__info_wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <a href="#">Tel : +97142628388</a>
+                        </li>
+                        <li class="footer__img__info_wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <a href="#">Fax : +97142627789</a>
+                        </li>
 
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <a href="#">P.O Box 21313, Dubai – UAE</a>
-              </li>
-            </ol>
-          </div>
-          <div class="footer__col1">
-            <div class="footer__socials">
-              <h4 class="footer__socials__title">Follow us</h4>
-              <ol class="footer__socials__list">
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-facebook"
-                    >
-                      <path
-                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                      />
-                    </svg>
-                  </a>
-                </li>
+                        <li class="footer__img__info_wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <a href="#">P.O Box 21313, Dubai – UAE</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="footer__col1">
+                    <div class="footer__socials">
+                        <h4 class="footer__socials__title">Follow us</h4>
+                        <ol class="footer__socials__list">
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-facebook">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                    </svg>
+                                </a>
+                            </li>
 
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path
-                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                      />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  </a>
-                </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                    </svg>
+                                </a>
+                            </li>
 
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
-                      />
-                      <polygon
-                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                      />
-                    </svg>
-                  </a>
-                </li>
-              </ol>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
     <!-- Footer Section End -->
 
-     <!-- Change WhatsApp number / email here if needed -->
+    <!-- Change WhatsApp number / email here if needed -->
     <div class="fab fab--left">
-      <a
-        class="fab__btn fab__btn--email"
-        href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
-        aria-label="Send us an email"
-        data-label="Email us"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <polyline points="22,6.5 12,13 2,6.5" />
-        </svg>
-      </a>
+        <a class="fab__btn fab__btn--email" href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
+            aria-label="Send us an email" data-label="Email us">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="22,6.5 12,13 2,6.5" />
+            </svg>
+        </a>
     </div>
 
     <div class="fab fab--right">
-      <button
-        type="button"
-        class="fab__btn fab__btn--top"
-        id="backToTop"
-        aria-label="Back to top"
-        data-label="Back to top"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="18 15 12 9 6 15" />
-        </svg>
-      </button>
+        <button type="button" class="fab__btn fab__btn--top" id="backToTop" aria-label="Back to top"
+            data-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="18 15 12 9 6 15" />
+            </svg>
+        </button>
 
-      <a
-        class="fab__btn fab__btn--whatsapp"
-        href="https://wa.me/97142628388?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        data-label="Chat with us"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z" transform="translate(.4 .25) scale(.98)" />
-        </svg>
-      </a>
+        <a class="fab__btn fab__btn--whatsapp"
+            href="https://wa.me/97142628388?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+            target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" data-label="Chat with us">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                    d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z"
+                    transform="translate(.4 .25) scale(.98)" />
+            </svg>
+        </a>
     </div>
-  </body>
+
+</body>
+
 </html>

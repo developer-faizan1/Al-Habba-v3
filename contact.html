@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
     <!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Website JavaScript -->
     <script src="./js/projectDetailsMenu.js" defer></script>
     <script src="./js/contact.js" defer></script>
@@ -49,7 +49,12 @@
                             <li><a href="./about.html">About US</a></li>
                             <li><a href="./awardsNews.html">Awards & News</a></li>
                             <li><a href="./principals.html">Principals</a></li>
-                            <li><a href="./careers.html">Careers</a></li>
+                            <li class="has-submenu">
+                                <a href="./careers.html">Careers</a>
+                                <ul class="submenu">
+                                    <li><a href="./work-with-us.html">Work With Us</a></li>
+                                </ul>
+                            </li>
                             <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
@@ -80,10 +85,13 @@
         <!-- Banner text (moved here from the gallery section) -->
         <div class="gl-hero">
             <div class="gl-head gl-head--hero">
-                <span class="gl-eyebrow" data-gl-reveal>GET IN TOUCH</span>
-                <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+                <span class="gl-eyebrow" data-gl-reveal="">GET IN TOUCH</span>
+                <h2 class="gl-title" data-gl-reveal="" style="--d: 80ms">
                     <em>Let's Talk</em> About Your Project
                 </h2>
+                <p class="gl-sub is-in" data-gl-reveal="" style="--d: 160ms">
+                    Have a project in mind? Connect with our team to turn your vision into reality.
+                </p>
 
             </div>
         </div>

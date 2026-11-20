@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Careers – Apply Now | Al Habbai Contracting</title>
+
+<!-- custom css -->
+<link rel="stylesheet" href="./css/global.css" />
+<link rel="stylesheet" href="./css/projectDetailsMenu.css">
+<link rel="stylesheet" href="./css/work-with-us.css">
+  <!-- aos library css  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<!-- aos script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script src="./js/work-with-us.js" defer></script>
+<script src="./js/projectDetailsMenu.js" defer></script>
+
+
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="global-banner">
+    <!-- Navigation -->
+    <div class="nav__menu__wrapper" id="navbar">
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
+          </a>
+
+          <div class="nav-links" id="navLinks">
+            <!-- Close Icon -->
+            <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./about.html">About US</a></li>
+              <li><a href="./awardsNews.html">Awards & News</a></li>
+              <li><a href="./principals.html">Principals</a></li>
+              <li class="has-submenu">
+                <a href="./careers.html">Careers</a>
+                <ul class="submenu">
+                  <li><a href="./work-with-us.html">Work With Us</a></li>
+                </ul>
+              </li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- our profile -->
+          <a href="./projects.html" class="nav-cta">
+            <span>Our Profile</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Menu Icon -->
+
+          <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Banner text (moved here from the gallery section) -->
+    <div class="gl-hero">
+      <div class="gl-head gl-head--hero">
+        <span class="gl-eyebrow" data-gl-reveal>WORK WITH US</span>
+        <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+         BUILD YOUR <em> FUTURE WITH US</em>
+        </h2>
+         <p class="gl-sub is-in" data-gl-reveal="" style="--d: 160ms">
+     Join our team of professionals and contribute to meaningful projects while building your future with us.
+        </p>
+      </div>
+    </div>
+  </header>
+  <!-- Nav End -->
+
+<!-- ============ keep your existing header here ============ -->
+<section class="cf-section" id="apply">
+  <span class="cf-bg cf-bg--1"></span>
+  <span class="cf-bg cf-bg--2"></span>
+
+  <div class="cf-wrap">
+    <div class="cf-card" id="cfCard">
+      <!-- stepper -->
+      <ol class="cf-steps" id="cfSteps">
+        <span class="cf-steps__fill" id="cfFill"></span>
+        <li class="cf-step is-active"><span class="cf-step__dot">1</span><span class="cf-step__label">Personal</span></li>
+        <li class="cf-step"><span class="cf-step__dot">2</span><span class="cf-step__label">Contact</span></li>
+        <li class="cf-step"><span class="cf-step__dot">3</span><span class="cf-step__label">Availability</span></li>
+        <li class="cf-step"><span class="cf-step__dot">4</span><span class="cf-step__label">Skills &amp; CV</span></li>
+      </ol>
+
+      <form id="cfForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+
+        <!-- STEP 1 -->
+        <div class="cf-panel is-active">
+          <h3>Let’s start with the basics</h3>
+          <p class="cf-hint">Which role are you applying for, and who are you?</p>
+          <div class="cf-grid">
+            <div class="cf-field cf-field--select" style="--i:0">
+              <select name="post_applied_for" id="post" required>
+                <option value="" hidden></option>
+                <!-- Replace with your real positions -->
+                <option>Site Engineer</option><option>Project Manager</option><option>Foreman</option>
+                <option>Electrician</option><option>Plumber</option><option>Mason</option>
+                <option>Carpenter</option><option>Driver</option><option>Accountant</option><option>Other</option>
+              </select>
+              <label for="post">Post Applied For *</label>
+              <div class="cf-error">Please select a position</div>
+            </div>
+
+            <div class="cf-field" style="--i:1">
+              <input type="text" name="name" id="name" placeholder=" " required autocomplete="name" />
+              <label for="name">Full Name *</label>
+              <div class="cf-error">Please enter your name</div>
+            </div>
+
+            <div class="cf-field" style="--i:2">
+              <input type="number" name="age" id="age" placeholder=" " min="18" max="70" required />
+              <label for="age">Age *</label>
+              <div class="cf-error">Enter a valid age (18–70)</div>
+            </div>
+
+            <div class="cf-field cf-field--select" style="--i:3">
+              <select name="marital_status" id="marital">
+                <option value="" hidden></option>
+                <option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option>
+              </select>
+              <label for="marital">Marital Status</label>
+            </div>
+
+            <div class="cf-field cf-field--select" style="--i:4">
+              <select name="nationality" id="nat" required>
+                <option value="" hidden></option>
+                <!-- Replace with your full nationality list -->
+                <option>Indian</option><option>Pakistani</option><option>Bangladeshi</option>
+                <option>Filipino</option><option>Nepalese</option><option>Sri Lankan</option>
+                <option>Egyptian</option><option>Jordanian</option><option>Emirati</option><option>Other</option>
+              </select>
+              <label for="nat">Nationality *</label>
+              <div class="cf-error">Please select nationality</div>
+            </div>
+
+            <div class="cf-field" style="--i:5">
+              <input type="text" name="languages" id="lang" placeholder=" " />
+              <label for="lang">Languages Known</label>
+            </div>
+
+            <div class="cf-field cf-field--select" style="--i:6">
+              <select name="uae_driving_license" id="lic">
+                <option value="" hidden></option>
+                <option>Yes</option><option>No</option><option>In Progress</option>
+              </select>
+              <label for="lic">UAE Driving License</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="cf-panel">
+          <h3>How can we reach you?</h3>
+          <p class="cf-hint">Contact details and your education background.</p>
+          <div class="cf-grid">
+            <div class="cf-field" style="--i:0">
+              <input type="tel" name="mobile" id="mob" placeholder=" " required autocomplete="tel" />
+              <label for="mob">Mobile No *</label>
+              <div class="cf-error">Enter a valid mobile number</div>
+            </div>
+            <div class="cf-field" style="--i:1">
+              <input type="email" name="email" id="email" placeholder=" " required autocomplete="email" />
+              <label for="email">Email *</label>
+              <div class="cf-error">Enter a valid email address</div>
+            </div>
+            <div class="cf-field" style="--i:2">
+              <input type="text" name="graduation" id="grad" placeholder=" " />
+              <label for="grad">Graduation</label>
+            </div>
+            <div class="cf-field" style="--i:3">
+              <input type="number" name="year_of_graduation" id="gyear" placeholder=" " min="1970" max="2030" />
+              <label for="gyear">Year of Graduation</label>
+            </div>
+            <div class="cf-field" style="--i:4">
+              <input type="text" name="university" id="uni" placeholder=" " />
+              <label for="uni">University</label>
+            </div>
+            <div class="cf-field" style="--i:5">
+              <input type="text" name="total_experience" id="exp" placeholder=" " />
+              <label for="exp">Total Experience (years)</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="cf-panel">
+          <h3>Where are you &amp; when can you join?</h3>
+          <p class="cf-hint">Tell us about your location, visa and availability.</p>
+          <div class="cf-grid">
+            <div class="cf-field cf-field--select" style="--i:0">
+              <select name="in_uae" id="inuae">
+                <option value="" hidden></option><option>Yes</option><option>No</option>
+              </select>
+              <label for="inuae">Currently in UAE</label>
+            </div>
+            <div class="cf-field" style="--i:1">
+              <input type="text" name="in_gulf" id="gulf" placeholder=" " />
+              <label for="gulf">In Gulf (Out of UAE)</label>
+            </div>
+            <div class="cf-field" style="--i:2">
+              <input type="text" name="outside_gulf" id="outg" placeholder=" " />
+              <label for="outg">Outside Gulf</label>
+            </div>
+            <div class="cf-field cf-field--select" style="--i:3">
+              <select name="visa_status" id="visa">
+                <option value="" hidden></option>
+                <option>Employment Visa</option><option>Visit Visa</option>
+                <option>Cancelled Visa</option><option>Freelance / Golden Visa</option><option>Outside UAE</option>
+              </select>
+              <label for="visa">Visa Status</label>
+            </div>
+            <div class="cf-field" style="--i:4">
+              <input type="date" name="date_of_joining" id="join" />
+              <label for="join">Date Willing to Join</label>
+            </div>
+            <div class="cf-field" style="--i:5">
+              <input type="text" name="expected_salary" id="sal" placeholder=" " />
+              <label for="sal">Expected Salary (AED)</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="cf-panel">
+          <h3>Almost done!</h3>
+          <p class="cf-hint">Share your skills and upload your CV.</p>
+          <div class="cf-grid">
+            <div class="cf-field cf-full" style="--i:0">
+              <textarea name="other_skills" id="skills" placeholder=" "></textarea>
+              <label for="skills">Other Skills / Information</label>
+            </div>
+          </div>
+
+          <label class="cf-drop" id="cfDrop" style="--i:1">
+            <input type="file" name="cv" id="cv" accept=".pdf,.doc,.docx" />
+            <span class="cf-drop__icon">
+              <!-- document + upload arrow -->
+              <svg class="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6M12 12l-2.5 2.5M12 12l2.5 2.5"/></svg>
+              <!-- document + check (shown after attaching) -->
+              <svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M9 14.5l2.2 2.2L15.5 12"/></svg>
+            </span>
+            <div class="cf-drop__text">
+              <strong id="cfFileTitle">Upload your CV</strong>
+              <span id="cfFileName">Drag &amp; drop or click to browse (max 5 MB)</span>
+              <div class="cf-drop__chips"><span class="cf-chip">PDF</span><span class="cf-chip">DOC</span><span class="cf-chip">DOCX</span></div>
+            </div>
+            <button type="button" class="cf-drop__remove" id="cfFileRemove" aria-label="Remove file">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </label>
+        </div>
+
+        <div class="cf-actions">
+          <button type="button" class="cf-btn cf-btn--ghost" id="cfPrev" hidden>← Back</button>
+          <button type="button" class="cf-btn cf-btn--primary" id="cfNext" style="margin-left:auto">
+            <span id="cfNextTxt">Continue</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- SUCCESS -->
+      <div class="cf-success" id="cfSuccess">
+        <svg class="cf-check" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"/><path d="M38 62l16 16 29-34"/></svg>
+        <h3>Application Submitted!</h3>
+        <p>Thank you for applying. Our HR team will review your profile and contact you if there is a match.</p>
+        <button type="button" class="cf-btn cf-btn--gold" id="cfAgain">Submit another</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ keep your existing footer here ============ -->
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper" data-aos="fade-up">
+        <div class="footer__col2">
+          <h3 class="footer__text__title">Quick Links</h3>
+          <ol class="footer__text">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./awardsNews.html">Awards & News</a></li>
+          </ol>
+        </div>
+        <div class="footer__col3">
+          <h3 class="footer__text__title">Staff Links</h3>
+          <ol class="footer__text">
+            <li>
+              <a href="https://login.microsoftonline.com/" target="_blank">Staff Login</a>
+            </li>
+            <li>
+              <a href="http://alhabbai.fortiddns.com:6060/Dotapps/DotappsWS/Default.aspx" target="_blank">Attendance</a>
+            </li>
+            <li>
+              <a href="https://dms.alhabbai.app:444/dms/#/login" target="_blank">DMS</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col4">
+          <h3 class="footer__text__title">Contact</h3>
+          <ol class="footer__text">
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="#"> habbai@alhabbai.ae</a>
+            </li>
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <a href="#">Tel : +97142628388</a>
+            </li>
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <a href="#">Fax : +97142627789</a>
+            </li>
+
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <a href="#">P.O Box 21313, Dubai – UAE</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col1">
+          <div class="footer__socials">
+            <h4 class="footer__socials__title">Follow us</h4>
+            <ol class="footer__socials__list">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-facebook">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                  </svg>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Change WhatsApp number / email here if needed -->
+  <div class="fab fab--left">
+    <a class="fab__btn fab__btn--email" href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
+      aria-label="Send us an email" data-label="Email us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <polyline points="22,6.5 12,13 2,6.5" />
+      </svg>
+    </a>
+  </div>
+
+  <div class="fab fab--right">
+    <button type="button" class="fab__btn fab__btn--top" id="backToTop" aria-label="Back to top"
+      data-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+
+    <a class="fab__btn fab__btn--whatsapp"
+      href="https://wa.me/+971529049204?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+      target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" data-label="Chat with us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z"
+          transform="translate(.4 .25) scale(.98)" />
+      </svg>
+    </a>
+  </div>
+</body>
+</html>

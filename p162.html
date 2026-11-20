@@ -20,13 +20,13 @@
 
 <body>
   <!-- Nav -->
-  <header class="news__bg">
+  <header class="global-banner">
     <!-- Navigation -->
     <div class="nav__menu__wrapper" id="navbar">
       <div class="container">
         <nav>
-          <a href="../index.html">
-            <img src="./assets/images/alhabbai-white-logo.png" alt="Logo" />
+          <a href="index.html">
+            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
           </a>
 
           <div class="nav-links" id="navLinks">
@@ -42,13 +42,20 @@
               <li><a href="index.html">HOME</a></li>
               <li><a href="./projects.html">Projects</a></li>
               <li><a href="./gallery.html">Gallery</a></li>
-              <li><a href="./about.html">About</a></li>
+              <li><a href="./about.html">About US</a></li>
               <li><a href="./awardsNews.html">Awards & News</a></li>
               <li><a href="./principals.html">Principals</a></li>
-              <li><a href="./careers.html">Careers</a></li>
+              <li class="has-submenu">
+                <a href="./careers.html">Careers</a>
+                <ul class="submenu">
+                  <li><a href="./work-with-us.html">Work With Us</a></li>
+                </ul>
+              </li>
               <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
+
+          <!-- our profile -->
           <a href="./projects.html" class="nav-cta">
             <span>Our Profile</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -57,6 +64,7 @@
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </a>
+
           <!-- Menu Icon -->
 
           <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -66,6 +74,17 @@
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </nav>
+      </div>
+    </div>
+
+    <!-- Banner text (moved here from the gallery section) -->
+    <div class="gl-hero">
+      <div class="gl-head gl-head--hero">
+        <span class="gl-eyebrow" data-gl-reveal>CAREERS</span>
+        <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+          <em> Grow With</em> Us
+        </h2>
+
       </div>
     </div>
   </header>

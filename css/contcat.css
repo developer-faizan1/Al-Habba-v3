@@ -1,9 +1,6 @@
 /* ==========================================================================
-   contact.css  |  AL Habbai Contracting  |  Contact Us page
-   Builds on global.css (fonts, colours, .container, .gl-* heading styles).
-   Mobile-first: base styles are for phones, min-width queries scale up.
-   Note: global.css sets html { font-size: 10px }, so 1rem = 10px.
-   ========================================================================== */
+                   Contact Us page
+========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Design tokens

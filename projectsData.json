@@ -1117,7 +1117,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 177,
     "projectNumber": "P-177",
     "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
@@ -1321,12 +1321,12 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 155,
     "projectNumber": "P-155",
     "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
     "title": "Soho Apartment",
-    "image":"assets/images/comm_&_residential/155.jpg",
+    "image": "assets/images/comm_&_residential/155.jpg",
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
     "consultant": "M/s Naga Engineering Consultant",
@@ -1349,7 +1349,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 157,
     "projectNumber": "P-157",
     "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
@@ -1379,7 +1379,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 143,
     "projectNumber": "P-143",
     "slug": "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
@@ -1407,7 +1407,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 149,
     "projectNumber": "P-149",
     "slug": "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
@@ -1471,7 +1471,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 163,
     "projectNumber": "P-163",
     "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
@@ -1486,7 +1486,10 @@
     "status": "Completed",
     "projectType": "Healthcare",
     "projectDescription": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
-    "projectComprisesOf": ["Ground Floor", "1 Floors"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "1 Floors"
+    ],
     "fullAddress": "Al Barsha South, Third, Dubai",
     "plot": "671-2986",
     "area": "Al Barsha South, Third",
@@ -1494,7 +1497,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 164,
     "projectNumber": "P-164",
     "slug": "P-164 PROPOSED (G+4F+R)",
@@ -1509,7 +1512,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+4 Floors +Roof)",
-    "projectComprisesOf": ["Ground Floor", "4 Floors Levels", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "4 Floors Levels",
+      "Roof Level"
+    ],
     "fullAddress": "Al Barsha Third, Dubai",
     "plot": "673-1140",
     "area": "Al Barsha Third",
@@ -1532,7 +1539,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+M+7Floor+Gym)",
-    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "7 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Al Souq Al Kabeer, Dubai",
     "plot": "312-119",
     "area": "Al Souq Al Kabeer",
@@ -1540,7 +1551,7 @@
     "latitude": null,
     "longitude": null
   },
-   {
+  {
     "id": 166,
     "projectNumber": "P-166",
     "slug": "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
@@ -1555,7 +1566,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (B+G+P+8 Floors + Roof) Building",
-    "projectComprisesOf": ["Ground Floor", "8 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "8 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Jumeirah Garden City - Al Satwa, Dubai",
     "plot": "334-7341 & 334-7342",
     "area": "Jumeirah Garden City - Al Satwa",

@@ -1,8 +1,5 @@
 /* =========================================================
-   AWARDS & NEWS SECTION  (prefix: aw__)
-   Uses variables + fonts from global.css only.
-   Add at the END of css/awardsNews.css (or link after it).
-   Old .awards / .award__* rules are no longer used.
+   AWARDS & NEWS SECTION 
    ========================================================= */
 .about__bg {
   background-image:
@@ -379,12 +376,6 @@
     transition: none !important;
   }
 }
-
-/* =========================================================
-   ENTRANCE ANIMATIONS (triggered by AOS adding .aos-animate)
-   Hidden state only applies once AOS has initialised, so the
-   content stays visible if the library fails to load.
-   ========================================================= */
 
 /* heading underline draws in */
 .aw__rule {

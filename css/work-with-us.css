@@ -1,0 +1,234 @@
+/* =====================================================
+   CAREER APPLICATION FORM  (all classes prefixed cf-)
+   Tokens from global.css: --green-1, --gold, --mint ...
+   ===================================================== */
+.cf-section{
+  --cf-green:var(--green-1,#1e665e);
+  --cf-green-dark:#0d3732;
+  --cf-gold:var(--gold,#c9a15f);
+  --cf-gold-light:var(--gold-light,#e9d3a6);
+  --cf-mint:var(--mint,#dcefe6);
+  --cf-ink:var(--black-1,#2b312a);
+  --cf-muted:var(--black-3,#5b6359);
+  --cf-line:var(--border,#dfe5e3);
+  --cf-ease:var(--ease,cubic-bezier(.2,.8,.2,1));
+  --cf-err:#d64545;
+  position:relative;
+  overflow:hidden;
+  padding:70px 0 90px;
+  font-family:Raleway,sans-serif;
+}
+.cf-bg{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+.cf-wrap{position:relative;z-index:1;width:min(860px,100% - 32px);margin-inline:auto}
+
+/* ---------- card ---------- */
+.cf-card{
+  position:relative;background:#fff;border-radius:22px;padding:44px 52px 38px;
+  box-shadow:0 30px 80px -24px rgba(13,55,50,.3),0 2px 6px rgba(0,0,0,.04);
+  opacity:0;transform:translateY(40px) scale(.98);
+  transition:opacity .9s var(--cf-ease),transform .9s var(--cf-ease);
+}
+.cf-card.is-in{opacity:1;transform:none}
+.cf-card::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,var(--cf-green),var(--cf-gold));
+}
+
+/* ---------- horizontal stepper ---------- */
+.cf-steps{position:relative;display:flex;justify-content:space-between;margin:0 0 44px;padding:0;list-style:none}
+.cf-steps::before{
+  content:"";position:absolute;left:var(--off,45px);right:var(--off,45px);top:20px;height:3px;border-radius:3px;background:var(--cf-mint);
+}
+.cf-steps__fill{
+  position:absolute;left:var(--off,45px);top:20px;height:3px;border-radius:3px;width:0;
+  background:linear-gradient(90deg,var(--cf-green),var(--cf-gold));
+  transition:width .8s var(--cf-ease);
+}
+.cf-step{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;width:90px;
+  text-align:center;white-space:nowrap;font:500 1.35rem Raleway,sans-serif;letter-spacing:.2px;color:var(--cf-muted);
+  transition:color .4s;
+}
+.cf-step__dot{
+  position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:#fff;border:2px solid var(--cf-line);font:600 1.6rem Poppins,sans-serif;color:var(--cf-muted);
+  transition:background .45s var(--cf-ease),border-color .45s var(--cf-ease),color .3s,box-shadow .45s;
+}
+.cf-step__num{display:inline-block;transition:opacity .2s,transform .35s var(--cf-ease)}
+.cf-step__label{transition:transform .4s var(--cf-ease)}
+
+/* active: pop-in + pulsing ring */
+.cf-step.is-active{color:var(--cf-green);font-weight:600}
+.cf-step.is-active .cf-step__label{transform:translateY(1px)}
+.cf-step.is-active .cf-step__dot{
+  background:var(--cf-gold);border-color:var(--cf-gold);color:#1b1b1b;
+  box-shadow:0 8px 18px -6px rgba(201,161,95,.8);
+  animation:cf-pop .6s var(--cf-ease) both;
+}
+.cf-step.is-active .cf-step__dot::before{
+  content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--cf-gold);
+  animation:cf-pulse 1.8s ease-out infinite;
+}
+.cf-step.is-active .cf-step__num{animation:cf-num .5s .1s var(--cf-ease) both}
+@keyframes cf-pop{0%{transform:scale(.6)}55%{transform:scale(1.22)}100%{transform:scale(1.08)}}
+@keyframes cf-pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@keyframes cf-num{from{opacity:0;transform:translateY(10px) rotate(-12deg)}to{opacity:1;transform:none}}
+
+/* done: filled green with a drawn check */
+.cf-step.is-done{color:var(--cf-green)}
+.cf-step.is-done .cf-step__dot{background:var(--cf-green);border-color:var(--cf-green);animation:cf-pop-done .5s var(--cf-ease) both}
+.cf-step.is-done .cf-step__num{opacity:0;transform:scale(.4)}
+.cf-step.is-done .cf-step__dot::after{
+  content:"";position:absolute;left:50%;top:50%;width:8px;height:15px;
+  border:solid #fff;border-width:0 3px 3px 0;border-radius:1px;
+  transform:translate(-50%,-62%) rotate(45deg);
+  animation:cf-tick .45s .12s var(--cf-ease) both;
+}
+@keyframes cf-pop-done{0%{transform:scale(.8)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes cf-tick{from{opacity:0;clip-path:inset(0 100% 100% 0);transform:translate(-50%,-62%) rotate(45deg) scale(.5)}to{opacity:1;clip-path:inset(0 0 0 0);transform:translate(-50%,-62%) rotate(45deg) scale(1)}}
+
+/* ---------- panels ---------- */
+.cf-panel{display:none}
+.cf-panel.is-active{display:block}
+.cf-panel h3{font:600 2.6rem/1.25 Poppins,sans-serif;color:var(--cf-ink);margin:0 0 8px}
+.cf-panel .cf-hint{font-size:1.6rem;line-height:1.6;color:var(--cf-muted);margin:0 0 32px}
+.cf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+.cf-grid>*{min-width:0}
+.cf-full{grid-column:1/-1}
+
+.cf-panel.is-active .cf-field,
+.cf-panel.is-active .cf-drop{
+  animation:cf-in .6s var(--cf-ease) both;
+  animation-delay:calc(var(--i,0) * 60ms + 80ms);
+}
+.cf-panel.is-back.is-active .cf-field,
+.cf-panel.is-back.is-active .cf-drop{animation-name:cf-in-back}
+@keyframes cf-in{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes cf-in-back{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+
+/* ---------- floating-label fields ---------- */
+.cf-field{position:relative}
+.cf-field input,.cf-field select,.cf-field textarea{
+  width:100%;min-width:0;height:62px;padding:26px 16px 8px;
+  font:500 1.6rem Raleway,sans-serif;color:var(--cf-ink);
+  background:#f8faf9;border:1.5px solid var(--cf-line);border-radius:12px;outline:none;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+  appearance:none;-webkit-appearance:none;
+}
+.cf-field textarea{height:auto;min-height:130px;resize:vertical;padding-top:30px;line-height:1.6}
+.cf-field label{
+  position:absolute;left:16px;top:19px;font:500 1.6rem Raleway,sans-serif;color:var(--cf-muted);
+  pointer-events:none;transform-origin:left top;transition:transform .25s var(--cf-ease),color .25s;
+}
+.cf-field input:hover,.cf-field select:hover,.cf-field textarea:hover{border-color:#c4d2cd}
+.cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{
+  background:#fff;border-color:var(--cf-green);box-shadow:0 0 0 4px rgba(30,102,94,.13);
+}
+.cf-field input:focus~label,
+.cf-field input:not(:placeholder-shown)~label,
+.cf-field textarea:focus~label,
+.cf-field textarea:not(:placeholder-shown)~label,
+.cf-field select:focus~label,
+.cf-field.has-value select~label,
+.cf-field input[type=date]~label{
+  transform:translateY(-12px) scale(.78);color:var(--cf-green);font-weight:600;
+}
+.cf-field--select::after{
+  content:"";position:absolute;right:20px;top:23px;width:8px;height:8px;
+  border:solid var(--cf-muted);border-width:0 2px 2px 0;transform:rotate(45deg);
+  pointer-events:none;transition:transform .3s var(--cf-ease);
+}
+.cf-field--select:focus-within::after{transform:rotate(225deg) translate(-2px,-2px);border-color:var(--cf-green)}
+
+.cf-field.is-error input,.cf-field.is-error select,.cf-field.is-error textarea{border-color:var(--cf-err);background:#fff7f7}
+.cf-field.is-error label{color:var(--cf-err)}
+.cf-field.is-error{animation:cf-shake .4s}
+.cf-error{display:none;margin:7px 4px 0;font:500 1.3rem Raleway,sans-serif;color:var(--cf-err)}
+.cf-field.is-error .cf-error{display:block}
+@keyframes cf-shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+/* ---------- CV drop zone ---------- */
+.cf-drop{
+  position:relative;display:flex;align-items:center;gap:22px;padding:24px 26px;margin-top:26px;
+  border:2px dashed #b9d3c9;border-radius:18px;background:var(--lightGreen-1,#f0f9f3);
+  cursor:pointer;transition:all .35s var(--cf-ease);
+}
+.cf-drop:hover,.cf-drop.is-over{border-color:var(--cf-green);background:var(--cf-mint);transform:translateY(-2px)}
+.cf-drop.is-over{box-shadow:0 0 0 5px rgba(30,102,94,.12)}
+.cf-drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;z-index:1}
+.cf-drop__icon{position:relative;flex:none;width:60px;height:60px;border-radius:16px;display:grid;place-items:center;background:var(--cf-green);color:#fff;box-shadow:0 10px 20px -8px rgba(30,102,94,.6);animation:cf-bob 2.6s ease-in-out infinite}
+.cf-drop__icon svg{position:absolute;width:28px;height:28px;transition:opacity .3s,transform .4s var(--cf-ease)}
+.cf-drop__icon .ic-done{opacity:0;transform:scale(.4)}
+.cf-drop__text{flex:1;min-width:0}
+.cf-drop strong{display:block;font:600 1.7rem Poppins,sans-serif;color:var(--cf-ink);margin-bottom:4px}
+.cf-drop__text span{display:block;font-size:1.35rem;line-height:1.5;color:var(--cf-muted);word-break:break-all}
+.cf-drop__chips{display:flex;gap:8px;margin-top:10px}
+.cf-chip{padding:3px 10px;border-radius:50px;background:#fff;border:1px solid #cfe2da;font:600 1.1rem Poppins,sans-serif;letter-spacing:.5px;color:var(--cf-green)}
+@keyframes cf-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.cf-drop.has-file{border-style:solid;border-color:var(--cf-green);background:#fff}
+.cf-drop.has-file .cf-drop__icon{animation:none;background:var(--cf-gold);box-shadow:0 10px 20px -8px rgba(201,161,95,.8)}
+.cf-drop.has-file .ic-upload{opacity:0;transform:scale(.4)}
+.cf-drop.has-file .ic-done{opacity:1;transform:none}
+.cf-drop.has-file .cf-drop__chips{display:none}
+.cf-drop__remove{
+  position:relative;z-index:2;flex:none;display:none;width:38px;height:38px;border:0;border-radius:50%;cursor:pointer;
+  place-items:center;background:#fdecec;color:var(--cf-err);transition:transform .3s var(--cf-ease),background .3s;
+}
+.cf-drop__remove svg{width:18px;height:18px}
+.cf-drop__remove:hover{background:var(--cf-err);color:#fff;transform:rotate(90deg)}
+.cf-drop.has-file .cf-drop__remove{display:grid}
+
+/* ---------- buttons ---------- */
+.cf-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:36px;padding-top:26px;border-top:1px solid var(--cf-line)}
+.cf-btn{
+  position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;
+  padding:15px 34px;border:0;border-radius:50px;cursor:pointer;font:600 1.5rem Poppins,sans-serif;
+  transition:transform .3s var(--cf-ease),box-shadow .3s,color .3s;
+}
+.cf-btn--primary{color:#fff;background:linear-gradient(120deg,var(--cf-green),#2a8a7d);box-shadow:0 10px 24px -8px rgba(30,102,94,.6)}
+.cf-btn--primary:hover{transform:translateY(-3px);box-shadow:0 16px 30px -8px rgba(30,102,94,.7)}
+.cf-btn--primary svg{width:18px;height:18px;transition:transform .3s var(--cf-ease)}
+.cf-btn--primary:hover svg{transform:translateX(5px)}
+.cf-btn--ghost{background:transparent;color:var(--cf-muted);padding-inline:20px}
+.cf-btn--ghost:hover{color:var(--cf-green)}
+.cf-btn--ghost[hidden]{display:none}
+.cf-btn--gold{background:linear-gradient(120deg,var(--cf-gold),#dbb877);color:#1b1b1b;box-shadow:0 10px 24px -8px rgba(201,161,95,.7)}
+.cf-btn--gold:hover{transform:translateY(-3px)}
+.cf-btn.is-loading{pointer-events:none;opacity:.85}
+.cf-btn.is-loading::after{content:"";width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:cf-spin .7s linear infinite}
+@keyframes cf-spin{to{transform:rotate(360deg)}}
+.cf-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:cf-rip .6s linear;pointer-events:none}
+@keyframes cf-rip{to{transform:scale(4);opacity:0}}
+
+/* ---------- success ---------- */
+.cf-success{display:none;text-align:center;padding:30px 10px 10px}
+.cf-success.is-active{display:block;animation:cf-in .7s var(--cf-ease) both}
+.cf-check{width:120px;height:120px;margin:0 auto 28px}
+.cf-check circle{fill:none;stroke:var(--cf-green);stroke-width:4;stroke-dasharray:314;stroke-dashoffset:314;animation:cf-draw .9s .1s var(--cf-ease) forwards}
+.cf-check path{fill:none;stroke:var(--cf-gold);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:80;stroke-dashoffset:80;animation:cf-draw .6s .8s var(--cf-ease) forwards}
+@keyframes cf-draw{to{stroke-dashoffset:0}}
+.cf-success h3{font:600 2.8rem Poppins,sans-serif;color:var(--cf-ink);margin-bottom:12px}
+.cf-success p{font-size:1.6rem;line-height:1.7;color:var(--cf-muted);max-width:460px;margin:0 auto 30px}
+
+/* ---------- responsive ---------- */
+@media (max-width:767px){
+  .cf-section{padding:40px 0 60px}
+  .cf-card{padding:30px 18px 24px}
+  .cf-steps{margin-bottom:32px}
+  .cf-step{width:64px;font-size:1.2rem}
+  .cf-step:not(.is-active) .cf-step__label{display:none}
+  .cf-panel h3{font-size:2.2rem}
+  .cf-panel .cf-hint{font-size:1.45rem;margin-bottom:24px}
+  .cf-grid{grid-template-columns:1fr;gap:18px}
+  .cf-drop{flex-direction:column;text-align:center;padding:22px 16px}
+  .cf-drop__chips{justify-content:center}
+  .cf-btn{padding:14px 26px}
+  .cf-btn--primary{flex:1;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .cf-card,.cf-head *,.cf-panel .cf-field,.cf-panel .cf-drop,.cf-bg,.cf-drop__icon,
+  .cf-step__dot,.cf-step__dot::before,.cf-step__dot::after,.cf-step__num{animation:none!important;transition:none!important;opacity:1;transform:none;filter:none}
+  .cf-step.is-done .cf-step__num{opacity:0}
+  .cf-step.is-done .cf-step__dot::after{transform:translate(-50%,-62%) rotate(45deg)}
+  .cf-step.is-active .cf-step__dot::before{display:none}
+}

@@ -15,86 +15,76 @@
   </head>
 
   <body>
-    <!-- Nav -->
-    <header>
-      <!-- Navigation -->
-      <div class="nav__menu__wrapper" id="navbar">
-        <div class="container">
-          <nav>
-            <a href="index.html">
-              <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
-            </a>
+   <!-- Nav -->
+  <header class="global-banner">
+    <!-- Navigation -->
+    <div class="nav__menu__wrapper" id="navbar">
+      <div class="container">
+        <nav>
+          <a href="index.html">
+            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
+          </a>
 
-            <div class="nav-links" id="navLinks">
-              <!-- Close Icon -->
-              <svg
-                class="svgColor"
-                onclick="hideMenu()"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-
-              <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./about.html">About US</a></li>
-                <li><a href="./awardsNews.html">Awards & News</a></li>
-                <li><a href="./principals.html">Principals</a></li>
-                <li><a href="./careers.html">Careers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <a href="./projects.html" class="nav-cta">
-              <span>Our Profile</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <!-- Menu Icon -->
-
-            <svg
-              onclick="showMenu()"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
+          <div class="nav-links" id="navLinks">
+            <!-- Close Icon -->
+            <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
-          </nav>
-        </div>
+
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./about.html">About US</a></li>
+              <li><a href="./awardsNews.html">Awards & News</a></li>
+              <li><a href="./principals.html">Principals</a></li>
+              <li class="has-submenu">
+                <a href="./careers.html">Careers</a>
+                <ul class="submenu">
+                  <li><a href="./work-with-us.html">Work With Us</a></li>
+                </ul>
+              </li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- our profile -->
+          <a href="./projects.html" class="nav-cta">
+            <span>Our Profile</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Menu Icon -->
+
+          <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </nav>
       </div>
-    </header>
-    <!-- Nav End -->
+    </div>
+
+    <!-- Banner text (moved here from the gallery section) -->
+    <div class="gl-hero">
+      <div class="gl-head gl-head--hero">
+        <span class="gl-eyebrow" data-gl-reveal>CAREERS</span>
+        <h2 class="gl-title" data-gl-reveal style="--d: 80ms">
+          <em> Grow With</em> Us
+        </h2>
+
+      </div>
+    </div>
+  </header>
+  <!-- Nav End -->
 
     <!-- Project about -->
     <section class="container">

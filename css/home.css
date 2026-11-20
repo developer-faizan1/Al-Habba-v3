@@ -1,9 +1,5 @@
 /* =========================================================
-   AL HABBAI – HOME PAGE SECTIONS (v2)
-   Uses variables, fonts & colours from global.css
-   Place at: /css/home.css  (load AFTER style.css)
-   All classes are prefixed "ah-" so nothing clashes
-   with header / hero / footer styles.
+    HOME PAGE SECTIONS
 ========================================================= */
 
 :root {

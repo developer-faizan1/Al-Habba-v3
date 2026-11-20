@@ -269,7 +269,7 @@
     width: 24px;
     height: 24px;
     flex: 0 0 auto;
-    z-index: 10001;
+    z-index: 1;
     color: #fff;
   }
 
@@ -386,6 +386,130 @@
   .nav__menu__wrapper nav > a.nav-cta,
   .nav__menu__wrapper nav > a.nav-cta svg {
     transition: none;
+  }
+}
+
+/* ===========================
+   CAREERS SUB MENU (hover)
+=========================== */
+
+/* small arrow next to "Careers" */
+.nav-links ul li.has-submenu > a::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.nav-links ul li.has-submenu:hover > a::after,
+.nav-links ul li.has-submenu:focus-within > a::after {
+  transform: rotate(-135deg) translate(-1px, -1px);
+}
+
+/* dropdown box */
+.nav__menu__wrapper .nav-links ul.submenu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  margin: 10px 0 0;
+  padding: 8px;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px -10px rgba(13, 55, 50, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+  z-index: 20;
+}
+
+/* invisible bridge so the menu stays open while the mouse moves down */
+.nav__menu__wrapper .nav-links ul.submenu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -14px;
+  height: 14px;
+}
+
+.nav-links ul li.has-submenu:hover > .submenu,
+.nav-links ul li.has-submenu:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.nav__menu__wrapper .nav-links ul.submenu li {
+  display: block;
+  margin: 0;
+}
+
+/* no green underline animation on the sub items */
+.nav-links ul.submenu li::after {
+  display: none;
+}
+
+.nav__menu__wrapper .nav-links ul.submenu li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 1.3rem;
+  color: var(--black-1);
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav__menu__wrapper .nav-links ul.submenu li a:hover {
+  background: var(--lightGreen-1);
+  color: var(--green-1);
+}
+
+/* Tablet & mobile: show it inline inside the slide-in menu */
+@media (max-width: 1192px) {
+  .nav-links ul li.has-submenu > a::after {
+    display: none;
+  }
+
+  .nav__menu__wrapper .nav-links ul.submenu {
+    position: static;
+    min-width: 0;
+    margin: 12px 0 0;
+    padding: 0 0 0 14px;
+    background: transparent;
+    border: 0;
+    border-left: 2px solid var(--green-2);
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav__menu__wrapper .nav-links ul.submenu::before {
+    display: none;
+  }
+
+  .nav__menu__wrapper .nav-links ul.submenu li a {
+    padding: 4px 0;
+    font-size: 1.4rem;
+  }
+
+  .nav__menu__wrapper .nav-links ul.submenu li a:hover {
+    background: transparent;
   }
 }
 

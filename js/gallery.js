@@ -11,6 +11,11 @@ const images = [
     src: "../assets/images/running/215.jpg",
   },
   {
+    projectNumber: "214",
+    slug: "P-214 PROPOSED MIXED USE DEVELOPMENT",
+    src: "../assets/images/running/214.jpg",
+  },
+  {
     projectNumber: "212",
     slug: "P-212 (G+2P+7F+R) Hotel Building",
     src: "../assets/images/running/212.jpg",
@@ -154,7 +159,7 @@ const images = [
     slug: "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/117v1.jpg",
   },
- 
+
   {
     projectNumber: "132",
     slug: "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
@@ -170,7 +175,7 @@ const images = [
     slug: "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/134.jpg",
   },
-   {
+  {
     projectNumber: "118",
     slug: "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
     src: "../assets/images/comm_&_residential/118.jpg",
@@ -282,13 +287,14 @@ const images = [
     projectNumber: "155",
     src: "../assets/images/comm_&_residential/155.jpg",
   },
-  {
-    projectNumber: "157",
-    src: "../assets/images/comm_&_residential/157.jpg",
-  },
+
   {
     projectNumber: "149",
     src: "../assets/images/comm_&_residential/149.jpg",
+  },
+  {
+    projectNumber: "157",
+    src: "../assets/images/comm_&_residential/157.jpg",
   },
   {
     projectNumber: "143",
@@ -317,6 +323,26 @@ const images = [
     projectNumber: "86",
     slug: "P-086 (2B+G+12) RESIDENTIAL COMMERCIAL",
     src: "../assets/images/comm_&_residential/86.jpg",
+  },
+  {
+    projectNumber: "138",
+    slug: "P-138 RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/138.jpg",
+  },
+  {
+    projectNumber: "170",
+    slug: "P-170 RESIDENTIAL BUILDING (B+G+8+R)",
+    src: "../assets/images/comm_&_residential/170.jpg",
+  },
+  {
+    projectNumber: "174",
+    slug: "P-174 RESIDENTIAL BUILDING (B+G+8+R)",
+    src: "../assets/images/comm_&_residential/174.jpg",
+  },
+  {
+    projectNumber: "175",
+    slug: "P-175 RESIDENTIAL BUILDING (B+G+8+R)",
+    src: "../assets/images/comm_&_residential/175.jpg",
   },
 ];
 
@@ -408,22 +434,22 @@ const galleryImages = images.flatMap((project) =>
   const observer =
     "IntersectionObserver" in window
       ? new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
 
-              const el = entry.target;
-              el.classList.add("is-in");
-              observer.unobserve(el);
+            const el = entry.target;
+            el.classList.add("is-in");
+            observer.unobserve(el);
 
-              // Remove stagger delay once the reveal has finished
-              if (el.classList.contains("gl-card")) {
-                setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
-        )
+            // Remove stagger delay once the reveal has finished
+            if (el.classList.contains("gl-card")) {
+              setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      )
       : null;
 
   function reveal(el) {

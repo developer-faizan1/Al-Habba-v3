@@ -1,539 +1,341 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Details |AL Habbai Contracting | Dubai</title>
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/projectDetailsMenu.css" />
-    <link rel="stylesheet" href="./css/projectDeatils.css" />
 
-    <!-- aos library css  -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details |AL Habbai Contracting | Dubai</title>
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/projectDetailsMenu.css" />
+  <link rel="stylesheet" href="./css/projectDeatils.css" />
 
-    <!-- aos script -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+  <!-- aos library css  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <script src="./js/projectDetailsMenu.js" defer></script>
-    <script src="./js/project-details.js" defer></script>
-  </head>
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
-  <body>
-    <!-- Nav -->
-    <header>
-      <!-- Navigation -->
-      <div class="nav__menu__wrapper" id="navbar">
-        <div class="container">
-          <nav>
-            <a href="index.html">
-              <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
-            </a>
+  <script src="./js/projectDetailsMenu.js" defer></script>
+  <script src="./js/project-details.js" defer></script>
+</head>
 
-            <div class="nav-links" id="navLinks">
-              <!-- Close Icon -->
-              <svg
-                class="svgColor"
-                onclick="hideMenu()"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-
-              <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./about.html">About US</a></li>
-                <li><a href="./awardsNews.html">Awards & News</a></li>
-                <li><a href="./principals.html">Principals</a></li>
-                <li><a href="./careers.html">Careers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <a href="./projects.html" class="nav-cta">
-              <span>Our Profile</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <!-- Menu Icon -->
-
-            <svg
-              onclick="showMenu()"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- Nav End -->
-
-    <!-- project details section -->
-    <section>
+<body>
+  <!-- Nav -->
+  <header>
+    <!-- Navigation -->
+    <div class="nav__menu__wrapper" id="navbar">
       <div class="container">
-        <main id="pdPage">
-          <header class="pd-hero" id="pdHero">
-            <!-- Error state -->
-            <div class="pd-error" id="pdError" hidden>
-              <h1 id="pdErrorText">Project not found</h1>
-              <a class="pd-btn" href="projects.html">Back to projects</a>
-            </div>
+        <nav>
+          <a href="index.html">
+            <img src="./assets/images/alhabbai-dark-logo.png" alt="Logo" />
+          </a>
 
-            <div class="pd-hero-grid" id="pdLayout">
-              <!-- Hero text -->
-              <div class="pd-hero-copy">
-                <div class="pd-chips reveal" style="--i: 1">
-                  <span class="pd-chip pd-chip--num" id="projectNumber"
-                    >P-000</span
-                  >
-                  <span class="pd-chip" id="projectTypeChip">Type</span>
-                </div>
+          <div class="nav-links" id="navLinks">
+            <!-- Close Icon -->
+            <svg class="svgColor" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
 
-                <h1 class="pd-title" id="projectTitle">Loading…</h1>
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./about.html">About US</a></li>
+              <li><a href="./awardsNews.html">Awards & News</a></li>
+              <li><a href="./principals.html">Principals</a></li>
+              <li><a href="./careers.html">Careers</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <a href="./projects.html" class="nav-cta">
+            <span>Our Profile</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <!-- Menu Icon -->
 
-                <p
-                  class="pd-lead reveal"
-                  id="projectDescription"
-                  style="--i: 2"
-                  hidden
-                ></p>
+          <svg onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Nav End -->
 
-                <div class="pd-meter-row">
-                  <div
-                    class="pd-progress reveal"
-                    id="pdProgress"
-                    style="--i: 4"
-                    hidden
-                  >
-                    <div class="pd-ring">
-                      <svg viewBox="0 0 120 120" aria-hidden="true">
-                        <circle class="pd-ring-track" cx="60" cy="60" r="52" />
-                        <circle
-                          class="pd-ring-bar"
-                          id="ringBar"
-                          cx="60"
-                          cy="60"
-                          r="52"
-                          pathLength="100"
-                        />
-                      </svg>
-                      <div class="pd-ring-text">
-                        <strong id="progressNum">0%</strong>
-                        <small>Completed</small>
-                      </div>
+  <!-- project details section -->
+  <section>
+    <div class="container">
+      <main id="pdPage">
+        <header class="pd-hero" id="pdHero">
+          <!-- Error state -->
+          <div class="pd-error" id="pdError" hidden>
+            <h1 id="pdErrorText">Project not found</h1>
+            <a class="pd-btn" href="projects.html">Back to projects</a>
+          </div>
+
+          <div class="pd-hero-grid" id="pdLayout">
+            <!-- Hero text -->
+            <div class="pd-hero-copy">
+              <div class="pd-chips reveal" style="--i: 1">
+                <span class="pd-chip pd-chip--num" id="projectNumber">P-000</span>
+                <span class="pd-chip" id="projectTypeChip">Type</span>
+              </div>
+
+              <h1 class="pd-title" id="projectTitle">Loading…</h1>
+
+              <p class="pd-lead reveal" id="projectDescription" style="--i: 2" hidden></p>
+
+              <div class="pd-meter-row">
+                <div class="pd-progress reveal" id="pdProgress" style="--i: 4" hidden>
+                  <div class="pd-ring">
+                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                      <circle class="pd-ring-track" cx="60" cy="60" r="52" />
+                      <circle class="pd-ring-bar" id="ringBar" cx="60" cy="60" r="52" pathLength="100" />
+                    </svg>
+                    <div class="pd-ring-text">
+                      <strong id="progressNum">0%</strong>
+                      <small>Completed</small>
                     </div>
                   </div>
                 </div>
-
-                <div class="pd-stats" id="pdStats"></div>
-
-                <div class="pd-thumbs-wrap">
-                  <button
-                    type="button"
-                    class="pd-thumb-nav"
-                    id="thumbnailPrev"
-                    aria-label="Scroll thumbnails left"
-                  >
-                    &#8249;
-                  </button>
-                  <div class="pd-thumbs" id="galleryThumbnails"></div>
-                  <button
-                    type="button"
-                    class="pd-thumb-nav"
-                    id="thumbnailNext"
-                    aria-label="Scroll thumbnails right"
-                  >
-                    &#8250;
-                  </button>
-                </div>
               </div>
 
-              <!-- Gallery -->
-              <div class="pd-gallery reveal" style="--i: 2">
-                <div class="pd-stage" id="pdStage">
-                  <img
-                    id="mainProjectImage"
-                    class="pd-main-img"
-                    alt=""
-                    decoding="async"
-                    draggable="false"
-                  />
+              <div class="pd-stats" id="pdStats"></div>
 
-                  <span class="pd-badge" id="projectStatus">
-                    <i class="pd-badge-dot"></i>
-                    <span id="projectStatusText">Status</span>
-                  </span>
-
-                  <button
-                    type="button"
-                    class="pd-arrow pd-prev"
-                    id="galleryPrev"
-                    aria-label="Previous image"
-                  >
-                    &#8249;
-                  </button>
-                  <button
-                    type="button"
-                    class="pd-arrow pd-next"
-                    id="galleryNext"
-                    aria-label="Next image"
-                  >
-                    &#8250;
-                  </button>
-
-                  <span class="pd-counter" id="galleryCounter">01 / 01</span>
-
-                  <button
-                    type="button"
-                    class="pd-expand"
-                    id="galleryFullscreen"
-                    aria-label="View fullscreen"
-                  >
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
-                    </svg>
-                  </button>
-                </div>
+              <div class="pd-thumbs-wrap">
+                <button type="button" class="pd-thumb-nav" id="thumbnailPrev" aria-label="Scroll thumbnails left">
+                  &#8249;
+                </button>
+                <div class="pd-thumbs" id="galleryThumbnails"></div>
+                <button type="button" class="pd-thumb-nav" id="thumbnailNext" aria-label="Scroll thumbnails right">
+                  &#8250;
+                </button>
               </div>
             </div>
-          </header>
 
-          <div class="pd-wrap" id="pdBody">
-            <!-- Key information: client, consultant, location (rendered by JS) -->
-            <div class="pd-section" aria-labelledby="hInfo" data-aos="fade-up">
-              <div class="pd-head reveal">
-                <span class="pd-eyebrow">Project Details</span>
-                <h2 class="pd-h2" id="hInfo">Key information</h2>
+            <!-- Gallery -->
+            <div class="pd-gallery reveal" style="--i: 2">
+              <div class="pd-stage" id="pdStage">
+                <img id="mainProjectImage" class="pd-main-img" alt="" decoding="async" draggable="false" />
+
+                <span class="pd-badge" id="projectStatus">
+                  <i class="pd-badge-dot"></i>
+                  <span id="projectStatusText">Status</span>
+                </span>
+
+                <button type="button" class="pd-arrow pd-prev" id="galleryPrev" aria-label="Previous image">
+                  &#8249;
+                </button>
+                <button type="button" class="pd-arrow pd-next" id="galleryNext" aria-label="Next image">
+                  &#8250;
+                </button>
+
+                <span class="pd-counter" id="galleryCounter">01 / 01</span>
+
+                <button type="button" class="pd-expand" id="galleryFullscreen" aria-label="View fullscreen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+                  </svg>
+                </button>
               </div>
-              <div class="pd-bento" id="pdBento"></div>
             </div>
-
-            <!-- Previous / all / next (rendered by JS) -->
-            <nav
-              data-aos="fade-up"
-              class="pd-sibs reveal"
-              id="pdSiblings"
-              aria-label="More projects"
-              hidden
-            ></nav>
           </div>
-        </main>
+        </header>
 
-        <!-- Lightbox -->
-        <div
-          class="lightbox"
-          id="galleryLightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Project image viewer"
-          aria-hidden="true"
-          inert
-        >
-          <button
-            type="button"
-            class="lb-btn lb-close"
-            id="lightboxClose"
-            aria-label="Close"
-          >
-            &times;
-          </button>
-          <button
-            type="button"
-            class="lb-btn lb-arrow lb-prev"
-            id="lightboxPrev"
-            aria-label="Previous image"
-          >
-            &#8249;
-          </button>
+        <div class="pd-wrap" id="pdBody">
+          <!-- Key information: client, consultant, location (rendered by JS) -->
+          <div class="pd-section" aria-labelledby="hInfo" data-aos="fade-up">
+            <div class="pd-head reveal">
+              <span class="pd-eyebrow">Project Details</span>
+              <h2 class="pd-h2" id="hInfo">Key information</h2>
+            </div>
+            <div class="pd-bento" id="pdBento"></div>
+          </div>
 
-          <figure class="lb-figure" id="lbFigure">
-            <img id="lightboxImage" class="lb-image" alt="" draggable="false" />
-          </figure>
+          <!-- Previous / all / next (rendered by JS) -->
+          <nav data-aos="fade-up" class="pd-sibs reveal" id="pdSiblings" aria-label="More projects" hidden></nav>
+        </div>
+      </main>
 
-          <button
-            type="button"
-            class="lb-btn lb-arrow lb-next"
-            id="lightboxNext"
-            aria-label="Next image"
-          >
-            &#8250;
-          </button>
+      <!-- Lightbox -->
+      <div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Project image viewer"
+        aria-hidden="true" inert>
+        <button type="button" class="lb-btn lb-close" id="lightboxClose" aria-label="Close">
+          &times;
+        </button>
+        <button type="button" class="lb-btn lb-arrow lb-prev" id="lightboxPrev" aria-label="Previous image">
+          &#8249;
+        </button>
 
-          <div class="lb-thumbs" id="lbThumbs"></div>
+        <figure class="lb-figure" id="lbFigure">
+          <img id="lightboxImage" class="lb-image" alt="" draggable="false" />
+        </figure>
 
-          <div class="lb-bar">
-            <span class="lb-caption" id="lightboxCaption"></span>
-            <span class="lb-counter" id="lightboxCounter">01 / 01</span>
-            <span class="lb-hint">Click image to zoom</span>
+        <button type="button" class="lb-btn lb-arrow lb-next" id="lightboxNext" aria-label="Next image">
+          &#8250;
+        </button>
+
+        <div class="lb-thumbs" id="lbThumbs"></div>
+
+        <div class="lb-bar">
+          <span class="lb-caption" id="lightboxCaption"></span>
+          <span class="lb-counter" id="lightboxCounter">01 / 01</span>
+          <span class="lb-hint">Click image to zoom</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- project details section End -->
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer__wrapper" data-aos="fade-up">
+        <div class="footer__col2">
+          <h3 class="footer__text__title">Quick Links</h3>
+          <ol class="footer__text">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./awardsNews.html">Awards & News</a></li>
+          </ol>
+        </div>
+        <div class="footer__col3">
+          <h3 class="footer__text__title">Staff Links</h3>
+          <ol class="footer__text">
+            <li>
+              <a href="https://login.microsoftonline.com/" target="_blank">Staff Login</a>
+            </li>
+            <li>
+              <a href="http://alhabbai.fortiddns.com:6060/Dotapps/DotappsWS/Default.aspx" target="_blank">Attendance</a>
+            </li>
+            <li>
+              <a href="https://dms.alhabbai.app:444/dms/#/login" target="_blank">DMS</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col4">
+          <h3 class="footer__text__title">Contact</h3>
+          <ol class="footer__text">
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="#"> habbai@alhabbai.ae</a>
+            </li>
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <a href="#">Tel : +97142628388</a>
+            </li>
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <a href="#">Fax : +97142627789</a>
+            </li>
+
+            <li class="footer__img__info_wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <a href="#">P.O Box 21313, Dubai – UAE</a>
+            </li>
+          </ol>
+        </div>
+        <div class="footer__col1">
+          <div class="footer__socials">
+            <h4 class="footer__socials__title">Follow us</h4>
+            <ol class="footer__socials__list">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-facebook">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                  </svg>
+                </a>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
-    </section>
-    <!-- project details section End -->
-
-    <!-- Footer Section -->
-    <footer>
-      <div class="container">
-        <div class="footer__wrapper" data-aos="fade-up">
-          <div class="footer__col2">
-            <h3 class="footer__text__title">Quick Links</h3>
-            <ol class="footer__text">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="./projects.html">Projects</a></li>
-              <li><a href="./gallery.html">Gallery</a></li>
-              <li><a href="./awardsNews.html">Awards & News</a></li>
-            </ol>
-          </div>
-          <div class="footer__col3">
-            <h3 class="footer__text__title">Staff Links</h3>
-            <ol class="footer__text">
-              <li>
-                <a href="https://login.microsoftonline.com/" target="_blank"
-                  >Staff Login</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://alhabbai.fortiddns.com:6060/Dotapps/DotappsWS/Default.aspx"
-                  target="_blank"
-                  >Attendance</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://dms.alhabbai.app:444/dms/#/login"
-                  target="_blank"
-                  >DMS</a
-                >
-              </li>
-            </ol>
-          </div>
-          <div class="footer__col4">
-            <h3 class="footer__text__title">Contact</h3>
-            <ol class="footer__text">
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <a href="#"> habbai@alhabbai.ae</a>
-              </li>
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-                <a href="#">Tel : +97142628388</a>
-              </li>
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-                <a href="#">Fax : +97142627789</a>
-              </li>
-
-              <li class="footer__img__info_wrapper">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <a href="#">P.O Box 21313, Dubai – UAE</a>
-              </li>
-            </ol>
-          </div>
-          <div class="footer__col1">
-            <div class="footer__socials">
-              <h4 class="footer__socials__title">Follow us</h4>
-              <ol class="footer__socials__list">
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-facebook"
-                    >
-                      <path
-                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                      />
-                    </svg>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path
-                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                      />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
-                      />
-                      <polygon
-                        points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                      />
-                    </svg>
-                  </a>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Section End -->
-
-       <!-- Change WhatsApp number / email here if needed -->
-    <div class="fab fab--left">
-      <a
-        class="fab__btn fab__btn--email"
-        href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
-        aria-label="Send us an email"
-        data-label="Email us"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2" y="4" width="20" height="16" rx="2" />
-          <polyline points="22,6.5 12,13 2,6.5" />
-        </svg>
-      </a>
     </div>
+  </footer>
+  <!-- Footer Section End -->
 
-    <div class="fab fab--right">
-      <button
-        type="button"
-        class="fab__btn fab__btn--top"
-        id="backToTop"
-        aria-label="Back to top"
-        data-label="Back to top"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="18 15 12 9 6 15" />
-        </svg>
-      </button>
+  <!-- Change WhatsApp number / email here if needed -->
+  <div class="fab fab--left">
+    <a class="fab__btn fab__btn--email" href="mailto:habbai@alhabbai.ae?subject=Enquiry%20from%20website"
+      aria-label="Send us an email" data-label="Email us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <polyline points="22,6.5 12,13 2,6.5" />
+      </svg>
+    </a>
+  </div>
 
-      <a
-        class="fab__btn fab__btn--whatsapp"
-        href="https://wa.me/+971529049204?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        data-label="Chat with us"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z" transform="translate(.4 .25) scale(.98)" />
-        </svg>
-      </a>
-    </div>
-  </body>
+  <div class="fab fab--right">
+    <button type="button" class="fab__btn fab__btn--top" id="backToTop" aria-label="Back to top"
+      data-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+
+    <a class="fab__btn fab__btn--whatsapp"
+      href="https://wa.me/+971529049204?text=Hello%20AL%20Habbai%20Contracting%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+      target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" data-label="Chat with us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.22-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.21 4.24-9.45 9.46-9.45 2.52 0 4.9.99 6.68 2.77a9.4 9.4 0 0 1 2.77 6.69c0 5.21-4.24 9.45-9.45 9.45zM20.52 3.45A11.4 11.4 0 0 0 12.05 0C5.73 0 .59 5.14.59 11.46c0 2.02.53 3.99 1.53 5.73L.5 23.5l6.46-1.69a11.44 11.44 0 0 0 5.09 1.2h.01c6.32 0 11.46-5.14 11.46-11.46 0-3.06-1.19-5.94-3.36-8.1z"
+          transform="translate(.4 .25) scale(.98)" />
+      </svg>
+    </a>
+  </div>
+</body>
+
 </html>

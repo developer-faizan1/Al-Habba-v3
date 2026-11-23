@@ -208,7 +208,7 @@ const images = [
   {
     projectNumber: "176",
     slug: "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/176.jpg",
+    src: "../assets/images/comm_&_residential/176v1.jpg",
   },
   {
     projectNumber: "177",
@@ -236,7 +236,7 @@ const images = [
   {
     projectNumber: "195",
     slug: "P-195 (G+1) SHOPPING MALL",
-    src: "../assets/images/comm_&_residential/195.jpg",
+    src: "../assets/images/comm_&_residential/195v1.jpg",
   },
   {
     projectNumber: "197",
@@ -265,19 +265,23 @@ const images = [
   },
   {
     projectNumber: "166",
+    slug: "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
     src: "../assets/images/comm_&_residential/166.jpg",
   },
   {
     projectNumber: "165",
+    slug: "P-165 PROPOSED (G+M+7F+Gym)",
     src: "../assets/images/comm_&_residential/165.jpg",
   },
   {
     projectNumber: "164",
+    slug: "P-164 PROPOSED (G+4F+R)",
     src: "../assets/images/comm_&_residential/164.jpg",
   },
 
   {
     projectNumber: "151",
+    slug: "P-151 (3B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: [
       "../assets/images/comm_&_residential/151v1.jpg",
       "../assets/images/comm_&_residential/151v1.jpg",
@@ -285,23 +289,28 @@ const images = [
   },
   {
     projectNumber: "155",
+    slug: "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
     src: "../assets/images/comm_&_residential/155.jpg",
   },
 
   {
     projectNumber: "149",
+    slug: "P-149 (B+G+6+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/149.jpg",
   },
   {
     projectNumber: "157",
+    slug: "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
     src: "../assets/images/comm_&_residential/157.jpg",
   },
   {
     projectNumber: "143",
+    slug: "P-143 (2B+G+14F) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/143.jpg",
   },
   {
     projectNumber: "163",
+    slug: "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     src: "../assets/images/comm_&_residential/163.jpg",
   },
   {
@@ -441,7 +450,6 @@ const galleryImages = images.flatMap((project) =>
             const el = entry.target;
             el.classList.add("is-in");
             observer.unobserve(el);
-
             // Remove stagger delay once the reveal has finished
             if (el.classList.contains("gl-card")) {
               setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);

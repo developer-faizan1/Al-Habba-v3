@@ -120,6 +120,11 @@ const images = [
     src: "../assets/images/hotels/171.jpg",
   },
   {
+    projectNumber: "129",
+    slug: "P-129 (B+G+32) HOTEL-BUILDING",
+    src: "../assets/images/comm_&_residential/129.jpg",
+  },
+  {
     projectNumber: "77",
     slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/77.jpg",
@@ -140,15 +145,16 @@ const images = [
     src: "../assets/images/comm_&_residential/99.jpg",
   },
   {
+    projectNumber: "152",
+    slug: "P-152 (3B+G+13) COMMERCIAL-RESIDENTIAL-BUILDING",
+    src: "assets/images/comm_&_residential/152.jpg",
+  },
+  {
     projectNumber: "117",
     slug: "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/117v1.jpg",
   },
-  {
-    projectNumber: "118",
-    slug: "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
-    src: "../assets/images/comm_&_residential/118.jpg",
-  },
+ 
   {
     projectNumber: "132",
     slug: "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
@@ -163,6 +169,11 @@ const images = [
     projectNumber: "134",
     slug: "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/134.jpg",
+  },
+   {
+    projectNumber: "118",
+    slug: "P-118 (B+G+M+3) RESIDENTIAL COMMERCIAL BUILDING",
+    src: "../assets/images/comm_&_residential/118.jpg",
   },
   {
     projectNumber: "135",
@@ -190,6 +201,11 @@ const images = [
     src: "../assets/images/comm_&_residential/173.jpg",
   },
   {
+    projectNumber: "176",
+    slug: "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/176.jpg",
+  },
+  {
     projectNumber: "177",
     slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: [
@@ -213,9 +229,24 @@ const images = [
     src: "../assets/images/comm_&_residential/190.jpg",
   },
   {
+    projectNumber: "195",
+    slug: "P-195 (G+1) SHOPPING MALL",
+    src: "../assets/images/comm_&_residential/195.jpg",
+  },
+  {
     projectNumber: "197",
     slug: "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     src: "../assets/images/comm_&_residential/197.jpg",
+  },
+  {
+    projectNumber: "82",
+    slug: "P-082 (2B+G+14+FLOORS)",
+    src: "../assets/images/comm_&_residential/82.jpg",
+  },
+  {
+    projectNumber: "109",
+    slug: "P-109 (3B+G+4+Gym) COMMERCIAL RESIDENTIAL BUILDING",
+    src: "../assets/images/comm_&_residential/109.jpg",
   },
   {
     projectNumber: "198",
@@ -225,44 +256,67 @@ const images = [
   {
     projectNumber: "192",
     slug: "P-192 (G+2P+12+R+U Roof) COMMERCIAL AND RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/192.jpg"
+    src: "../assets/images/comm_&_residential/192.jpg",
   },
   {
     projectNumber: "166",
-    src: "../assets/images/comm_&_residential/166.jpg"
+    src: "../assets/images/comm_&_residential/166.jpg",
   },
   {
     projectNumber: "165",
-    src: "../assets/images/comm_&_residential/165.jpg"
+    src: "../assets/images/comm_&_residential/165.jpg",
   },
   {
     projectNumber: "164",
-    src: "../assets/images/comm_&_residential/164.jpg"
+    src: "../assets/images/comm_&_residential/164.jpg",
   },
 
   {
     projectNumber: "151",
-    src: ["../assets/images/comm_&_residential/151v1.jpg", "../assets/images/comm_&_residential/151v1.jpg"]
+    src: [
+      "../assets/images/comm_&_residential/151v1.jpg",
+      "../assets/images/comm_&_residential/151v1.jpg",
+    ],
   },
   {
     projectNumber: "155",
-    src: "../assets/images/comm_&_residential/155.jpg"
+    src: "../assets/images/comm_&_residential/155.jpg",
   },
   {
     projectNumber: "157",
-    src: "../assets/images/comm_&_residential/157.jpg"
+    src: "../assets/images/comm_&_residential/157.jpg",
   },
   {
     projectNumber: "149",
-    src: "../assets/images/comm_&_residential/149.jpg"
+    src: "../assets/images/comm_&_residential/149.jpg",
   },
   {
     projectNumber: "143",
-    src: "../assets/images/comm_&_residential/143.jpg"
-  }, 
+    src: "../assets/images/comm_&_residential/143.jpg",
+  },
   {
     projectNumber: "163",
-    src: "../assets/images/comm_&_residential/163.jpg"
+    src: "../assets/images/comm_&_residential/163.jpg",
+  },
+  {
+    projectNumber: "121",
+    slug: "p-121 (B+G+7+R) Commercial & Residential Building",
+    src: "../assets/images/comm_&_residential/121.jpg",
+  },
+  {
+    projectNumber: "119",
+    slug: "p-119 (2B+G+M+11)  Residential Buildin",
+    src: "../assets/images/comm_&_residential/119.jpg",
+  },
+  {
+    projectNumber: "83",
+    slug: "P-083 (B+G+12) Residential Building",
+    src: "../assets/images/comm_&_residential/83.jpg",
+  },
+  {
+    projectNumber: "86",
+    slug: "P-086 (2B+G+12) RESIDENTIAL COMMERCIAL",
+    src: "../assets/images/comm_&_residential/86.jpg",
   },
 ];
 
@@ -354,22 +408,22 @@ const galleryImages = images.flatMap((project) =>
   const observer =
     "IntersectionObserver" in window
       ? new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
 
-            const el = entry.target;
-            el.classList.add("is-in");
-            observer.unobserve(el);
+              const el = entry.target;
+              el.classList.add("is-in");
+              observer.unobserve(el);
 
-            // Remove stagger delay once the reveal has finished
-            if (el.classList.contains("gl-card")) {
-              setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
-      )
+              // Remove stagger delay once the reveal has finished
+              if (el.classList.contains("gl-card")) {
+                setTimeout(() => el.style.setProperty("--d", "0ms"), 1300);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+        )
       : null;
 
   function reveal(el) {

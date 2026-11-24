@@ -88,7 +88,6 @@ ul {
   }
 }
 
-
 /* banner */
 .gl-section,
 .gl-lightbox,
@@ -159,7 +158,6 @@ ul {
     0 1px 3px rgba(0, 0, 0, 0.6),
     0 2px 18px rgba(0, 0, 0, 0.7);
 }
-
 
 /* ==========================================================
    3. SECTION & HEADER
@@ -233,6 +231,7 @@ ul {
   line-height: 1.8;
   color: var(--gl-muted);
 }
+
 /* =========================================================
    HERO TITLE ANIMATION (plays on page load)
 ========================================================= */
@@ -241,6 +240,7 @@ ul {
 .gl-head--hero {
   position: relative;
 }
+
 .gl-head--hero::before {
   content: "";
   position: absolute;
@@ -249,14 +249,26 @@ ul {
   width: min(620px, 90vw);
   height: 260px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(closest-side, rgba(143, 217, 201, 0.28), transparent 70%);
+  background: radial-gradient(closest-side,
+      rgba(143, 217, 201, 0.28),
+      transparent 70%);
   filter: blur(30px);
   z-index: -1;
   animation: gl-glow 6s ease-in-out infinite;
 }
+
 @keyframes gl-glow {
-  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.95); }
-  50%      { opacity: 1;    transform: translate(-50%, -50%) scale(1.08); }
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
 }
 
 /* eyebrow: fades down, side lines grow outward */
@@ -264,20 +276,39 @@ ul {
   animation: gl-fade-down 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 0.1s;
 }
+
 .gl-head--hero .gl-eyebrow::before,
 .gl-head--hero .gl-eyebrow::after {
   transform: scaleX(0);
   animation: gl-line-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
 }
-.gl-head--hero .gl-eyebrow::before { transform-origin: right center; }
-.gl-head--hero .gl-eyebrow::after  { transform-origin: left center; }
+
+.gl-head--hero .gl-eyebrow::before {
+  transform-origin: right center;
+}
+
+.gl-head--hero .gl-eyebrow::after {
+  transform-origin: left center;
+}
 
 @keyframes gl-fade-down {
-  from { opacity: 0; transform: translateY(-18px); letter-spacing: 0.5em; }
-  to   { opacity: 1; transform: none; letter-spacing: 0.24em; }
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+    letter-spacing: 0.5em;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+    letter-spacing: 0.24em;
+  }
 }
+
 @keyframes gl-line-grow {
-  to { transform: scaleX(1); }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* title: rises up from a blur */
@@ -285,20 +316,36 @@ ul {
   animation: gl-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: calc(var(--d, 0ms) + 250ms);
 }
+
 @keyframes gl-rise {
-  from { opacity: 0; transform: translateY(40px); filter: blur(10px); }
-  to   { opacity: 1; transform: none; filter: blur(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
 }
 
 /* highlighted words: flowing gradient */
 .gl-head--hero .gl-title em {
   display: inline-block;
   background-size: 220% auto;
-  background-image: linear-gradient(100deg, #8fd9c9 10%, var(--gl-gold-light) 50%, #8fd9c9 90%);
+  background-image: linear-gradient(100deg,
+      #8fd9c9 10%,
+      var(--gl-gold-light) 50%,
+      #8fd9c9 90%);
   animation: gl-shimmer 5s linear 1.4s infinite;
 }
+
 @keyframes gl-shimmer {
-  to { background-position: -220% center; }
+  to {
+    background-position: -220% center;
+  }
 }
 
 /* animated underline drawn under the title */
@@ -319,12 +366,21 @@ ul {
 .gl-head--hero .gl-sub {
   animation: gl-fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
 }
+
 @keyframes gl-fade-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .gl-head--hero::before,
   .gl-head--hero .gl-eyebrow,
   .gl-head--hero .gl-eyebrow::before,
@@ -338,8 +394,12 @@ ul {
     transform: none;
     filter: none;
   }
-  .gl-head--hero .gl-title::after { transform: scaleX(1); }
+
+  .gl-head--hero .gl-title::after {
+    transform: scaleX(1);
+  }
 }
+
 /* FLOATING ACTION BUTTONS (WhatsApp + Back-to-top on right, Email on left) */
 .fab {
   position: fixed;
@@ -352,11 +412,6 @@ ul {
 
 .fab--right {
   right: calc(22px + env(safe-area-inset-right, 0px));
-  align-items: center;
-}
-
-.fab--left {
-  left: calc(22px + env(safe-area-inset-left, 0px));
   align-items: center;
 }
 
@@ -373,7 +428,9 @@ ul {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .fab__btn:hover {
@@ -435,10 +492,6 @@ ul {
   right: calc(100% + 12px);
 }
 
-.fab--left .fab__btn[data-label]::after {
-  left: calc(100% + 12px);
-}
-
 .fab__btn[data-label]:hover::after,
 .fab__btn[data-label]:focus-visible::after {
   opacity: 1;
@@ -449,7 +502,10 @@ ul {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
 }
 
 .fab__btn--top.is-visible {
@@ -533,10 +589,6 @@ ul {
     right: 14px;
   }
 
-  .fab--left {
-    left: 14px;
-  }
-
   .fab__btn {
     width: 48px;
     height: 48px;
@@ -563,5 +615,380 @@ ul {
   .fab__btn--whatsapp::before,
   .fab__btn--whatsapp svg {
     animation: none;
+  }
+}
+
+/* =====================================================
+   MODERN EMAIL PICKER
+   ===================================================== */
+
+.email-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.email-picker.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* BACKGROUND OVERLAY */
+
+.email-picker__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 15, 18, 0.65);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* MODAL */
+
+.email-picker__dialog {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 460px);
+  padding: 34px;
+
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary, #202124);
+
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(24px) scale(0.97);
+
+  transition:
+    transform 0.35s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.email-picker.is-open .email-picker__dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* CLOSE BUTTON */
+
+.email-picker__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 50%;
+
+  background: var(--surface-bg, #f5f7f8);
+  color: var(--text-primary, #202124);
+
+  font-size: 26px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.email-picker__close:hover {
+  background: var(--surface-bg-2, #e9edef);
+  transform: rotate(90deg);
+}
+
+/* EMAIL ICON */
+
+.email-picker__icon {
+  display: grid;
+  place-items: center;
+
+  width: 62px;
+  height: 62px;
+
+  margin-bottom: 22px;
+
+  border-radius: 18px;
+
+  background: #1e665e;
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(30, 102, 94, 0.22);
+}
+
+/* EYEBROW */
+
+.email-picker__eyebrow {
+  margin-bottom: 10px;
+
+  color: #1e665e;
+
+  font-family: Poppins, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* HEADING */
+
+.email-picker__dialog h3 {
+  margin: 0 40px 10px 0;
+
+  color: var(--text-primary, #202124);
+
+  font-family: Poppins, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+/* DESCRIPTION */
+
+.email-picker__dialog>p {
+  margin: 0 0 26px;
+
+  color: var(--text-secondary, #6b7280);
+
+  font-family: Raleway, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* OPTIONS CONTAINER */
+
+.email-picker__options {
+  display: grid;
+  gap: 12px;
+}
+
+/* OPTION CARD */
+
+.email-picker__option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  min-height: 76px;
+  padding: 14px 16px;
+
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+
+  background: var(--surface-bg, #f8fafb);
+  color: var(--text-primary, #202124);
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.email-picker__option:hover {
+  background: var(--surface-bg-2, #eef3f2);
+
+  border-color: #1e665e;
+
+  box-shadow: 0 8px 20px rgba(30, 102, 94, 0.08);
+
+  transform: translateY(-2px);
+}
+
+/* APP ICON */
+
+.email-picker__app-icon {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 46px;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 13px;
+
+  font-family: Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+/* GMAIL */
+
+.gmail-icon {
+  background: #ffffff;
+  color: #4285f4;
+
+  border: 1px solid #e5e7eb;
+}
+
+/* OUTLOOK */
+
+.outlook-icon {
+  background: #e8f2ff;
+  color: #0078d4;
+}
+
+/* DEFAULT EMAIL */
+
+.default-icon {
+  background: var(--surface-bg-2, #e9edef);
+  color: var(--text-primary, #202124);
+}
+
+/* OPTION TEXT */
+
+.email-picker__option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.email-picker__option-text strong {
+  color: var(--text-primary, #202124);
+
+  font-family: Poppins, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.email-picker__option-text small {
+  color: var(--text-secondary, #6b7280);
+
+  font-family: Raleway, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* ARROW */
+
+.email-picker__arrow {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  color: var(--text-secondary, #6b7280);
+
+  font-size: 1.8rem;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.email-picker__option:hover .email-picker__arrow {
+  background: #1e665e;
+  color: #ffffff;
+
+  transform: translate(2px, -2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .email-picker {
+    padding: 18px;
+  }
+
+  .email-picker__dialog {
+    width: 100%;
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .email-picker__dialog h3 {
+    font-size: 2.1rem;
+  }
+
+  .email-picker__option {
+    min-height: 70px;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .email-picker__app-icon {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .email-picker,
+  .email-picker__dialog,
+  .email-picker__option,
+  .email-picker__close {
+    transition: none;
+  }
+}
+
+
+/* EMAIL BUTTON - FIXED LEFT SIDE */
+
+.fab--left {
+  left: calc(22px + env(safe-area-inset-left, 0px));
+  align-items: center;
+}
+
+/* Email button color */
+.fab__btn--email {
+  background: #1e665e;
+  color: #ffffff;
+}
+
+/* Email tooltip appears on the right */
+.fab--left .fab__btn[data-label]::after {
+  left: calc(100% + 12px);
+  right: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .fab--left {
+    left: calc(14px + env(safe-area-inset-left, 0px));
   }
 }

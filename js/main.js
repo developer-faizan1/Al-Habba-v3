@@ -47,3 +47,96 @@ window.addEventListener("scroll", () => {
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   });
 })();
+
+
+
+const emailPickerButton = document.getElementById(
+  "emailPickerButton"
+);
+
+const emailPickerModal = document.getElementById(
+  "emailPickerModal"
+);
+
+const gmailEmailLink = document.getElementById(
+  "gmailEmailLink"
+);
+
+const outlookEmailLink = document.getElementById(
+  "outlookEmailLink"
+);
+
+const defaultEmailLink = document.getElementById(
+  "defaultEmailLink"
+);
+
+// Company email
+const contactEmail = "habbai@alhabbai.ae";
+
+// Open email picker
+function openEmailPicker() {
+  emailPickerModal.classList.add("is-open");
+  emailPickerModal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+  emailPickerModal
+    .querySelector(".email-picker__close")
+    .focus();
+}
+
+// Close email picker
+function closeEmailPicker() {
+  emailPickerModal.classList.remove("is-open");
+  emailPickerModal.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+
+  emailPickerButton.focus();
+}
+
+// Gmail compose
+gmailEmailLink.href =
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}`;
+
+// Outlook compose
+outlookEmailLink.href =
+  `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(contactEmail)}`;
+
+// Default email application
+defaultEmailLink.href =
+  `mailto:${contactEmail}`;
+
+// Open popup
+emailPickerButton.addEventListener(
+  "click",
+  openEmailPicker
+);
+
+// Close button and overlay
+emailPickerModal
+  .querySelectorAll("[data-close-email-picker]")
+  .forEach((element) => {
+    element.addEventListener("click", closeEmailPicker);
+  });
+
+// Close with Escape
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    emailPickerModal.classList.contains("is-open")
+  ) {
+    closeEmailPicker();
+  }
+});
+
+// Close popup after selecting email app
+[
+  gmailEmailLink,
+  outlookEmailLink,
+  defaultEmailLink
+].forEach((link) => {
+  link.addEventListener("click", () => {
+    closeEmailPicker();
+  });
+});

@@ -1,4 +1,38 @@
-// AOS
+
+/* =========================================================
+   1. CONFIGURATION
+========================================================= */
+
+const SITE_CONFIG = {
+  contactEmail: "info@faizanahmad.in",
+  emailSubject: "Website Enquiry",
+};
+
+
+/* =========================================================
+   2. DOM ELEMENTS
+========================================================= */
+
+const DOM = {
+  navLinks: document.getElementById("navLinks"),
+  navbar: document.getElementById("navbar"),
+  logo: document.querySelector("nav img"),
+
+  backToTop: document.getElementById("backToTop"),
+
+  emailPickerButton: document.getElementById("emailPickerButton"),
+  emailPickerModal: document.getElementById("emailPickerModal"),
+
+  gmailEmailLink: document.getElementById("gmailEmailLink"),
+  outlookEmailLink: document.getElementById("outlookEmailLink"),
+  defaultEmailLink: document.getElementById("defaultEmailLink"),
+};
+
+
+/* =========================================================
+   3. INITIALIZATION
+========================================================= */
+
 AOS.init({
   offset: 150,
   delay: 100,
@@ -9,134 +43,88 @@ AOS.init({
   anchorPlacement: "top-bottom",
 });
 
-// Navigation
-const navLinks = document.getElementById("navLinks");
-const navbar = document.getElementById("navbar");
-const logo = document.querySelector("nav img");
-const circumference = 2 * Math.PI * 21;
+
+/* =========================================================
+   4. NAVIGATION FUNCTIONS
+========================================================= */
 
 function showMenu() {
-  navLinks.style.right = "0";
+  if (!DOM.navLinks) return;
+  DOM.navLinks.style.right = "0";
 }
 
 function hideMenu() {
-  navLinks.style.right = "-200px";
+  if (!DOM.navLinks) return;
+  DOM.navLinks.style.right = "-200px";
 }
 
-// Sticky Navbar
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 70) {
-    navbar.classList.add("scrolled");
-    logo.src = "./assets/images/alhabbai-dark-logo.png";
-  } else {
-    navbar.classList.remove("scrolled");
-    logo.src = "./assets/images/alhabbai-white-logo.png";
-  }
-});
 
-(function () {
-  var btn = document.getElementById("backToTop");
-  if (!btn) return;
-  var toggle = function () {
-    btn.classList.toggle("is-visible", window.scrollY > 300);
-  };
-  window.addEventListener("scroll", toggle, { passive: true });
-  toggle();
-  btn.addEventListener("click", function () {
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
-  });
-})();
+/* =========================================================
+   5. EMAIL PICKER FUNCTIONS
+========================================================= */
 
-
-
-const emailPickerButton = document.getElementById(
-  "emailPickerButton"
-);
-
-const emailPickerModal = document.getElementById(
-  "emailPickerModal"
-);
-
-const gmailEmailLink = document.getElementById(
-  "gmailEmailLink"
-);
-
-const outlookEmailLink = document.getElementById(
-  "outlookEmailLink"
-);
-
-const defaultEmailLink = document.getElementById(
-  "defaultEmailLink"
-);
-
-// Company email
-const contactEmail = "habbai@alhabbai.ae";
-
-// Open email picker
 function openEmailPicker() {
-  emailPickerModal.classList.add("is-open");
-  emailPickerModal.setAttribute("aria-hidden", "false");
+  if (!DOM.emailPickerModal) return;
+
+  DOM.emailPickerModal.classList.add("is-open");
+  DOM.emailPickerModal.setAttribute("aria-hidden", "false");
 
   document.body.style.overflow = "hidden";
 
-  emailPickerModal
+  DOM.emailPickerModal
     .querySelector(".email-picker__close")
-    .focus();
+    ?.focus();
 }
 
-// Close email picker
 function closeEmailPicker() {
-  emailPickerModal.classList.remove("is-open");
-  emailPickerModal.setAttribute("aria-hidden", "true");
+  if (!DOM.emailPickerModal) return;
+
+  DOM.emailPickerModal.classList.remove("is-open");
+  DOM.emailPickerModal.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
 
-  emailPickerButton.focus();
+  DOM.emailPickerButton?.focus();
 }
 
-// Gmail compose
-gmailEmailLink.href =
-  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}`;
 
-// Outlook compose
-outlookEmailLink.href =
-  `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(contactEmail)}`;
+/* =========================================================
+   6. EMAIL LINKS
+========================================================= */
 
-// Default email application
-defaultEmailLink.href =
-  `mailto:${contactEmail}`;
+function setupEmailLinks() {
+  const email = encodeURIComponent(SITE_CONFIG.contactEmail);
 
-// Open popup
-emailPickerButton.addEventListener(
+  if (DOM.gmailEmailLink) {
+    DOM.gmailEmailLink.href =
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+  }
+
+  if (DOM.outlookEmailLink) {
+    DOM.outlookEmailLink.href =
+      `mailto:${SITE_CONFIG.contactEmail}`;
+  }
+
+  if (DOM.defaultEmailLink) {
+    DOM.defaultEmailLink.href =
+      `mailto:${SITE_CONFIG.contactEmail}`;
+  }
+}
+
+
+/* =========================================================
+   7. EVENT LISTENERS
+========================================================= */
+
+DOM.emailPickerButton?.addEventListener(
   "click",
   openEmailPicker
 );
 
-// Close button and overlay
-emailPickerModal
-  .querySelectorAll("[data-close-email-picker]")
+DOM.emailPickerModal
+  ?.querySelectorAll("[data-close-email-picker]")
   .forEach((element) => {
     element.addEventListener("click", closeEmailPicker);
   });
 
-// Close with Escape
-document.addEventListener("keydown", (event) => {
-  if (
-    event.key === "Escape" &&
-    emailPickerModal.classList.contains("is-open")
-  ) {
-    closeEmailPicker();
-  }
-});
-
-// Close popup after selecting email app
-[
-  gmailEmailLink,
-  outlookEmailLink,
-  defaultEmailLink
-].forEach((link) => {
-  link.addEventListener("click", () => {
-    closeEmailPicker();
-  });
-});
+setupEmailLinks();

@@ -136,7 +136,7 @@ nav svg {
    MOBILE
 =========================== */
 
-@media (max-width: 1192px) {
+@media (max-width: 1300px) {
   nav img {
     width: 180px;
   }

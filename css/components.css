@@ -1,9 +1,7 @@
 /* ===========================
    NAVIGATION
 =========================== */
-.logo{
-  margin-top: -14px;
-}
+
 .nav__menu__wrapper {
   position: fixed;
   top: 0;
@@ -11,39 +9,42 @@
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition: background 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: none;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.nav__menu__wrapper nav {
+/* After scrolling: white background */
+.nav__menu__wrapper.scrolled {
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  height: 90px;
+  height: 70px;
   transition: all 0.35s ease;
 }
 
-.nav__menu__wrapper nav > a:first-child {
-  flex-shrink: 0;
-  line-height: 0;
-}
-
-.nav__menu__wrapper nav > a:first-child img {
-  display: block;
-  width: 220px;
+nav img {
+  width: 190px;
   transition: all 0.35s ease;
 }
 
-/* Navigation Links */
+nav svg {
+  display: none;
+}
+
 .nav-links {
   flex: 1;
-  min-width: 0;
   text-align: right;
 }
 
 .nav-links ul {
   padding: 0;
-  margin: 0;
 }
 
 .nav-links ul li {
@@ -55,65 +56,47 @@
 
 .nav-links ul li a {
   text-decoration: none;
-  color: #fff;
-  font-size: 1.6rem;
+  color: var(--black-1);
+  font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: color 0.3s ease;
   font-family: Poppins;
-  white-space: nowrap;
 }
 
 .nav-links ul li a:hover {
   color: var(--green-1);
 }
 
-.nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background-color: var(--green-1);
-  display: block;
-  margin: auto;
-  transition: width 0.4s ease;
+/* Transparent state (top of page) */
+.nav__menu__wrapper:not(.scrolled) .nav-links ul li a {
+  color: #ffffff;
 }
 
-.nav-links ul li:hover::after {
-  width: 100%;
+.nav__menu__wrapper:not(.scrolled) nav > svg {
+  color: #ffffff;
 }
 
-/* ===========================
-   STICKY NAVIGATION
-=========================== */
-
-.nav__menu__wrapper.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+.nav__menu__wrapper:not(.scrolled) nav > a.nav-cta {
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
-.nav__menu__wrapper.scrolled nav {
-  height: 72px;
+/* Hover colors should still win */
+.nav__menu__wrapper:not(.scrolled) .nav-links ul li a:hover {
+  color: var(--green-1);
 }
 
-.nav__menu__wrapper.scrolled nav > a:first-child img {
-  width: 190px;
-  margin-top: 6px;
-}
-
-.nav__menu__wrapper.scrolled .nav-links ul li a {
+/* Dropdown is always white, so keep its links dark */
+.nav__menu__wrapper:not(.scrolled) .nav-links ul.submenu li a {
   color: var(--black-1);
 }
 
-/* ===========================
-   MENU ICONS
-=========================== */
+/* Menu Icons */
 
-.nav__menu__wrapper nav > svg,
-.nav-links > svg {
+nav svg {
   display: none;
-  color: #fff;
+  color: var(--black-1);
   cursor: pointer;
 }
 
@@ -129,8 +112,8 @@
   justify-content: center;
   flex: 0 0 auto;
   gap: 1rem;
-  padding: 1.2rem 2.4rem;
-  margin: 0;
+  padding: .6rem 1.4rem;
+  margin: 0 0 0 3.2rem; /* gap between CONTACT and the button */
   font-family: Poppins;
   font-weight: 500;
   font-size: 1.4rem;
@@ -178,99 +161,17 @@
 }
 
 /* ===========================
-   DESKTOP SPACING
+   MOBILE
 =========================== */
 
-@media (min-width: 1193px) {
-
-  .nav__menu__wrapper nav {
-    gap: 24px;
-  }
-
-  .nav__menu__wrapper .nav-links {
-    padding-right: 12px;
-  }
-
-  .nav__menu__wrapper .nav-links ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: clamp(12px, 1.15vw, 24px);
-    white-space: nowrap;
-  }
-
-  .nav__menu__wrapper .nav-links ul li {
-    display: block;
-    flex: 0 0 auto;
-    margin-left: 19px;
-  }
-}
-
-/* Smaller desktop */
-@media (min-width: 1193px) and (max-width: 1500px) {
-
-  .nav__menu__wrapper nav {
-    gap: 14px;
-  }
-
-  .nav__menu__wrapper nav > a:first-child img {
-    width: 175px;
-  }
-
-  .nav__menu__wrapper .nav-links {
-    padding-right: 4px;
-  }
-
-  .nav__menu__wrapper .nav-links ul {
-    gap: 16px;
-  }
-
-  .nav__menu__wrapper .nav-links ul li a {
-    font-size: 1.4rem;
-    font-weight: 600;
-      font-family: Poppins;
-  }
-
-  .nav__menu__wrapper nav > a.nav-cta {
-    padding: .6rem 1.4rem;
-    font-size: 1.4rem;
-    margin-top: -4px;
-    gap: 8px;
-  }
-}
-
-/* Large desktop only: extra space between nav links */
-@media (min-width: 1501px) {
-
-  .nav__menu__wrapper .nav-links ul li {
-    margin-left: 19px;
-  }
-}
-
-/* ===========================
-   TABLET NAVIGATION
-=========================== */
-
-@media (max-width: 1192px) {
-
-  .nav__menu__wrapper nav {
-    gap: 12px;
-  }
-
-  .nav__menu__wrapper nav > a:first-child img {
+@media (max-width: 1300px) {
+  nav img {
     width: 180px;
   }
 
-  .nav__menu__wrapper nav > svg {
+  nav svg {
     display: block;
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 24px;
-    height: 24px;
-    flex: 0 0 auto;
-    z-index: 1;
-    color: #fff;
+    z-index: 9999;
   }
 
   .nav-links {
@@ -281,9 +182,10 @@
     height: 100vh;
     background: var(--lightGreen-1);
     text-align: left;
-    transition: right 0.4s ease;
+    transition: 0.4s;
     z-index: 10000;
     padding-top: 80px;
+    transition: 0.4s ease;
   }
 
   .nav-links.active {
@@ -299,52 +201,64 @@
     margin: 22px 0;
   }
 
-  .nav-links ul li a {
+  /* Slide-in panel is light green, so links stay dark in both nav states */
+  .nav__menu__wrapper .nav-links ul li a {
     color: var(--black-3) !important;
     font-size: 1.6rem;
   }
 
-  .nav-links > svg {
-    display: block;
+  .nav-links svg {
+    color: #222;
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 24px;
-    height: 24px;
-    color: #222;
   }
 
-  .nav__menu__wrapper nav > a.nav-cta {
-    margin-left: auto;
-    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 100vh;
   }
 
-  .nav__menu__wrapper.scrolled nav > svg {
-    color: var(--black-1);
+  nav {
+    padding: 15px 0;
+  }
+
+  nav img {
+    width: 150px;
+  }
+
+  nav svg {
+    display: block;
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    cursor: pointer;
   }
 }
 
 /* ===========================
-   MOBILE NAVIGATION
+   OUR PROFILE BUTTON - TABLET & MOBILE
 =========================== */
 
-@media (max-width: 768px) {
-
-  .nav__menu__wrapper nav {
-    padding: 15px 0;
-  }
-
-  .nav__menu__wrapper nav > a:first-child img {
-    width: 150px;
-  }
-
+/* Tablet: hamburger sits in the flex row, button goes beside it */
+@media (max-width: 1192px) {
   .nav__menu__wrapper nav > a.nav-cta {
-    height: 38px;
-    margin-left: auto;
-    margin-right: 8px;
-    padding: 0 1.2rem;
+    margin: 0 2rem 0 auto;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile: hamburger is absolutely positioned at right: 20px,
+   so leave room for it and shrink the button */
+@media (max-width: 768px) {
+  .nav__menu__wrapper nav > a.nav-cta {
+    margin: 0 44px 0 auto;
+    padding: 0.8rem 1.6rem;
     font-size: 1.2rem;
-    gap: 8px;
+    gap: 0.6rem;
   }
 
   .nav__menu__wrapper nav > a.nav-cta svg {
@@ -353,39 +267,17 @@
   }
 }
 
-/* ===========================
-   SMALL MOBILE
-=========================== */
-
-@media (max-width: 420px) {
-
-  .nav__menu__wrapper nav {
-    gap: 6px;
-  }
-
-  .nav__menu__wrapper nav > a:first-child img {
-    width: 112px;
-  }
-
+/* Small phones */
+@media (max-width: 400px) {
   .nav__menu__wrapper nav > a.nav-cta {
-    margin-right: 4px;
-    padding: 0 8px;
-    font-size: 1rem;
-    gap: 5px;
+    margin-right: 40px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
   }
 
   .nav__menu__wrapper nav > a.nav-cta svg {
-    display: block !important;
-    width: 13px;
-    height: 13px;
-  }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  .nav__menu__wrapper nav > a.nav-cta,
-  .nav__menu__wrapper nav > a.nav-cta svg {
-    transition: none;
+    display: none !important;
   }
 }
 
@@ -393,7 +285,6 @@
    CAREERS SUB MENU (hover)
 =========================== */
 
-/* small arrow next to "Careers" */
 .nav-links ul li.has-submenu > a::after {
   content: "";
   display: inline-block;
@@ -411,15 +302,13 @@
   transform: rotate(-135deg) translate(-1px, -1px);
 }
 
-/* dropdown box */
-.nav__menu__wrapper .nav-links ul.submenu {
-  display: block;
+.nav-links ul.submenu {
   position: absolute;
   top: 100%;
   left: 0;
   min-width: 190px;
-  margin: 10px 0 0;
   padding: 8px;
+  margin-top: 10px;
   text-align: left;
   background: #ffffff;
   border: 1px solid var(--border);
@@ -435,8 +324,8 @@
   z-index: 20;
 }
 
-/* invisible bridge so the menu stays open while the mouse moves down */
-.nav__menu__wrapper .nav-links ul.submenu::before {
+/* invisible bridge so the menu doesn't close while moving the mouse down */
+.nav-links ul.submenu::before {
   content: "";
   position: absolute;
   left: 0;
@@ -452,30 +341,25 @@
   transform: none;
 }
 
-.nav__menu__wrapper .nav-links ul.submenu li {
+.nav-links ul.submenu li {
   display: block;
   margin: 0;
 }
 
-/* no green underline animation on the sub items */
-.nav-links ul.submenu li::after {
-  display: none;
-}
-
-.nav__menu__wrapper .nav-links ul.submenu li a {
+.nav-links ul.submenu li a {
   display: block;
   padding: 10px 14px;
   font-size: 1.3rem;
-  color: var(--black-1);
+  white-space: nowrap;
   border-radius: 8px;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-.nav__menu__wrapper .nav-links ul.submenu li a:hover {
+.nav-links ul.submenu li a:hover {
   background: var(--lightGreen-1);
-  color: var(--green-1);
+  color: var(--green-1) !important;
 }
 
 /* Tablet & mobile: show it inline inside the slide-in menu */
@@ -484,7 +368,7 @@
     display: none;
   }
 
-  .nav__menu__wrapper .nav-links ul.submenu {
+  .nav-links ul.submenu {
     position: static;
     min-width: 0;
     margin: 12px 0 0;
@@ -499,22 +383,21 @@
     transform: none;
   }
 
-  .nav__menu__wrapper .nav-links ul.submenu::before {
+  .nav-links ul.submenu::before {
     display: none;
   }
 
-  .nav__menu__wrapper .nav-links ul.submenu li a {
+  .nav-links ul.submenu li a {
     padding: 4px 0;
     font-size: 1.4rem;
   }
 
-  .nav__menu__wrapper .nav-links ul.submenu li a:hover {
+  .nav-links ul.submenu li a:hover {
     background: transparent;
   }
 }
 
-/* Navigation End */
-
+/* Nav End */
 
 /* Global Button Styles */
 .btn {
@@ -567,6 +450,88 @@
   }
 }
 
+/* scroll button */
+.scroll-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--green-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  padding: 0;
+  box-shadow: 0 6px 20px rgba(25, 100, 105, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Progress Ring */
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+/* Background Ring */
+.progress-ring-bg {
+  fill: none;
+  stroke: var(--lightGreen-1);
+  stroke-width: 3;
+}
+
+/* Scroll Progress */
+.progress-ring-progress {
+  fill: none;
+  stroke: var(--green-1);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 131.95;
+  stroke-dashoffset: 131.95;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+/* Arrow */
+.scroll-arrow {
+  position: relative;
+  z-index: 2;
+  color: var(--green-1);
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.scroll-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(25, 100, 105, 0.22);
+}
+
+.scroll-top:hover .scroll-arrow {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .scroll-top {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    bottom: 20px;
+  }
+
+  .scroll-arrow {
+    font-size: 18px;
+  }
+}
 
 /*  Footer Section  */
 

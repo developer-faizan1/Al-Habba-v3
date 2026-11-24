@@ -4,7 +4,7 @@
 ========================================================= */
 
 const SITE_CONFIG = {
-  contactEmail: "info@faizanahmad.in",
+  contactEmail: "habbai@alhabbai.ae",
   emailSubject: "Website Enquiry",
 };
 

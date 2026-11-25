@@ -64,12 +64,15 @@ const images = [
   {
     projectNumber: "140",
     slug: "P-140 (2B+G+19) HOTEL BUILDING",
-    src: "../assets/images/hotels/140v1.jpg",
+    src: [
+      "../assets/images/hotels/140v1.jpg",
+      "../assets/images/hotels/140v2.jpg",
+    ],
   },
   {
     projectNumber: "96",
     slug: "P-096 (3B+G+19) STOREY HOTEL TOWER",
-    src: "../assets/images/hotels/96.jpg",
+    src: ["../assets/images/hotels/96.jpg", "../assets/images/hotels/96v2.jpg"],
   },
   {
     projectNumber: "102",
@@ -122,17 +125,18 @@ const images = [
   {
     projectNumber: "171",
     slug: "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
-    src: "../assets/images/hotels/171.jpg",
+    src: [
+      "../assets/images/hotels/171v1.jpg",
+      "../assets/images/hotels/171v2.jpg",
+    ],
   },
   {
     projectNumber: "129",
     slug: "P-129 (B+G+32) HOTEL-BUILDING",
-    src: "../assets/images/comm_&_residential/129.jpg",
-  },
-  {
-    projectNumber: "77",
-    slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/77.jpg",
+    src: [
+      "../assets/images/comm_&_residential/129.jpg",
+      "../assets/images/comm_&_residential/129v2.jpg",
+    ],
   },
   {
     projectNumber: "85",
@@ -142,7 +146,7 @@ const images = [
   {
     projectNumber: "95",
     slug: "P-095 (2B+G+15) RESIDENTIAL COMMERCIAL BUILDING",
-    src: "../assets/images/comm_&_residential/95.jpg",
+    src: ["../assets/images/comm_&_residential/95.jpg", "../assets/images/comm_&_residential/95v2.jpg"],
   },
   {
     projectNumber: "99",
@@ -157,23 +161,33 @@ const images = [
   {
     projectNumber: "117",
     slug: "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/117v1.jpg",
+    src: ["../assets/images/comm_&_residential/117v1.jpg","../assets/images/comm_&_residential/117v2.jpg"],
   },
 
   {
     projectNumber: "132",
     slug: "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/132.jpg",
+    src: ["../assets/images/comm_&_residential/132.jpg", "../assets/images/comm_&_residential/132v2.jpg"],
+  },
+  {
+    projectNumber: "77",
+    slug: "P-077 (B+G+UG+12) Commercial & Residential Building",
+    src: ["../assets/images/comm_&_residential/77.jpg","../assets/images/comm_&_residential/77v2.jpg"],
   },
   {
     projectNumber: "133",
     slug: "P-133 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/133.jpg",
+    src: ["../assets/images/comm_&_residential/133.jpg","../assets/images/comm_&_residential/133v2.jpg"],
+  },
+  {
+    projectNumber: "177",
+    slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    src: ["../assets/images/comm_&_residential/177v2.jpg","../assets/images/comm_&_residential/177v3.jpg"],
   },
   {
     projectNumber: "134",
     slug: "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/134.jpg",
+    src: ["../assets/images/comm_&_residential/134.jpg","../assets/images/comm_&_residential/134v2.jpg"],
   },
   {
     projectNumber: "118",
@@ -183,60 +197,52 @@ const images = [
   {
     projectNumber: "135",
     slug: "P-135 (B+G+12+R) COMMERCIAL RESIDENTIAL BUILDING (2 BLDGS)",
-    src: "../assets/images/comm_&_residential/135.jpg",
+    src: ["../assets/images/comm_&_residential/135.jpg", "../assets/images/comm_&_residential/135v2.jpg"],
   },
   {
     projectNumber: "159",
     slug: "P-159 PROPOSED (B+G+8+R) COMMERCIAL AND RESIDENTIAL",
-    src: "../assets/images/comm_&_residential/159.jpg",
+    src: ["../assets/images/comm_&_residential/159.jpg", "../assets/images/comm_&_residential/159v2.jpg"],
   },
   {
     projectNumber: "162",
     slug: "P-162 SRG ALT TOWER",
-    src: "../assets/images/comm_&_residential/162.jpg",
+    src: ["../assets/images/comm_&_residential/162.jpg","../assets/images/comm_&_residential/162v2.jpg"],
   },
   {
     projectNumber: "172",
     slug: "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/172.jpg",
+    src: ["../assets/images/comm_&_residential/172.jpg","../assets/images/comm_&_residential/172v2.jpg"],
   },
   {
     projectNumber: "173",
     slug: "P-173 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/173.jpg",
+    src: ["../assets/images/comm_&_residential/173.jpg","../assets/images/comm_&_residential/173v2.jpg"],
   },
   {
     projectNumber: "176",
     slug: "P-176 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/176v1.jpg",
-  },
-  {
-    projectNumber: "177",
-    slug: "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: [
-      "../assets/images/comm_&_residential/177v1.jpg",
-      "../assets/images/comm_&_residential/177v2.jpg",
-    ],
+    src: ["../assets/images/comm_&_residential/176v1.jpg","../assets/images/comm_&_residential/176v2.jpg"],
   },
   {
     projectNumber: "188",
     slug: "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/188.jpg",
+    src: ["../assets/images/comm_&_residential/188.jpg","../assets/images/comm_&_residential/189.jpg"],
   },
   {
     projectNumber: "189",
     slug: "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/189.jpg",
+    src:[ "../assets/images/comm_&_residential/189v2.jpg", "../assets/images/comm_&_residential/189v3.jpg"],
   },
   {
     projectNumber: "190",
     slug: "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: "../assets/images/comm_&_residential/190.jpg",
+    src: ["../assets/images/comm_&_residential/190.jpg","../assets/images/comm_&_residential/190v2.jpg"],
   },
   {
     projectNumber: "195",
     slug: "P-195 (G+1) SHOPPING MALL",
-    src: "../assets/images/comm_&_residential/195v1.jpg",
+    src: ["../assets/images/comm_&_residential/195v1.jpg","../assets/images/comm_&_residential/195.jpg"],
   },
   {
     projectNumber: "197",
@@ -266,7 +272,7 @@ const images = [
   {
     projectNumber: "166",
     slug: "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
-    src: "../assets/images/comm_&_residential/166.jpg",
+    src: "../assets/images/comm_&_residential/166v2.jpg",
   },
   {
     projectNumber: "165",

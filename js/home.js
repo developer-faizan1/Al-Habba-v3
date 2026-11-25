@@ -1,12 +1,5 @@
 /* =========================================================
-   AL HABBAI – HOME PAGE INTERACTIONS (v2)
-   Place at: /js/home.js  (load with defer)
-   - scroll reveal + masked title reveal
-   - mouse-follow spotlight on cards
-   - 3D tilt on about image
-   - animated counters
-   - parallax background text
-   - leadership carousel (drag / swipe, arrows, dots, autoplay)
+   AL HABBAI – HOME PAGE INTERACTIONS 
 ========================================================= */
 (function () {
   "use strict";

@@ -128,3 +128,25 @@ DOM.emailPickerModal
   });
 
 setupEmailLinks();
+
+
+
+/* Sticky Navbar */
+function updateNavbarOnScroll() {
+  if (!DOM.navbar || !DOM.logo) return;
+
+  if (window.scrollY > 70) {
+    DOM.navbar.classList.add("scrolled");
+    DOM.logo.src = "./assets/images/alhabbai-dark-logo.png";
+  } else {
+    DOM.navbar.classList.remove("scrolled");
+    DOM.logo.src = "./assets/images/alhabbai-white-logo.png";
+  }
+}
+
+window.addEventListener("scroll", updateNavbarOnScroll, {
+  passive: true,
+});
+
+// Set the correct logo and navbar state when the page loads
+updateNavbarOnScroll();

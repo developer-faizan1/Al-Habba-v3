@@ -52,10 +52,7 @@
     },
     "projectType": "Mixed Use",
     "projectDescription": "Proposed Mixed Use Development",
-    "projectComprisesOf": [
-      "Community Mall",
-      "6 Buildings"
-    ],
+    "projectComprisesOf": ["Community Mall", "6 Buildings"],
     "fullAddress": "Studio City - Al Hebiah Second",
     "plot": "6750299",
     "area": "Studio City - Al Hebiah Second",
@@ -68,10 +65,7 @@
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Pullman Hotel",
-    "image": [
-      "assets/images/hotels/96.jpg",
-      "assets/images/hotels/96v2.jpg"
-    ],
+    "image": ["assets/images/hotels/96.jpg", "assets/images/hotels/96v2.jpg"],
     "images": [
       "assets/images/hotels/96.jpg",
       "assets/images/hotels/96v2.jpg",
@@ -496,9 +490,11 @@
     "projectNumber": "P-171",
     "slug": "P-171 PROPOSED (B+G+17+R) HOTEL BUILDING",
     "title": "HOTEL Building",
-    "image": "assets/images/hotels/171.jpg",
+    "image": "assets/images/hotels/171v1.jpg",
     "images": [
-      "assets/images/hotels/171.jpg"
+      "assets/images/hotels/171v1.jpg",
+      "assets/images/hotels/171v2.jpg",
+      "assets/images/hotels/171v3.jpg"
     ],
     "projectValue": "AED 81,000,000",
     "client": "Mr. Central One Properties LLC",
@@ -528,6 +524,10 @@
     "slug": "P-099 (2B+G+30) RESIDENTIAL COMMERCIAL BUILDING",
     "title": "Residential & Commercial Building",
     "image": "assets/images/comm_&_residential/99.jpg",
+    "images": [
+      "assets/images/comm_&_residential/99.jpg",
+      "assets/images/comm_&_residential/99v2.jpg"
+    ],
     "projectValue": "AED 169,650,000",
     "client": "M/S. Dire (Dubai I Nt’l Real Es Tate)",
     "consultant": "M/s. Group Consultant International ",
@@ -556,6 +556,10 @@
     "slug": "P-162 SRG ALT TOWER",
     "title": "SRG Alt Tower",
     "image": "assets/images/comm_&_residential/162.jpg",
+    "images": [
+      "assets/images/comm_&_residential/162.jpg",
+      "assets/images/comm_&_residential/162v2.jpg"
+    ],
     "projectValue": "AED 218,500,000",
     "client": "SRG Holding Limited",
     "consultant": "M/S. ERGA Engineering Consultant",
@@ -808,11 +812,7 @@
     },
     "projectType": "Residential",
     "projectDescription": "G+7+R Residential Building",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "7 Floors",
-      "Roof Level"
-    ],
+    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
     "fullAddress": "Al Barsha South 3rd, Arjan, Dubai",
     "plot": "6731159",
     "area": "Al Barsha South 3rd, Arjan",
@@ -825,10 +825,10 @@
     "projectNumber": "P-195",
     "slug": "P-195 (G+1) SHOPPING MALL",
     "title": "Shopping Mall",
-    "image": "assets/images/comm_&_residential/195v2.jpg",
+    "image": "assets/images/comm_&_residential/195.jpg",
     "images": [
-      "assets/images/comm_&_residentia/195v2.jpg",
-      "assets/images/comm_&_residentia/195v1.jpg"
+      "assets/images/comm_&_residential/195.jpg",
+      "assets/images/comm_&_residential/195v1.jpg"
     ],
     "projectValue": "AED 30,500,000",
     "client": "M/s. SRG Holding Limited",
@@ -923,7 +923,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/159.jpg",
     "images": [
-      "assets/images/comm_&_residential/159.jpg"
+      "assets/images/comm_&_residential/159.jpg",
+      "assets/images/comm_&_residential/159v2.jpg"
     ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -953,6 +954,10 @@
     "slug": "P-172 PROPOSED (B+G+P+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/172.jpg",
+    "images": [
+      "assets/images/comm_&_residential/172.jpg",
+      "assets/images/comm_&_residential/172v2.jpg"
+    ],
     "projectValue": "AED 49,000,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s Al Ajmi Engineering Consultant",
@@ -982,7 +987,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/173.jpg",
     "images": [
-      "assets/images/comm_&_residential/173.jpg"
+      "assets/images/comm_&_residential/173.jpg",
+      "assets/images/comm_&_residential/173v2.jpg"
     ],
     "projectValue": "AED 40,768,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
@@ -1013,7 +1019,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/188.jpg",
     "images": [
-      "assets/images/comm_&_residential/188.jpg"
+      "assets/images/comm_&_residential/188.jpg",
+      "assets/images/comm_&_residential/188v2.jpg"
     ],
     "projectValue": "AED 33,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
@@ -1038,13 +1045,46 @@
     "longitude": null
   },
   {
+    "id": 177,
+    "projectNumber": "P-177",
+    "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
+    "title": "Commercial & Residential Building",
+    "image": "assets/images/comm_&_residential/177v2.jpg",
+    "images": [
+      "assets/images/comm_&_residential/177v2.jpg",
+      "assets/images/comm_&_residential/177v3.jpg"
+    ],
+    "projectValue": "AED 75,100,000",
+    "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
+    "consultant": "M/s Al Ajmi Engineering Consultant",
+    "projectLocation": "Al Barsha South, Arjan",
+    "startDate": "18 April 2019",
+    "completionDate": "04 April 2021",
+    "status": "Completed",
+    "projectType": "Commercial & Residential",
+    "projectDescription": "Proposed (B+G+13+R) Commercial & Residential Building",
+    "projectComprisesOf": [
+      "Ground Floor",
+      "1 Podium",
+      "13 Floors",
+      "Roof Level"
+    ],
+    "fullAddress": "Al Barsha South, Arjan, Dubai",
+    "plot": "673-4086",
+    "area": "Al Barsha South, Arjan",
+    "state": "Dubai",
+    "latitude": null,
+    "longitude": null
+  },
+  {
     "id": 189,
     "projectNumber": "P-189",
     "slug": "P-189 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/comm_&_residential/189.jpg",
+    "image": "assets/images/comm_&_residential/189v2.jpg",
     "images": [
-      "assets/images/comm_&_residential/189.jpg"
+      "assets/images/comm_&_residential/189v2.jpg",
+      "assets/images/comm_&_residential/189v3.jpg"
     ],
     "projectValue": "AED 35,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
@@ -1074,6 +1114,10 @@
     "slug": "P-190 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/190.jpg",
+    "images": [
+      "assets/images/comm_&_residential/190.jpg",
+      "assets/images/comm_&_residential/190v2.jpg"
+    ],
     "projectValue": "AED 76,100,000",
     "client": "Mr. Ali Ahmed Mohammed Abdul Rahman",
     "consultant": "M/s Style Engineers Consultant",
@@ -1130,6 +1174,10 @@
     "slug": "P-197 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/197.jpg",
+    "images": [
+      "assets/images/comm_&_residential/197.jpg",
+      "assets/images/comm_&_residential/197v2.jpg"
+    ],
     "projectValue": "AED 38,100,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rahman",
     "consultant": "M/S. Style Engineering Consultant",
@@ -1159,7 +1207,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/198.jpg",
     "images": [
-      "assets/images/comm_&_residential/198.jpg"
+      "assets/images/comm_&_residential/198.jpg",
+      "assets/images/comm_&_residential/198v2.jpg"
     ],
     "projectValue": "AED 36,100,000",
     "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
@@ -1189,6 +1238,10 @@
     "slug": "P-095 (2B+G+15) RESIDENTIAL COMMERCIAL BUILDING",
     "title": "Residential & Commercial Building",
     "image": "assets/images/comm_&_residential/95.jpg",
+    "images": [
+      "assets/images/comm_&_residential/95.jpg",
+      "assets/images/comm_&_residential/95v2.jpg"
+    ],
     "projectValue": "AED 97,200,000",
     "client": "Mr. Ahmad Abdulrahim Ahmad  Baker",
     "consultant": "M/s. Dubai Consultant",
@@ -1212,46 +1265,15 @@
     "longitude": null
   },
   {
-    "id": 177,
-    "projectNumber": "P-177",
-    "slug": "P-177 PROPOSED (B+G+13+R) COMMERCIAL RESIDENTIAL BUILDING",
-    "title": "Commercial & Residential Building",
-    "image": [
-      "assets/images/comm_&_residentia/177v1.jpg",
-      "assets/images/comm_&_residentia/177v2.jpg"
-    ],
-    "images": [
-      "assets/images/comm_&_residentia/177v1.jpg",
-      "assets/images/comm_&_residentia/177v2.jpg"
-    ],
-    "projectValue": "AED 75,100,000",
-    "client": "Mr. Ali Ahmed Mohammad Abdul Rahman",
-    "consultant": "M/s Al Ajmi Engineering Consultant",
-    "projectLocation": "Al Barsha South, Arjan",
-    "startDate": "18 April 2019",
-    "completionDate": "04 April 2021",
-    "status": "Completed",
-    "projectType": "Commercial & Residential",
-    "projectDescription": "Proposed (B+G+13+R) Commercial & Residential Building",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "1 Podium",
-      "13 Floors",
-      "Roof Level"
-    ],
-    "fullAddress": "Al Barsha South, Arjan, Dubai",
-    "plot": "673-4086",
-    "area": "Al Barsha South, Arjan",
-    "state": "Dubai",
-    "latitude": null,
-    "longitude": null
-  },
-  {
     "id": 77,
     "projectNumber": "P-077",
     "slug": "P-077 (B+G+UG+12) Commercial & Residential Building",
     "title": "Commercial & Residential Building ",
     "image": "assets/images/comm_&_residential/77.jpg",
+    "images": [
+      "assets/images/comm_&_residential/77.jpg",
+      "assets/images/comm_&_residential/77v2.jpg"
+    ],
     "projectValue": "AED 46,500,000",
     "client": "Mr. Ali Ahmed Mo H A Mad Abdul Rah Man",
     "consultant": "M/S. Style Engineering Consultant",
@@ -1279,7 +1301,12 @@
     "projectNumber": "P-117",
     "slug": "P-117 (2B+G+11+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Residential & Commercial Building",
-    "image": "assets/images/comm_&_residential/117v1.jpg",
+    "image": "assets/images/comm_&_residential/117v2.jpg",
+    "images": [
+      "assets/images/comm_&_residential/117v1.jpg",
+      "assets/images/comm_&_residential/117v2.jpg",
+      "assets/images/comm_&_residential/117v3.jpg"
+    ],
     "projectValue": "AED 40,500,000",
     "client": "Mr. Ali Ahmed Mohamad Abdul Rah Man",
     "consultant": "M/s Style Engineers Consultant",
@@ -1307,7 +1334,11 @@
     "projectNumber": "P-132",
     "slug": "P-132 (B+G+7F+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/comm_&_residential/132.jpg",
+    "image": "assets/images/comm_&_residential/132v2.jpg",
+    "images": [
+      "assets/images/comm_&_residential/132v2.jpg",
+      "assets/images/comm_&_residential/132.jpg"
+    ],
     "projectValue": "AED 51,100,000",
     "client": "M/s. New Dubai Properties LLC",
     "consultant": "M/S. Rimal Engineering Consultant",
@@ -1330,12 +1361,17 @@
     "latitude": null,
     "longitude": null
   },
+  
   {
     "id": 133,
     "projectNumber": "P-133",
     "slug": "P-133 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/133.jpg",
+    "images": [
+      "assets/images/comm_&_residential/133.jpg",
+      "assets/images/comm_&_residential/133v2.jpg"
+    ],
     "projectValue": "AED 40,200,000",
     "client": "Mr. Ahmed Abdul Rahman Ahmed Arif",
     "consultant": "M/s. Arif & Intouk Engineering Consultnat",
@@ -1364,6 +1400,10 @@
     "slug": "P-134 (B+G+7+R) COMMERCIAL RESIDENTIAL BUILDING",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/134.jpg",
+    "images": [
+      "assets/images/comm_&_residential/134.jpg",
+      "assets/images/comm_&_residential/134v2.jpg"
+    ],
     "projectValue": "AED 66,500,000",
     "client": "M/S. SRG PROPERTIES LLC",
     "consultant": "M/s. Al Jabal Engineering Consultnat",
@@ -1392,6 +1432,10 @@
     "slug": "P-135 (B+G+12+R) COMMERCIAL RESIDENTIAL BUILDING (2 BLDGS)",
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/135.jpg",
+    "images": [
+      "assets/images/comm_&_residential/135.jpg",
+      "assets/images/comm_&_residential/135v2.jpg"
+    ],
     "projectValue": "AED 104,950,000",
     "client": "M/S. DIRE - DUBAI INT'L REAL ESTATE",
     "consultant": "M/S. AL MAJAL ENGINEERING CONSULTANT",
@@ -1421,6 +1465,10 @@
     "slug": "P-155 (2B+G+9F) STORIES SOHO APARTMENT",
     "title": "Soho Apartment",
     "image": "assets/images/comm_&_residential/155.jpg",
+    "images": [
+      "assets/images/comm_&_residential/155.jpg",
+      "assets/images/comm_&_residential/155v2.jpg"
+    ],
     "projectValue": "AED 62,000,000",
     "client": "M/s. NYC Holding Limited",
     "consultant": "M/s Naga Engineering Consultant",
@@ -1449,6 +1497,10 @@
     "slug": "P-157 (B+G+4P+MC+22+R) RESIDENTIAL RETAIL BUILDING",
     "title": "Residential & Retail Building",
     "image": "assets/images/comm_&_residential/157.jpg",
+    "images": [
+      "assets/images/comm_&_residential/157.jpg",
+      "assets/images/comm_&_residential/157v2.jpg"
+    ],
     "projectValue": "AED 116,500,000",
     "client": "M/s Al Sandos Real Estate",
     "consultant": "M/s. Art Engineering Consultant",
@@ -1508,8 +1560,8 @@
     "title": "Commercial & Residential Building",
     "image": "assets/images/comm_&_residential/149.jpg",
     "images": [
-      "assets/images/img_gallery/149v4.webp",
-      "assets/images/img_gallery/149v3.webp"
+      "assets/images/comm_&_residential/149.jpg",
+      "assets/images/comm_&_residential/149v2.jpg"
     ],
     "projectValue": "AED 73,600,000",
     "client": "M/S. SRG PROPERTIES LLC",
@@ -1570,7 +1622,11 @@
     "projectNumber": "P-163",
     "slug": "P-163 PROPOSED G+1 ADC ABDULSALAM AL RAFI DIALYSIS CENTER",
     "title": "Dialysis Center",
-    "image": "assets/images/comm_&_residential/163.jpg",
+    "image": "assets/images/comm_&_residential/163v2.jpg",
+    "images": [
+      "assets/images/comm_&_residential/163v2.jpg",
+      "assets/images/comm_&_residential/163.jpg"
+    ],
     "projectValue": "AED 32,000,000",
     "client": "M/S Dubai Health Authority & Srg",
     "consultant": "M/S. Erga Engineering Consultant",
@@ -1580,10 +1636,7 @@
     "status": "Completed",
     "projectType": "Healthcare",
     "projectDescription": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "1 Floors"
-    ],
+    "projectComprisesOf": ["Ground Floor", "1 Floors"],
     "fullAddress": "Al Barsha South, Third, Dubai",
     "plot": "671-2986",
     "area": "Al Barsha South, Third",
@@ -1606,11 +1659,7 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+4 Floors +Roof)",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "4 Floors Levels",
-      "Roof Level"
-    ],
+    "projectComprisesOf": ["Ground Floor", "4 Floors Levels", "Roof Level"],
     "fullAddress": "Al Barsha Third, Dubai",
     "plot": "673-1140",
     "area": "Al Barsha Third",
@@ -1665,11 +1714,7 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+M+7Floor+Gym)",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "7 Floors",
-      "Roof Level"
-    ],
+    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
     "fullAddress": "Al Souq Al Kabeer, Dubai",
     "plot": "312-119",
     "area": "Al Souq Al Kabeer",
@@ -1682,7 +1727,11 @@
     "projectNumber": "P-166",
     "slug": "P-166 PROPOSED (B+G+P+8F+R) BUILDING",
     "title": "Commercial & Residential Building",
-    "image": "assets/images/comm_&_residential/166.jpg",
+    "image": "assets/images/comm_&_residential/166v2.jpg",
+    "images": [
+      "assets/images/comm_&_residential/166v2.jpg",
+      "assets/images/comm_&_residential/166v3.jpg"
+    ],
     "projectValue": "AED 122,300,000",
     "client": "H.H Sheikh Ahmed Mohd Sultan Al Dhahiri",
     "consultant": "M/s. Al Ajmi Engineering Consultant",
@@ -1692,11 +1741,7 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (B+G+P+8 Floors + Roof) Building",
-    "projectComprisesOf": [
-      "Ground Floor",
-      "8 Floors",
-      "Roof Level"
-    ],
+    "projectComprisesOf": ["Ground Floor", "8 Floors", "Roof Level"],
     "fullAddress": "Jumeirah Garden City - Al Satwa, Dubai",
     "plot": "334-7341 & 334-7342",
     "area": "Jumeirah Garden City - Al Satwa",
@@ -1936,7 +1981,11 @@
     "projectNumber": "P-170",
     "slug": "P-170 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
-    "image": "assets/images/projects/p170.jpg",
+    "image": "assets/images/comm_&_residential/170.jpg",
+    "images": [
+      "assets/images/comm_&_residential/170.jpg",
+      "assets/images/comm_&_residential/170v2.jpg"
+    ],
     "projectValue": "AED 21,800,000",
     "client": "MR. MOHAMED RASHED MUBARAK SALEM ALKETBI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1965,6 +2014,10 @@
     "slug": "P-174 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
     "image": "assets/images/comm_&_residential/174.jpg",
+    "images": [
+      "assets/images/comm_&_residential/174.jpg",
+      "assets/images/comm_&_residential/174v2.jpg"
+    ],
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",
@@ -1993,6 +2046,10 @@
     "slug": "P-175 RESIDENTIAL BUILDING (B+G+8+R)",
     "title": "Residential Building",
     "image": "assets/images/comm_&_residential/175.jpg",
+    "images": [
+      "assets/images/comm_&_residential/175.jpg",
+      "assets/images/comm_&_residential/175v2.jpg"
+    ],
     "projectValue": "AED 29,550,000",
     "client": "MR. AHMAD ALI AL ABDULLA AL ANSARI",
     "consultant": "M/S. AL AJMI ENGINEERING CONSULTANT",

@@ -227,7 +227,7 @@ const images = [
   {
     projectNumber: "188",
     slug: "P-188 PROPOSED (B+G+8+R) COMMERCIAL RESIDENTIAL BUILDING",
-    src: ["../assets/images/comm_&_residential/188.jpg","../assets/images/comm_&_residential/189.jpg"],
+    src: ["../assets/images/comm_&_residential/188.jpg","../assets/images/comm_&_residential/188v2.jpg"],
   },
   {
     projectNumber: "189",

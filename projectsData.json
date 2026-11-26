@@ -52,7 +52,10 @@
     },
     "projectType": "Mixed Use",
     "projectDescription": "Proposed Mixed Use Development",
-    "projectComprisesOf": ["Community Mall", "6 Buildings"],
+    "projectComprisesOf": [
+      "Community Mall",
+      "6 Buildings"
+    ],
     "fullAddress": "Studio City - Al Hebiah Second",
     "plot": "6750299",
     "area": "Studio City - Al Hebiah Second",
@@ -65,7 +68,10 @@
     "projectNumber": "P-096",
     "slug": "P-096 (3B+G+19) STOREY HOTEL TOWER",
     "title": "Pullman Hotel",
-    "image": ["assets/images/hotels/96.jpg", "assets/images/hotels/96v2.jpg"],
+    "image": [
+      "assets/images/hotels/96.jpg",
+      "assets/images/hotels/96v2.jpg"
+    ],
     "images": [
       "assets/images/hotels/96.jpg",
       "assets/images/hotels/96v2.jpg",
@@ -812,7 +818,11 @@
     },
     "projectType": "Residential",
     "projectDescription": "G+7+R Residential Building",
-    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "7 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Al Barsha South 3rd, Arjan, Dubai",
     "plot": "6731159",
     "area": "Al Barsha South 3rd, Arjan",
@@ -1361,7 +1371,6 @@
     "latitude": null,
     "longitude": null
   },
-  
   {
     "id": 133,
     "projectNumber": "P-133",
@@ -1636,7 +1645,10 @@
     "status": "Completed",
     "projectType": "Healthcare",
     "projectDescription": "Proposed (G+1) ADC Abdulsalam Al Rafi Dialysis Center",
-    "projectComprisesOf": ["Ground Floor", "1 Floors"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "1 Floors"
+    ],
     "fullAddress": "Al Barsha South, Third, Dubai",
     "plot": "671-2986",
     "area": "Al Barsha South, Third",
@@ -1659,7 +1671,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+4 Floors +Roof)",
-    "projectComprisesOf": ["Ground Floor", "4 Floors Levels", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "4 Floors Levels",
+      "Roof Level"
+    ],
     "fullAddress": "Al Barsha Third, Dubai",
     "plot": "673-1140",
     "area": "Al Barsha Third",
@@ -1714,7 +1730,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (G+M+7Floor+Gym)",
-    "projectComprisesOf": ["Ground Floor", "7 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "7 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Al Souq Al Kabeer, Dubai",
     "plot": "312-119",
     "area": "Al Souq Al Kabeer",
@@ -1741,7 +1761,11 @@
     "status": "Completed",
     "projectType": "Building",
     "projectDescription": "Proposed (B+G+P+8 Floors + Roof) Building",
-    "projectComprisesOf": ["Ground Floor", "8 Floors", "Roof Level"],
+    "projectComprisesOf": [
+      "Ground Floor",
+      "8 Floors",
+      "Roof Level"
+    ],
     "fullAddress": "Jumeirah Garden City - Al Satwa, Dubai",
     "plot": "334-7341 & 334-7342",
     "area": "Jumeirah Garden City - Al Satwa",
@@ -1925,41 +1949,13 @@
     "projectNumber": "P-138",
     "slug": "P-138 RESIDENTIAL BUILDING",
     "title": "Residential Building",
-    "image": "assets/images/projects/p138.jpg",
+    "image": "assets/images/comm_&_residential/138.jpg",
     "projectValue": "AED 21,800,000",
     "client": "Mr. Ali Ahmed Mohd Abdul Rahman",
     "consultant": "M/S. Style Engineering Consultant",
     "projectLocation": "Al Warqa First",
     "startDate": "5 November 2015",
     "completionDate": "7 March 2017",
-    "status": "Completed",
-    "projectType": "Residential",
-    "projectDescription": "Residential Building",
-    "projectComprisesOf": [
-      "Basement Levels",
-      "Ground Floor",
-      "6 Floors",
-      "Roof Level"
-    ],
-    "fullAddress": "Al Warqa First, Dubai",
-    "plot": null,
-    "area": "Al Warqa First",
-    "state": "Dubai",
-    "latitude": null,
-    "longitude": null
-  },
-  {
-    "id": 139,
-    "projectNumber": "P-139",
-    "slug": "P-139 RESIDENTIAL BUILDING",
-    "title": "Residential Building",
-    "image": "assets/images/projects/p139.jpg",
-    "projectValue": "AED 20,800,000",
-    "client": "Mr. Ali Ahmed Mohd Abdul Rahman",
-    "consultant": "M/S. Style Engineering Consultant",
-    "projectLocation": "Al Warqa First",
-    "startDate": "5 November 2015",
-    "completionDate": "1 March 2017",
     "status": "Completed",
     "projectType": "Residential",
     "projectDescription": "Residential Building",
